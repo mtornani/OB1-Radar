@@ -1,12 +1,12 @@
 name: Daily Anomaly Radar
 
 on:
-  workflow_dispatch:      # avvio manuale
+  workflow_dispatch:
   schedule:
-    - cron: "0 7 * * *"   # 07:00 UTC (09:00 CEST estivo)
+    - cron: "0 7 * * *"   # 07:00 UTC (09:00 CEST in estate)
 
 permissions:
-  contents: write         # serve per fare commit/push
+  contents: write
   pages: write
 
 jobs:
@@ -17,21 +17,25 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # per poter committare sul ramo corrente
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Install dependencies
+      - name: Install deps
         run: |
+          python -V
+          pip -V
+          python -m pip install --upgrade pip
           pip install requests
 
       - name: Run anomaly engine
         env:
           ANYCRAWL_API_URL: ${{ secrets.ANYCRAWL_API_URL }}
           ANYCRAWL_API_KEY: ${{ secrets.ANYCRAWL_API_KEY }}
+          SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
         run: |
           mkdir -p output
           python engine/run.py
