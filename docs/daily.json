@@ -1,14 +1,71 @@
 {
-  "generated_at_utc": "2025-08-11T19:49:56Z",
+  "generated_at_utc": "2025-08-11T20:04:39Z",
   "source": "OB1-AnomalyRadar",
+  "mode": "anycrawl",
   "items": [
     {
       "entity": "PLAYER",
-      "label": "Notizie online sempre aggiornate dal Ticino e dalla Svizzera",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 4.0,
+      "label": "Calcio - Scommesse con quote top | Sporttip",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 100.0,
       "why": [
-        "segnale prestazionale"
+        "mercato",
+        "prestazioni",
+        "youth"
+      ],
+      "links": [
+        "https://www.swisslos.ch/it/sporttip/scommesse-sportive/calcio/u19-ec"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Simone Belluzzi, Autore presso Calcio Ticinese - Pagina 120 di ...",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 28.3,
+      "why": [
+        "esordio",
+        "prestazioni"
+      ],
+      "links": [
+        "https://calcio-ticinese.ch/author/simone-belluzzi/page/120/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Team Ticino Archivi - Pagina 32 di 45",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 18.3,
+      "why": [
+        "mercato",
+        "prestazioni",
+        "youth"
+      ],
+      "links": [
+        "https://calcio-ticinese.ch/tag/team-ticino/page/32/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Ticino Unihockey - TIUH INGAGGIA JOONATAN SURAKKA",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 17.5,
+      "why": [
+        "prestazioni",
+        "primavera",
+        "youth"
+      ],
+      "links": [
+        "https://www.ticinounihockey.ch/it/article/2897/tiuh-ingaggia-joonatan-surakka"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Notizie online sempre aggiornate dal Ticino e dalla Svizzera",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 15.3,
+      "why": [
+        "mercato",
+        "prestazioni"
       ],
       "links": [
         "https://www.laregione.ch/1717404https://www.laregione.ch/sport"
@@ -16,39 +73,66 @@
     },
     {
       "entity": "PLAYER",
+      "label": "News – Pagina 54",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 12.8,
+      "why": [
+        "esordio",
+        "youth"
+      ],
+      "links": [
+        "https://www.moncalieribasketball.com/news/page/54/?page_id_all=4"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "AC Bellinzona / News / Kubilay \"Kubi\" Türkyilmaz\"‹",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 10.8,
+      "why": [
+        "esordio"
+      ],
+      "links": [
+        "https://www.acbellinzona.ch/it/news/2020-04-15-00-00-00-kubilay-kubi-turkyilmaz"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "News – Pagina 71",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 10.4,
+      "why": [
+        "esordio",
+        "prestazioni",
+        "youth"
+      ],
+      "links": [
+        "https://www.moncalieribasketball.com/news/page/71/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Ticinonews.ch – Il Ticino in diretta: News, Ultima Ora, Sport ...",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 4.8,
+      "why": [
+        "prestazioni",
+        "youth"
+      ],
+      "links": [
+        "https://www.ticinonews.ch/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
       "label": "Notizie Locarno | laRegione.ch",
       "anomaly_type": "NOISE_PULSE",
-      "score": 2.7,
+      "score": 1.2,
       "why": [
-        "età/giovanile",
-        "segnale prestazionale"
+        "prestazioni"
       ],
       "links": [
         "https://www.laregione.ch/cantone/locarnese"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Jeudi 10 décembre 2009 Saison 2009-2010 - 1-2-3-4-5-6",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 0,
-      "why": [
-        "pattern testuale"
-      ],
-      "links": [
-        "http://www.1-2-3-4-5-6.net/dlcl/lnba-info/Saison2009-2010/20091210_InfoMediaBasket.pdf"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Almanacco del Grigioni Italiano 2022",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 0,
-      "why": [
-        "pattern testuale"
-      ],
-      "links": [
-        "https://www.pgi.ch/sites/default/files/2024-02/Almanacco%202022.pdf"
       ]
     }
   ]
