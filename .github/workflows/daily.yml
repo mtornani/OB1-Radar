@@ -1,9 +1,13 @@
 name: Daily Anomaly Radar
 
 on:
-  workflow_dispatch: # Avvio manuale
+  workflow_dispatch:      # avvio manuale
   schedule:
-    - cron: "0 7 * * *" # Ogni giorno alle 07:00 UTC
+    - cron: "0 7 * * *"   # 07:00 UTC (09:00 CEST estivo)
+
+permissions:
+  contents: write         # serve per fare commit/push
+  pages: write
 
 jobs:
   build:
@@ -12,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # per poter committare sul ramo corrente
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -20,14 +26,27 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pandas numpy scikit-learn
+          pip install requests
 
       - name: Run anomaly engine
+        env:
+          ANYCRAWL_API_URL: ${{ secrets.ANYCRAWL_API_URL }}
+          ANYCRAWL_API_KEY: ${{ secrets.ANYCRAWL_API_KEY }}
         run: |
           mkdir -p output
           python engine/run.py
 
-      - name: Deploy to Pages
+      - name: Copy JSON to docs
         run: |
           mkdir -p docs
-          cp output/daily.json docs/
+          cp output/daily.json docs/daily.json
+
+      - name: Commit & push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/daily.json
+          git commit -m "chore: update daily.json [skip ci]" || echo "No changes to commit"
+          git push
