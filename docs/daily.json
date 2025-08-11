@@ -1,0 +1,126 @@
+{
+  "stamp": "2025-08-11",
+  "source": "OB1-AnomalyRadar",
+  "items": [
+    {
+      "entity": "PLAYER",
+      "label": "Demo anomaly #1",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 93,
+      "why": [
+        "fallback mode (no API response)"
+      ],
+      "links": [
+        "https://github.com/mtornani/OB1-Radar"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Demo anomaly #2",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 86,
+      "why": [
+        "fallback mode (no API response)"
+      ],
+      "links": [
+        "https://github.com/mtornani/OB1-Radar"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Demo anomaly #3",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 79,
+      "why": [
+        "fallback mode (no API response)"
+      ],
+      "links": [
+        "https://github.com/mtornani/OB1-Radar"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Demo anomaly #4",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 72,
+      "why": [
+        "fallback mode (no API response)"
+      ],
+      "links": [
+        "https://github.com/mtornani/OB1-Radar"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Demo anomaly #5",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 65,
+      "why": [
+        "fallback mode (no API response)"
+      ],
+      "links": [
+        "https://github.com/mtornani/OB1-Radar"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Demo anomaly #6",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 58,
+      "why": [
+        "fallback mode (no API response)"
+      ],
+      "links": [
+        "https://github.com/mtornani/OB1-Radar"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Demo anomaly #7",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 51,
+      "why": [
+        "fallback mode (no API response)"
+      ],
+      "links": [
+        "https://github.com/mtornani/OB1-Radar"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Demo anomaly #8",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 44,
+      "why": [
+        "fallback mode (no API response)"
+      ],
+      "links": [
+        "https://github.com/mtornani/OB1-Radar"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Demo anomaly #9",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 37,
+      "why": [
+        "fallback mode (no API response)"
+      ],
+      "links": [
+        "https://github.com/mtornani/OB1-Radar"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Demo anomaly #10",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 30,
+      "why": [
+        "fallback mode (no API response)"
+      ],
+      "links": [
+        "https://github.com/mtornani/OB1-Radar"
+      ]
+    }
+  ]
+}
