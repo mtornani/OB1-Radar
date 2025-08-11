@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>OB1 Radar • Top-10 anomalie</title>
+  <style>
+    body { font-family: sans-serif; padding: 1rem; background: #f4f4f4; color: #333; }
+    h1 { text-align: center; }
+    .item { margin: 1rem 0; padding: 0.75rem; background: #fff; border-radius: 4px; }
+    .score { float: right; font-weight: bold; }
+    .why { font-style: italic; font-size: 0.9rem; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>OB1 Radar — Top-10 Anomalie</h1>
+  <div id="list">Caricamento...</div>
+  <script>
+    fetch('daily.json')
+      .then(r => r.json())
+      .then(data => {
+        const list = document.getElementById('list');
+        list.innerHTML = '';
+        data.items.forEach(it => {
+          const div = document.createElement('div');
+          div.className = 'item';
+          div.innerHTML = `
+            <div><strong>${it.label}</strong> <span class="score">${it.score}</span></div>
+            <div class="why">${it.why.join(', ')}</div>
+            <div><a href="${it.links[0]}" target="_blank">Dettagli →</a></div>`;
+          list.appendChild(div);
+        });
+      })
+      .catch(_ => document.getElementById('list').textContent = 'Errore nel caricamento.');
+  </script>
+</body>
+</html>
