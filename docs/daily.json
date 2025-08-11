@@ -1,125 +1,54 @@
 {
-  "stamp": "2025-08-11",
+  "generated_at_utc": "2025-08-11T19:49:56Z",
   "source": "OB1-AnomalyRadar",
   "items": [
     {
       "entity": "PLAYER",
-      "label": "Demo anomaly #1",
+      "label": "Notizie online sempre aggiornate dal Ticino e dalla Svizzera",
       "anomaly_type": "NOISE_PULSE",
-      "score": 93,
+      "score": 4.0,
       "why": [
-        "fallback mode (no API response)"
+        "segnale prestazionale"
       ],
       "links": [
-        "https://github.com/mtornani/OB1-Radar"
+        "https://www.laregione.ch/1717404https://www.laregione.ch/sport"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Demo anomaly #2",
+      "label": "Notizie Locarno | laRegione.ch",
       "anomaly_type": "NOISE_PULSE",
-      "score": 86,
+      "score": 2.7,
       "why": [
-        "fallback mode (no API response)"
+        "età/giovanile",
+        "segnale prestazionale"
       ],
       "links": [
-        "https://github.com/mtornani/OB1-Radar"
+        "https://www.laregione.ch/cantone/locarnese"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Demo anomaly #3",
+      "label": "Jeudi 10 décembre 2009 Saison 2009-2010 - 1-2-3-4-5-6",
       "anomaly_type": "NOISE_PULSE",
-      "score": 79,
+      "score": 0,
       "why": [
-        "fallback mode (no API response)"
+        "pattern testuale"
       ],
       "links": [
-        "https://github.com/mtornani/OB1-Radar"
+        "http://www.1-2-3-4-5-6.net/dlcl/lnba-info/Saison2009-2010/20091210_InfoMediaBasket.pdf"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Demo anomaly #4",
+      "label": "Almanacco del Grigioni Italiano 2022",
       "anomaly_type": "NOISE_PULSE",
-      "score": 72,
+      "score": 0,
       "why": [
-        "fallback mode (no API response)"
+        "pattern testuale"
       ],
       "links": [
-        "https://github.com/mtornani/OB1-Radar"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Demo anomaly #5",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 65,
-      "why": [
-        "fallback mode (no API response)"
-      ],
-      "links": [
-        "https://github.com/mtornani/OB1-Radar"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Demo anomaly #6",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 58,
-      "why": [
-        "fallback mode (no API response)"
-      ],
-      "links": [
-        "https://github.com/mtornani/OB1-Radar"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Demo anomaly #7",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 51,
-      "why": [
-        "fallback mode (no API response)"
-      ],
-      "links": [
-        "https://github.com/mtornani/OB1-Radar"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Demo anomaly #8",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 44,
-      "why": [
-        "fallback mode (no API response)"
-      ],
-      "links": [
-        "https://github.com/mtornani/OB1-Radar"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Demo anomaly #9",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 37,
-      "why": [
-        "fallback mode (no API response)"
-      ],
-      "links": [
-        "https://github.com/mtornani/OB1-Radar"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Demo anomaly #10",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 30,
-      "why": [
-        "fallback mode (no API response)"
-      ],
-      "links": [
-        "https://github.com/mtornani/OB1-Radar"
+        "https://www.pgi.ch/sites/default/files/2024-02/Almanacco%202022.pdf"
       ]
     }
   ]
