@@ -1,0 +1,33 @@
+name: Daily Anomaly Radar
+
+on:
+  workflow_dispatch: # Avvio manuale
+  schedule:
+    - cron: "0 7 * * *" # Ogni giorno alle 07:00 UTC
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          pip install pandas numpy scikit-learn
+
+      - name: Run anomaly engine
+        run: |
+          mkdir -p output
+          python engine/run.py
+
+      - name: Deploy to Pages
+        run: |
+          mkdir -p docs
+          cp output/daily.json docs/
