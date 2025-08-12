@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2025-08-12T16:22:52Z",
+  "generated_at_utc": "2025-08-12T16:51:12Z",
   "source": "OB1-AnomalyRadar",
   "mode": "anycrawl",
   "items": [
@@ -22,22 +22,6 @@
     },
     {
       "entity": "PLAYER",
-      "label": "Los 39 mejores jugadores de 21 años o menos en el futbol ...",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 100.0,
-      "why": [
-        "esordio",
-        "mercato",
-        "prestazioni",
-        "recente",
-        "youth"
-      ],
-      "links": [
-        "https://espndeportes.espn.com/futbol/nota/_/id/14986580/mejores-jugadores-sub-21-futbol-mundial-premier-league-barcelona-psg"
-      ]
-    },
-    {
-      "entity": "PLAYER",
       "label": "São Paulo Sub-20: Partidos, Resultados y Estadísticas",
       "anomaly_type": "NOISE_PULSE",
       "score": 100.0,
@@ -53,41 +37,13 @@
     },
     {
       "entity": "PLAYER",
-      "label": "Paraguay Sub 20 Resultados, estadísticas y highlights",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 75.4,
-      "why": [
-        "prestazioni",
-        "recente",
-        "youth"
-      ],
-      "links": [
-        "https://espndeportes.espn.com/futbol/equipo/_/id/10296/paraguay-sub-20"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Reglas y Regulaciones de las plantillas de la MLS 2024",
-      "anomaly_type": "TRANSFER_SIGNAL",
-      "score": 73.5,
-      "why": [
-        "mercato",
-        "prestazioni",
-        "recente",
-        "youth"
-      ],
-      "links": [
-        "https://www.mlssoccer.com/news/reglas-y-regulaciones-de-las-plantillas-de-la-mls-2024"
-      ]
-    },
-    {
-      "entity": "PLAYER",
       "label": "¡Colombia y Paraguay al Mundial Sub20!",
       "anomaly_type": "NOISE_PULSE",
-      "score": 65.9,
+      "score": 77.76,
       "why": [
         "prestazioni",
         "recente",
+        "south-america",
         "youth"
       ],
       "links": [
@@ -96,13 +52,43 @@
     },
     {
       "entity": "PLAYER",
+      "label": "Paraguay Sub 20 Resultados, estadísticas y highlights",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 75.4,
+      "why": [
+        "prestazioni",
+        "recente",
+        "south-america",
+        "youth"
+      ],
+      "links": [
+        "https://espndeportes.espn.com/futbol/equipo/_/id/10296/paraguay-sub-20"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Torneo Maurice Revello 2025: Panamá Sub-20 está lista ...",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 61.0,
+      "why": [
+        "africa",
+        "esordio",
+        "recente"
+      ],
+      "links": [
+        "https://www.rpctv.com/marea-roja/torneo-maurice-revello-2025-panama-sub-20-esta-lista-su-debut-mali-n6041700"
+      ]
+    },
+    {
+      "entity": "PLAYER",
       "label": "Fútbol: Conoce a las joyas del futuro de Argentina que ...",
       "anomaly_type": "PLAYER_BURST",
-      "score": 50.3,
+      "score": 55.5,
       "why": [
         "esordio",
         "prestazioni",
         "recente",
+        "south-america",
         "youth"
       ],
       "links": [
@@ -111,44 +97,62 @@
     },
     {
       "entity": "PLAYER",
-      "label": "Se acerca el debut colombiano en el Sudamericano Sub",
+      "label": "Argentina gana en su debut en el Mundial Sub20",
       "anomaly_type": "PLAYER_BURST",
-      "score": 17.9,
+      "score": 49.68,
       "why": [
         "esordio",
+        "prestazioni",
         "recente",
         "south-america"
       ],
       "links": [
-        "https://olimpicocol.co/web/se-acerca-el-debut-colombiano-en-el-sudamericano-sub-20-de-futbol/"
+        "https://www.conmebol.com/noticias/argentina-gana-en-su-debut-en-el-mundial-sub20/"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Tabla de posiciones Sudamericano sub 20: Estadisticas ...",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 16.4,
-      "why": [
-        "prestazioni",
-        "recente"
-      ],
-      "links": [
-        "https://www.futbolred.com/tabla-de-posiciones/sudamericano-sub-20"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "El juvenil Kadir Barria debutó con el Botafogo Sub 20, ...",
+      "label": "Sudamericano Sub-20 2025: Brasil se consagró campeón",
       "anomaly_type": "PLAYER_BURST",
-      "score": 14.4,
+      "score": 31.1,
       "why": [
         "esordio",
-        "js-heavy",
+        "prestazioni",
+        "recente",
+        "south-america"
+      ],
+      "links": [
+        "https://www.olympics.com/es/noticias/sudamericano-sub-20-2025-resumen-y-clasificados-al-mundial"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Fichaje de Sergej Levak: Roma U19 a Inter",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 31.0,
+      "why": [
+        "mercato",
+        "prestazioni",
         "recente",
         "youth"
       ],
       "links": [
-        "https://www.threads.com/@tigosportspa/post/DNJ1b2Spt3h/gran-debutel-juvenil-kadir-barria-debut%C3%B3-con-el-botafogo-sub-20-sucedi%C3%B3-en-el-to"
+        "https://www.transferfeed.com/es/fichajes/sergej-levak-roma-u19-inter/12360675"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Fichaje de Divin Mubama: Manchester City U21 a Stoke City",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 21.7,
+      "why": [
+        "mercato",
+        "prestazioni",
+        "recente",
+        "youth"
+      ],
+      "links": [
+        "https://www.transferfeed.com/es/fichajes/divin-mubama-manchester-city-u21-stoke-city/12361703"
       ]
     }
   ]
