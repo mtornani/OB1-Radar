@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-# OB1 • Ouroboros Radar — engine/run.py (v0.4)
+# OB1 • Ouroboros Radar — engine/run.py (v0.4-fix1)
 # AnyCrawl /v1/search + /v1/scrape → filtri → scoring → Top-10
-# Novità: micro-cache URL (14gg), snapshot giornalieri, confederation tags,
+# Novità v0.4: micro-cache URL (14gg), snapshot giornalieri, confederation tags,
 # site-packs CAF/AFC rinforzati, block/penalty per aggregatori, fix Maurice Revello
+# Fix1: chiusura f-string finale + bug in region_from_host_or_tld
 
 import os, json, re, requests, glob
 from datetime import datetime, timedelta
@@ -74,14 +75,12 @@ OFF_PATTERNS = (
     "/economia","/politica","/motori","almanacco","forumfree",
     "facebook.com","instagram.com","tiktok.com","wikipedia.org",
 )
-# Blocca hard alcuni host “aggregatore”
 HOST_BLOCKLIST = {
-    "apwin.com",  # betting stats/tips (non segnale primario)
+    "apwin.com",
 }
-# Penalità forti per altri aggregatori
 HOST_PENALTY = {
     "transferfeed.com": 0.6,
-    "olympics.com": 0.85,  # utile contesto, ma non “segnale” primario
+    "olympics.com": 0.85,
 }
 
 TRUST_WEIGHTS = {
@@ -113,7 +112,6 @@ PT_MONTHS = ["janeiro","fevereiro","março","abril","maio","junho","julho","agos
 FR_MONTHS = ["janvier","février","fevrier","mars","avril","mai","juin","juillet","août","aout","septembre","octobre","novembre","décembre","decembre"]
 MONTHS_ALL  = IT_MONTHS + ES_MONTHS + PT_MONTHS + FR_MONTHS
 
-# Tournaments → confederation override (Maurice Revello = international)
 TOURNAMENT_CONFED = {
     "maurice revello": "international", "toulon": "international",
     "conmebol": "CONMEBOL", "sudamericano": "CONMEBOL",
@@ -254,7 +252,6 @@ def domain_weight(url: str):
     return 1.0
 
 def host_cap(host: str) -> int:
-    # più restrittivo su host “generici/aggregatori”
     if host in HOST_PENALTY or host in HOST_BLOCKLIST: return 1
     return MAX_PER_HOST
 
@@ -267,9 +264,8 @@ def infer_confed(txt: str) -> str:
 
 def region_from_host_or_tld(host: str) -> str:
     h = host.lower()
-    if any(h in host for host in SITE_PACKS["africa"]): return "africa"
-    if any(h in host for host in SITE_PACKS["asia"]): return "asia"
-    # TLD heuristic
+    if any(dom in h for dom in SITE_PACKS["africa"]): return "africa"
+    if any(dom in h for dom in SITE_PACKS["asia"]): return "asia"
     if h.endswith((".za",".ng",".gh",".ma",".tn",".dz",".ke",".ug",".tz",".sn",".cm")): return "africa"
     if h.endswith((".jp",".kr",".id",".th",".vn",".my",".in",".cn",".ph",".sg")): return "asia"
     if h.endswith((".br",".ar",".cl",".uy",".pe",".co",".py",".bo",".ec",".ve")): return "south-america"
@@ -293,7 +289,7 @@ def collect_candidates(cache):
             if not allowed_url(url):  continue
             nu = normalize_url(url); host = urlparse(nu).netloc.lower()
             if nu in seen_urls:       continue
-            if is_seen(cache, nu):    continue  # micro-cache 14gg
+            if is_seen(cache, nu):    continue
             cap = host_cap(host)
             if per_host.get(host,0) >= cap: continue
             seen_urls.add(nu); per_host[host] = per_host.get(host,0)+1
@@ -321,7 +317,6 @@ def main():
         txt = text_from_page(page)
         if not good_text(txt): continue
 
-        # Scoring
         sc = score_text(txt)
         a_type = infer_type(txt)
         dt = guess_date_from_text_or_url(txt, c["url"])
@@ -329,12 +324,9 @@ def main():
         sc = round(sc * domain_weight(c["url"]), 2)
         sc = float(max(0, min(100, sc)))
 
-        # Confed & region tagging
         conf = infer_confed(txt)
         host = urlparse(c["url"]).netloc.lower()
         region = region_from_host_or_tld(host)
-
-        # Override: Maurice Revello/Toulon = international, non CAF
         if conf == "international":
             region = "international"
 
@@ -358,17 +350,14 @@ def main():
             "links": [c["url"]],
         })
 
-        # Mark seen in cache
         mark_seen(cache, c["url"], host)
 
     if not items:
         mode = "fallback"
         items = fallback_items()
 
-    # Ordina
     items = sorted(items, key=lambda x: x["score"], reverse=True)[:10]
 
-    # Payload
     now_iso = datetime.utcnow().isoformat(timespec="seconds") + "Z"
     payload = {
         "generated_at_utc": now_iso,
@@ -377,22 +366,20 @@ def main():
         "items": items
     }
 
-    # Salva output + snapshot
     os.makedirs(OUT_DIR, exist_ok=True)
     os.makedirs(SNAP_DIR, exist_ok=True)
     with open(os.path.join(OUT_DIR, "daily.json"), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
-    # Snapshot datato
     today = datetime.utcnow().strftime("%Y-%m-%d")
     snap_path = os.path.join(SNAP_DIR, f"daily-{today}.json")
     with open(snap_path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
-    # Persist cache
     save_cache(cache)
 
-    print(f"[OK] wrote {OUT_DIR}/daily.json and snapshot {snap_path} (items={len(items)}, mode={mode)})")
+    # ✅ f-string chiusa correttamente (era la causa del failure)
+    print(f"[OK] wrote {OUT_DIR}/daily.json and snapshot {snap_path} (items={len(items)}, mode={mode})")
 
 if __name__ == "__main__":
     main()
