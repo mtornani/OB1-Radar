@@ -1,46 +1,43 @@
 {
-  "generated_at_utc": "2025-08-12T19:07:09Z",
+  "generated_at_utc": "2025-08-12T19:45:57Z",
   "source": "OB1-AnomalyRadar",
   "mode": "anycrawl",
   "items": [
     {
       "entity": "PLAYER",
-      "label": "Campeonato Sudamericano Sub-20 - Lista de goleadores ...",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 100.0,
-      "why": [
-        "CONMEBOL",
-        "mercato",
-        "prestazioni",
-        "recente",
-        "south-america",
-        "youth"
-      ],
-      "links": [
-        "https://www.transfermarkt.co/campeonato-sudamericano-sub-20-2025/scorerliste/pokalwettbewerb/2SAM/saison_id/2024/altersklasse//plus/1"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Los 39 mejores jugadores de 21 años o menos en el futbol ...",
+      "label": "Colombia sub 20 debutó con victoria en torneo en Egipto",
       "anomaly_type": "PLAYER_BURST",
       "score": 100.0,
       "why": [
+        "CONMEBOL",
         "esordio",
+        "prestazioni",
+        "recente"
+      ],
+      "links": [
+        "https://www.antena2.com/futbol/colombia-sub-20-debuto-con-victoria-en-torneo-en-egipto"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "São Paulo Sub-20: Partidos, Resultados y Estadísticas",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 100.0,
+      "why": [
         "mercato",
         "prestazioni",
         "recente",
         "youth"
       ],
       "links": [
-        "https://espndeportes.espn.com/futbol/nota/_/id/14986580/mejores-jugadores-sub-21-futbol-mundial-premier-league-barcelona-psg"
+        "https://www.apwin.com/es/equipo/sao-paulo-futebol-clube-under-20/"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "¡Colombia y Paraguay al Mundial Sub20!",
+      "label": "Paraguay Sub 20 Resultados, estadísticas y highlights",
       "anomaly_type": "NOISE_PULSE",
-      "score": 77.76,
+      "score": 74.1,
       "why": [
         "CONMEBOL",
         "prestazioni",
@@ -48,111 +45,74 @@
         "youth"
       ],
       "links": [
-        "https://www.conmebol.com/noticias/colombia-y-paraguay-al-mundial-sub20/"
+        "https://espndeportes.espn.com/futbol/equipo/_/id/10296/paraguay-sub-20"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Copa Mundial Sub-20 - Lista de goleadores y asistentes",
+      "label": "Sub-20: Ceará encara o Falcon/SE na estreia na Copa do ...",
       "anomaly_type": "NOISE_PULSE",
-      "score": 69.7,
-      "why": [
-        "mercato",
-        "prestazioni",
-        "recente",
-        "south-america",
-        "youth"
-      ],
-      "links": [
-        "https://www.transfermarkt.co/copa-mundial-sub-20-de-2015/scorerliste/pokalwettbewerb/20WC/saison_id/2014/altersklasse//sort/age"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "El Sub 20 debutó con un triunfo y tres pinchas",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 35.0,
-      "why": [
-        "esordio",
-        "prestazioni",
-        "recente",
-        "youth"
-      ],
-      "links": [
-        "https://estudiantesdelaplata.com/el-sub-20-debuto-con-un-triunfo-y-tres-pinchas/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "la Argentina creó un show de fútbol y borró de la cancha a Brasil",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 31.1,
-      "why": [
-        "CONMEBOL",
-        "esordio",
-        "prestazioni",
-        "recente",
-        "youth"
-      ],
-      "links": [
-        "https://es-us.noticias.yahoo.com/deportes/sudamericano-sub-20-argentina-cre%C3%B3-020815622.html"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Mundial sub-20 de futebol masculino 2025",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 25.5,
+      "score": 34.0,
       "why": [
         "recente"
       ],
       "links": [
-        "https://www.olympics.com/pt/noticias/mundial-sub-20-futebol-masculino-2025-classificados-datas-local"
+        "https://www.cearasc.com/noticia/sub-20-ceara-encara-o-falconse-na-estreia-na-copa-"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Fichaje de Divin Mubama: Manchester City U21 a Stoke City",
-      "anomaly_type": "TRANSFER_SIGNAL",
-      "score": 21.7,
+      "label": "Fixture de la Argentina en el Mundial Sub 20 2025",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 31.4,
       "why": [
-        "mercato",
+        "CONMEBOL",
         "prestazioni",
         "recente",
         "youth"
       ],
       "links": [
-        "https://www.transferfeed.com/es/fichajes/divin-mubama-manchester-city-u21-stoke-city/12361703"
+        "https://es-us.noticias.yahoo.com/deportes/fixture-argentina-mundial-sub-20-190940842.html"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Se acerca el debut colombiano en el Sudamericano Sub",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 17.9,
+      "label": "Ituano venceu na estreia do Brasileiro Série B sub 20",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 29.8,
       "why": [
-        "CONMEBOL",
-        "esordio",
-        "js-heavy",
-        "recente",
-        "south-america"
+        "prestazioni",
+        "recente"
       ],
       "links": [
-        "https://olimpicocol.co/web/se-acerca-el-debut-colombiano-en-el-sudamericano-sub-20-de-futbol/"
+        "https://ituanofc.com/noticias/ituano-venceu-na-estreia-do-brasileiro-serie-b-sub-20"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Tabla de posiciones Sudamericano sub 20: Estadisticas ...",
+      "label": "Bola de Ouro 2025: compare os números dos principais ...",
       "anomaly_type": "NOISE_PULSE",
-      "score": 16.4,
+      "score": 25.2,
+      "why": [
+        "prestazioni",
+        "recente"
+      ],
+      "links": [
+        "https://www.olympics.com/pt/noticias/bola-de-ouro-2025-numeros-candidatos"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Sul-Americano sub-20 de futebol masculino 2025",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 21.3,
       "why": [
         "CONMEBOL",
         "prestazioni",
         "recente"
       ],
       "links": [
-        "https://www.futbolred.com/tabla-de-posiciones/sudamericano-sub-20"
+        "https://www.olympics.com/pt/noticias/sul-americano-sub-20-futebol-masculino-2025-datas-horarios-jogos-brasil"
       ]
     }
   ]
