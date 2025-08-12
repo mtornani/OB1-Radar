@@ -1,118 +1,139 @@
 {
-  "generated_at_utc": "2025-08-12T19:45:57Z",
+  "generated_at_utc": "2025-08-12T20:06:39Z",
   "source": "OB1-AnomalyRadar",
   "mode": "anycrawl",
   "items": [
     {
       "entity": "PLAYER",
-      "label": "Colombia sub 20 debutó con victoria en torneo en Egipto",
-      "anomaly_type": "PLAYER_BURST",
+      "label": "Los Derechos de formación en el futbol",
+      "anomaly_type": "TRANSFER_SIGNAL",
       "score": 100.0,
       "why": [
         "CONMEBOL",
-        "esordio",
-        "prestazioni",
-        "recente"
+        "mercato",
+        "youth"
       ],
       "links": [
-        "https://www.antena2.com/futbol/colombia-sub-20-debuto-con-victoria-en-torneo-en-egipto"
+        "https://www.derechosdelfutbol.com/post/derechos-de-formacion"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "São Paulo Sub-20: Partidos, Resultados y Estadísticas",
-      "anomaly_type": "NOISE_PULSE",
+      "label": "¿Cuál fue el mejor fichaje en el actual mercado invernal?",
+      "anomaly_type": "TRANSFER_SIGNAL",
       "score": 100.0,
       "why": [
         "mercato",
         "prestazioni",
-        "recente",
         "youth"
       ],
       "links": [
-        "https://www.apwin.com/es/equipo/sao-paulo-futebol-clube-under-20/"
+        "https://espndeportes.espn.com/futbol/nota/_/id/13080088/mercado-fichajes-cual-ha-sido-el-mejor-traspaso-al-momento"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Paraguay Sub 20 Resultados, estadísticas y highlights",
+      "label": "Sul-Americano Sub-20: como funciona, datas, grupos ...",
       "anomaly_type": "NOISE_PULSE",
-      "score": 74.1,
+      "score": 100.0,
       "why": [
         "CONMEBOL",
+        "mercato",
+        "prestazioni"
+      ],
+      "links": [
+        "https://www.365scores.com/pt-br/news/magazine/sul-americano-sub-20/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Diego Luna Envía a la SelecciónNacional Juvenil ...",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 65.9,
+      "why": [
         "prestazioni",
-        "recente",
         "youth"
       ],
       "links": [
-        "https://espndeportes.espn.com/futbol/equipo/_/id/10296/paraguay-sub-20"
+        "https://www.rsl.com/news/diego-luna-envia-a-la-seleccionnacional-juvenil-masculina-sub-20-de-estados-unid"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Sub-20: Ceará encara o Falcon/SE na estreia na Copa do ...",
+      "label": "Ituano vence nas 3 categorias da base. Com viradas no 15 ...",
       "anomaly_type": "NOISE_PULSE",
-      "score": 34.0,
+      "score": 65.4,
       "why": [
-        "recente"
+        "prestazioni"
       ],
       "links": [
-        "https://www.cearasc.com/noticia/sub-20-ceara-encara-o-falconse-na-estreia-na-copa-"
+        "https://ituanofc.com/noticias/ituano-vence-nas-3-categorias-da-base-com-viradas-no-15-e-20"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Fixture de la Argentina en el Mundial Sub 20 2025",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 31.4,
+      "label": "Delantero chileno sub 20 debutó con un hat-trick en Cuiabá",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 54.5,
+      "why": [
+        "prestazioni"
+      ],
+      "links": [
+        "https://onefootball.com/pt-br/noticias/delantero-chileno-sub-20-debuto-con-un-hat-trick-en-cuiaba-llego-hace-dos-dias-a-brasil-41477997"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Colombia Sub-20 debutó con empate ante Argentina en el ...",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 32.3,
       "why": [
         "CONMEBOL",
-        "prestazioni",
-        "recente",
+        "esordio",
+        "prestazioni"
+      ],
+      "links": [
+        "https://clanfutbolero.com/seleccion-colombia/colombia-sub-20-debuto-con-empate-ante-argentina-en-el-sudamericano/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Colombia debuta con empate ante el líder Argentina en ...",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 29.1,
+      "why": [
+        "CONMEBOL",
+        "esordio",
+        "prestazioni"
+      ],
+      "links": [
+        "https://espndeportes.espn.com/futbol/mundial/nota/_/id/14718484/seleccion-colombia-empata-argentina-sudamericano-sub-20"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Copinha 2025: quem é o artilheiro do torneio? Confira o ...",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 26.8,
+      "why": [
+        "prestazioni"
+      ],
+      "links": [
+        "https://www.olympics.com/pt/noticias/copinha-2025-artilheiro-top-10"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "El juvenil Kadir Barria debutó con el Botafogo Sub 20, ...",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 25.6,
+      "why": [
+        "esordio",
+        "js-heavy",
         "youth"
       ],
       "links": [
-        "https://es-us.noticias.yahoo.com/deportes/fixture-argentina-mundial-sub-20-190940842.html"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Ituano venceu na estreia do Brasileiro Série B sub 20",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 29.8,
-      "why": [
-        "prestazioni",
-        "recente"
-      ],
-      "links": [
-        "https://ituanofc.com/noticias/ituano-venceu-na-estreia-do-brasileiro-serie-b-sub-20"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Bola de Ouro 2025: compare os números dos principais ...",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 25.2,
-      "why": [
-        "prestazioni",
-        "recente"
-      ],
-      "links": [
-        "https://www.olympics.com/pt/noticias/bola-de-ouro-2025-numeros-candidatos"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Sul-Americano sub-20 de futebol masculino 2025",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 21.3,
-      "why": [
-        "CONMEBOL",
-        "prestazioni",
-        "recente"
-      ],
-      "links": [
-        "https://www.olympics.com/pt/noticias/sul-americano-sub-20-futebol-masculino-2025-datas-horarios-jogos-brasil"
+        "https://www.threads.com/@tigosportspa/post/DNJ1b2Spt3h/gran-debutel-juvenil-kadir-barria-debut%C3%B3-con-el-botafogo-sub-20-sucedi%C3%B3-en-el-to"
       ]
     }
   ]
