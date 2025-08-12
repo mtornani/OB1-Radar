@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-# OB1 • Ouroboros Radar — engine/run.py (v0.4.1)
-# Add: region quotas (AF/AS) + extended official site-packs
+# OB1 • Ouroboros Radar — engine/run.py (v0.4.2)
+# Asia-uplift: query locali (JP/KR/AR/TH/VI/ID), site-packs FA asiatiche,
+# preferenze Playwright per domini JS-heavy, fix filtri linguistici.
 
 import os, json, re, requests
 from datetime import datetime, timedelta
@@ -13,32 +14,32 @@ HEADERS = {"Content-Type": "application/json"}
 if API_KEY:
     HEADERS["Authorization"] = f"Bearer {API_KEY}"
 
-# ---- Site packs (ufficiali / confederali) -----------------------------------
+# ---- Site packs --------------------------------------------------------------
 SITE_PACKS = {
     # Africa (CAF + sub-regionali)
     "africa": [
-        "cafonline.com",          # CAF U20 AFCON (ufficiale)
-        "cosafa.com",             # Sud Africa australe U20
-        "cecafaonline.com",       # East & Central Africa U20
-        "ufoawafub.com",          # WAFU Zone B (West Africa)
-        # NB: WAFU-A ha presenza frammentaria → copriamo via CAF
+        "cafonline.com", "cosafa.com", "cecafaonline.com", "ufoawafub.com"
     ],
-    # Asia (AFC + sotto-federazioni)
+    # Asia (AFC + sotto-federazioni + FA nazionali chiave)
     "asia": [
-        "the-afc.com",            # AFC U20 Asian Cup (ufficiale)
-        "aseanfootball.org",      # AFF (Sud-Est asiatico)
-        "eaff.com",               # EAFF (Est asiatico)
-        "the-waff.com",           # WAFF (Asia occidentale)
-        "saffederation.org",      # SAFF (Asia meridionale)
+        "the-afc.com", "aseanfootball.org", "eaff.com", "the-waff.com", "saffederation.org",
+        "jfa.jp", "kfa.or.kr", "vff.org.vn", "fathailand.org",
+        "qfa.qa", "the-aiff.com", "pssi.org"
     ],
     # Sud America
     "south-america": [
-        "conmebol.com",
-        "ge.globo.com", "ole.com.ar", "tycsports.com",
-        "as.com", "marca.com",
-        "transfermarkt"          # wildcard vari TLD
+        "conmebol.com", "ge.globo.com", "ole.com.ar", "tycsports.com", "as.com", "marca.com",
+        "transfermarkt"
     ],
 }
+
+# Token locali per migliorare recall in Asia
+TOK_JP = ["U-20 日本代表", "U-19 日本代表", "デビュー", "得点", "アシスト", "移籍", "レンタル"]
+TOK_KR = ["U-20 대표팀", "U-19 대표팀", "데뷔", "득점", "도움", "이적", "임대"]
+TOK_AR = ["تحت 20", "تحت 19", "منتخب الشباب", "سجل", "صنع", "انتقال", "إعارة", "ظهور"]
+TOK_TH = ["ทีมชาติ U20", "ทีมชาติ U19", "เดบิวต์", "ยิง", "แอสซิสต์", "ยืมตัว", "โอนย้าย"]
+TOK_VI = ["U20", "U19", "đội tuyển", "ra mắt", "ghi bàn", "kiến tạo", "chuyển nhượng", "cho mượn"]
+TOK_ID = ["U20", "U19", "timnas", "debut", "gol", "assist", "pinjaman", "transfer"]
 
 BASE_QUERIES = [
     # ES/PT (Sudamerica)
@@ -46,7 +47,7 @@ BASE_QUERIES = [
     "transfer Sub-20 fichaje préstamo juvenil",
     "Sub-20 estreia futebol", "base Sub-20 gols assistências",
     "estreou convocado seleção Sub-20",
-    # FR/EN (Africa + Asia EN/FR)
+    # FR/EN (Africa/Asia)
     "U20 a débuté football", "sélection U20 sélectionné football",
     "U20 debut football", "U20 transfer loan youth",
 ]
@@ -55,13 +56,26 @@ def build_site_queries():
     out = []
     for hosts in SITE_PACKS.values():
         for h in hosts:
-            out += [
-                f"site:{h} U20", f"site:{h} U19",
-                f"site:{h} debut U20", f"site:{h} youth U20"
-            ]
+            out += [f"site:{h} U20", f"site:{h} U19", f"site:{h} debut U20", f"site:{h} youth U20"]
     return out
 
-QUERIES = BASE_QUERIES + build_site_queries()
+def build_asia_lang_queries():
+    out = []
+    asia_hosts = SITE_PACKS["asia"]
+    token_sets = TOK_JP + TOK_KR + TOK_AR + TOK_TH + TOK_VI + TOK_ID
+    for h in asia_hosts:
+        for tok in token_sets:
+            out.append(f"site:{h} {tok}")
+    # qualche query generica senza site: in lingue locali
+    out += [
+        "U-20 日本代表 デビュー", "U-20 代表 得点",
+        "U-20 대표팀 데뷔 득점", "U-20 대표팀 이적 임대",
+        "منتخب الشباب تحت 20 انتقال إعارة", "U20 ทีมชาติ เดบิวต์ ยิง",
+        "U20 ra mắt ghi bàn kiến tạo chuyển nhượng", "U20 timnas debut gol assist transfer"
+    ]
+    return out
+
+QUERIES = BASE_QUERIES + build_site_queries() + build_asia_lang_queries()
 
 # ---- Heuristics & scoring ---------------------------------------------------
 MAX_SERP       = 14
@@ -70,7 +84,6 @@ TIMEOUT_S      = 50
 RECENT_DAYS    = 21
 CACHE_TTL_DAYS = 14
 
-# Quote minime per regione (se esistono candidati)
 REGION_MIN_QUOTAS = {"africa": 2, "asia": 2}
 TOP_K = 10
 
@@ -89,38 +102,63 @@ OFF_PATTERNS = (
     "facebook.com","instagram.com","tiktok.com","wikipedia.org",
 )
 
-# Block/penalty host
 HOST_BLOCKLIST = {"apwin.com"}
 HOST_PENALTY   = {"transferfeed.com": 0.6, "olympics.com": 0.85}
 
 TRUST_WEIGHTS = {
     # Africa
     "cafonline.com": 1.20, "cosafa.com": 1.15, "cecafaonline.com": 1.12, "ufoawafub.com": 1.10,
-    # Asia
+    # Asia (confederazioni + FA nazionali)
     "the-afc.com": 1.18, "aseanfootball.org": 1.10, "eaff.com": 1.10, "the-waff.com": 1.10, "saffederation.org": 1.08,
+    "jfa.jp": 1.18, "kfa.or.kr": 1.15, "vff.org.vn": 1.10, "fathailand.org": 1.10,
+    "qfa.qa": 1.10, "the-aiff.com": 1.10, "pssi.org": 1.08,
     # Sudamerica
     "conmebol.com": 1.18, "ge.globo.com": 1.18, "ole.com.ar": 1.15, "tycsports.com": 1.10, "as.com": 1.08, "marca.com": 1.08,
 }
 
+# Preferenze motore per domini JS-heavy
+DOMAIN_ENGINE = {
+    "kfa.or.kr": "playwright",
+    "qfa.qa": "playwright",
+    "the-aiff.com": "playwright",
+}
+
 POS_WEIGHTS = {
+    # Latine
     r"\bgol\b|\bgoal\b|\bgoles\b|\bgols\b|\bbuts\b": 2.0,
     r"\bassist\b|\bassistenza\b|\basistencia\b|\bassistências?\b|\bpasse(?:s)? décisive(?:s)?\b": 1.6,
-    r"\bunder\b|\bu19\b|\bu17\b|\bsub[- ]?20\b|\bsub[- ]?19\b|\bsub[- ]?17\b|\bprimavera\b|\bjuvenil\b": 1.3,
+    r"\bunder\b|\bu[\-\s]?19\b|\bu[\-\s]?17\b|\bu[\-\s]?20\b|\bsub[- ]?20\b|\bsub[- ]?19\b|\bsub[- ]?17\b|\bprimavera\b|\bjuvenil\b": 1.3,
     r"\besordio\b|\bdebutto\b|\bdebut(?:é|e|o|ou)?\b|\bestreia\b|\ba débuté\b": 2.2,
     r"\btransfer\b|\bmercato\b|\bfichaje\b|\btraspaso\b|\bpr[êe]t\b|\bpréstamo\b|\bempr[eê]stimo\b|\bloan\b|\bcedid[oa]\b|\bcedut[oa]\b|\bsigned\b": 1.5,
     r"\bconvocado\b|\bconvocato\b|\bselecci[oó]n(?:ado)?\b|\bs[eé]lectionn[ée]?\b|\bcalled up\b": 1.4,
     r"\bnazionale\b|\bsele[cç][aã]o\b|\bselecci[oó]n\b|\bnational team\b|\bs[eé]lection\b": 1.2,
+    # Giapponese
+    r"デビュー|得点|アシスト|移籍|レンタル": 1.8,
+    # Coreano
+    r"데뷔|득점|도움|이적|임대": 1.8,
+    # Arabo
+    r"تحت\s?20|تحت\s?19|منتخب|سجل|صنع|انتقال|إعارة|ظهور": 1.6,
+    # Thailandese
+    r"เดบิวต์|ยิง|แอสซิสต์|ยืมตัว|โอนย้าย": 1.6,
+    # Vietnamita
+    r"ra mắt|ghi bàn|kiến tạo|chuyển nhượng|cho mượn": 1.6,
+    # Indonesiano
+    r"\btimnas\b|debut|gol|assist|pinjaman|transfer": 1.6,
 }
 
-MUST_HAVE_ANY = ("fútbol","futebol","football","soccer","primavera","cantera","juvenil","u20","u19","u17")
-NEG_PATTERNS  = ("cookie","privacy","accetta","banner","abbonati","paywall","newsletter")
-
-MONTHS_ALL = (
-    ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"] +
-    ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"] +
-    ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"] +
-    ["janvier","février","fevrier","mars","avril","mai","juin","juillet","août","aout","septembre","octobre","novembre","décembre","decembre"]
+# Pattern “almeno uno” per non scartare pagine non latine
+MUST_HAVE_REGEX = re.compile(
+    r"(f[uú]tbol|futebol|football|soccer|primavera|cantera|juvenil|"
+    r"u[\-\s]?20|u[\-\s]?19|u[\-\s]?17|"
+    r"日本代表|代表|デビュー|得点|アシスト|"
+    r"대표팀|데뷔|득점|도움|"
+    r"منتخب|تحت\s?20|ظهور|"
+    r"ทีมชาติ|เดบิวต์|"
+    r"đội tuyển|ra mắt|"
+    r"timnas)"
 )
+
+NEG_PATTERNS  = ("cookie","privacy","accetta","banner","abbonati","paywall","newsletter")
 
 TOURNAMENT_CONFED = {
     "maurice revello": "international", "toulon": "international",
@@ -198,15 +236,23 @@ def text_from_page(scrape_json: dict) -> str:
 def good_text(txt: str) -> bool:
     t = (txt or "").lower()
     if len(t) < MIN_TEXT_LEN: return False
-    if not any(k in t for k in MUST_HAVE_ANY): return False
+    if not MUST_HAVE_REGEX.search(t): return False
     if sum(t.count(w) for w in NEG_PATTERNS) > 20: return False
-    hits = sum(t.count(k) for k in [
+    # almeno 2 occorrenze “calcistiche” in varie lingue
+    hits = 0
+    patterns = [
         "gol","goal","goles","gols","buts","assist","asistencia","assistência","passe decisiva",
-        "primavera","juvenil","u20","u19","u17","under","transfer","mercato","fichaje",
+        "primavera","juvenil","u20","u-20","u19","u-19","u17","u-17","under","transfer","mercato","fichaje",
         "traspaso","préstamo","empréstimo","loan","prêt","debut","debutto","esordio","estreia",
-        "sélection","selección","seleçao","seleção","national team","nazionale",
-        "conmebol","caf","afc","concacaf"
-    ])
+        "sélection","selección","nazionale","national team","conmebol","caf","afc","concacaf",
+        "デビュー","得点","アシスト","移籍","レンタル",
+        "데뷔","득점","도움","이적","임대",
+        "منتخب","تحت 20","سجل","صنع","انتقال","إعارة","ظهور",
+        "เดบิวต์","ยิง","แอสซิสต์","ยืมตัว","โอนย้าย",
+        "ra mắt","ghi bàn","kiến tạo","chuyển nhượng","cho mượn",
+        "timnas","pinjaman"
+    ]
+    for k in patterns: hits += t.count(k)
     return hits >= 2
 
 def score_text(txt: str) -> float:
@@ -218,8 +264,8 @@ def score_text(txt: str) -> float:
 
 def infer_type(txt: str) -> str:
     t = (txt or "").lower()
-    if re.search(r"\besordio\b|\bdebut(?:é|e|o|ou)?\b", t): return "PLAYER_BURST"
-    if re.search(r"\btransfer\b|\bmercato\b|\bfichaje\b|\btraspaso\b|\bpr[êe]t\b|\bpréstamo\b|\bempr[eê]stimo\b|\bloan\b|\bcedid[oa]\b|\bcedut[oa]\b|\bsigned\b", t):
+    if re.search(r"\besordio\b|\bdebut(?:é|e|o|ou)?\b|デビュー|데뷔|ظهور|เดบิวต์|ra mắt", t): return "PLAYER_BURST"
+    if re.search(r"\btransfer\b|\bmercato\b|\bfichaje\b|\btraspaso\b|\bpr[êe]t\b|\bpréstamo\b|\bempr[eê]stimo\b|\bloan\b|\bcedid[oa]\b|\bcedut[oa]\b|\bsigned\b|移籍|レンタル|이적|임대|انتقال|إعارة|chuyển nhượng|cho mượn|pinjaman", t):
         return "TRANSFER_SIGNAL"
     return "NOISE_PULSE"
 
@@ -230,22 +276,7 @@ def guess_date_from_text_or_url(txt: str, url: str):
         y, mm = int(m.group(1)), int(m.group(2))
         try: return datetime(y, mm, 1)
         except: pass
-    months = "|".join([re.escape(x) for x in MONTHS_ALL])
-    m2 = re.search(r"(\d{1,2})\s+(" + months + r")\s+(20\d{2})", t)
-    if m2:
-        d = int(m2.group(1)); month_name = m2.group(2); y = int(m2.group(3))
-        def idx(name):
-            for lst in (MONTHS_ALL,):
-                if name in lst: return lst.index(name) % 12 + 1
-            return 1
-        try: return datetime(y, idx(month_name), d)
-        except: pass
-    m3 = re.search(r"(20\d{2})", t)
-    if m3:
-        y = int(m3.group(1))
-        try: return datetime(y,1,1)
-        except: pass
-    return None
+    return None  # semplice: per robustezza cross-lingua
 
 def recency_boost(dt: datetime, now=None):
     if not dt: return 0.0
@@ -265,9 +296,9 @@ def domain_weight(url: str):
 def region_from_host_or_tld(host: str) -> str:
     h = host.lower()
     if any(dom in h for dom in SITE_PACKS["africa"]): return "africa"
-    if any(dom in h for dom in SITE_PACKS["asia"]): return "asia"
+    if any(dom in h for dom in SITE_PACKS["asia"]):   return "asia"
     if h.endswith((".za",".ng",".gh",".ma",".tn",".dz",".ke",".ug",".tz",".sn",".cm")): return "africa"
-    if h.endswith((".jp",".kr",".id",".th",".vn",".my",".in",".cn",".ph",".sg")): return "asia"
+    if h.endswith((".jp",".kr",".id",".th",".vn",".my",".in",".cn",".ph",".sg",".qa",".ae",".sa",".kw",".bh",".om",".jo")): return "asia"
     if h.endswith((".br",".ar",".cl",".uy",".pe",".co",".py",".bo",".ec",".ve")): return "south-america"
     return "unknown"
 
@@ -277,11 +308,22 @@ def infer_confed(txt: str) -> str:
         if k in t: return conf
     return "unknown"
 
-def retry_scrape_if_thin(url: str, first_json: dict, min_len=MIN_TEXT_LEN):
-    txt = text_from_page(first_json)
-    if len((txt or "")) >= min_len: return first_json, "cheerio"
-    j2 = ac_scrape(url, engine="playwright")
-    return (j2 or first_json), ("playwright" if j2 else "cheerio")
+def preferred_engine_for(host: str) -> str:
+    h = host.lower()
+    for dom, eng in DOMAIN_ENGINE.items():
+        if dom in h: return eng
+    return "cheerio"
+
+def ac_scrape_smart(url: str):
+    host = urlparse(url).netloc
+    eng = preferred_engine_for(host)
+    js = ac_scrape(url, engine=eng) or {}
+    t = text_from_page(js)
+    if len(t) < MIN_TEXT_LEN and eng != "playwright":
+        # fallback upshift
+        js2 = ac_scrape(url, engine="playwright")
+        return js2 or js, "playwright" if js2 else eng
+    return js, eng
 
 # ---- Candidates --------------------------------------------------------------
 def collect_candidates(cache):
@@ -296,7 +338,6 @@ def collect_candidates(cache):
             nu = normalize_url(url); host = urlparse(nu).netloc.lower()
             if nu in seen:           continue
             if is_seen(cache, nu):   continue
-            # piccolo cap per host rumorosi
             cap = 1 if (host in HOST_PENALTY or host in HOST_BLOCKLIST) else 2
             if per_host.get(host,0) >= cap: continue
             seen.add(nu); per_host[host] = per_host.get(host,0)+1
@@ -307,7 +348,7 @@ def collect_candidates(cache):
 # ---- Selection con quote ----------------------------------------------------
 def select_with_region_quotas(items, k=TOP_K, quotas=REGION_MIN_QUOTAS):
     picked, used = [], set()
-    # 1) soddisfa quote (se possibile)
+    # 1) quota
     for region, q in quotas.items():
         pool = [it for it in items if region in it.get("why", [])]
         pool.sort(key=lambda x: x.get("score",0), reverse=True)
@@ -315,7 +356,7 @@ def select_with_region_quotas(items, k=TOP_K, quotas=REGION_MIN_QUOTAS):
             key = tuple(it.get("links", []))
             if key in used: continue
             picked.append(it); used.add(key)
-    # 2) riempi con i migliori restanti
+    # 2) fill
     rest = [it for it in items if tuple(it.get("links", [])) not in used]
     rest.sort(key=lambda x: x.get("score",0), reverse=True)
     for it in rest:
@@ -332,14 +373,12 @@ def main():
     except Exception:
         cache = {}
 
-    # SERP
     cands = collect_candidates(cache)
     print(f"[SERP] candidati: {len(cands)}")
 
     items = []
     for c in cands:
-        first = ac_scrape(c["url"], engine="cheerio") or {}
-        page, used_engine = retry_scrape_if_thin(c["url"], first, min_len=MIN_TEXT_LEN)
+        page, used_engine = ac_scrape_smart(c["url"])
         txt = text_from_page(page)
         if not good_text(txt): continue
 
@@ -352,15 +391,13 @@ def main():
         host = urlparse(c["url"]).netloc.lower()
         region = region_from_host_or_tld(host)
         conf = infer_confed(txt)
-        if conf == "international":
-            region = "international"
+        if conf == "international": region = "international"
 
         why = []
-        if "primavera" in txt: why.append("primavera")
-        if any(k in txt for k in ["u20","u19","under","juvenil"]): why.append("youth")
-        if any(k in txt for k in ["transfer","mercato","fichaje","traspaso","préstamo","empréstimo","loan","prêt","signed","cedido","ceduta","ceduto"]): why.append("mercato")
-        if any(k in txt for k in ["gol","goal","goles","gols","buts","assist","asistencia","assistência","passe decisiva"]): why.append("prestazioni")
-        if re.search(r"\besordio\b|\bdebut(?:é|e|o|ou)?\b", txt): why.append("esordio")
+        if any(k in txt for k in ["primavera","juvenil","유스","ユース","đội trẻ","เยาวชน"]): why.append("youth")
+        if any(k in txt for k in ["transfer","mercato","fichaje","traspaso","préstamo","empréstimo","loan","prêt","signed","移籍","レンタル","이적","임대","chuyển nhượng","cho mượn","pinjaman"]): why.append("mercato")
+        if any(k in txt for k in ["gol","goal","goles","gols","buts","assist","asistencia","assistência","passe decisiva","得点","アシスト","득점","도움","ghi bàn","kiến tạo","ยิง","แอสซิสต์"]): why.append("prestazioni")
+        if re.search(r"\besordio\b|\bdebut(?:é|e|o|ou)?\b|デビュー|데뷔|ظهور|เดบิวต์|ra mắt", txt): why.append("esordio")
         if dt: why.append("recente")
         if used_engine == "playwright": why.append("js-heavy")
         if conf != "unknown": why.append(conf)
@@ -371,13 +408,12 @@ def main():
             "label": c["title"][:80],
             "anomaly_type": a_type,
             "score": sc,
-            "why": sorted(set(why)) or ["segnali testuali"],
+            "why": sorted(set(why)) or ["segnali"],
             "links": [c["url"]],
         })
 
         cache[c["url"]] = {"host": host, "seen_at": datetime.utcnow().isoformat(timespec="seconds")}
 
-    # selection + payload
     items.sort(key=lambda x: x["score"], reverse=True)
     items = select_with_region_quotas(items, k=TOP_K, quotas=REGION_MIN_QUOTAS)
 
@@ -391,22 +427,19 @@ def main():
         }]
     }
 
-    # save
     os.makedirs(OUT_DIR, exist_ok=True)
     os.makedirs(SNAP_DIR, exist_ok=True)
     with open(os.path.join(OUT_DIR, "daily.json"), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
-
     today = datetime.utcnow().strftime("%Y-%m-%d")
     with open(os.path.join(SNAP_DIR, f"daily-{today}.json"), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
-    # persist cache
     os.makedirs(os.path.dirname(CACHE_PATH), exist_ok=True)
     with open(CACHE_PATH, "w", encoding="utf-8") as f:
         json.dump(cache, f, ensure_ascii=False, indent=2)
 
-    print(f"[OK] wrote output/daily.json (items={len(items)}) with region quotas {REGION_MIN_QUOTAS}")
+    print(f"[OK] wrote output/daily.json (items={len(items)}) • quotas={REGION_MIN_QUOTAS}")
 
 if __name__ == "__main__":
     main()
