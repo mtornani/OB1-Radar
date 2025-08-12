@@ -13,6 +13,7 @@
     .controls{display:grid;grid-template-columns:1fr;gap:8px}
     .row{display:flex;gap:8px}
     input,select,button{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #242a36;background:#0f1219;color:var(--text);outline:none}
+    label{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
     main{padding:8px 12px 24px}
     .meta{font-size:12px;color:var(--muted);margin-top:4px}
     .list{display:grid;gap:10px;margin-top:12px}
@@ -26,7 +27,9 @@
     .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;background:#0f1219;border:1px solid #242a36;color:#cbd1e2;border-radius:10px;text-decoration:none;font-size:14px}
     .empty{color:var(--muted);text-align:center;padding:28px 8px;font-size:14px}
     footer{padding:12px;color:var(--muted);font-size:12px;text-align:center}
-    @media (min-width:720px){.controls{grid-template-columns:1fr 160px 160px 120px}}
+    .archive{margin-top:10px;font-size:13px}
+    .archive a{display:inline-block;margin:4px 6px 0 0;color:#a9b0c2}
+    @media (min-width:720px){.controls{grid-template-columns:1fr 140px 140px 140px}}
   </style>
 </head>
 <body>
@@ -37,10 +40,11 @@
       <div class="row">
         <select id="type"></select>
         <select id="tag"></select>
-        <button id="reset" title="Azzera filtri">Reset</button>
+        <label><input id="recentOnly" type="checkbox" /> Solo recenti (≤21gg)</label>
       </div>
     </div>
     <div class="meta" id="last">Last updated —</div>
+    <div class="archive" id="archive"></div>
   </header>
 
   <main>
@@ -53,15 +57,13 @@
   </footer>
 
   <script>
-    const state = { data:null, items:[], q:"", type:"", tag:"" };
+    const state = { data:null, items:[], q:"", type:"", tag:"", recentOnly:false };
     const $ = s => document.querySelector(s);
 
     function escapeHtml(s=''){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
     function timeToLocal(iso){try{const d=new Date(iso);return d.toLocaleString(undefined,{hour12:false})}catch{return iso||'—'}}
 
-    function option(node, value, label){
-      const o=document.createElement('option');o.value=value;o.textContent=label;node.appendChild(o);
-    }
+    function option(node, value, label){ const o=document.createElement('option'); o.value=value; o.textContent=label; node.appendChild(o); }
 
     function hydrateFiltersFromData(){
       const types = new Set(), tags = new Set();
@@ -70,17 +72,15 @@
         (it.why||[]).forEach(w=>{ if(w) tags.add(String(w).toLowerCase()); });
       });
       const typeSel = $('#type'), tagSel = $('#tag');
-      typeSel.innerHTML = ''; tagSel.innerHTML = '';
-      option(typeSel,'', 'Anomaly type: tutti');
+      typeSel.innerHTML=''; tagSel.innerHTML='';
+      option(typeSel,'','Anomaly type: tutti');
       [...types].sort().forEach(t=> option(typeSel,t,t));
-      option(tagSel,'', 'Tag: tutti');
+      option(tagSel,'','Tag: tutti');
       [...tags].sort().forEach(t=> option(tagSel,t,t));
       typeSel.value=''; tagSel.value='';
     }
 
-    function badge(text){
-      const s=document.createElement('span'); s.className='chip'; s.textContent=text; return s;
-    }
+    function badge(text){ const s=document.createElement('span'); s.className='chip'; s.textContent=text; return s; }
 
     function card(it){
       const div=document.createElement('div'); div.className='card';
@@ -104,6 +104,7 @@
         .filter(it=>{
           if(type && it.anomaly_type!==type) return false;
           if(tag && !(it.why||[]).map(x=>String(x).toLowerCase()).includes(tag)) return false;
+          if(state.recentOnly && !(it.why||[]).map(String).includes('recente')) return false;
           if(q){
             const hay = `${it.label||''} ${(it.why||[]).join(' ')}`.toLowerCase();
             if(!hay.includes(q)) return false;
@@ -115,9 +116,34 @@
     }
 
     function render(){
-      const list=$('#list'), empty=$('#empty');
-      list.innerHTML=''; if(!state.items.length){ empty.style.display='block'; return; }
+      const list=$('#list'), empty=$('#empty'); list.innerHTML='';
+      if(!state.items.length){ empty.style.display='block'; return; }
       empty.style.display='none'; state.items.forEach(it=> list.appendChild(card(it)));
+    }
+
+    async function buildArchive(){
+      // prova ultimi 10 giorni; mostra quelli esistenti
+      const base = 'daily-';
+      const today = new Date();
+      const candidates = [];
+      for(let i=0;i<10;i++){
+        const d = new Date(today); d.setDate(today.getDate()-i);
+        const y=d.getUTCFullYear(), m=String(d.getUTCMonth()+1).padStart(2,'0'), dd=String(d.getUTCDate()).padStart(2,'0');
+        candidates.push(`daily-${y}-${m}-${dd}.json`);
+      }
+      const present = [];
+      await Promise.all(candidates.map(async f=>{
+        try{
+          const r = await fetch(`${f}`, {cache:'no-store'});
+          if(r.ok) present.push(f);
+        }catch{}
+      }));
+      if(present.length){
+        const el = $('#archive'); el.innerHTML = 'Archivio: ';
+        present.slice(0,7).forEach(f=>{
+          const a=document.createElement('a'); a.href=f; a.textContent=f.replace('daily-','').replace('.json',''); a.target='_blank'; el.appendChild(a);
+        });
+      }
     }
 
     async function boot(){
@@ -132,16 +158,17 @@
         $('#last').textContent = 'Last updated — errore nel fetch di daily.json';
       }
       hydrateFiltersFromData();
-      state.q=''; state.type=''; state.tag='';
-      $('#q').value=''; $('#type').value=''; $('#tag').value='';
+      state.q=''; state.type=''; state.tag=''; state.recentOnly=false;
+      $('#q').value=''; $('#type').value=''; $('#tag').value=''; $('#recentOnly').checked=false;
       applyFilters();
+      buildArchive();
     }
 
     // UI events
     $('#q').addEventListener('input', e=>{ state.q=e.target.value; applyFilters(); });
     $('#type').addEventListener('change', e=>{ state.type=e.target.value; applyFilters(); });
     $('#tag').addEventListener('change', e=>{ state.tag=e.target.value; applyFilters(); });
-    $('#reset').addEventListener('click', ()=>{ state.q=''; state.type=''; state.tag=''; $('#q').value=''; $('#type').value=''; $('#tag').value=''; applyFilters(); });
+    $('#recentOnly').addEventListener('change', e=>{ state.recentOnly=e.target.checked; applyFilters(); });
 
     boot();
   </script>
