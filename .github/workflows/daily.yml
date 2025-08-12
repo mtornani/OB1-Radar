@@ -3,7 +3,7 @@ name: Daily Anomaly Radar
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 7 * * *"   # 07:00 UTC (09:00 CEST in estate)
+    - cron: "0 7 * * *"   # 07:00 UTC (≈09:00 CEST in estate)
 
 permissions:
   contents: write
@@ -24,21 +24,30 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Install deps
+      - name: Install dependencies
         run: |
           python -V
           pip -V
           python -m pip install --upgrade pip
           pip install requests
 
+      - name: List repo tree (debug)
+        run: |
+          pwd
+          git rev-parse HEAD
+          ls -la
+          echo "--- engine ---"
+          ls -la engine || true
+          echo "--- docs ---"
+          ls -la docs || true
+
       - name: Run anomaly engine
         env:
           ANYCRAWL_API_URL: ${{ secrets.ANYCRAWL_API_URL }}
           ANYCRAWL_API_KEY: ${{ secrets.ANYCRAWL_API_KEY }}
-          SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
         run: |
           mkdir -p output
-          python engine/run.py
+          python engine/run.py || (echo "Engine failed; keeping previous daily.json if exists" && exit 1)
 
       - name: Copy JSON to docs
         run: |
