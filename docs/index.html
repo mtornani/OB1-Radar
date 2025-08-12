@@ -2,89 +2,148 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OB1 Radar • Top-10 anomalie</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OB1 • Ouroboros Radar — Top-10</title>
   <style>
-    :root { --pad: 14px; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin:0; background:#f5f5f7; color:#222; }
-    header { padding: var(--pad); text-align:center; background:#fff; position:sticky; top:0; border-bottom:1px solid #eee; }
-    h1 { margin:0; font-size:20px; }
-    small { color:#666; font-weight:400; }
-    .wrap { max-width: 860px; margin: 0 auto; padding: var(--pad); }
-    .filters { display:flex; gap:8px; margin-bottom:10px; }
-    .filters input, .filters select { flex:1; padding:10px; border:1px solid #ddd; border-radius:8px; background:#fff; }
-    .item { background:#fff; border-radius:10px; padding:12px; margin:10px 0; border:1px solid #eee; }
-    .ttl { display:flex; justify-content:space-between; align-items:center; font-weight:600; }
-    .why { color:#555; font-size:14px; margin-top:4px; }
-    .score { font-weight:700; }
-    a { color:#5533cc; text-decoration:none; }
-    a:hover { text-decoration:underline; }
+    :root { --bg:#0b0c10; --panel:#12141a; --muted:#8b90a0; --text:#e6e8ef; --accent:#7ee787; --chip:#1f2430; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;background:var(--bg);color:var(--text)}
+    header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,rgba(11,12,16,.95),rgba(11,12,16,.8) 60%,transparent);backdrop-filter:blur(6px);padding:12px 14px 6px}
+    h1{margin:4px 0 8px;font-size:20px;letter-spacing:.2px}
+    .controls{display:grid;grid-template-columns:1fr;gap:8px}
+    .row{display:flex;gap:8px}
+    input,select,button{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #242a36;background:#0f1219;color:var(--text);outline:none}
+    main{padding:8px 12px 24px}
+    .meta{font-size:12px;color:var(--muted);margin-top:4px}
+    .list{display:grid;gap:10px;margin-top:12px}
+    .card{background:var(--panel);border:1px solid #1c2230;border-radius:14px;padding:12px}
+    .top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+    .title{font-weight:600;line-height:1.3}
+    .score{font-weight:700;font-variant-numeric:tabular-nums;background:#0e1a12;color:var(--accent);padding:6px 10px;border-radius:12px;border:1px solid #18301f}
+    .chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 2px}
+    .chip{background:var(--chip);color:#cbd1e2;padding:5px 8px;border-radius:10px;font-size:12px;border:1px solid #2a3040}
+    .actions{margin-top:8px;display:flex;gap:8px}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;background:#0f1219;border:1px solid #242a36;color:#cbd1e2;border-radius:10px;text-decoration:none;font-size:14px}
+    .empty{color:var(--muted);text-align:center;padding:28px 8px;font-size:14px}
+    footer{padding:12px;color:var(--muted);font-size:12px;text-align:center}
+    @media (min-width:720px){.controls{grid-template-columns:1fr 160px 160px 120px}}
   </style>
 </head>
 <body>
   <header>
-    <h1>OB1 Radar — Top-10 Anomalie <small id="ts"></small></h1>
+    <h1>OB1 • Ouroboros Radar — Top-10</h1>
+    <div class="controls">
+      <input id="q" type="search" placeholder="Cerca (titolo, tag) …" />
+      <div class="row">
+        <select id="type"></select>
+        <select id="tag"></select>
+        <button id="reset" title="Azzera filtri">Reset</button>
+      </div>
+    </div>
+    <div class="meta" id="last">Last updated —</div>
   </header>
 
-  <div class="wrap">
-    <div class="filters">
-      <input id="q" type="search" placeholder="Cerca (titolo/motivo)..." />
-      <select id="entity">
-        <option value="">Entity: tutte</option>
-        <option value="PLAYER">PLAYER</option>
-        <option value="TEAM">TEAM</option>
-      </select>
-      <select id="atype">
-        <option value="">Tipo: tutti</option>
-        <option value="NOISE_PULSE">NOISE_PULSE</option>
-        <option value="PLAYER_BURST">PLAYER_BURST</option>
-        <option value="TEAM_SHIFT">TEAM_SHIFT</option>
-      </select>
-    </div>
-    <div id="list">Caricamento…</div>
-  </div>
+  <main>
+    <div id="list" class="list"></div>
+    <div id="empty" class="empty" style="display:none">Nessun risultato con questi filtri.</div>
+  </main>
+
+  <footer>
+    <span id="mode"></span>
+  </footer>
 
   <script>
-    let RAW = [];
-    const list = document.getElementById('list');
+    const state = { data:null, items:[], q:"", type:"", tag:"" };
+    const $ = s => document.querySelector(s);
 
-    function render() {
-      const q = document.getElementById('q').value.trim().toLowerCase();
-      const e = document.getElementById('entity').value;
-      const t = document.getElementById('atype').value;
-      const rows = RAW.filter(x => {
-        const okQ = !q || (x.label?.toLowerCase().includes(q) || (x.why||[]).join(' ').toLowerCase().includes(q));
-        const okE = !e || x.entity === e;
-        const okT = !t || x.anomaly_type === t;
-        return okQ && okE && okT;
-      });
-      list.innerHTML = rows.map(x => `
-        <div class="item">
-          <div class="ttl">
-            <div>${x.label}</div>
-            <div class="score">${x.score}</div>
-          </div>
-          <div class="why">${(x.why||[]).join(', ') || '&nbsp;'}</div>
-          <div style="margin-top:6px">
-            ${x.links?.[0] ? `<a href="${x.links[0]}" target="_blank" rel="noopener">Dettagli →</a>` : ''}
-          </div>
-        </div>
-      `).join('') || 'Nessun risultato.';
+    function escapeHtml(s=''){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+    function timeToLocal(iso){try{const d=new Date(iso);return d.toLocaleString(undefined,{hour12:false})}catch{return iso||'—'}}
+
+    function option(node, value, label){
+      const o=document.createElement('option');o.value=value;o.textContent=label;node.appendChild(o);
     }
 
-    fetch('daily.json?t=' + Date.now())
-      .then(r => r.json())
-      .then(data => {
-        RAW = data.items || [];
-        const ts = data.generated_at_utc || data.stamp || '';
-        if (ts) document.getElementById('ts').textContent = `(${ts})`;
-        render();
-      })
-      .catch(() => list.textContent = 'Errore nel caricamento.');
+    function hydrateFiltersFromData(){
+      const types = new Set(), tags = new Set();
+      (state.data.items||[]).forEach(it=>{
+        if(it.anomaly_type) types.add(it.anomaly_type);
+        (it.why||[]).forEach(w=>{ if(w) tags.add(String(w).toLowerCase()); });
+      });
+      const typeSel = $('#type'), tagSel = $('#tag');
+      typeSel.innerHTML = ''; tagSel.innerHTML = '';
+      option(typeSel,'', 'Anomaly type: tutti');
+      [...types].sort().forEach(t=> option(typeSel,t,t));
+      option(tagSel,'', 'Tag: tutti');
+      [...tags].sort().forEach(t=> option(tagSel,t,t));
+      typeSel.value=''; tagSel.value='';
+    }
 
-    document.getElementById('q').addEventListener('input', render);
-    document.getElementById('entity').addEventListener('change', render);
-    document.getElementById('atype').addEventListener('change', render);
+    function badge(text){
+      const s=document.createElement('span'); s.className='chip'; s.textContent=text; return s;
+    }
+
+    function card(it){
+      const div=document.createElement('div'); div.className='card';
+      div.innerHTML = `
+        <div class="top">
+          <div class="title">${escapeHtml(it.label||'—')}</div>
+          <div class="score">${Number(it.score??0).toFixed(0)}</div>
+        </div>
+        <div class="chips"></div>
+        <div class="actions">
+          <a class="btn" href="${(it.links&&it.links[0])||'#'}" target="_blank" rel="noopener">Apri fonte →</a>
+        </div>`;
+      const box=div.querySelector('.chips');
+      (it.why||[]).forEach(w=>box.appendChild(badge(w)));
+      return div;
+    }
+
+    function applyFilters(){
+      const q=state.q.trim().toLowerCase(), type=state.type, tag=state.tag;
+      const out=(state.data.items||[])
+        .filter(it=>{
+          if(type && it.anomaly_type!==type) return false;
+          if(tag && !(it.why||[]).map(x=>String(x).toLowerCase()).includes(tag)) return false;
+          if(q){
+            const hay = `${it.label||''} ${(it.why||[]).join(' ')}`.toLowerCase();
+            if(!hay.includes(q)) return false;
+          }
+          return true;
+        })
+        .sort((a,b)=>(b.score||0)-(a.score||0));
+      state.items=out; render();
+    }
+
+    function render(){
+      const list=$('#list'), empty=$('#empty');
+      list.innerHTML=''; if(!state.items.length){ empty.style.display='block'; return; }
+      empty.style.display='none'; state.items.forEach(it=> list.appendChild(card(it)));
+    }
+
+    async function boot(){
+      try{
+        const r = await fetch(`daily.json?t=${Date.now()}`, { cache:'no-store' });
+        if(!r.ok) throw new Error(r.status);
+        state.data = await r.json();
+        $('#last').textContent = `Last updated: ${timeToLocal(state.data.generated_at_utc)} • items: ${state.data.items?.length??0}`;
+        $('#mode').textContent = `mode: ${state.data.mode || 'unknown'}`;
+      }catch(e){
+        state.data = { items: [] };
+        $('#last').textContent = 'Last updated — errore nel fetch di daily.json';
+      }
+      hydrateFiltersFromData();
+      state.q=''; state.type=''; state.tag='';
+      $('#q').value=''; $('#type').value=''; $('#tag').value='';
+      applyFilters();
+    }
+
+    // UI events
+    $('#q').addEventListener('input', e=>{ state.q=e.target.value; applyFilters(); });
+    $('#type').addEventListener('change', e=>{ state.type=e.target.value; applyFilters(); });
+    $('#tag').addEventListener('change', e=>{ state.tag=e.target.value; applyFilters(); });
+    $('#reset').addEventListener('click', ()=>{ state.q=''; state.type=''; state.tag=''; $('#q').value=''; $('#type').value=''; $('#tag').value=''; applyFilters(); });
+
+    boot();
   </script>
 </body>
 </html>
