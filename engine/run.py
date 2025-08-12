@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-# OB1 • Ouroboros Radar — engine/run.py (v0.3.1)
-# Hot-fix: site-packs Africa/Asia, trust-weight regionale e tag regione in output.
+# OB1 • Ouroboros Radar — engine/run.py (v0.3.2)
+# Fix: copertura Africa/Asia più robusta + filtro URL “regole/guida” + region tag affidabile
 
 import os, json, re, requests
 from datetime import datetime
@@ -12,59 +12,59 @@ HEADERS = {"Content-Type": "application/json"}
 if API_KEY:
     HEADERS["Authorization"] = f"Bearer {API_KEY}"
 
-# ---- Site packs per spingere Africa/Asia ------------------------------------
+# ---------------- Site packs & queries ---------------------------------------
 SITE_PACKS = {
     "africa": [
-        "cafonline.com",       # CAF U-20 AFCON
-        "cosafa.com",          # Africa australe U-20
-        "cecafaonline.com",    # Africa est/centro U-20
-        "ufoawafub.com",       # WAFU (Africa ovest) U-20
+        "cafonline.com",       # CAF (U20 AFCON)
+        "cosafa.com",          # COSAFA U20
+        "cecafaonline.com",    # CECAFA U20
+        "ufoawafub.com",       # WAFU U20
     ],
     "asia": [
-        "the-afc.com",         # AFC U-20 Asian Cup
-        "aseanfootball.org",   # AFF U18/U19 (SEA)
+        "the-afc.com",         # AFC U20 Asian Cup
+        "aseanfootball.org",   # AFF U18/U19
     ],
-    # Sudamerica rimane naturale (molte fonti già emergono senza site:)
     "south-america": [
+        "conmebol.com",
         "ge.globo.com", "ole.com.ar", "tycsports.com", "as.com", "marca.com",
+        "transfermarkt",  # tutte le varianti (co, com, de…)
     ],
 }
 
-# Query base multi-lingua (ES/PT/FR/EN) – restano quelle già efficaci
 BASE_QUERIES = [
-    "Sub 20 debutó fútbol",                    # ES
-    "juvenil Sub 20 goles asistencias",        # ES
-    "transfer Sub-20 fichaje préstamo juvenil",# ES
-    "Sub-20 estreia futebol",                  # PT
-    "base Sub-20 gols assistências",           # PT
-    "estreou convocado seleção Sub-20",        # PT
-    "U20 a débuté football",                   # FR
-    "sélection U20 sélectionné",               # FR
-    "U20 debut football",                      # EN
-    "U20 transfer loan youth",                 # EN
+    # ES / PT (Sudamerica)
+    "Sub 20 debutó fútbol", "juvenil Sub 20 goles asistencias",
+    "transfer Sub-20 fichaje préstamo juvenil",
+    "Sub-20 estreia futebol", "base Sub-20 gols assistências",
+    "estreou convocado seleção Sub-20",
+    # FR / EN (Africa + Asia EN-first)
+    "U20 a débuté football", "sélection U20 sélectionné football",
+    "U20 debut football", "U20 transfer loan youth",
 ]
 
-# Da site-packs costruiamo query mirate semplici (site: + U20)
 def build_site_queries():
     out = []
-    for region, hosts in SITE_PACKS.items():
+    for hosts in SITE_PACKS.values():
         for h in hosts:
-            out += [
-                f"site:{h} U20",
-                f"site:{h} U19",
-                f"site:{h} youth U20",
-                f"site:{h} debut U20",
-            ]
+            out += [f"site:{h} U20", f"site:{h} U19", f"site:{h} debut U20", f"site:{h} youth U20"]
     return out
 
 QUERIES = BASE_QUERIES + build_site_queries()
 
-MAX_SERP = 14
+# ---------------- Heuristics & scoring ---------------------------------------
+MAX_SERP     = 14
 MAX_PER_HOST = 2
 MIN_TEXT_LEN = 600
-TIMEOUT_S = 50
+TIMEOUT_S    = 50
 
 BLOCK_EXT = (".pdf",".jpg",".jpeg",".png",".gif",".svg",".webp",".zip",".rar")
+
+# URL da scartare (guide/regole/servizio, non segnali)
+NEG_URL_PATTERNS = (
+    "/rules", "/reglas", "/regulations", "/how-to", "/como-", "/guia", "/guide",
+    "/privacy", "/cookies", "/terminos", "/terms", "/about", "/acerca-",
+)
+
 OFF_PATTERNS = (
     "basket","baloncesto","basquete","handball","handebol","voleibol","volei","rugby",
     "/economia","/politica","/motori","almanacco","forumfree",
@@ -81,9 +81,7 @@ POS_WEIGHTS = {
     r"\bnazionale\b|\bsele[cç][aã]o\b|\bselecci[oó]n\b|\bnational team\b|\bs[eé]lection\b": 1.2,
 }
 
-MUST_HAVE_ANY = (
-    "fútbol","futebol","football","soccer","primavera","cantera","juvenil","u20","u19","u17"
-)
+MUST_HAVE_ANY = ("fútbol","futebol","football","soccer","primavera","cantera","juvenil","u20","u19","u17")
 
 RECENT_DAYS = 21
 TRUST_WEIGHTS = {
@@ -91,8 +89,13 @@ TRUST_WEIGHTS = {
     "cafonline.com": 1.20, "cosafa.com": 1.15, "cecafaonline.com": 1.12, "ufoawafub.com": 1.10,
     # Asia
     "the-afc.com": 1.18, "aseanfootball.org": 1.10,
-    # Sudamerica (già presenti)
-    "ge.globo.com": 1.18, "ole.com.ar": 1.15, "tycsports.com": 1.10, "as.com": 1.08, "marca.com": 1.08,
+    # Sudamerica
+    "conmebol.com": 1.18, "ge.globo.com": 1.18, "ole.com.ar": 1.15, "tycsports.com": 1.10,
+    "as.com": 1.08, "marca.com": 1.08,
+}
+
+HOST_PENALTY = {  # leggera penalità per siti-aggregatore generici
+    "apwin.com": 0.9, "olympics.com": 0.95
 }
 
 NEG_PATTERNS = ("cookie","privacy","accetta","banner","abbonati","paywall","newsletter")
@@ -103,7 +106,18 @@ PT_MONTHS = ["janeiro","fevereiro","março","abril","maio","junho","julho","agos
 FR_MONTHS = ["janvier","février","fevrier","mars","avril","mai","juin","juillet","août","aout","septembre","octobre","novembre","décembre","decembre"]
 MONTHS_ALL = IT_MONTHS + ES_MONTHS + PT_MONTHS + FR_MONTHS
 
-# ---- AnyCrawl ---------------------------------------------------------------
+# Host → regione (mapping esplicito)
+REGION_HOST_MAP = {
+    # Africa
+    "cafonline.com": "africa", "cosafa.com": "africa", "cecafaonline.com": "africa", "ufoawafub.com": "africa",
+    # Asia
+    "the-afc.com": "asia", "aseanfootball.org": "asia",
+    # Sudamerica
+    "conmebol.com": "south-america", "espndeportes.espn.com": "south-america",
+    "transfermarkt.co": "south-america",  # .co spesso usato per SA
+}
+
+# ---------------- AnyCrawl client --------------------------------------------
 def ac_post(path: str, payload: dict):
     try:
         r = requests.post(f"{API_URL}{path}", headers=HEADERS, json=payload, timeout=TIMEOUT_S)
@@ -121,7 +135,7 @@ def ac_search(query: str, pages: int = 1, limit: int = 20, lang: str = "all"):
 def ac_scrape(url: str, engine: str = "cheerio"):
     return ac_post("/v1/scrape", {"url": url, "engine": engine, "formats": ["markdown","text"]})
 
-# ---- Utils ------------------------------------------------------------------
+# ---------------- Utils -------------------------------------------------------
 def normalize_url(u: str) -> str:
     p = urlparse(u)
     if not p.scheme: return u
@@ -132,6 +146,7 @@ def allowed_url(u: str) -> bool:
     lu = u.lower()
     if any(lu.endswith(ext) for ext in BLOCK_EXT): return False
     if any(tok in lu for tok in OFF_PATTERNS):    return False
+    if any(tok in lu for tok in NEG_URL_PATTERNS): return False
     return True
 
 def text_from_page(scrape_json: dict) -> str:
@@ -149,7 +164,7 @@ def good_text(txt: str) -> bool:
         "gol","goal","goles","gols","buts","assist","asistencia","assistência","passe decisiva",
         "primavera","juvenil","u20","u19","u17","under","transfer","mercato","fichaje",
         "traspaso","préstamo","empréstimo","loan","prêt","debut","debutto","esordio","estreia",
-        "sélection","selección","seleçao","seleção","national team","nazionale"
+        "sélection","selección","seleçao","seleção","national team","nazionale","conmebol","caf","afc"
     ])
     return hits >= 2
 
@@ -196,17 +211,20 @@ def recency_boost(dt: datetime, now=None):
     now = now or datetime.utcnow()
     age = (now - dt).days
     if age < 0: return 0.0
-    if age <= 21: return round(10.0 * (1 - age/21), 2)
+    if age <= RECENT_DAYS: return round(10.0 * (1 - age/RECENT_DAYS), 2)
     return 0.0
 
 def domain_weight(url: str):
     host = urlparse(url).netloc.lower()
     for k, w in TRUST_WEIGHTS.items():
         if k in host: return w
+    if any(k in host for k in HOST_PENALTY):
+        return HOST_PENALTY.get(host, 1.0)
     return 1.0
 
-def host_region(url: str) -> str:
-    host = urlparse(url).netloc.lower()
+def region_from_host(host: str) -> str:
+    host = host.lower()
+    if host in REGION_HOST_MAP: return REGION_HOST_MAP[host]
     if any(h in host for h in SITE_PACKS["africa"]): return "africa"
     if any(h in host for h in SITE_PACKS["asia"]): return "asia"
     # tld heuristic
@@ -215,13 +233,20 @@ def host_region(url: str) -> str:
     if host.endswith((".br",".ar",".cl",".uy",".pe",".co",".py",".bo",".ec",".ve")): return "south-america"
     return "unknown"
 
+def region_from_text(txt: str) -> str:
+    t = (txt or "").lower()
+    if any(k in t for k in ["conmebol", "sudamericano"]): return "south-america"
+    if any(k in t for k in ["caf", "afcon", "cosafa", "cecafa", "wafu"]): return "africa"
+    if any(k in t for k in ["afc asian cup", "asean", "east asia", "south asia"]): return "asia"
+    return "unknown"
+
 def retry_scrape_if_thin(url: str, first_json: dict, min_len=MIN_TEXT_LEN):
     txt = text_from_page(first_json)
     if len((txt or "")) >= min_len: return first_json, "cheerio"
     j2 = ac_scrape(url, engine="playwright")
     return (j2 or first_json), ("playwright" if j2 else "cheerio")
 
-# ---- Pipeline ----------------------------------------------------------------
+# ---------------- Pipeline ----------------------------------------------------
 def collect_candidates():
     seen_urls, per_host, cand = set(), {}, []
     for q in QUERIES:
@@ -261,10 +286,16 @@ def main():
         a_type = infer_type(txt)
         dt = guess_date_from_text_or_url(txt, c["url"])
         sc += recency_boost(dt)
-        sc = round(sc * domain_weight(c["url"]), 2)
+        w_domain = domain_weight(c["url"])
+        sc = round(sc * w_domain, 2)
         sc = float(max(0, min(100, sc)))
 
-        region = host_region(c["url"])
+        host = urlparse(c["url"]).netloc.lower()
+        region = region_from_host(host)
+        if region == "unknown":
+            r2 = region_from_text(txt)
+            if r2 != "unknown": region = r2
+
         why = []
         if "primavera" in txt: why.append("primavera")
         if any(k in txt for k in ["u20","u19","under","juvenil"]): why.append("youth")
