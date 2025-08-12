@@ -1,176 +1,94 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>OB1 • Ouroboros Radar — Top-10</title>
-  <style>
-    :root { --bg:#0b0c10; --panel:#12141a; --muted:#8b90a0; --text:#e6e8ef; --accent:#7ee787; --chip:#1f2430; }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;background:var(--bg);color:var(--text)}
-    header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,rgba(11,12,16,.95),rgba(11,12,16,.8) 60%,transparent);backdrop-filter:blur(6px);padding:12px 14px 6px}
-    h1{margin:4px 0 8px;font-size:20px;letter-spacing:.2px}
-    .controls{display:grid;grid-template-columns:1fr;gap:8px}
-    .row{display:flex;gap:8px}
-    input,select,button{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #242a36;background:#0f1219;color:var(--text);outline:none}
-    label{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
-    main{padding:8px 12px 24px}
-    .meta{font-size:12px;color:var(--muted);margin-top:4px}
-    .list{display:grid;gap:10px;margin-top:12px}
-    .card{background:var(--panel);border:1px solid #1c2230;border-radius:14px;padding:12px}
-    .top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
-    .title{font-weight:600;line-height:1.3}
-    .score{font-weight:700;font-variant-numeric:tabular-nums;background:#0e1a12;color:var(--accent);padding:6px 10px;border-radius:12px;border:1px solid #18301f}
-    .chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 2px}
-    .chip{background:var(--chip);color:#cbd1e2;padding:5px 8px;border-radius:10px;font-size:12px;border:1px solid #2a3040}
-    .actions{margin-top:8px;display:flex;gap:8px}
-    .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;background:#0f1219;border:1px solid #242a36;color:#cbd1e2;border-radius:10px;text-decoration:none;font-size:14px}
-    .empty{color:var(--muted);text-align:center;padding:28px 8px;font-size:14px}
-    footer{padding:12px;color:var(--muted);font-size:12px;text-align:center}
-    .archive{margin-top:10px;font-size:13px}
-    .archive a{display:inline-block;margin:4px 6px 0 0;color:#a9b0c2}
-    @media (min-width:720px){.controls{grid-template-columns:1fr 140px 140px 140px}}
-  </style>
-</head>
-<body>
-  <header>
-    <h1>OB1 • Ouroboros Radar — Top-10</h1>
-    <div class="controls">
-      <input id="q" type="search" placeholder="Cerca (titolo, tag) …" />
-      <div class="row">
-        <select id="type"></select>
-        <select id="tag"></select>
-        <label><input id="recentOnly" type="checkbox" /> Solo recenti (≤21gg)</label>
-      </div>
-    </div>
-    <div class="meta" id="last">Last updated —</div>
-    <div class="archive" id="archive"></div>
-  </header>
+<script>
+  const state = { data:null, items:[], q:"", type:"", tag:"", recentOnly:false };
+  const $ = s => document.querySelector(s);
 
-  <main>
-    <div id="list" class="list"></div>
-    <div id="empty" class="empty" style="display:none">Nessun risultato con questi filtri.</div>
-  </main>
+  function escapeHtml(s=''){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+  function timeToLocal(iso){try{const d=new Date(iso);return d.toLocaleString(undefined,{hour12:false})}catch{return iso||'—'}}
+  function option(node,v,l){const o=document.createElement('option');o.value=v;o.textContent=l;node.appendChild(o)}
 
-  <footer>
-    <span id="mode"></span>
-  </footer>
+  function hydrateFiltersFromData(){
+    const types=new Set(), tags=new Set();
+    (state.data.items||[]).forEach(it=>{
+      if(it.anomaly_type) types.add(it.anomaly_type);
+      (it.why||[]).forEach(w=>{ if(w) tags.add(String(w).toLowerCase()); });
+    });
+    const typeSel=$('#type'), tagSel=$('#tag'); typeSel.innerHTML=''; tagSel.innerHTML='';
+    option(typeSel,'','Anomaly type: tutti'); [...types].sort().forEach(t=>option(typeSel,t,t));
+    option(tagSel,'','Tag: tutti'); [...tags].sort().forEach(t=>option(tagSel,t,t));
+    typeSel.value=''; tagSel.value='';
+  }
 
-  <script>
-    const state = { data:null, items:[], q:"", type:"", tag:"", recentOnly:false };
-    const $ = s => document.querySelector(s);
+  function badge(t){ const s=document.createElement('span'); s.className='chip'; s.textContent=t; return s; }
 
-    function escapeHtml(s=''){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
-    function timeToLocal(iso){try{const d=new Date(iso);return d.toLocaleString(undefined,{hour12:false})}catch{return iso||'—'}}
+  function card(it){
+    const d=document.createElement('div'); d.className='card';
+    d.innerHTML=`<div class="top"><div class="title">${escapeHtml(it.label||'—')}</div>
+      <div class="score">${Number(it.score??0).toFixed(0)}</div></div>
+      <div class="chips"></div>
+      <div class="actions"><a class="btn" href="${(it.links&&it.links[0])||'#'}" target="_blank" rel="noopener">Apri fonte →</a></div>`;
+    const box=d.querySelector('.chips'); (it.why||[]).forEach(w=>box.appendChild(badge(w)));
+    return d;
+  }
 
-    function option(node, value, label){ const o=document.createElement('option'); o.value=value; o.textContent=label; node.appendChild(o); }
+  function applyFilters(){
+    const q=state.q.trim().toLowerCase(), type=state.type, tag=state.tag;
+    const raw=(state.data.items||[]);
+    const pass = it=>{
+      if(type && it.anomaly_type!==type) return false;
+      if(tag && !(it.why||[]).map(x=>String(x).toLowerCase()).includes(tag)) return false;
+      if(state.recentOnly && !(it.why||[]).includes('recente')) return false;
+      if(q){ const hay=`${it.label||''} ${(it.why||[]).join(' ')}`.toLowerCase(); if(!hay.includes(q)) return false; }
+      return true;
+    };
+    let out=raw.filter(pass).sort((a,b)=>(b.score||0)-(a.score||0));
 
-    function hydrateFiltersFromData(){
-      const types = new Set(), tags = new Set();
-      (state.data.items||[]).forEach(it=>{
-        if(it.anomaly_type) types.add(it.anomaly_type);
-        (it.why||[]).forEach(w=>{ if(w) tags.add(String(w).toLowerCase()); });
-      });
-      const typeSel = $('#type'), tagSel = $('#tag');
-      typeSel.innerHTML=''; tagSel.innerHTML='';
-      option(typeSel,'','Anomaly type: tutti');
-      [...types].sort().forEach(t=> option(typeSel,t,t));
-      option(tagSel,'','Tag: tutti');
-      [...tags].sort().forEach(t=> option(tagSel,t,t));
-      typeSel.value=''; tagSel.value='';
+    // Fallback UX: se il filtro recenti azzera tutto, disattivalo e mostra hint
+    if(state.recentOnly && out.length===0 && raw.length>0){
+      state.recentOnly=false; $('#recentOnly').checked=false;
+      const last=$('#last'); last.textContent += " — nessun item marcato 'recente'; filtro disattivato automaticamente.";
+      out=raw.sort((a,b)=>(b.score||0)-(a.score||0));
     }
 
-    function badge(text){ const s=document.createElement('span'); s.className='chip'; s.textContent=text; return s; }
+    state.items=out; render();
+  }
 
-    function card(it){
-      const div=document.createElement('div'); div.className='card';
-      div.innerHTML = `
-        <div class="top">
-          <div class="title">${escapeHtml(it.label||'—')}</div>
-          <div class="score">${Number(it.score??0).toFixed(0)}</div>
-        </div>
-        <div class="chips"></div>
-        <div class="actions">
-          <a class="btn" href="${(it.links&&it.links[0])||'#'}" target="_blank" rel="noopener">Apri fonte →</a>
-        </div>`;
-      const box=div.querySelector('.chips');
-      (it.why||[]).forEach(w=>box.appendChild(badge(w)));
-      return div;
+  function render(){
+    const list=$('#list'), empty=$('#empty'); list.innerHTML='';
+    if(!state.items.length){ empty.style.display='block'; return; }
+    empty.style.display='none'; state.items.forEach(it=> list.appendChild(card(it)));
+  }
+
+  async function buildArchive(){
+    const today=new Date(); const cands=[];
+    for(let i=0;i<10;i++){ const d=new Date(today); d.setDate(today.getDate()-i);
+      const y=d.getUTCFullYear(), m=String(d.getUTCMonth()+1).padStart(2,'0'), dd=String(d.getUTCDate()).padStart(2,'0');
+      cands.push(`daily-${y}-${m}-${dd}.json`);
     }
+    const present=[]; await Promise.all(cands.map(async f=>{ try{ const r=await fetch(`${f}`,{cache:'no-store'}); if(r.ok) present.push(f);}catch{} }));
+    if(present.length){ const el=$('#archive'); el.innerHTML='Archivio: '; present.slice(0,7).forEach(f=>{ const a=document.createElement('a'); a.href=f; a.textContent=f.replace('daily-','').replace('.json',''); a.target='_blank'; el.appendChild(a); }); }
+  }
 
-    function applyFilters(){
-      const q=state.q.trim().toLowerCase(), type=state.type, tag=state.tag;
-      const out=(state.data.items||[])
-        .filter(it=>{
-          if(type && it.anomaly_type!==type) return false;
-          if(tag && !(it.why||[]).map(x=>String(x).toLowerCase()).includes(tag)) return false;
-          if(state.recentOnly && !(it.why||[]).map(String).includes('recente')) return false;
-          if(q){
-            const hay = `${it.label||''} ${(it.why||[]).join(' ')}`.toLowerCase();
-            if(!hay.includes(q)) return false;
-          }
-          return true;
-        })
-        .sort((a,b)=>(b.score||0)-(a.score||0));
-      state.items=out; render();
+  async function boot(){
+    try{
+      const r=await fetch(`daily.json?t=${Date.now()}`,{cache:'no-store'});
+      if(!r.ok) throw new Error(r.status);
+      state.data=await r.json();
+      $('#last').textContent=`Last updated: ${timeToLocal(state.data.generated_at_utc)} • items: ${state.data.items?.length??0}`;
+      $('#mode').textContent=`mode: ${state.data.mode||'unknown'}`;
+    }catch(e){
+      state.data={items:[]}; $('#last').textContent='Last updated — errore nel fetch di daily.json';
     }
+    hydrateFiltersFromData();
+    // forza default OFF
+    state.q=''; state.type=''; state.tag=''; state.recentOnly=false;
+    $('#q').value=''; $('#type').value=''; $('#tag').value=''; $('#recentOnly').checked=false;
+    applyFilters(); buildArchive();
+  }
 
-    function render(){
-      const list=$('#list'), empty=$('#empty'); list.innerHTML='';
-      if(!state.items.length){ empty.style.display='block'; return; }
-      empty.style.display='none'; state.items.forEach(it=> list.appendChild(card(it)));
-    }
+  $('#q').addEventListener('input',e=>{state.q=e.target.value; applyFilters();});
+  $('#type').addEventListener('change',e=>{state.type=e.target.value; applyFilters();});
+  $('#tag').addEventListener('change',e=>{state.tag=e.target.value; applyFilters();});
+  $('#recentOnly').addEventListener('change',e=>{state.recentOnly=e.target.checked; applyFilters();});
 
-    async function buildArchive(){
-      // prova ultimi 10 giorni; mostra quelli esistenti
-      const base = 'daily-';
-      const today = new Date();
-      const candidates = [];
-      for(let i=0;i<10;i++){
-        const d = new Date(today); d.setDate(today.getDate()-i);
-        const y=d.getUTCFullYear(), m=String(d.getUTCMonth()+1).padStart(2,'0'), dd=String(d.getUTCDate()).padStart(2,'0');
-        candidates.push(`daily-${y}-${m}-${dd}.json`);
-      }
-      const present = [];
-      await Promise.all(candidates.map(async f=>{
-        try{
-          const r = await fetch(`${f}`, {cache:'no-store'});
-          if(r.ok) present.push(f);
-        }catch{}
-      }));
-      if(present.length){
-        const el = $('#archive'); el.innerHTML = 'Archivio: ';
-        present.slice(0,7).forEach(f=>{
-          const a=document.createElement('a'); a.href=f; a.textContent=f.replace('daily-','').replace('.json',''); a.target='_blank'; el.appendChild(a);
-        });
-      }
-    }
-
-    async function boot(){
-      try{
-        const r = await fetch(`daily.json?t=${Date.now()}`, { cache:'no-store' });
-        if(!r.ok) throw new Error(r.status);
-        state.data = await r.json();
-        $('#last').textContent = `Last updated: ${timeToLocal(state.data.generated_at_utc)} • items: ${state.data.items?.length??0}`;
-        $('#mode').textContent = `mode: ${state.data.mode || 'unknown'}`;
-      }catch(e){
-        state.data = { items: [] };
-        $('#last').textContent = 'Last updated — errore nel fetch di daily.json';
-      }
-      hydrateFiltersFromData();
-      state.q=''; state.type=''; state.tag=''; state.recentOnly=false;
-      $('#q').value=''; $('#type').value=''; $('#tag').value=''; $('#recentOnly').checked=false;
-      applyFilters();
-      buildArchive();
-    }
-
-    // UI events
-    $('#q').addEventListener('input', e=>{ state.q=e.target.value; applyFilters(); });
-    $('#type').addEventListener('change', e=>{ state.type=e.target.value; applyFilters(); });
-    $('#tag').addEventListener('change', e=>{ state.tag=e.target.value; applyFilters(); });
-    $('#recentOnly').addEventListener('change', e=>{ state.recentOnly=e.target.checked; applyFilters(); });
-
-    boot();
-  </script>
-</body>
-</html>
+  boot();
+</script>
