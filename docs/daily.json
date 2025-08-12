@@ -1,139 +1,151 @@
 {
-  "generated_at_utc": "2025-08-12T07:24:31Z",
+  "generated_at_utc": "2025-08-12T16:02:01Z",
   "source": "OB1-AnomalyRadar",
   "mode": "anycrawl",
   "items": [
     {
       "entity": "PLAYER",
-      "label": "Simone Belluzzi, Autore presso Calcio Ticinese - Pagina 120 di ...",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 28.3,
-      "why": [
-        "esordio",
-        "prestazioni"
-      ],
-      "links": [
-        "https://calcio-ticinese.ch/author/simone-belluzzi/page/120/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Quale primo VdM per Camarda? - Diavoli in Paradiso",
-      "anomaly_type": "TRANSFER_SIGNAL",
-      "score": 25.3,
-      "why": [
-        "mercato",
-        "prestazioni",
-        "primavera",
-        "youth"
-      ],
-      "links": [
-        "https://www.transfermarkt.ch/quale-primo-vdm-per-camarda-/thread/forum/448/thread_id/810"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Team Ticino Archivi - Pagina 32 di 45",
-      "anomaly_type": "TRANSFER_SIGNAL",
-      "score": 18.3,
-      "why": [
-        "mercato",
-        "prestazioni",
-        "youth"
-      ],
-      "links": [
-        "https://calcio-ticinese.ch/tag/team-ticino/page/32/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Ticino Unihockey - TIUH INGAGGIA JOONATAN SURAKKA",
+      "label": "Campeonato Sudamericano Sub-20 - Lista de goleadores ...",
       "anomaly_type": "NOISE_PULSE",
-      "score": 17.5,
+      "score": 100.0,
       "why": [
+        "mercato",
         "prestazioni",
-        "primavera",
+        "recente",
         "youth"
       ],
       "links": [
-        "https://www.ticinounihockey.ch/it/article/2897/tiuh-ingaggia-joonatan-surakka"
+        "https://www.transfermarkt.co/campeonato-sudamericano-sub-20-2025/scorerliste/pokalwettbewerb/2SAM/saison_id/2024/altersklasse//plus/1"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Notizie online sempre aggiornate dal Ticino e dalla Svizzera",
-      "anomaly_type": "TRANSFER_SIGNAL",
-      "score": 15.3,
+      "label": "São Paulo Sub-20: Partidos, Resultados y Estadísticas",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 100.0,
       "why": [
         "mercato",
-        "prestazioni"
+        "prestazioni",
+        "recente",
+        "youth"
       ],
       "links": [
-        "https://www.laregione.ch/1764239https://www.laregione.ch/1764239"
+        "https://www.apwin.com/es/equipo/sao-paulo-futebol-clube-under-20/"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Notizie online sempre aggiornate dal Ticino e dalla Svizzera",
-      "anomaly_type": "TRANSFER_SIGNAL",
-      "score": 12.3,
+      "label": "Paraguay Sub 20 Resultados, estadísticas y highlights",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 75.4,
       "why": [
-        "mercato",
-        "prestazioni"
+        "prestazioni",
+        "recente",
+        "youth"
       ],
       "links": [
-        "https://www.laregione.ch/1717404https://www.laregione.ch/sport"
+        "https://espndeportes.espn.com/futbol/equipo/_/id/10296/paraguay-sub-20"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "AC Bellinzona / News / Kubilay \"Kubi\" Türkyilmaz\"‹",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 10.8,
+      "label": "¡Colombia y Paraguay al Mundial Sub20!",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 65.9,
       "why": [
-        "esordio"
+        "prestazioni",
+        "recente",
+        "youth"
       ],
       "links": [
-        "https://www.acbellinzona.ch/it/news/2020-04-15-00-00-00-kubilay-kubi-turkyilmaz"
+        "https://www.conmebol.com/noticias/colombia-y-paraguay-al-mundial-sub20/"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "News – Pagina 71",
+      "label": "Fútbol: Conoce a las joyas del futuro de Argentina que ...",
       "anomaly_type": "PLAYER_BURST",
-      "score": 10.4,
+      "score": 55.5,
       "why": [
         "esordio",
         "prestazioni",
+        "recente",
         "youth"
       ],
       "links": [
-        "https://www.moncalieribasketball.com/news/page/71/"
+        "https://www.olympics.com/es/noticias/futbol-joyas-jugadores-futuro-argentina-sudamericano-sub-20-2025"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Ticinonews.ch – Il Ticino in diretta: News, Ultima Ora, Sport ...",
+      "label": "La nueva Sub-20 es espectacular: Jacobo, Bravo, Jiménez ...",
       "anomaly_type": "NOISE_PULSE",
-      "score": 4.8,
+      "score": 39.31,
+      "why": [
+        "recente",
+        "youth"
+      ],
+      "links": [
+        "https://as.com/futbol/seleccion/la-nueva-sub-21-es-espectacular-jacobo-bravo-jimenez-n/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Bordalás, el entrenador de 1ª que más canteranos ha ...",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 39.0,
+      "why": [
+        "mercato",
+        "prestazioni",
+        "recente",
+        "youth"
+      ],
+      "links": [
+        "https://getafeweb.mforos.com/1459863/13212646-bordalas-el-entrenador-de-1-que-mas-canteranos-ha-convocado-y-ha-hecho-debutar/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "El Sub 20 debutó con un triunfo y tres pinchas",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 35.0,
+      "why": [
+        "esordio",
+        "prestazioni",
+        "recente",
+        "youth"
+      ],
+      "links": [
+        "https://estudiantesdelaplata.com/el-sub-20-debuto-con-un-triunfo-y-tres-pinchas/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "La Cantera Granota es protagonista en el regreso del ...",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 31.5,
+      "why": [
+        "esordio",
+        "mercato",
+        "prestazioni",
+        "recente",
+        "youth"
+      ],
+      "links": [
+        "https://www.levanteud.com/noticias/la-cantera-granota-es-protagonista-en-el-regreso-del-levante-ud-a-primera-division"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Tabla de posiciones Sudamericano sub 20: Estadisticas ...",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 16.4,
       "why": [
         "prestazioni",
-        "youth"
+        "recente"
       ],
       "links": [
-        "https://www.ticinonews.ch/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Esercizio fisico durante le mestruazioni: come allenarsi in ...",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 1.2,
-      "why": [
-        "prestazioni"
-      ],
-      "links": [
-        "https://impuls.migros.ch/it/medicina/salute-delle-donne/ciclo-mestruale/allenamento-basato-sul-ciclo"
+        "https://www.futbolred.com/tabla-de-posiciones/sudamericano-sub-20"
       ]
     }
   ]
