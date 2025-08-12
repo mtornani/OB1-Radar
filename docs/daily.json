@@ -1,22 +1,8 @@
 {
-  "generated_at_utc": "2025-08-11T20:04:39Z",
+  "generated_at_utc": "2025-08-12T07:24:31Z",
   "source": "OB1-AnomalyRadar",
   "mode": "anycrawl",
   "items": [
-    {
-      "entity": "PLAYER",
-      "label": "Calcio - Scommesse con quote top | Sporttip",
-      "anomaly_type": "TRANSFER_SIGNAL",
-      "score": 100.0,
-      "why": [
-        "mercato",
-        "prestazioni",
-        "youth"
-      ],
-      "links": [
-        "https://www.swisslos.ch/it/sporttip/scommesse-sportive/calcio/u19-ec"
-      ]
-    },
     {
       "entity": "PLAYER",
       "label": "Simone Belluzzi, Autore presso Calcio Ticinese - Pagina 120 di ...",
@@ -28,6 +14,21 @@
       ],
       "links": [
         "https://calcio-ticinese.ch/author/simone-belluzzi/page/120/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Quale primo VdM per Camarda? - Diavoli in Paradiso",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 25.3,
+      "why": [
+        "mercato",
+        "prestazioni",
+        "primavera",
+        "youth"
+      ],
+      "links": [
+        "https://www.transfermarkt.ch/quale-primo-vdm-per-camarda-/thread/forum/448/thread_id/810"
       ]
     },
     {
@@ -68,20 +69,20 @@
         "prestazioni"
       ],
       "links": [
-        "https://www.laregione.ch/1717404https://www.laregione.ch/sport"
+        "https://www.laregione.ch/1764239https://www.laregione.ch/1764239"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "News – Pagina 54",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 12.8,
+      "label": "Notizie online sempre aggiornate dal Ticino e dalla Svizzera",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 12.3,
       "why": [
-        "esordio",
-        "youth"
+        "mercato",
+        "prestazioni"
       ],
       "links": [
-        "https://www.moncalieribasketball.com/news/page/54/?page_id_all=4"
+        "https://www.laregione.ch/1717404https://www.laregione.ch/sport"
       ]
     },
     {
@@ -125,14 +126,14 @@
     },
     {
       "entity": "PLAYER",
-      "label": "Notizie Locarno | laRegione.ch",
+      "label": "Esercizio fisico durante le mestruazioni: come allenarsi in ...",
       "anomaly_type": "NOISE_PULSE",
       "score": 1.2,
       "why": [
         "prestazioni"
       ],
       "links": [
-        "https://www.laregione.ch/cantone/locarnese"
+        "https://impuls.migros.ch/it/medicina/salute-delle-donne/ciclo-mestruale/allenamento-basato-sul-ciclo"
       ]
     }
   ]
