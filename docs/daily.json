@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2025-08-12T16:02:01Z",
+  "generated_at_utc": "2025-08-12T16:22:52Z",
   "source": "OB1-AnomalyRadar",
   "mode": "anycrawl",
   "items": [
@@ -9,13 +9,31 @@
       "anomaly_type": "NOISE_PULSE",
       "score": 100.0,
       "why": [
+        "js-heavy",
+        "mercato",
+        "prestazioni",
+        "recente",
+        "south-america",
+        "youth"
+      ],
+      "links": [
+        "https://www.transfermarkt.co/campeonato-sudamericano-sub-20-2025/scorerliste/pokalwettbewerb/2SAM/saison_id/2024/altersklasse//plus/1"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Los 39 mejores jugadores de 21 años o menos en el futbol ...",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 100.0,
+      "why": [
+        "esordio",
         "mercato",
         "prestazioni",
         "recente",
         "youth"
       ],
       "links": [
-        "https://www.transfermarkt.co/campeonato-sudamericano-sub-20-2025/scorerliste/pokalwettbewerb/2SAM/saison_id/2024/altersklasse//plus/1"
+        "https://espndeportes.espn.com/futbol/nota/_/id/14986580/mejores-jugadores-sub-21-futbol-mundial-premier-league-barcelona-psg"
       ]
     },
     {
@@ -49,6 +67,21 @@
     },
     {
       "entity": "PLAYER",
+      "label": "Reglas y Regulaciones de las plantillas de la MLS 2024",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 73.5,
+      "why": [
+        "mercato",
+        "prestazioni",
+        "recente",
+        "youth"
+      ],
+      "links": [
+        "https://www.mlssoccer.com/news/reglas-y-regulaciones-de-las-plantillas-de-la-mls-2024"
+      ]
+    },
+    {
+      "entity": "PLAYER",
       "label": "¡Colombia y Paraguay al Mundial Sub20!",
       "anomaly_type": "NOISE_PULSE",
       "score": 65.9,
@@ -65,7 +98,7 @@
       "entity": "PLAYER",
       "label": "Fútbol: Conoce a las joyas del futuro de Argentina que ...",
       "anomaly_type": "PLAYER_BURST",
-      "score": 55.5,
+      "score": 50.3,
       "why": [
         "esordio",
         "prestazioni",
@@ -78,61 +111,16 @@
     },
     {
       "entity": "PLAYER",
-      "label": "La nueva Sub-20 es espectacular: Jacobo, Bravo, Jiménez ...",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 39.31,
-      "why": [
-        "recente",
-        "youth"
-      ],
-      "links": [
-        "https://as.com/futbol/seleccion/la-nueva-sub-21-es-espectacular-jacobo-bravo-jimenez-n/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Bordalás, el entrenador de 1ª que más canteranos ha ...",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 39.0,
-      "why": [
-        "mercato",
-        "prestazioni",
-        "recente",
-        "youth"
-      ],
-      "links": [
-        "https://getafeweb.mforos.com/1459863/13212646-bordalas-el-entrenador-de-1-que-mas-canteranos-ha-convocado-y-ha-hecho-debutar/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "El Sub 20 debutó con un triunfo y tres pinchas",
+      "label": "Se acerca el debut colombiano en el Sudamericano Sub",
       "anomaly_type": "PLAYER_BURST",
-      "score": 35.0,
+      "score": 17.9,
       "why": [
         "esordio",
-        "prestazioni",
         "recente",
-        "youth"
+        "south-america"
       ],
       "links": [
-        "https://estudiantesdelaplata.com/el-sub-20-debuto-con-un-triunfo-y-tres-pinchas/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "La Cantera Granota es protagonista en el regreso del ...",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 31.5,
-      "why": [
-        "esordio",
-        "mercato",
-        "prestazioni",
-        "recente",
-        "youth"
-      ],
-      "links": [
-        "https://www.levanteud.com/noticias/la-cantera-granota-es-protagonista-en-el-regreso-del-levante-ud-a-primera-division"
+        "https://olimpicocol.co/web/se-acerca-el-debut-colombiano-en-el-sudamericano-sub-20-de-futbol/"
       ]
     },
     {
@@ -146,6 +134,21 @@
       ],
       "links": [
         "https://www.futbolred.com/tabla-de-posiciones/sudamericano-sub-20"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "El juvenil Kadir Barria debutó con el Botafogo Sub 20, ...",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 14.4,
+      "why": [
+        "esordio",
+        "js-heavy",
+        "recente",
+        "youth"
+      ],
+      "links": [
+        "https://www.threads.com/@tigosportspa/post/DNJ1b2Spt3h/gran-debutel-juvenil-kadir-barria-debut%C3%B3-con-el-botafogo-sub-20-sucedi%C3%B3-en-el-to"
       ]
     }
   ]
