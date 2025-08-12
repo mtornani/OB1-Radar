@@ -3,7 +3,7 @@ name: Daily Anomaly Radar
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 7 * * *"   # 07:00 UTC (≈09:00 CEST in estate)
+    - cron: "0 7 * * *"   # 07:00 UTC (≈09:00 CEST)
 
 permissions:
   contents: write
@@ -31,35 +31,32 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: List repo tree (debug)
-        run: |
-          pwd
-          git rev-parse HEAD
-          ls -la
-          echo "--- engine ---"
-          ls -la engine || true
-          echo "--- docs ---"
-          ls -la docs || true
-
       - name: Run anomaly engine
         env:
           ANYCRAWL_API_URL: ${{ secrets.ANYCRAWL_API_URL }}
           ANYCRAWL_API_KEY: ${{ secrets.ANYCRAWL_API_KEY }}
         run: |
           mkdir -p output
-          python engine/run.py || (echo "Engine failed; keeping previous daily.json if exists" && exit 1)
+          python engine/run.py
 
-      - name: Copy JSON to docs
+      - name: Publish JSONs to /docs
         run: |
           mkdir -p docs
           cp output/daily.json docs/daily.json
+          mkdir -p docs
+          cp -n output/snapshots/daily-*.json docs/ 2>/dev/null || true
 
-      - name: Commit & push changes
+      - name: Keep last 7 snapshots
+        run: |
+          ls -1t docs/daily-*.json 2>/dev/null | tail -n +8 | xargs -r git rm -f
+          git reset --quiet
+
+      - name: Commit & push changes (daily + snapshots + cache)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/daily.json
-          git commit -m "chore: update daily.json [skip ci]" || echo "No changes to commit"
+          git add docs/daily.json docs/daily-*.json data/cache_seen.json || true
+          git commit -m "chore: update daily & snapshots [skip ci]" || echo "No changes to commit"
           git push
