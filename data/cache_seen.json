@@ -114,5 +114,41 @@
   "https://www.olympics.com/pt/noticias/copinha-2025-artilheiro-top-10": {
     "host": "www.olympics.com",
     "seen_at": "2025-08-12T20:06:39"
+  },
+  "https://espndeportes.espn.com/futbol/equipo/_/id/5172/mexico-sub-20": {
+    "host": "espndeportes.espn.com",
+    "seen_at": "2025-08-13T07:22:55"
+  },
+  "https://www.concacaf.com/es/sub-15-hombres/noticias/grandes-jugadores-que-iniciaron-su-carrera-en-el-campeonato-sub-15-masculino-de-concacaf/": {
+    "host": "www.concacaf.com",
+    "seen_at": "2025-08-13T07:22:58"
+  },
+  "https://espndeportes.espn.com/futbol/mexico/nota/_/id/15090382/liga-mx-futbol-estufa-apertura-2025-rumores-fichajes": {
+    "host": "espndeportes.espn.com",
+    "seen_at": "2025-08-13T07:23:09"
+  },
+  "https://www.marca.com/futbol/mercado-fichajes/2025/02/03/67a06b747aeb1c2f7518122a-directo.html": {
+    "host": "www.marca.com",
+    "seen_at": "2025-08-13T07:23:21"
+  },
+  "https://www.transfermarkt.co/real-madrid/transferstroeme/verein/418": {
+    "host": "www.transfermarkt.co",
+    "seen_at": "2025-08-13T07:23:24"
+  },
+  "https://www.cearasc.com/noticia/sub-20-ceara-fecha-preparacao-para-estreia-alvineg": {
+    "host": "www.cearasc.com",
+    "seen_at": "2025-08-13T07:23:29"
+  },
+  "https://fla.mundobola.com/3-jogos-3-assistencias-ramon-se-destaca-sub-20-flamengo/": {
+    "host": "fla.mundobola.com",
+    "seen_at": "2025-08-13T07:23:37"
+  },
+  "https://www.olympics.com/pt/noticias/veja-jogadores-convocados-sul-americano-masculino-sub-20-futebol": {
+    "host": "www.olympics.com",
+    "seen_at": "2025-08-13T07:23:49"
+  },
+  "https://www.olympics.com/pt/noticias/mundial-sub-20-2025-jogadores-podem-reforcar-selecao": {
+    "host": "www.olympics.com",
+    "seen_at": "2025-08-13T07:24:06"
   }
 }
