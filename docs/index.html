@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OB1 · Ouroboros Radar — Top-10</title>
   <style>
-    :root { --bg:#0b0d10; --fg:#e8eaed; --muted:#9aa0a6; --card:#15181c; --chip:#2a2f36; --accent:#4caf50; }
+    :root { --bg:#0b0d10; --fg:#e8eaed; --muted:#9aa0a6; --card:#15181c; --chip:#2a2f36; }
     html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;}
     .wrap{max-width:980px;margin:0 auto;padding:14px;}
     h1{font-size:18px;margin:6px 0 12px 0;font-weight:700}
@@ -23,15 +23,17 @@
     .chip{background:var(--chip);color:#c9d1d9;border-radius:999px;padding:4px 8px;font-size:12px}
     .actions{margin-top:8px}
     .empty{display:none;text-align:center;color:var(--muted);padding:40px 8px}
-    .row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
     .switch{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
     .archive a{color:var(--muted);text-decoration:none;margin-right:10px}
     .hint{font-size:12px;color:var(--muted)}
+    /* error overlay */
     #err { display:none; position:fixed; inset:0; background:rgba(0,0,0,.9); color:#fff; z-index:9999; }
     #err .box{max-width:900px;margin:40px auto;padding:14px}
     #err pre{white-space:pre-wrap;background:#1a1a1a;padding:12px;border-radius:10px;border:1px solid #333;overflow:auto}
+    /* breakdown mini-chips */
     .mini-chip{display:inline-block;background:#1e2329;border:1px solid #2d3742;border-radius:999px;padding:2px 6px;margin-left:6px}
     .mini-chip b{color:#cde6ff}
+    .hide{display:none}
   </style>
 </head>
 <body>
@@ -57,6 +59,7 @@
       &nbsp;•&nbsp;<span id="mode">mode —</span>
       &nbsp;•&nbsp;<span id="regions"></span>
       &nbsp;•&nbsp;<span class="archive" id="archive"></span>
+      &nbsp;•&nbsp;<a id="csv" class="hide" href="top-week.csv" target="_blank" rel="noopener">CSV week</a>
     </div>
 
     <div id="list" class="list"></div>
@@ -142,6 +145,12 @@
       })(0,[]);
     }
 
+    function probeCSV(){
+      fetch('top-week.csv?'+Date.now(), {cache:'no-store'})
+        .then(function(r){ if (r.ok) $('#csv').classList.remove('hide'); })
+        .catch(function(){});
+    }
+
     function boot(){
       state.q=''; state.type=''; state.tag=''; state.recentOnly=false;
       $('#q').value=''; $('#type').value=''; $('#tag').value=''; $('#recentOnly').checked=false;
@@ -153,7 +162,7 @@
           $('#last').textContent="Last updated: "+toLocal(safe(j,'generated_at_utc',''))+" • items: "+(safe(j,'items',[]).length);
           $('#mode').textContent="mode: "+(j && j.mode || 'unknown');
           renderBreakdown(safe(j,'region_breakdown',null));
-          hydrateFilters(); applyFilters(); buildArchive();
+          hydrateFilters(); applyFilters(); buildArchive(); probeCSV();
         })
         .catch(function(err){
           state.data={items:[]}; $('#last').textContent="Last updated — errore nel fetch di daily.json";
