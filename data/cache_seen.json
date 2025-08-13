@@ -150,5 +150,33 @@
   "https://www.olympics.com/pt/noticias/mundial-sub-20-2025-jogadores-podem-reforcar-selecao": {
     "host": "www.olympics.com",
     "seen_at": "2025-08-13T07:24:06"
+  },
+  "https://espndeportes.espn.com/futbol/equipo/_/id/5203/chile-sub-20": {
+    "host": "espndeportes.espn.com",
+    "seen_at": "2025-08-13T14:18:52"
+  },
+  "https://www.portaltela.com/esporte/futebol/2025/08/13/joao-cruz-brilha-no-brasil-sub20-com-gol-e-assistencia-pelo-athletico": {
+    "host": "www.portaltela.com",
+    "seen_at": "2025-08-13T14:19:11"
+  },
+  "https://www.olympics.com/pt/noticias/libertadores-sub-20-jogadores-revelados": {
+    "host": "www.olympics.com",
+    "seen_at": "2025-08-13T14:19:22"
+  },
+  "https://onefootball.com/fr/news/isaque-e-mais-um-moleque-de-xerem-convocado-para-a-selecao-brasileira-sub-20-41441771": {
+    "host": "onefootball.com",
+    "seen_at": "2025-08-13T14:19:31"
+  },
+  "https://fla.mundobola.com/flamengo-tem-apenas-1-convocado-pela-selecao-para-o-mundial-sub-20-2/": {
+    "host": "fla.mundobola.com",
+    "seen_at": "2025-08-13T14:19:33"
+  },
+  "https://www.fogaonet.com/noticias-do-botafogo/yarlen-celebra-convocacao-a-selecao-brasileira-sub-20-sensacao-incrivel-servir-meu-pais-honrando-as-cores-do-botafogo/": {
+    "host": "www.fogaonet.com",
+    "seen_at": "2025-08-13T14:19:36"
+  },
+  "https://www.cafonline.com/fr/coupe-dafrique-des-nations-u-20/news/la-coupe-d-afrique-des-nations-u20-caf-totalenergies-egypte-2025-devoile-son-dispositif-de-diffusion/": {
+    "host": "www.cafonline.com",
+    "seen_at": "2025-08-13T14:19:42"
   }
 }

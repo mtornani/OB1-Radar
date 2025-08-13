@@ -1,133 +1,105 @@
 {
-  "generated_at_utc": "2025-08-13T07:24:06Z",
+  "generated_at_utc": "2025-08-13T14:19:42Z",
   "source": "OB1-AnomalyRadar",
   "mode": "anycrawl",
+  "region_breakdown": {
+    "africa": 1,
+    "asia": 0,
+    "south-america": 0,
+    "international": 0,
+    "unknown": 6
+  },
   "items": [
     {
       "entity": "PLAYER",
-      "label": "Liga MX: Futbol de Estufa rumbo al Apertura 2025",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 100.0,
-      "why": [
-        "CONMEBOL",
-        "esordio",
-        "mercato",
-        "prestazioni",
-        "youth"
-      ],
-      "links": [
-        "https://espndeportes.espn.com/futbol/mexico/nota/_/id/15090382/liga-mx-futbol-estufa-apertura-2025-rumores-fichajes"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Mercado de fichajes hoy en directo | Altas, bajas y última ...",
-      "anomaly_type": "TRANSFER_SIGNAL",
-      "score": 100.0,
-      "why": [
-        "CONMEBOL",
-        "mercato",
-        "prestazioni",
-        "youth"
-      ],
-      "links": [
-        "https://www.marca.com/futbol/mercado-fichajes/2025/02/03/67a06b747aeb1c2f7518122a-directo.html"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Grandes Jugadores que iniciaron su carrera en el ...",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 79.6,
-      "why": [
-        "esordio",
-        "mercato",
-        "prestazioni",
-        "youth"
-      ],
-      "links": [
-        "https://www.concacaf.com/es/sub-15-hombres/noticias/grandes-jugadores-que-iniciaron-su-carrera-en-el-campeonato-sub-15-masculino-de-concacaf/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "México Sub 20 Resultados, estadísticas y highlights",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 50.7,
-      "why": [
-        "esordio",
-        "international",
-        "prestazioni",
-        "youth"
-      ],
-      "links": [
-        "https://espndeportes.espn.com/futbol/equipo/_/id/5172/mexico-sub-20"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Sub-20: Ceará fecha preparação para estreia alvinegra no ...",
+      "label": "La Coupe d'Afrique des Nations U20 CAF TotalEnergies ...",
       "anomaly_type": "NOISE_PULSE",
-      "score": 40.92,
+      "score": 24.96,
       "why": [
+        "africa"
+      ],
+      "links": [
+        "https://www.cafonline.com/fr/coupe-dafrique-des-nations-u-20/news/la-coupe-d-afrique-des-nations-u20-caf-totalenergies-egypte-2025-devoile-son-dispositif-de-diffusion/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "João Cruz brilha no Brasil sub-20 com gol e assistência ...",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 100.0,
+      "why": [
+        "prestazioni",
         "recente"
       ],
       "links": [
-        "https://www.cearasc.com/noticia/sub-20-ceara-fecha-preparacao-para-estreia-alvineg"
+        "https://www.portaltela.com/esporte/futebol/2025/08/13/joao-cruz-brilha-no-brasil-sub20-com-gol-e-assistencia-pelo-athletico"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Mundial sub-20 2025: que jogadores podem reforçar a ...",
+      "label": "Yarlen celebra convocação à Seleção Brasileira sub-20",
       "anomaly_type": "NOISE_PULSE",
-      "score": 40.3,
+      "score": 100.0,
+      "why": [
+        "prestazioni"
+      ],
+      "links": [
+        "https://www.fogaonet.com/noticias-do-botafogo/yarlen-celebra-convocacao-a-selecao-brasileira-sub-20-sensacao-incrivel-servir-meu-pais-honrando-as-cores-do-botafogo/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Chile Sub 20 Resultados, estadísticas y highlights",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 80.2,
+      "why": [
+        "CONMEBOL",
+        "esordio",
+        "prestazioni",
+        "youth"
+      ],
+      "links": [
+        "https://espndeportes.espn.com/futbol/equipo/_/id/5203/chile-sub-20"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Flamengo tem apenas 1 convocado pela Seleção para o ...",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 60.0,
       "why": [
         "CONMEBOL",
         "mercato",
         "prestazioni"
       ],
       "links": [
-        "https://www.olympics.com/pt/noticias/mundial-sub-20-2025-jogadores-podem-reforcar-selecao"
+        "https://fla.mundobola.com/flamengo-tem-apenas-1-convocado-pela-selecao-para-o-mundial-sub-20-2/"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "3 jogos e 3 assistências: Ramon se destaca pelo sub-20 ...",
+      "label": "Libertadores sub-20: relembre jogadores revelados no ...",
       "anomaly_type": "NOISE_PULSE",
-      "score": 37.7,
+      "score": 46.9,
       "why": [
-        "CONMEBOL",
         "mercato",
         "prestazioni"
       ],
       "links": [
-        "https://fla.mundobola.com/3-jogos-3-assistencias-ramon-se-destaca-sub-20-flamengo/"
+        "https://www.olympics.com/pt/noticias/libertadores-sub-20-jogadores-revelados"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Jogadores convocados para o sul-americano masculino ...",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 32.4,
-      "why": [
-        "CONMEBOL",
-        "prestazioni"
-      ],
-      "links": [
-        "https://www.olympics.com/pt/noticias/veja-jogadores-convocados-sul-americano-masculino-sub-20-futebol"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Real Madrid CF - Flujo de fichajes",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 1.3,
+      "label": "Isaque é mais um Moleque de Xerém convocado para a ...",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 29.3,
       "why": [
         "mercato",
-        "south-america"
+        "recente"
       ],
       "links": [
-        "https://www.transfermarkt.co/real-madrid/transferstroeme/verein/418"
+        "https://onefootball.com/fr/news/isaque-e-mais-um-moleque-de-xerem-convocado-para-a-selecao-brasileira-sub-20-41441771"
       ]
     }
   ]
