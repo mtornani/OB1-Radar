@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
 
 jobs:
   build:
@@ -48,15 +47,47 @@ jobs:
 
       - name: Keep last 7 snapshots
         run: |
-          ls -1t docs/daily-*.json 2>/dev/null | tail -n +8 | xargs -r git rm -f
-          git reset --quiet
+          keep=$(ls -1t docs/daily-*.json 2>/dev/null | head -n 7)
+          all=$(ls -1 docs/daily-*.json 2>/dev/null || true)
+          for f in $all; do
+            echo "$keep" | grep -qx "$f" || rm -f "$f"
+          done
 
-      - name: Commit & push changes (daily + snapshots + cache)
+      - name: Build weekly CSV (last 7 snapshots)
+        run: |
+          python - <<'PY'
+          import json,glob,csv,os,re
+          snaps = sorted(glob.glob('docs/daily-*.json'))[-7:]
+          rows = []
+          for path in snaps:
+              m = re.search(r'daily-(\d{4}-\d{2}-\d{2})\.json', path)
+              date = m.group(1) if m else ''
+              with open(path, encoding='utf-8') as f:
+                  data = json.load(f)
+              for it in data.get('items', []):
+                  tags = it.get('why', []) or []
+                  region = 'unknown'
+                  for r in ('africa','asia','south-america','international'):
+                      if r in tags: region = r; break
+                  link = (it.get('links') or [''])[0]
+                  rows.append([date, region, it.get('anomaly_type',''), it.get('label',''),
+                               it.get('score',0), '|'.join(tags), link])
+          os.makedirs('docs', exist_ok=True)
+          out = 'docs/top-week.csv'
+          with open(out, 'w', newline='', encoding='utf-8') as f:
+              w = csv.writer(f)
+              w.writerow(['date','region','type','label','score','tags','link'])
+              rows.sort(key=lambda r: (r[0], float(r[4]) if r[4] != '' else 0.0), reverse=True)
+              w.writerows(rows)
+          print('wrote', out, 'rows', len(rows))
+          PY
+
+      - name: Commit & push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/daily.json docs/daily-*.json data/cache_seen.json || true
-          git commit -m "chore: update daily & snapshots [skip ci]" || echo "No changes to commit"
+          git add docs/daily.json docs/daily-*.json docs/top-week.csv data/cache_seen.json || true
+          git commit -m "chore: update daily, snapshots & weekly CSV [skip ci]" || echo "No changes to commit"
           git push
