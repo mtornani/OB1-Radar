@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-# OB1 • Ouroboros Radar — engine/run.py (v0.4.2-fixRecency)
-# Fix: data inference più robusta → ripristina il tag 'recente'
+# OB1 • Ouroboros Radar — engine/run.py (v0.4.2.3)
+# Add: region_breakdown nel payload + quota Asia=3 (temporanea)
+# Include fix recency + query locali Asia
 
 import os, json, re, requests
 from datetime import datetime, timedelta
@@ -12,7 +13,7 @@ HEADERS = {"Content-Type": "application/json"}
 if API_KEY:
     HEADERS["Authorization"] = f"Bearer {API_KEY}"
 
-# ---------- packs/queries (come tua v0.4.2) ----------
+# ---------- packs/queries ----------
 SITE_PACKS = {
     "africa": ["cafonline.com","cosafa.com","cecafaonline.com","ufoawafub.com"],
     "asia": [
@@ -59,7 +60,10 @@ QUERIES = BASE_QUERIES + build_site_queries() + build_asia_lang_queries()
 
 # ---------- heuristics ----------
 MAX_SERP=14; MIN_TEXT_LEN=600; TIMEOUT_S=50; RECENT_DAYS=21; CACHE_TTL_DAYS=14
-REGION_MIN_QUOTAS={"africa":2,"asia":2}; TOP_K=10
+# Quota temporanea: Asia=3 (prima era 2)
+REGION_MIN_QUOTAS={"africa":2,"asia":3}
+TOP_K=10
+
 CACHE_PATH="data/cache_seen.json"; OUT_DIR="output"; SNAP_DIR=os.path.join(OUT_DIR,"snapshots")
 BLOCK_EXT=(".pdf",".jpg",".jpeg",".png",".gif",".svg",".webp",".zip",".rar")
 NEG_URL_PATTERNS=("/rules","/reglas","/regulations","/how-to","/como-","/guia","/guide","/privacy","/cookies","/terminos","/terms","/about","/acerca-")
@@ -82,7 +86,7 @@ POS_WEIGHTS={
     r"\bconvocado\b|\bconvocato\b|\bselecci[oó]n(?:ado)?\b|\bs[eé]lectionn[ée]?\b|\bcalled up\b":1.4,
     r"\bnazionale\b|\bsele[cç][aã]o\b|\bselecci[oó]n\b|\bnational team\b|\bs[eé]lection\b":1.2,
 }
-MUST_HAVE_REGEX=re.compile(r"(f[uú]tbol|futebol|football|soccer|primavera|cantera|juvenil|u[\-\s]?20|u[\-\s]?19|u[\-\s]?17|日本代表|代表|デビュー|得点|アシスト|대표팀|데뷔|득점|منتخب|تحت\s?20|ظهور|ทีมชาติ|เดบิวต์|đội tuyển|ra mắt|timnas)")
+MUST_HAVE_REGEX=re.compile(r"(f[uú]tbol|futebol|football|soccer|primavera|cantera|juvenil|u[\-\s]?20|u[\-\s]?19|u[\-\s]?17|日本代表|代表|デビュー|得点|アシスト|대표팀|데뷔|득점|منتخب|تحت\s?20|ظهور|팀ชาติ|ทีมชาติ|เดบิวต์|đội tuyển|ra mắt|timnas)")
 NEG_PATTERNS=("cookie","privacy","accetta","banner","abbonati","paywall","newsletter")
 TOURNAMENT_CONFED={"maurice revello":"international","toulon":"international","conmebol":"CONMEBOL","sudamericano":"CONMEBOL","caf u-20":"CAF","u-20 afcon":"CAF","afc u20":"AFC","u20 asian cup":"AFC","concacaf u-20":"CONCACAF"}
 
@@ -160,7 +164,7 @@ def infer_type(txt):
     if re.search(r"\btransfer\b|\bmercato\b|\bfichaje\b|\btraspaso\b|\bpr[êe]t\b|\bpréstamo\b|\bempr[eê]stimo\b|\bloan\b|\bcedid[oa]\b|\bcedut[oa]\b|\bsigned\b|移籍|レンタル|이적|임대|انتقال|إعارة|chuyển nhượng|cho mượn|pinjaman",t): return "TRANSFER_SIGNAL"
     return "NOISE_PULSE"
 
-# ------- NEW: robust date inference -------
+# date inference (robusta)
 IT_MONTHS=["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"]
 ES_MONTHS=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]
 PT_MONTHS=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"]
@@ -169,7 +173,6 @@ MONTHS_ALL=IT_MONTHS+ES_MONTHS+PT_MONTHS+FR_MONTHS
 
 def guess_date_from_text_or_url(txt,url):
     t=(txt or "").lower()
-    # URL /YYYY/MM/DD or /YYYY-MM-DD or YYYYMMDD
     m=re.search(r"/(20\d{2})[\/\-](0[1-9]|1[0-2])[\/\-](0[1-9]|[12]\d|3[01])",url)
     if m:
         y,mm,dd=map(int,m.groups())
@@ -180,19 +183,16 @@ def guess_date_from_text_or_url(txt,url):
         y,mm=map(int,m.groups())
         try: return datetime(y,mm,1)
         except: pass
-    # ISO in testo
     m=re.search(r"(20\d{2})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])",t)
     if m:
         y,mm,dd=map(int,m.groups())
         try: return datetime(y,mm,dd)
         except: pass
-    # DD/MM/YYYY o DD-MM-YYYY
     m=re.search(r"\b(0?[1-9]|[12]\d|3[01])[\/\-](0?[1-9]|1[0-2])[\/\-](20\d{2})\b",t)
     if m:
         dd,mm,y=map(int,m.groups())
         try: return datetime(y,mm,dd)
         except: pass
-    # Italiano/Spagnolo/Portoghese/Francese "12 agosto 2025"
     months="|".join([re.escape(x) for x in MONTHS_ALL])
     m=re.search(r"\b(0?[1-9]|[12]\d|3[01])\s+("+months+r")\s+(20\d{2})\b",t)
     if m:
@@ -203,7 +203,6 @@ def guess_date_from_text_or_url(txt,url):
             return 1
         try: return datetime(y,idx(name),dd)
         except: pass
-    # East/Ar/SEA fallback: se appare un anno recente, prendi 1 gennaio
     m=re.search(r"\b(20\d{2})\b",t)
     if m:
         y=int(m.group(1))
@@ -289,6 +288,19 @@ def select_with_region_quotas(items,k=TOP_K,quotas=REGION_MIN_QUOTAS):
         picked.append(it)
     return picked[:k]
 
+def region_breakdown(items):
+    b={"africa":0,"asia":0,"south-america":0,"international":0,"unknown":0}
+    for it in items:
+        tags = it.get("why",[])
+        # prendi la prima regione taggata
+        for r in ("africa","asia","south-america","international"):
+            if r in tags:
+                b[r]+=1
+                break
+        else:
+            b["unknown"]+=1
+    return b
+
 def main():
     cache=load_cache()
     cands=collect_candidates(cache)
@@ -334,6 +346,7 @@ def main():
     payload={
         "generated_at_utc": datetime.utcnow().isoformat(timespec="seconds")+"Z",
         "source":"OB1-AnomalyRadar","mode":"anycrawl" if items else "fallback",
+        "region_breakdown": region_breakdown(items),
         "items": items or [{"entity":"PLAYER","label":"Demo anomaly","anomaly_type":"NOISE_PULSE","score":10,"why":["fallback"],"links":["https://github.com/mtornani/OB1-Radar"]}]
     }
 
@@ -342,7 +355,6 @@ def main():
     today=datetime.utcnow().strftime("%Y-%m-%d")
     open(os.path.join(SNAP_DIR,f"daily-{today}.json"),"w",encoding="utf-8").write(json.dumps(payload,ensure_ascii=False,indent=2))
     save_cache(cache)
-    print(f"[OK] wrote output/daily.json (items={len(items)}) – recency fixed")
-
+    print(f"[OK] wrote output/daily.json (items={len(items)}) – quotas={REGION_MIN_QUOTAS} breakdown={payload['region_breakdown']}")
 if __name__=="__main__":
     main()
