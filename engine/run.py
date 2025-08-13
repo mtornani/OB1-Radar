@@ -30,7 +30,7 @@ BASE_QUERIES = [
     "U20 debut football","U20 transfer loan youth",
 ]
 TOK_JP = ["U-20 日本代表","U-19 日本代表","デビュー","得点","アシスト","移籍","レンタル"]
-TOK_KR = ["U-20 대표팀","U-19 대표팀","데뷔","득점","도움","이적","임대"]
+TOK_KR = ["U-20代表팀","U-19代表팀","데뷔","득점","도움","이적","임대"]
 TOK_AR = ["تحت 20","تحت 19","منتخب الشباب","سجل","صنع","انتقال","إعارة","ظهور"]
 TOK_TH = ["ทีมชาติ U20","ทีมชาติ U19","เดบิวต์","ยิง","แอสซิสต์","ยืมตัว","โอนย้าย"]
 TOK_VI = ["U20","U19","đội tuyển","ra mắt","ghi bàn","kiến tạo","chuyển nhượng","cho mượn"]
@@ -60,8 +60,7 @@ QUERIES = BASE_QUERIES + build_site_queries() + build_asia_lang_queries()
 
 # ---------- heuristics ----------
 MAX_SERP=14; MIN_TEXT_LEN=600; TIMEOUT_S=50; RECENT_DAYS=21; CACHE_TTL_DAYS=14
-# Quota temporanea: Asia=3 (prima era 2)
-REGION_MIN_QUOTAS={"africa":2,"asia":3}
+REGION_MIN_QUOTAS={"africa":2,"asia":3}   # quota temporanea Asia=3
 TOP_K=10
 
 CACHE_PATH="data/cache_seen.json"; OUT_DIR="output"; SNAP_DIR=os.path.join(OUT_DIR,"snapshots")
