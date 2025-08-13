@@ -86,7 +86,7 @@ POS_WEIGHTS={
     r"\bconvocado\b|\bconvocato\b|\bselecci[oó]n(?:ado)?\b|\bs[eé]lectionn[ée]?\b|\bcalled up\b":1.4,
     r"\bnazionale\b|\bsele[cç][aã]o\b|\bselecci[oó]n\b|\bnational team\b|\bs[eé]lection\b":1.2,
 }
-MUST_HAVE_REGEX=re.compile(r"(f[uú]tbol|futebol|football|soccer|primavera|cantera|juvenil|u[\-\s]?20|u[\-\s]?19|u[\-\s]?17|日本代表|代表|デビュー|得点|アシスト|대표팀|데뷔|득점|منتخب|تحت\s?20|ظهور|팀ชาติ|ทีมชาติ|เดบิวต์|đội tuyển|ra mắt|timnas)")
+MUST_HAVE_REGEX=re.compile(r"(f[uú]tbol|futebol|football|soccer|primavera|cantera|juvenil|u[\-\s]?20|u[\-\s]?19|u[\-\s]?17|日本代表|代表|デビュー|得点|アシスト|대표팀|데뷔|득점|منتخب|تحت\s?20|ظهور|ทีมชาติ|เดบิวต์|đội tuyển|ra mắt|timnas)")
 NEG_PATTERNS=("cookie","privacy","accetta","banner","abbonati","paywall","newsletter")
 TOURNAMENT_CONFED={"maurice revello":"international","toulon":"international","conmebol":"CONMEBOL","sudamericano":"CONMEBOL","caf u-20":"CAF","u-20 afcon":"CAF","afc u20":"AFC","u20 asian cup":"AFC","concacaf u-20":"CONCACAF"}
 
@@ -292,7 +292,6 @@ def region_breakdown(items):
     b={"africa":0,"asia":0,"south-america":0,"international":0,"unknown":0}
     for it in items:
         tags = it.get("why",[])
-        # prendi la prima regione taggata
         for r in ("africa","asia","south-america","international"):
             if r in tags:
                 b[r]+=1
