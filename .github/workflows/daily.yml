@@ -82,6 +82,33 @@ jobs:
           print('wrote', out, 'rows', len(rows))
           PY
 
+      - name: Send Telegram alert (optional)
+        env:
+          BOT: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python - <<'PY'
+          import os, json, html, requests
+          bot = os.environ.get("BOT","").strip()
+          chat = os.environ.get("CHAT","").strip()
+          if not bot or not chat:
+              print("telegram: secrets not set, skip"); raise SystemExit(0)
+          with open("docs/daily.json", encoding="utf-8") as f:
+              data = json.load(f)
+          rb = data.get("region_breakdown", {})
+          title = f"OB1 Top-10 {data.get('generated_at_utc','')[:10]} — AF:{rb.get('africa',0)} AS:{rb.get('asia',0)} SA:{rb.get('south-america',0)}"
+          lines = []
+          for it in data.get("items", [])[:10]:
+              score = int(round(float(it.get("score",0))))
+              label = html.escape(it.get("label",""))
+              link = (it.get("links") or [""])[0]
+              lines.append(f"{score} · {label}\n{link}")
+          text = f"<b>{html.escape(title)}</b>\n\n" + "\n".join(lines)
+          url = f"https://api.telegram.org/bot{bot}/sendMessage"
+          r = requests.post(url, data={"chat_id": chat, "parse_mode": "HTML", "text": text}, timeout=30)
+          print("telegram:", r.status_code, r.text[:120])
+          PY
+
       - name: Commit & push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
