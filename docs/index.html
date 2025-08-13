@@ -30,10 +30,16 @@
     #err { display:none; position:fixed; inset:0; background:rgba(0,0,0,.9); color:#fff; z-index:9999; }
     #err .box{max-width:900px;margin:40px auto;padding:14px}
     #err pre{white-space:pre-wrap;background:#1a1a1a;padding:12px;border-radius:10px;border:1px solid #333;overflow:auto}
-    /* breakdown mini-chips */
+    /* breakdown & hero */
     .mini-chip{display:inline-block;background:#1e2329;border:1px solid #2d3742;border-radius:999px;padding:2px 6px;margin-left:6px}
     .mini-chip b{color:#cde6ff}
     .hide{display:none}
+    .hero{background:#0f1318;border:1px solid #1e242c;border-radius:14px;padding:14px;margin:6px 0 12px}
+    .hero h2{margin:0 0 6px 0;font-size:18px}
+    .hero p{margin:0 0 10px 0;color:#9aa0a6}
+    .cta{display:flex;gap:8px;flex-wrap:wrap}
+    .cta .btn-primary{background:#2563eb;border:1px solid #2b6be7}
+    .cta .btn-ghost{background:#1c2229;border:1px dashed #2a333d}
   </style>
 </head>
 <body>
@@ -45,6 +51,16 @@
 
   <div class="wrap">
     <h1>OB1 · Ouroboros Radar — Top-10</h1>
+
+    <!-- HERO + CTA -->
+    <div class="hero">
+      <h2>Daily Top-10 U19/U20 — Africa · Asia · Sudamerica</h2>
+      <p>Link già buoni, breakdown per regione, CSV settimanale. Early Access.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:hello@ob1radar.ai?subject=OB1%20Pro%20Early%20Access&body=Ciao%2C%20voglio%20attivare%20OB1%20Pro.%0A-%202%20watchlist%20richieste%3A%20...%0A-%20Telegram%20SI%2FNO%3A%20...%0A" rel="noopener">Richiedi accesso Pro</a>
+        <a class="btn btn-ghost" href="method.html" rel="noopener">Metodo & Limiti</a>
+      </div>
+    </div>
 
     <div class="topbar">
       <input id="q" type="search" placeholder="Cerca (titolo, tag) …" />
