@@ -51,7 +51,19 @@
       </ul>
     </div>
 
-    <p>Vuoi il piano Pro o una watchlist dedicata? <a href="mailto:hello@ob1radar.ai?subject=OB1%20Pro%20Early%20Access">Scrivici</a>.</p>
+    <p>Vuoi il piano Pro o una watchlist dedicata?
+      <a id="contactMail" data-user="mirkotornani" data-domain="gmail.com">Scrivici</a>.
+    </p>
   </div>
+
+  <script>
+  (function(){
+    var a=document.getElementById('contactMail');
+    if(a){
+      var to=a.dataset.user+'@'+a.dataset.domain;
+      a.href='mailto:'+to+'?subject='+encodeURIComponent('OB1 Pro Early Access');
+    }
+  })();
+  </script>
 </body>
 </html>
