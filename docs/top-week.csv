@@ -1,4 +1,13 @@
 date,region,type,label,score,tags,link
+2025-08-15,unknown,PLAYER_BURST,Argentina gana en su debut en el Mundial Sub20,55.86,CONMEBOL|esordio|prestazioni|recente,https://www.conmebol.com/noticias/argentina-gana-en-su-debut-en-el-mundial-sub20/
+2025-08-15,unknown,PLAYER_BURST,Fútbol: Conoce a las joyas del futuro de Argentina que ...,55.5,CONMEBOL|esordio|prestazioni|youth,https://www.olympics.com/es/noticias/futbol-joyas-jugadores-futuro-argentina-sudamericano-sub-20-2025
+2025-08-15,unknown,TRANSFER_SIGNAL,Los jugadores a seguir en el Sudamericano Sub-20 - AS.com,39.1,CONMEBOL|prestazioni,https://as.com/futbol/los-jugadores-a-seguir-en-el-sudamericano-sub-20-n/
+2025-08-15,unknown,PLAYER_BURST,Fecha 2 de la CONMEBOL Sub20: Toda la información y ...,35.0,CONMEBOL|esordio|prestazioni|recente,https://www.conmebol.com/noticias/fecha-2-de-la-conmebol-sub20-toda-la-informacion-y-donde-ver/
+2025-08-15,unknown,NOISE_PULSE,Sub20: Ecuador pasa a octavos de final con goleada ...,26.2,prestazioni,https://www.latimes.com/espanol/deportes/articulo/2023-05-26/sub20-ecuador-pasa-a-octavos-de-final-con-goleada-historica-9-0-ante-fiji
+2025-08-15,unknown,NOISE_PULSE,Goleiro colorado se junta a colegas do Inter convocados ...,16.2,prestazioni,https://somoscolorados.com/goleiro-colorado-se-junta-a-colegas-do-inter-convocados-para-selecao-sub-20
+2025-08-15,unknown,NOISE_PULSE,Première cape pour Rabby Nzingoula avec l'équipe de France ...,13.9,segnali,https://onefootball.com/pt-br/noticias/premiere-cape-pour-rabby-nzingoula-avec-lequipe-de-france-u20-face-au-danemark-u20-40323202
+2025-08-15,unknown,PLAYER_BURST,Triunfazo agónico de Uruguay en su debut en el ...,13.5,CONMEBOL|esordio,https://espndeportes.espn.com/futbol/nota/_/id/14709873/triunfazo-agonico-uruguay-debut-sudamericano-sub-20-ante-chile
+2025-08-15,unknown,TRANSFER_SIGNAL,El Sint-Truiden fichó a Zion Suzuki a préstamo del Urawa ...,13.1,mercato|youth,https://www.reddit.com/r/JLeague/comments/15jwykz/sinttruiden_have_signed_zion_suzuki_on_loan_from/?tl=es-419
 2025-08-14,unknown,NOISE_PULSE,Não tem lateral? Igor Felisberto é convocado para Seleção ...,100.0,prestazioni|recente,https://saopaulo.blog/2025/08/04/nao-tem-lateral-igor-felisberto-e-convocado-para-selecao-brasileira-sub20/
 2025-08-14,unknown,NOISE_PULSE,Sélection U20 : un mini stage au Maghreb avant la phase ...,100.0,mercato|prestazioni,https://leopardleader.com/selection-u20-un-mini-stage-au-maghreb-avant-la-phase-finale/
 2025-08-14,unknown,NOISE_PULSE,Sub-20: Daniel fala da vantagem alvinegra na semifinal e ...,53.12,prestazioni|recente,https://www.cearasc.com/noticia/sub-20-daniel-fala-da-vantagem-alvinegra-na-semifi
