@@ -1,4 +1,14 @@
 date,region,type,label,score,tags,link
+2025-08-16,unknown,PLAYER_BURST,La Selección argentina sub 20 debutó en L'Alcudia con ...,100.0,esordio|prestazioni|youth,https://www.cadena3.com/noticia/futbol/la-seleccion-argentina-sub-20-debuto-en-lalcudia-con-triunfo-ante-brasil_392741
+2025-08-16,unknown,TRANSFER_SIGNAL,Roma U20 - Transfers 24/25,100.0,js-heavy|mercato|prestazioni|youth,https://www.transfermarkt.com/roma-u20/transfers/verein/11997
+2025-08-16,unknown,NOISE_PULSE,Foot : Angelo Jean-Baptiste annonce une sélection U20 ...,86.0,mercato,https://haititempo.com/foot-angelo-jean-baptiste-annonce-une-selection-u20-avec-beaucoup-dinternationaux/
+2025-08-16,unknown,PLAYER_BURST,CAN U20 : Le programme de la compétition qui débute ce ...,69.2,esordio,https://africasport.org/can-u20-le-programme-de-la-competition-qui-debute-ce-dimanche-en-egypte/
+2025-08-16,unknown,NOISE_PULSE,Argentina debutó con una solvente victoria en el Torneo L' ...,57.4,CONMEBOL|mercato|prestazioni|youth,https://www.infobae.com/deportes/2025/07/21/argentina-debuto-con-una-solvente-victoria-en-el-torneo-lalcudia-2025-supero-2-0-a-chile/
+2025-08-16,unknown,PLAYER_BURST,England U20 Archives,37.7,esordio|prestazioni,https://www.fleetwoodtownfc.com/tag/england-u20/
+2025-08-16,unknown,TRANSFER_SIGNAL,CAN U20 2025 : La liste du Sénégal dévoilée,34.0,segnali,https://africasport.org/can-u20-2025-la-liste-du-senegal-devoilee/
+2025-08-16,unknown,PLAYER_BURST,Rojas keeps clean sheet on Colombia U20 debut | News,15.0,CONMEBOL|esordio|mercato,https://www.arsenal.com/news/rojas-keeps-clean-sheet-colombia-u20-debut
+2025-08-16,unknown,NOISE_PULSE,"Ryan Roberto, brilha no sub-17 do Flamengo com 20 gols ...",14.7,js-heavy|prestazioni,https://www.threads.com/@marquinhos021/post/DMRHhxquFJg/ryan-roberto-brilha-no-sub-17-do-flamengo-com-20-gols-e-14-assist%C3%AAncias-em-33-jo
+2025-08-16,unknown,NOISE_PULSE,Flamengo U20 5-1 Bayer Leverkusen: Heavy defeat in ten ...,14.4,prestazioni,https://sports.yahoo.com/article/flamengo-u20-5-1-bayer-193600263.html
 2025-08-15,unknown,PLAYER_BURST,Argentina gana en su debut en el Mundial Sub20,55.86,CONMEBOL|esordio|prestazioni|recente,https://www.conmebol.com/noticias/argentina-gana-en-su-debut-en-el-mundial-sub20/
 2025-08-15,unknown,PLAYER_BURST,Fútbol: Conoce a las joyas del futuro de Argentina que ...,55.5,CONMEBOL|esordio|prestazioni|youth,https://www.olympics.com/es/noticias/futbol-joyas-jugadores-futuro-argentina-sudamericano-sub-20-2025
 2025-08-15,unknown,TRANSFER_SIGNAL,Los jugadores a seguir en el Sudamericano Sub-20 - AS.com,39.1,CONMEBOL|prestazioni,https://as.com/futbol/los-jugadores-a-seguir-en-el-sudamericano-sub-20-n/
