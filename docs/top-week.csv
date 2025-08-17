@@ -1,4 +1,11 @@
 date,region,type,label,score,tags,link
+2025-08-17,unknown,PLAYER_BURST,Liga MX: Futbol de Estufa rumbo al Clausura 2025,100.0,CONMEBOL|esordio|mercato|prestazioni|youth,https://espndeportes.espn.com/blogs/index?entryID=14441282&nombre=futbol_de_estufa
+2025-08-17,unknown,NOISE_PULSE,Já começou! Conheça a Seleção sub-20 do 🇧🇷 que ...,48.0,CONMEBOL|prestazioni,https://onefootball.com/pt-br/noticias/ja-comecou-conheca-a-selecao-sub-20-do-que-estreia-no-sul-americano-40610670
+2025-08-17,unknown,PLAYER_BURST,"Édier Ocampo, exjugador de Atlético Nacional, es ...",33.5,CONMEBOL|esordio|mercato|prestazioni|youth,https://www.infobae.com/colombia/deportes/2024/08/09/ex-jugador-de-atletico-nacional-es-oficializado-en-su-nuevo-equipo-de-la-mls/
+2025-08-17,africa,NOISE_PULSE,Historique de la Coupe d'Afrique des Nations U-20 CAF ...,25.8,africa|prestazioni,https://www.cafonline.com/fr/coupe-dafrique-des-nations-u-20/news/historique-de-la-coupe-dafrique-des-nations-u-20-caf-totalenergies/
+2025-08-17,unknown,TRANSFER_SIGNAL,Fichaje de Rafael Luis: Benfica II a Strasbourg,10.1,mercato|recente|youth,https://www.transferfeed.com/es/fichajes/rafael-luis-benfica-ii-strasbourg/14691172
+2025-08-17,unknown,NOISE_PULSE,Estadísticas de Goles Campeonato Sub 20 Brasil - 2024-25,6.6,prestazioni,https://espndeportes.espn.com/futbol/estadisticas/_/liga/BRA.BRASILEIRO_U20/temporada/2024
+2025-08-17,unknown,TRANSFER_SIGNAL,[Transfermarkt] Los fichajes sub-18 más caros de la ...,3.0,js-heavy|mercato,https://www.reddit.com/r/soccer/comments/14shsuq/transfermarkt_real_madrids_most_expensive_u18/?tl=es-es
 2025-08-16,unknown,PLAYER_BURST,La Selección argentina sub 20 debutó en L'Alcudia con ...,100.0,esordio|prestazioni|youth,https://www.cadena3.com/noticia/futbol/la-seleccion-argentina-sub-20-debuto-en-lalcudia-con-triunfo-ante-brasil_392741
 2025-08-16,unknown,TRANSFER_SIGNAL,Roma U20 - Transfers 24/25,100.0,js-heavy|mercato|prestazioni|youth,https://www.transfermarkt.com/roma-u20/transfers/verein/11997
 2025-08-16,unknown,NOISE_PULSE,Foot : Angelo Jean-Baptiste annonce une sélection U20 ...,86.0,mercato,https://haititempo.com/foot-angelo-jean-baptiste-annonce-une-selection-u20-avec-beaucoup-dinternationaux/

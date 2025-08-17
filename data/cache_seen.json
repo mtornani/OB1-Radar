@@ -302,5 +302,33 @@
   "https://www.transfermarkt.com/roma-u20/transfers/verein/11997": {
     "host": "www.transfermarkt.com",
     "seen_at": "2025-08-16T07:21:26"
+  },
+  "https://espndeportes.espn.com/futbol/estadisticas/_/liga/BRA.BRASILEIRO_U20/temporada/2024": {
+    "host": "espndeportes.espn.com",
+    "seen_at": "2025-08-17T07:19:51"
+  },
+  "https://www.transferfeed.com/es/fichajes/rafael-luis-benfica-ii-strasbourg/14691172": {
+    "host": "www.transferfeed.com",
+    "seen_at": "2025-08-17T07:19:53"
+  },
+  "https://www.reddit.com/r/soccer/comments/14shsuq/transfermarkt_real_madrids_most_expensive_u18/?tl=es-es": {
+    "host": "www.reddit.com",
+    "seen_at": "2025-08-17T07:20:02"
+  },
+  "https://espndeportes.espn.com/blogs/index?entryID=14441282&nombre=futbol_de_estufa": {
+    "host": "espndeportes.espn.com",
+    "seen_at": "2025-08-17T07:20:06"
+  },
+  "https://www.infobae.com/colombia/deportes/2024/08/09/ex-jugador-de-atletico-nacional-es-oficializado-en-su-nuevo-equipo-de-la-mls/": {
+    "host": "www.infobae.com",
+    "seen_at": "2025-08-17T07:20:16"
+  },
+  "https://onefootball.com/pt-br/noticias/ja-comecou-conheca-a-selecao-sub-20-do-que-estreia-no-sul-americano-40610670": {
+    "host": "onefootball.com",
+    "seen_at": "2025-08-17T07:20:43"
+  },
+  "https://www.cafonline.com/fr/coupe-dafrique-des-nations-u-20/news/historique-de-la-coupe-dafrique-des-nations-u-20-caf-totalenergies/": {
+    "host": "www.cafonline.com",
+    "seen_at": "2025-08-17T07:20:47"
   }
 }
