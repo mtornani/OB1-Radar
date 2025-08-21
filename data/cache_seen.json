@@ -414,5 +414,29 @@
   "https://www.flashscore.com/football/brazil/paraense-u20/": {
     "host": "www.flashscore.com",
     "seen_at": "2025-08-20T07:31:01"
+  },
+  "https://espndeportes.espn.com/futbol/equipo/_/id/2918/brasil-sub-20": {
+    "host": "espndeportes.espn.com",
+    "seen_at": "2025-08-21T07:25:36"
+  },
+  "https://www.derechosdelfutbol.com/post/transferencia-internacional-de-menores": {
+    "host": "www.derechosdelfutbol.com",
+    "seen_at": "2025-08-21T07:26:13"
+  },
+  "https://www.cearasc.com/noticia/giulio-marca-na-estreia-e-classifica-o-ceara-quart": {
+    "host": "www.cearasc.com",
+    "seen_at": "2025-08-21T07:27:29"
+  },
+  "https://www.eluniverso.com/deportes/futbol/estos-son-los-criterios-de-desempate-del-sudamericano-sub-20-segun-reglamento-de-conmebol-nota/": {
+    "host": "www.eluniverso.com",
+    "seen_at": "2025-08-21T07:30:11"
+  },
+  "https://distritodoesporte.com/atleta-nascido-no-df-e-convocado-para-a-copa-do-mundo-sub-20/": {
+    "host": "distritodoesporte.com",
+    "seen_at": "2025-08-21T07:31:55"
+  },
+  "https://www.skysports.com/football/news/11787/10604779/celtic-hand-13-year-old-karamoko-dembele-his-debut-for-u20-side": {
+    "host": "www.skysports.com",
+    "seen_at": "2025-08-21T07:32:47"
   }
 }
