@@ -5,30 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OB1 · Ouroboros Radar — Top-10</title>
   <style>
-    :root { --bg:#0b0d10; --fg:#e8eaed; --muted:#9aa0a6; --card:#15181c; --chip:#2a2f36; }
+    :root { --bg:#0b0d10; --fg:#e8eaed; --muted:#9aa0a6; --card:#15181c; --chip:#2a2f36; --accent:#2563eb; }
     html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;}
     .wrap{max-width:980px;margin:0 auto;padding:14px;}
     h1{font-size:18px;margin:6px 0 12px 0;font-weight:700}
-    /* HERO */
-    .hero{background:#0f1318;border:1px solid #1e242c;border-radius:14px;padding:14px;margin:6px 0 12px}
-    .hero h2{margin:0 0 6px 0;font-size:18px}
-    .hero p{margin:0 0 10px 0;color:#9aa0a6}
-    .cta{display:flex;gap:8px;flex-wrap:wrap}
+    .topbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    input[type="search"],select{background:#111419;border:1px solid #20242b;color:var(--fg);padding:10px;border-radius:10px;flex:1 1 220px;outline:none}
     .btn{padding:10px 12px;border-radius:10px;background:#1c2229;border:1px solid #2a333d;color:var(--fg);text-decoration:none}
     .btn:hover{filter:brightness(1.1)}
-    .btn-primary{background:#2563eb;border:1px solid #2b6be7}
+    .btn-primary{background:var(--accent);border:1px solid #2b6be7}
     .btn-ghost{background:#1c2229;border:1px dashed #2a333d}
-    .policy-links{margin-top:6px;font-size:12px;color:var(--muted)}
-    .policy-links a{color:#9aa0a6;text-decoration:none;border-bottom:1px dotted #3a424d}
-    .policy-links a:hover{color:#cbd5e1}
-    /* TOPBAR */
-    .topbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}
-    input[type="search"],select{background:#111419;border:1px solid #20242b;color:var(--fg);padding:10px;border-radius:10px;flex:1 1 220px;outline:none}
-    .switch{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
     .meta{font-size:12px;color:var(--muted);margin:8px 0}
-    .archive a{color:var(--muted);text-decoration:none;margin-right:10px}
-    .hint{font-size:12px;color:var(--muted)}
-    /* LISTA */
     .list{display:flex;flex-direction:column;gap:10px;margin:10px 0 40px}
     .card{background:var(--card);border:1px solid #222831;border-radius:14px;padding:12px}
     .card .top{display:flex;justify-content:space-between;gap:10px}
@@ -38,21 +25,27 @@
     .chip{background:var(--chip);color:#c9d1d9;border-radius:999px;padding:4px 8px;font-size:12px}
     .actions{margin-top:8px}
     .empty{display:none;text-align:center;color:var(--muted);padding:40px 8px}
-    /* breakdown */
-    .mini-chip{display:inline-block;background:#1e2329;border:1px solid #2d3742;border-radius:999px;padding:2px 6px;margin-left:6px}
-    .mini-chip b{color:#cde6ff}
-    .hide{display:none}
+    .switch{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+    .archive a{color:var(--muted);text-decoration:none;margin-right:10px}
+    .hint{font-size:12px;color:var(--muted)}
+    /* hero */
+    .hero{background:#0f1318;border:1px solid #1e242c;border-radius:14px;padding:14px;margin:6px 0 12px}
+    .hero h2{margin:0 0 6px 0;font-size:18px}
+    .hero p{margin:0 0 10px 0;color:#9aa0a6}
+    .cta{display:flex;gap:8px;flex-wrap:wrap}
+    .links{font-size:12px;color:var(--muted);margin-top:6px}
+    .links a{color:#cde6ff;text-decoration:none}
+    .links a:hover{filter:brightness(1.1)}
     /* error overlay */
     #err { display:none; position:fixed; inset:0; background:rgba(0,0,0,.9); color:#fff; z-index:9999; }
     #err .box{max-width:900px;margin:40px auto;padding:14px}
     #err pre{white-space:pre-wrap;background:#1a1a1a;padding:12px;border-radius:10px;border:1px solid #333;overflow:auto}
-    /* footer */
-    .foot{max-width:980px;margin:20px auto 40px;padding:0 14px;color:#768195;font-size:12px;text-align:center}
-    .foot a{color:#9aa0a6;text-decoration:none;border-bottom:1px dotted #3a424d}
+    .mini-chip{display:inline-block;background:#1e2329;border:1px solid #2d3742;border-radius:999px;padding:2px 6px;margin-left:6px}
+    .mini-chip b{color:#cde6ff}
+    .hide{display:none}
   </style>
 </head>
 <body>
-  <!-- overlay errori -->
   <div id="err"><div class="box">
     <h2>⚠️ Errore JavaScript</h2>
     <pre id="errlog"></pre>
@@ -62,27 +55,26 @@
   <div class="wrap">
     <h1>OB1 · Ouroboros Radar — Top-10</h1>
 
-    <!-- HERO + CTA -->
+    <!-- HERO -->
     <div class="hero">
       <h2>Daily Top-10 U19/U20 — Africa · Asia · Sudamerica</h2>
       <p>Link già buoni, breakdown per regione, CSV settimanale. Early Access.</p>
       <div class="cta">
-        <!-- Sostituisci con i tuoi Pay Links Paddle -->
-        <a class="btn btn-primary" href="https://pay.paddle.com/p/PL_ANNUAL" target="_blank" rel="noopener">🚀 Attiva Pro Annual (€290)</a>
-        <a class="btn btn-ghost" href="https://pay.paddle.com/p/PL_MONTHLY" target="_blank" rel="noopener">▶️ Mensile (€29)</a>
-        <!-- WhatsApp: metti il tuo numero internazionale -->
-        <a class="btn btn-ghost" href="https://wa.me/39XXXXXXXXXX?text=Voglio%20attivare%20OB1%20Pro" target="_blank" rel="noopener">💬 WhatsApp</a>
-        <!-- Email offuscata -->
-        <a id="ctaMail" class="btn btn-ghost" data-user="mirkotornani" data-domain="gmail.com" rel="noopener">✉️ Email</a>
+        <a class="btn btn-primary" href="https://forms.gle/XXXXXXXXXXXXXXX" target="_blank" rel="noopener">Richiedi accesso Pro</a>
+        <a class="btn btn-ghost" href="https://wa.me/YOUR_INTL_PHONE?text=Voglio%20attivare%20OB1%20Pro%20con%202%20watchlist" target="_blank" rel="noopener">WhatsApp</a>
+        <a id="ctaMail" class="btn btn-ghost" data-user="mirkotornani" data-domain="gmail.com" rel="noopener">Email</a>
+        <!-- NUOVO: bottone Pricing visibile -->
+        <a class="btn" href="./pricing.html">Pricing</a>
       </div>
-      <div class="policy-links">
-        <a href="terms.html" target="_blank" rel="noopener">Termini</a> ·
-        <a href="privacy.html" target="_blank" rel="noopener">Privacy</a> ·
-        <a href="refund.html" target="_blank" rel="noopener">Rimborsi</a>
+      <!-- Link testuali rapidi, inclusi Pricing & legali -->
+      <div class="links">
+        <a href="./pricing.html">Pricing</a> ·
+        <a href="./terms.html">Termini</a> ·
+        <a href="./privacy.html">Privacy</a> ·
+        <a href="./refund.html">Rimborsi</a>
       </div>
     </div>
 
-    <!-- Filtri -->
     <div class="topbar">
       <input id="q" type="search" placeholder="Cerca (titolo, tag) …" />
       <select id="type"></select>
@@ -91,7 +83,6 @@
       <button id="reset" class="btn">Reset</button>
     </div>
 
-    <!-- Meta -->
     <div class="meta">
       <span id="last">Last updated —</span>
       &nbsp;•&nbsp;<span id="mode">mode —</span>
@@ -103,13 +94,6 @@
     <div id="list" class="list"></div>
     <div id="empty" class="empty">Nessun risultato con questi filtri.<div class="hint">Suggerimento: premi <b>Reset</b> o togli “Solo recenti”.</div></div>
   </div>
-
-  <footer class="foot">
-    © OB1 Radar —
-    <a href="terms.html" target="_blank" rel="noopener">Termini</a> ·
-    <a href="privacy.html" target="_blank" rel="noopener">Privacy</a> ·
-    <a href="refund.html" target="_blank" rel="noopener">Rimborsi</a>
-  </footer>
 
   <script>
   (function(){
@@ -200,7 +184,7 @@
       state.q=''; state.type=''; state.tag=''; state.recentOnly=false;
       $('#q').value=''; $('#type').value=''; $('#tag').value=''; $('#recentOnly').checked=false;
 
-      // offusca mail CTA
+      // mailto obfuscato
       (function(){
         var a=document.getElementById('ctaMail');
         if(a){
