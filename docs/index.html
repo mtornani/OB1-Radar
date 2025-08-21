@@ -1,110 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OB1 · Ouroboros Radar — Top-10</title>
   <style>
-    body {
-      background: #0d1117;
-      color: #e6edf3;
-      font-family: system-ui, -apple-system, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 20px 14px;
-    }
-    h1 {
-      font-size: 22px;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-    .hero {
-      background: #161b22;
-      border-radius: 8px;
-      padding: 18px;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      margin: 6px 0 14px;
-      font-size: 14px;
-      color: #9aa0a6;
-    }
-    .cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-    .cta a {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .btn-pro {
-      background: #2563eb;
-      color: #fff;
-    }
-    .btn-pro:hover {
-      background: #1d4ed8;
-    }
-    .btn-wa {
-      background: #25d366;
-      color: #000;
-    }
-    .btn-email {
-      background: #374151;
-      color: #e6edf3;
-    }
-
-    /* Policy links */
-    .policy-links {
-      margin-top: 6px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-    .policy-links a {
-      color: #9aa0a6;
-      text-decoration: none;
-      border-bottom: 1px dotted #3a424d;
-    }
-    .policy-links a:hover {
-      color: #cbd5e1;
-    }
-
-    /* Footer */
-    .foot {
-      max-width: 980px;
-      margin: 20px auto 40px;
-      padding: 0 14px;
-      color: #768195;
-      font-size: 12px;
-      text-align: center;
-    }
-    .foot a {
-      color: #9aa0a6;
-      text-decoration: none;
-      border-bottom: 1px dotted #3a424d;
-    }
+    :root { --bg:#0b0d10; --fg:#e8eaed; --muted:#9aa0a6; --card:#15181c; --chip:#2a2f36; }
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;}
+    .wrap{max-width:980px;margin:0 auto;padding:14px;}
+    h1{font-size:18px;margin:6px 0 12px 0;font-weight:700}
+    /* HERO */
+    .hero{background:#0f1318;border:1px solid #1e242c;border-radius:14px;padding:14px;margin:6px 0 12px}
+    .hero h2{margin:0 0 6px 0;font-size:18px}
+    .hero p{margin:0 0 10px 0;color:#9aa0a6}
+    .cta{display:flex;gap:8px;flex-wrap:wrap}
+    .btn{padding:10px 12px;border-radius:10px;background:#1c2229;border:1px solid #2a333d;color:var(--fg);text-decoration:none}
+    .btn:hover{filter:brightness(1.1)}
+    .btn-primary{background:#2563eb;border:1px solid #2b6be7}
+    .btn-ghost{background:#1c2229;border:1px dashed #2a333d}
+    .policy-links{margin-top:6px;font-size:12px;color:var(--muted)}
+    .policy-links a{color:#9aa0a6;text-decoration:none;border-bottom:1px dotted #3a424d}
+    .policy-links a:hover{color:#cbd5e1}
+    /* TOPBAR */
+    .topbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}
+    input[type="search"],select{background:#111419;border:1px solid #20242b;color:var(--fg);padding:10px;border-radius:10px;flex:1 1 220px;outline:none}
+    .switch{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+    .meta{font-size:12px;color:var(--muted);margin:8px 0}
+    .archive a{color:var(--muted);text-decoration:none;margin-right:10px}
+    .hint{font-size:12px;color:var(--muted)}
+    /* LISTA */
+    .list{display:flex;flex-direction:column;gap:10px;margin:10px 0 40px}
+    .card{background:var(--card);border:1px solid #222831;border-radius:14px;padding:12px}
+    .card .top{display:flex;justify-content:space-between;gap:10px}
+    .title{font-weight:600}
+    .score{background:#0f1a12;border:1px solid #1f3b26;color:#a7e3b5;border-radius:999px;padding:4px 10px;font-weight:700}
+    .chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+    .chip{background:var(--chip);color:#c9d1d9;border-radius:999px;padding:4px 8px;font-size:12px}
+    .actions{margin-top:8px}
+    .empty{display:none;text-align:center;color:var(--muted);padding:40px 8px}
+    /* breakdown */
+    .mini-chip{display:inline-block;background:#1e2329;border:1px solid #2d3742;border-radius:999px;padding:2px 6px;margin-left:6px}
+    .mini-chip b{color:#cde6ff}
+    .hide{display:none}
+    /* error overlay */
+    #err { display:none; position:fixed; inset:0; background:rgba(0,0,0,.9); color:#fff; z-index:9999; }
+    #err .box{max-width:900px;margin:40px auto;padding:14px}
+    #err pre{white-space:pre-wrap;background:#1a1a1a;padding:12px;border-radius:10px;border:1px solid #333;overflow:auto}
+    /* footer */
+    .foot{max-width:980px;margin:20px auto 40px;padding:0 14px;color:#768195;font-size:12px;text-align:center}
+    .foot a{color:#9aa0a6;text-decoration:none;border-bottom:1px dotted #3a424d}
   </style>
 </head>
 <body>
-  <div class="container">
+  <!-- overlay errori -->
+  <div id="err"><div class="box">
+    <h2>⚠️ Errore JavaScript</h2>
+    <pre id="errlog"></pre>
+    <button class="btn" onclick="document.getElementById('err').style.display='none'">Chiudi</button>
+  </div></div>
+
+  <div class="wrap">
     <h1>OB1 · Ouroboros Radar — Top-10</h1>
+
+    <!-- HERO + CTA -->
     <div class="hero">
       <h2>Daily Top-10 U19/U20 — Africa · Asia · Sudamerica</h2>
       <p>Link già buoni, breakdown per regione, CSV settimanale. Early Access.</p>
       <div class="cta">
-        <a href="#" class="btn-pro">Richiedi accesso Pro</a>
-        <a href="#" class="btn-wa">WhatsApp</a>
-        <a href="mailto:info@ob1radar.com" class="btn-email">Email</a>
+        <!-- Sostituisci con i tuoi Pay Links Paddle -->
+        <a class="btn btn-primary" href="https://pay.paddle.com/p/PL_ANNUAL" target="_blank" rel="noopener">🚀 Attiva Pro Annual (€290)</a>
+        <a class="btn btn-ghost" href="https://pay.paddle.com/p/PL_MONTHLY" target="_blank" rel="noopener">▶️ Mensile (€29)</a>
+        <!-- WhatsApp: metti il tuo numero internazionale -->
+        <a class="btn btn-ghost" href="https://wa.me/39XXXXXXXXXX?text=Voglio%20attivare%20OB1%20Pro" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <!-- Email offuscata -->
+        <a id="ctaMail" class="btn btn-ghost" data-user="mirkotornani" data-domain="gmail.com" rel="noopener">✉️ Email</a>
       </div>
       <div class="policy-links">
         <a href="terms.html" target="_blank" rel="noopener">Termini</a> ·
@@ -113,17 +82,161 @@
       </div>
     </div>
 
-    <!-- Qui il resto del contenuto della pagina: filtri, lista items, ecc. -->
-    <div id="app">
-      <!-- mount JS -->
+    <!-- Filtri -->
+    <div class="topbar">
+      <input id="q" type="search" placeholder="Cerca (titolo, tag) …" />
+      <select id="type"></select>
+      <select id="tag"></select>
+      <label class="switch"><input id="recentOnly" type="checkbox" /> Solo recenti (≤21gg)</label>
+      <button id="reset" class="btn">Reset</button>
     </div>
+
+    <!-- Meta -->
+    <div class="meta">
+      <span id="last">Last updated —</span>
+      &nbsp;•&nbsp;<span id="mode">mode —</span>
+      &nbsp;•&nbsp;<span id="regions"></span>
+      &nbsp;•&nbsp;<span class="archive" id="archive"></span>
+      &nbsp;•&nbsp;<a id="csv" class="hide" href="top-week.csv" target="_blank" rel="noopener">CSV week</a>
+    </div>
+
+    <div id="list" class="list"></div>
+    <div id="empty" class="empty">Nessun risultato con questi filtri.<div class="hint">Suggerimento: premi <b>Reset</b> o togli “Solo recenti”.</div></div>
   </div>
 
   <footer class="foot">
-    © OB1 Radar — 
+    © OB1 Radar —
     <a href="terms.html" target="_blank" rel="noopener">Termini</a> ·
     <a href="privacy.html" target="_blank" rel="noopener">Privacy</a> ·
     <a href="refund.html" target="_blank" rel="noopener">Rimborsi</a>
   </footer>
+
+  <script>
+  (function(){
+    function $(s){return document.querySelector(s);}
+    function safe(obj, path, def){try{var seg=path.split('.');for(var i=0;i<seg.length;i++){if(obj==null)return def;obj=obj[seg[i]];}return(obj==null?def:obj);}catch(e){return def;}}
+    function esc(s){return String(s||'').replace(/[&<>"']/g,function(m){return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[m]);});}
+    function toLocal(iso){try{var d=new Date(iso);return d.toLocaleString(undefined,{hour12:false});}catch(e){return iso||'—';}}
+
+    var state={data:null,items:[],q:'',type:'',tag:'',recentOnly:false};
+
+    function badge(t){var s=document.createElement('span');s.className='chip';s.textContent=t;return s;}
+    function card(it){
+      var d=document.createElement('div'); d.className='card';
+      var score=Math.round(Number(it && it.score || 0));
+      d.innerHTML='<div class="top"><div class="title">'+esc(it && it.label)+'</div><div class="score">'+score+'</div></div><div class="chips"></div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="'+esc((it && it.links && it.links[0])||"#")+'">Apri fonte →</a></div>';
+      var box=d.querySelector('.chips'); var why=(it && it.why) || []; for(var i=0;i<why.length;i++) box.appendChild(badge(why[i]));
+      return d;
+    }
+
+    function hydrateFilters(){
+      var items=safe(state,'data.items',[]), types={}, tags={};
+      for(var i=0;i<items.length;i++){
+        var it=items[i]; if(it && it.anomaly_type) types[it.anomaly_type]=1;
+        var w=(it && it.why)||[]; for(var j=0;j<w.length;j++) tags[String(w[j]).toLowerCase()]=1;
+      }
+      var typeSel=$('#type'), tagSel=$('#tag'); typeSel.innerHTML=''; tagSel.innerHTML='';
+      function opt(node,v,l){var o=document.createElement('option');o.value=v;o.textContent=l;node.appendChild(o);}
+      opt(typeSel,'','Anomaly type: tutti'); for(var k in types) opt(typeSel,k,k);
+      opt(tagSel,'','Tag: tutti'); var all=Object.keys(tags).sort(); for(var t=0;t<all.length;t++) opt(tagSel,all[t],all[t]);
+      typeSel.value=''; tagSel.value='';
+    }
+
+    function renderBreakdown(b){
+      var el=$('#regions'); if(!b){el.textContent='';return;}
+      function chip(label,val){ var s=document.createElement('span'); s.className='mini-chip'; s.innerHTML=label+': <b>'+val+'</b>'; return s; }
+      el.innerHTML='Distribuzione ';
+      el.appendChild(chip('AF', b.africa||0));
+      el.appendChild(chip('AS', b.asia||0));
+      el.appendChild(chip('SA', b["south-america"]||0));
+      if ((b.international||0)>0) el.appendChild(chip('INT', b.international||0));
+    }
+
+    function applyFilters(){
+      var q=(state.q||'').toLowerCase(), type=state.type||'', tag=(state.tag||'').toLowerCase();
+      var raw=safe(state,'data.items',[]), out=[];
+      for(var i=0;i<raw.length;i++){
+        var it=raw[i]; if(!it) continue;
+        if(type && it.anomaly_type!==type) continue;
+        var whyLower=((it.why||[]).join('◊')).toLowerCase();
+        if(tag && whyLower.split('◊').indexOf(tag)===-1) continue;
+        if(state.recentOnly && (it.why||[]).indexOf('recente')===-1) continue;
+        if(q){ var hay=(String(it.label||'')+' '+(it.why||[]).join(' ')).toLowerCase(); if(hay.indexOf(q)===-1) continue; }
+        out.push(it);
+      }
+      out.sort(function(a,b){return (b.score||0)-(a.score||0);});
+      if(state.recentOnly && out.length===0 && raw.length>0){
+        state.recentOnly=false; $('#recentOnly').checked=false;
+        var last=$('#last'); last.textContent += " — nessun item 'recente'; filtro disattivato.";
+        out=raw.slice().sort(function(a,b){return (b.score||0)-(a.score||0);});
+      }
+      state.items=out; render();
+    }
+
+    function render(){
+      var list=$('#list'), empty=$('#empty'); list.innerHTML='';
+      if(!state.items.length){ empty.style.display='block'; return; }
+      empty.style.display='none';
+      for(var i=0;i<state.items.length;i++) list.appendChild(card(state.items[i]));
+    }
+
+    function buildArchive(){
+      var today=new Date(), cands=[];
+      for(var i=0;i<10;i++){ var d=new Date(today.getTime()); d.setDate(today.getDate()-i);
+        var y=d.getUTCFullYear(), m=("0"+(d.getUTCMonth()+1)).slice(-2), dd=("0"+d.getUTCDate()).slice(-2);
+        cands.push("daily-"+y+"-"+m+"-"+dd+".json"); }
+      (function probe(i,acc){ if(i>=cands.length){ if(acc.length){ var el=$('#archive'); el.innerHTML='Archivio: '; for(var j=0;j<Math.min(acc.length,7);j++){ var a=document.createElement('a'); a.href=acc[j]; a.target="_blank"; a.textContent=acc[j].slice(6,-5); el.appendChild(a);} } return; }
+        fetch(cands[i],{cache:'no-store'}).then(function(r){ if(r.ok) acc.push(cands[i]); probe(i+1,acc); }).catch(function(){ probe(i+1,acc); });
+      })(0,[]);
+    }
+
+    function probeCSV(){
+      fetch('top-week.csv?'+Date.now(), {cache:'no-store'})
+        .then(function(r){ if (r.ok) $('#csv').classList.remove('hide'); })
+        .catch(function(){});
+    }
+
+    function boot(){
+      state.q=''; state.type=''; state.tag=''; state.recentOnly=false;
+      $('#q').value=''; $('#type').value=''; $('#tag').value=''; $('#recentOnly').checked=false;
+
+      // offusca mail CTA
+      (function(){
+        var a=document.getElementById('ctaMail');
+        if(a){
+          var to=a.getAttribute('data-user')+'@'+a.getAttribute('data-domain');
+          var subj='OB1 Pro Early Access';
+          var body='Ciao, voglio attivare OB1 Pro.%0A- 2 watchlist richieste: ...%0A- Telegram SI/NO: ...%0A';
+          a.href='mailto:'+to+'?subject='+encodeURIComponent(subj)+'&body='+body;
+        }
+      })();
+
+      fetch("daily.json?t="+Date.now(),{cache:'no-store'})
+        .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+        .then(function(j){
+          state.data=j||{items:[]};
+          $('#last').textContent="Last updated: "+toLocal(safe(j,'generated_at_utc',''))+" • items: "+(safe(j,'items',[]).length);
+          $('#mode').textContent="mode: "+(j && j.mode || 'unknown');
+          renderBreakdown(safe(j,'region_breakdown',null));
+          hydrateFilters(); applyFilters(); buildArchive(); probeCSV();
+        })
+        .catch(function(err){
+          state.data={items:[]}; $('#last').textContent="Last updated — errore nel fetch di daily.json";
+          hydrateFilters(); applyFilters();
+          try{ $('#errlog').textContent=(err && (err.stack||err.message))||String(err); $('#err').style.display='block'; }catch(_){}
+        });
+    }
+
+    $('#q').addEventListener('input',function(e){ state.q=e.target.value; applyFilters(); });
+    $('#type').addEventListener('change',function(e){ state.type=e.target.value; applyFilters(); });
+    $('#tag').addEventListener('change',function(e){ state.tag=e.target.value; applyFilters(); });
+    $('#recentOnly').addEventListener('change',function(e){ state.recentOnly=e.target.checked; applyFilters(); });
+    $('#reset').addEventListener('click',function(){ state.q=''; state.type=''; state.tag=''; state.recentOnly=false; $('#q').value=''; $('#type').value=''; $('#tag').value=''; $('#recentOnly').checked=false; applyFilters(); });
+
+    window.addEventListener('error',function(e){ try{ $('#errlog').textContent=(e && e.error && (e.error.stack||e.error.message))||(e && e.message)||String(e); $('#err').style.display='block'; }catch(_){}})
+    window.addEventListener('unhandledrejection',function(e){ try{ $('#errlog').textContent=(e && e.reason && (e.reason.stack||e.reason.message))||String(e.reason||e); $('#err').style.display='block'; }catch(_){}})
+    boot();
+  })();
+  </script>
 </body>
 </html>
