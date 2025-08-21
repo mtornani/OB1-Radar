@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OB1 · Pricing</title>
+  <meta name="description" content="Piani e prezzi per OB1 Ouroboros Radar: accesso al Top-10 U19/U20, breakdown per regione e CSV settimanale." />
+  <style>
+    :root { --bg:#0b0d10; --fg:#e8eaed; --muted:#9aa0a6; --card:#15181c; --chip:#2a2f36; --accent:#2563eb; }
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;}
+    .wrap{max-width:980px;margin:0 auto;padding:16px;}
+    a{color:#cde6ff;text-decoration:none}
+    a:hover{filter:brightness(1.15)}
+    header{display:flex;justify-content:space-between;align-items:center;margin:6px 0 14px 0}
+    .brand{font-weight:700}
+    .back{font-size:14px;color:var(--muted)}
+    h1{font-size:22px;margin:6px 0 6px}
+    p.lead{color:var(--muted);margin-top:0}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}
+    @media (min-width:720px){ .grid{grid-template-columns:repeat(3,1fr);} }
+    .card{background:var(--card);border:1px solid #222831;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px}
+    .badge{display:inline-block;background:#1e2329;border:1px solid #2d3742;border-radius:999px;padding:2px 8px;font-size:12px;color:#c9d1d9}
+    .price{font-size:26px;font-weight:800}
+    ul{margin:0 0 0 18px;padding:0}
+    li{margin:4px 0}
+    .btn{display:inline-block;padding:10px 12px;border-radius:10px;background:#1c2229;border:1px solid #2a333d;color:var(--fg)}
+    .btn-primary{background:var(--accent);border:1px solid #2b6be7}
+    .btn-ghost{background:#1c2229;border:1px dashed #2a333d}
+    .muted{color:var(--muted);font-size:12px}
+    footer{margin:20px 0 10px;color:var(--muted);text-align:center}
+    .links{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">OB1 · Ouroboros Radar</div>
+      <a class="back" href="./index.html">← Torna al Radar</a>
+    </header>
+
+    <h1>Piani & Prezzi</h1>
+    <p class="lead">Scegli il piano. Puoi passare a Pro quando vuoi. Fatturazione tramite Paddle.</p>
+
+    <div class="grid">
+      <!-- FREE -->
+      <section class="card">
+        <div><span class="badge">Free</span></div>
+        <div class="price">€0<span class="muted">/mese</span></div>
+        <ul>
+          <li>Preview Top-10 giornaliero</li>
+          <li>UI web mobile-first</li>
+          <li>Link alle fonti</li>
+        </ul>
+        <div><a class="btn btn-ghost" href="./index.html">Inizia gratis</a></div>
+      </section>
+
+      <!-- PRO -->
+      <section class="card">
+        <div><span class="badge">Consigliato</span></div>
+        <div class="price">€19<span class="muted">/mese</span></div>
+        <ul>
+          <li>Top-10 completo ogni giorno</li>
+          <li>Breakdown per regione (AF/AS/SA)</li>
+          <li>CSV settimanale pronti all’uso</li>
+          <li>Early Access a nuove feature</li>
+        </ul>
+        <!-- Sostituisci l'URL del form quando pronto -->
+        <div><a class="btn btn-primary" href="https://forms.gle/XXXXXXXXXXXXXXX" target="_blank" rel="noopener">Richiedi accesso Pro</a></div>
+        <div class="muted">IVA inclusa ove applicabile. Disdici quando vuoi.</div>
+      </section>
+
+      <!-- ENTERPRISE -->
+      <section class="card">
+        <div><span class="badge">Enterprise</span></div>
+        <div class="price">Custom</div>
+        <ul>
+          <li>Watchlist dedicate (ruoli/leghe)</li>
+          <li>Webhook/integrazioni dati</li>
+          <li>Supporto e priorità su roadmap</li>
+        </ul>
+        <div>
+          <a class="btn" href="mailto:mirkotornani@gmail.com?subject=OB1%20Enterprise&body=Ciao%2C%20mi%20serve%20una%20config%20su%20misura.">Parla con noi</a>
+        </div>
+      </section>
+    </div>
+
+    <div class="muted">
+      Pagamenti gestiti da Paddle (Merchant of Record). Le ricevute fiscali saranno emesse da Paddle secondo la normativa applicabile.
+    </div>
+
+    <div class="links">
+      <a href="./terms.html">Termini</a> ·
+      <a href="./privacy.html">Privacy</a> ·
+      <a href="./refund.html">Rimborsi</a>
+    </div>
+
+    <footer>© OB1 Radar</footer>
+  </div>
+</body>
+</html>
