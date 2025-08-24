@@ -518,5 +518,41 @@
   "https://www.marca.com/futbol/mercado-fichajes/2025/07/07/686b71707aeb1c2f7568893b-directo.html": {
     "host": "www.marca.com",
     "seen_at": "2025-08-23T07:19:58"
+  },
+  "https://www.rayados.com/es/noticias/20718/con-gol-de-alice-soto-mexico-sub-20-debuta-con-triunfo-en-el-premundial": {
+    "host": "www.rayados.com",
+    "seen_at": "2025-08-24T07:20:25"
+  },
+  "https://www.rayados.com/es/noticias/20034/debuta-fatima-servin-como-capitana-en-mundial-sub-20": {
+    "host": "www.rayados.com",
+    "seen_at": "2025-08-24T07:20:28"
+  },
+  "https://www.conmebol.com/noticias/sigue-la-accion-en-la-fase-final-de-la-conmebol-sub20-2025/": {
+    "host": "www.conmebol.com",
+    "seen_at": "2025-08-24T07:20:31"
+  },
+  "https://www.transferfeed.com/es/fichajes/claudio-echeverri-manchester-city-lazio/11873945": {
+    "host": "www.transferfeed.com",
+    "seen_at": "2025-08-24T07:20:34"
+  },
+  "https://www.reddit.com/r/ACMilan/comments/1jl5qse/football_talent_scout_francesco_camarda_for_italy/?tl=pt-br": {
+    "host": "www.reddit.com",
+    "seen_at": "2025-08-24T07:21:37"
+  },
+  "https://onefootball.com/es/noticias/marcos-leonardo-do-santos-fc-e-convocado-pela-selecao-brasileira-para-a-copa-do-mundo-sub-20-37345460": {
+    "host": "onefootball.com",
+    "seen_at": "2025-08-24T07:21:52"
+  },
+  "https://www.threads.com/@futcearense/post/DCRY4Vsxuxw": {
+    "host": "www.threads.com",
+    "seen_at": "2025-08-24T07:22:04"
+  },
+  "https://www.babagol.net/blog/2025/2/8/afc-u20-asian-cup-2025-set-to-showcase-asias-rising-football-stars": {
+    "host": "www.babagol.net",
+    "seen_at": "2025-08-24T07:22:07"
+  },
+  "https://www.charltonafc.com/news/matt-dench-first-team-debut-and-australia-u20-call": {
+    "host": "www.charltonafc.com",
+    "seen_at": "2025-08-24T07:22:11"
   }
 }
