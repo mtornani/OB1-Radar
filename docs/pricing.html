@@ -9,20 +9,16 @@
     :root { --bg:#0b0d10; --fg:#e8eaed; --muted:#9aa0a6; --card:#15181c; --chip:#2a2f36; --accent:#2563eb; }
     html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;}
     .wrap{max-width:980px;margin:0 auto;padding:16px;}
-    a{color:#cde6ff;text-decoration:none}
-    a:hover{filter:brightness(1.15)}
+    a{color:#cde6ff;text-decoration:none} a:hover{filter:brightness(1.15)}
     header{display:flex;justify-content:space-between;align-items:center;margin:6px 0 14px 0}
-    .brand{font-weight:700}
-    .back{font-size:14px;color:var(--muted)}
-    h1{font-size:22px;margin:6px 0 6px}
-    p.lead{color:var(--muted);margin-top:0}
+    .brand{font-weight:700} .back{font-size:14px;color:var(--muted)}
+    h1{font-size:22px;margin:6px 0 6px} p.lead{color:var(--muted);margin-top:0}
     .grid{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}
     @media (min-width:720px){ .grid{grid-template-columns:repeat(3,1fr);} }
     .card{background:var(--card);border:1px solid #222831;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px}
     .badge{display:inline-block;background:#1e2329;border:1px solid #2d3742;border-radius:999px;padding:2px 8px;font-size:12px;color:#c9d1d9}
-    .price{font-size:26px;font-weight:800}
-    ul{margin:0 0 0 18px;padding:0}
-    li{margin:4px 0}
+    .price{font-size:26px;font-weight:800} .strike{opacity:.7;text-decoration:line-through}
+    ul{margin:0 0 0 18px;padding:0} li{margin:4px 0}
     .btn{display:inline-block;padding:10px 12px;border-radius:10px;background:#1c2229;border:1px solid #2a333d;color:var(--fg);cursor:pointer}
     .btn-primary{background:var(--accent);border:1px solid #2b6be7}
     .btn-ghost{background:#1c2229;border:1px dashed #2a333d}
@@ -54,8 +50,8 @@
         <div><a class="btn btn-ghost" href="./index.html">Inizia gratis</a></div>
       </section>
 
-      <!-- PRO -->
-      <section class="card">
+      <!-- PRO MENSILE -->
+      <section class="card" id="pro">
         <div><span class="badge">Consigliato</span></div>
         <div class="price">€19<span class="muted">/mese</span></div>
         <ul>
@@ -64,33 +60,27 @@
           <li>CSV settimanale pronti all’uso</li>
           <li>Early Access a nuove feature</li>
         </ul>
-        <!-- Bottone Paddle -->
-        <div>
-          <button class="btn btn-primary paddle_button" data-product="PROD_MONTHLY_ID">
-            Attiva — €19/mese
-          </button>
-        </div>
-        <!-- Link alternativo Google Form -->
-        <div style="margin-top:8px;">
-          <a class="btn btn-ghost" href="https://forms.gle/JqNbVPWKrCVkMv816" target="_blank" rel="noopener">
-            Richiedi Accesso (Form)
-          </a>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btn-primary paddle_button" data-product="PROD_MONTHLY_ID">Attiva — €19/mese</button>
+          <a class="btn" href="https://forms.gle/JqNbVPWKrCVkMv816" target="_blank" rel="noopener">Richiedi Accesso (Form)</a>
         </div>
         <div class="muted">IVA inclusa ove applicabile. Disdici quando vuoi.</div>
       </section>
 
-      <!-- ENTERPRISE -->
-      <section class="card">
-        <div><span class="badge">Enterprise</span></div>
-        <div class="price">Custom</div>
+      <!-- PRO ANNUALE -->
+      <section class="card" id="annual">
+        <div><span class="badge">Due mesi gratis</span></div>
+        <div class="price"><span class="strike">€228</span> €190<span class="muted">/anno</span></div>
         <ul>
-          <li>Watchlist dedicate (ruoli/leghe)</li>
-          <li>Webhook/integrazioni dati</li>
-          <li>Supporto e priorità su roadmap</li>
+          <li>Tutto del piano Pro</li>
+          <li>2 mesi inclusi (risparmi €38)</li>
+          <li>Priorità su richieste/roadmap</li>
         </ul>
-        <div>
-          <a class="btn" href="mailto:mirkotornani@gmail.com?subject=OB1%20Enterprise&body=Ciao%2C%20mi%20serve%20una%20config%20su%20misura.">Parla con noi</a>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btn-primary paddle_button" data-product="PROD_ANNUAL_ID">Attiva — €190/anno</button>
+          <a class="btn" href="https://forms.gle/JqNbVPWKrCVkMv816" target="_blank" rel="noopener">Richiedi Accesso (Form)</a>
         </div>
+        <div class="muted">Fatturazione annuale con Paddle. Rinnovo automatico, annullabile prima della scadenza.</div>
       </section>
     </div>
 
@@ -110,13 +100,20 @@
   <!-- Paddle.js -->
   <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
   <script>
+    // TODO: inserisci i tuoi ID reali
+    // Paddle vendor
+    const VENDOR_ID = YOUR_VENDOR_ID;         // es. 123456
+    // Prodotti Paddle
+    // - PROD_MONTHLY_ID: ID piano mensile
+    // - PROD_ANNUAL_ID:  ID piano annuale
     Paddle.Environment.set('production');
-    Paddle.Setup({ vendor: YOUR_VENDOR_ID });
+    Paddle.Setup({ vendor: VENDOR_ID });
 
     document.querySelectorAll('.paddle_button').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        Paddle.Checkout.open({ product: btn.getAttribute('data-product') });
+        const productId = btn.getAttribute('data-product');
+        Paddle.Checkout.open({ product: productId });
       });
     });
   </script>
