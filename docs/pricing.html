@@ -23,7 +23,7 @@
     .price{font-size:26px;font-weight:800}
     ul{margin:0 0 0 18px;padding:0}
     li{margin:4px 0}
-    .btn{display:inline-block;padding:10px 12px;border-radius:10px;background:#1c2229;border:1px solid #2a333d;color:var(--fg)}
+    .btn{display:inline-block;padding:10px 12px;border-radius:10px;background:#1c2229;border:1px solid #2a333d;color:var(--fg);cursor:pointer}
     .btn-primary{background:var(--accent);border:1px solid #2b6be7}
     .btn-ghost{background:#1c2229;border:1px dashed #2a333d}
     .muted{color:var(--muted);font-size:12px}
@@ -64,8 +64,12 @@
           <li>CSV settimanale pronti all’uso</li>
           <li>Early Access a nuove feature</li>
         </ul>
-        <!-- Sostituisci l'URL del form quando pronto -->
-        <div><a class="btn btn-primary" href="https://forms.gle/XXXXXXXXXXXXXXX" target="_blank" rel="noopener">Richiedi accesso Pro</a></div>
+        <!-- Bottone Paddle -->
+        <div>
+          <button class="btn btn-primary paddle_button" data-product="PROD_MONTHLY_ID">
+            Attiva — €19/mese
+          </button>
+        </div>
         <div class="muted">IVA inclusa ove applicabile. Disdici quando vuoi.</div>
       </section>
 
@@ -96,5 +100,20 @@
 
     <footer>© OB1 Radar</footer>
   </div>
+
+  <!-- Paddle.js -->
+  <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+  <script>
+    // Sostituisci con il tuo Vendor ID
+    Paddle.Environment.set('production');
+    Paddle.Setup({ vendor: YOUR_VENDOR_ID });
+
+    document.querySelectorAll('.paddle_button').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        Paddle.Checkout.open({ product: btn.getAttribute('data-product') });
+      });
+    });
+  </script>
 </body>
 </html>
