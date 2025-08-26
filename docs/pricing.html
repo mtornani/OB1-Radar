@@ -6,7 +6,7 @@
   <title>OB1 · Pricing</title>
   <meta name="description" content="Piani e prezzi per OB1 Ouroboros Radar: accesso al Top-10 U19/U20, breakdown per regione e CSV settimanale." />
   <style>
-    :root { --bg:#0b0d10; --fg:#e8eaed; --muted:#9aa0a6; --card:#15181c; --chip:#2a2f36; --accent:#2563eb; }
+    :root { --bg:#0b0d10; --fg:#e8eaed; --muted:#9aa0a6; --card:#15181c; --accent:#2563eb; }
     html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;}
     .wrap{max-width:980px;margin:0 auto;padding:16px;}
     a{color:#cde6ff;text-decoration:none}
@@ -23,7 +23,7 @@
     .price{font-size:26px;font-weight:800}
     ul{margin:0 0 0 18px;padding:0}
     li{margin:4px 0}
-    .btn{display:inline-block;padding:10px 12px;border-radius:10px;background:#1c2229;border:1px solid #2a333d;color:var(--fg);cursor:pointer}
+    .btn{display:inline-block;padding:10px 12px;border-radius:10px;background:#1c2229;border:1px solid #2a333d;color:var(--fg);cursor:pointer;text-align:center}
     .btn-primary{background:var(--accent);border:1px solid #2b6be7}
     .btn-ghost{background:#1c2229;border:1px dashed #2a333d}
     .muted{color:var(--muted);font-size:12px}
@@ -64,12 +64,18 @@
           <li>CSV settimanale pronti all’uso</li>
           <li>Early Access a nuove feature</li>
         </ul>
-        <!-- Bottone Paddle -->
-        <div>
+
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <!-- Google Form link -->
+          <a class="btn btn-ghost" href="https://forms.gle/JqNbVPWKrCVkMv816" target="_blank" rel="noopener">
+            Richiedi Accesso (Form)
+          </a>
+          <!-- Paddle checkout -->
           <button class="btn btn-primary paddle_button" data-product="PROD_MONTHLY_ID">
-            Attiva — €19/mese
+            Attiva subito — €19/mese
           </button>
         </div>
+
         <div class="muted">IVA inclusa ove applicabile. Disdici quando vuoi.</div>
       </section>
 
@@ -83,7 +89,9 @@
           <li>Supporto e priorità su roadmap</li>
         </ul>
         <div>
-          <a class="btn" href="mailto:mirkotornani@gmail.com?subject=OB1%20Enterprise&body=Ciao%2C%20mi%20serve%20una%20config%20su%20misura.">Parla con noi</a>
+          <a class="btn" href="mailto:mirkotornani@gmail.com?subject=OB1%20Enterprise&body=Ciao%2C%20mi%20serve%20una%20config%20su%20misura.">
+            Parla con noi
+          </a>
         </div>
       </section>
     </div>
@@ -104,14 +112,12 @@
   <!-- Paddle.js -->
   <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
   <script>
-    // Sostituisci con il tuo Vendor ID
     Paddle.Environment.set('production');
     Paddle.Setup({ vendor: YOUR_VENDOR_ID });
-
     document.querySelectorAll('.paddle_button').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', function(e) {
         e.preventDefault();
-        Paddle.Checkout.open({ product: btn.getAttribute('data-product') });
+        Paddle.Checkout.open({ product: this.getAttribute('data-product') });
       });
     });
   </script>
