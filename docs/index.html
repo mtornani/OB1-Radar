@@ -4,18 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OB1 · Ouroboros Radar — Top-10</title>
-  <meta name="description" content="Daily Top-10 U19/U20 — Africa · Asia · Sudamerica. Link buoni, breakdown per regione, CSV settimanale. Early Access." />
   <style>
-    :root { --bg:#0b0d10; --fg:#e8eaed; --muted:#9aa0a6; --card:#15181c; --chip:#2a2f36; }
+    :root { --bg:#0b0d10; --fg:#e8eaed; --muted:#9aa0a6; --card:#15181c; --chip:#2a2f36; --accent:#2563eb; }
     html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;}
     .wrap{max-width:980px;margin:0 auto;padding:14px;}
     h1{font-size:18px;margin:6px 0 12px 0;font-weight:700}
-    .topbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+
+    /* buttons & inputs */
     input[type="search"],select{background:#111419;border:1px solid #20242b;color:var(--fg);padding:10px;border-radius:10px;flex:1 1 220px;outline:none}
     .btn{padding:10px 12px;border-radius:10px;background:#1c2229;border:1px solid #2a333d;color:var(--fg);text-decoration:none;display:inline-block}
     .btn:hover{filter:brightness(1.1)}
-    .btn-primary{background:#2563eb;border-color:#2b6be7}
+    .btn-primary{background:var(--accent);border:1px solid #2b6be7}
     .btn-ghost{background:#1c2229;border:1px dashed #2a333d}
+
+    .topbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
     .meta{font-size:12px;color:var(--muted);margin:8px 0}
     .list{display:flex;flex-direction:column;gap:10px;margin:10px 0 40px}
     .card{background:var(--card);border:1px solid #222831;border-radius:14px;padding:12px}
@@ -32,20 +34,23 @@
     .mini-chip{display:inline-block;background:#1e2329;border:1px solid #2d3742;border-radius:999px;padding:2px 6px;margin-left:6px}
     .mini-chip b{color:#cde6ff}
     .hide{display:none}
+
+    /* hero */
     .hero{background:#0f1318;border:1px solid #1e242c;border-radius:14px;padding:14px;margin:6px 0 12px}
     .hero h2{margin:0 0 6px 0;font-size:18px}
     .hero p{margin:0 0 10px 0;color:#9aa0a6}
     .cta{display:flex;gap:8px;flex-wrap:wrap}
-    .links-row{margin-top:8px;font-size:12px;color:var(--muted)}
-    .links-row a{color:var(--muted);text-decoration:none;margin-right:10px}
-    /* errore overlay */
-    #err{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);color:#fff;z-index:9999;}
+    .linksline{font-size:12px;color:#9aa0a6;margin-top:6px}
+    .linksline a{color:#9aa0a6;text-decoration:none}
+
+    /* error overlay */
+    #err { display:none; position:fixed; inset:0; background:rgba(0,0,0,.9); color:#fff; z-index:9999; }
     #err .box{max-width:900px;margin:40px auto;padding:14px}
     #err pre{white-space:pre-wrap;background:#1a1a1a;padding:12px;border-radius:10px;border:1px solid #333;overflow:auto}
   </style>
 </head>
 <body>
-  <!-- Overlay errori JS -->
+  <!-- error overlay -->
   <div id="err"><div class="box">
     <h2>⚠️ Errore JavaScript</h2>
     <pre id="errlog"></pre>
@@ -55,25 +60,16 @@
   <div class="wrap">
     <h1>OB1 · Ouroboros Radar — Top-10</h1>
 
-    <!-- HERO + CTA -->
+    <!-- HERO INTRO -->
     <div class="hero">
-      <h2>Daily Top-10 U19/U20 — Africa · Asia · Sudamerica</h2>
-      <p>Link già buoni, breakdown per regione, CSV settimanale. Early Access.</p>
+      <h2>Scouting predittivo U19/U20, ogni giorno</h2>
+      <p>OB1 setaccia centinaia di fonti in <b>Africa</b>, <b>Asia</b> e <b>Sudamerica</b> e restituisce un <b>Top-10</b> giornaliero pronto all’uso con punteggio, tag e link verificati. Pensato per club, agenti e scout che vogliono arrivare prima.</p>
       <div class="cta">
-        <!-- PRIMARIO → Google Form -->
-        <a class="btn btn-primary" href="https://forms.gle/JqNbVPWKrCVkMv816" target="_blank" rel="noopener">
-          Richiedi accesso Pro
-        </a>
-        <!-- Secondario: WhatsApp (sostituisci tel se vuoi) -->
-        <a class="btn btn-ghost" href="https://wa.me/XXXXXXXXXXX?text=Voglio%20OB1%20Pro%20con%202%20watchlist" target="_blank" rel="noopener">
-          WhatsApp
-        </a>
-        <!-- Terziario: Email (obfusc) -->
-        <a id="ctaMail" class="btn btn-ghost" data-user="mirkotornani" data-domain="gmail.com" rel="noopener">Email</a>
-        <!-- Link diretto a Pricing -->
-        <a class="btn" href="./pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="./pricing.html">Scopri i piani</a>
+        <a class="btn btn-ghost" href="#list">Guarda il Top-10</a>
+        <a class="btn" href="mailto:mirkotornani@gmail.com?subject=OB1%20Info">Email</a>
       </div>
-      <div class="links-row">
+      <div class="linksline">
         <a href="./pricing.html">Pricing</a> ·
         <a href="./terms.html">Termini</a> ·
         <a href="./privacy.html">Privacy</a> ·
@@ -81,16 +77,16 @@
       </div>
     </div>
 
-    <!-- Filtri -->
+    <!-- toolbar -->
     <div class="topbar">
       <input id="q" type="search" placeholder="Cerca (titolo, tag) …" />
       <select id="type"></select>
       <select id="tag"></select>
       <label class="switch"><input id="recentOnly" type="checkbox" /> Solo recenti (≤21gg)</label>
+      <a class="btn" href="./pricing.html">Pricing</a>
       <button id="reset" class="btn">Reset</button>
     </div>
 
-    <!-- Meta -->
     <div class="meta">
       <span id="last">Last updated —</span>
       &nbsp;•&nbsp;<span id="mode">mode —</span>
@@ -99,7 +95,6 @@
       &nbsp;•&nbsp;<a id="csv" class="hide" href="top-week.csv" target="_blank" rel="noopener">CSV week</a>
     </div>
 
-    <!-- Lista risultati -->
     <div id="list" class="list"></div>
     <div id="empty" class="empty">
       Nessun risultato con questi filtri.
@@ -196,17 +191,6 @@
       state.q=''; state.type=''; state.tag=''; state.recentOnly=false;
       $('#q').value=''; $('#type').value=''; $('#tag').value=''; $('#recentOnly').checked=false;
 
-      // Obfuscate mailto CTA
-      (function(){
-        var a=document.getElementById('ctaMail');
-        if(a){
-          var to=a.getAttribute('data-user')+'@'+a.getAttribute('data-domain');
-          var subj='OB1 Pro — Early Access';
-          var body='Ciao,%0A%0Avoglio attivare OB1 Pro.%0A- Watchlist richieste: ...%0A- Telegram SI/NO: ...%0A';
-          a.href='mailto:'+to+'?subject='+encodeURIComponent(subj)+'&body='+body;
-        }
-      })();
-
       fetch("daily.json?t="+Date.now(),{cache:'no-store'})
         .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
         .then(function(j){
@@ -230,7 +214,8 @@
     $('#reset').addEventListener('click',function(){ state.q=''; state.type=''; state.tag=''; state.recentOnly=false; $('#q').value=''; $('#type').value=''; $('#tag').value=''; $('#recentOnly').checked=false; applyFilters(); });
 
     window.addEventListener('error',function(e){ try{ $('#errlog').textContent=(e && e.error && (e.error.stack||e.error.message))||(e && e.message)||String(e); $('#err').style.display='block'; }catch(_){}})
-    window.addEventListener('unhandledrejection',function(e){ try{ $('#errlog').textContent=(e && e.reason && (e.reason.stack||e.reason.message))||String(e.reason||e); $('#err').style.display='block'; }catch(_){}})
+    window.addEventListener('unhandledrejection',function(e){ try{ $('#errlog').textContent((e && e.reason && (e.reason.stack||e.reason.message))||String(e.reason||e)); $('#err').style.display='block'; }catch(_){}})
+
     boot();
   })();
   </script>
