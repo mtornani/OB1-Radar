@@ -125,11 +125,11 @@
   },
   "https://espndeportes.espn.com/futbol/mexico/nota/_/id/15090382/liga-mx-futbol-estufa-apertura-2025-rumores-fichajes": {
     "host": "espndeportes.espn.com",
-    "seen_at": "2025-08-13T07:23:09"
+    "seen_at": "2025-08-29T07:21:06"
   },
   "https://www.marca.com/futbol/mercado-fichajes/2025/02/03/67a06b747aeb1c2f7518122a-directo.html": {
     "host": "www.marca.com",
-    "seen_at": "2025-08-13T07:23:21"
+    "seen_at": "2025-08-29T07:21:00"
   },
   "https://www.transfermarkt.co/real-madrid/transferstroeme/verein/418": {
     "host": "www.transfermarkt.co",
@@ -145,7 +145,7 @@
   },
   "https://www.olympics.com/pt/noticias/veja-jogadores-convocados-sul-americano-masculino-sub-20-futebol": {
     "host": "www.olympics.com",
-    "seen_at": "2025-08-13T07:23:49"
+    "seen_at": "2025-08-29T07:21:37"
   },
   "https://www.olympics.com/pt/noticias/mundial-sub-20-2025-jogadores-podem-reforcar-selecao": {
     "host": "www.olympics.com",
@@ -177,11 +177,11 @@
   },
   "https://www.cafonline.com/fr/coupe-dafrique-des-nations-u-20/news/la-coupe-d-afrique-des-nations-u20-caf-totalenergies-egypte-2025-devoile-son-dispositif-de-diffusion/": {
     "host": "www.cafonline.com",
-    "seen_at": "2025-08-13T14:19:42"
+    "seen_at": "2025-08-29T07:21:49"
   },
   "https://espndeportes.espn.com/futbol/mundial/nota/_/id/13939737/triunfo-uruguay-sub-20-elche-fabian-coito-torneo-lalcudia": {
     "host": "espndeportes.espn.com",
-    "seen_at": "2025-08-14T07:22:48"
+    "seen_at": "2025-08-29T07:20:42"
   },
   "https://olimpicocol.co/web/victoria-colombiana-en-el-debut-del-mundial-sub-20-de-futbol-de-salon/": {
     "host": "olimpicocol.co",
@@ -205,11 +205,11 @@
   },
   "https://foot-africa.com/en/news/morocco-makes-a-winning-start-to-the-u20-afcon-703205/": {
     "host": "foot-africa.com",
-    "seen_at": "2025-08-14T07:23:23"
+    "seen_at": "2025-08-29T07:21:57"
   },
   "https://www.cafonline.com/fr/coupe-dafrique-des-nations-u-20/news/coupe-d-afrique-des-nations-u20-caf-totalenergies-egypte-2025-le-programme-officiel-devoile/": {
     "host": "www.cafonline.com",
-    "seen_at": "2025-08-14T07:23:27"
+    "seen_at": "2025-08-29T07:21:53"
   },
   "https://wiwsport.com/2025/03/16/can-u20-trois-joueurs-evoluant-a-letranger-retenus-dans-la-liste-pour-la-double-confrontation-face-a-la-rdc/": {
     "host": "wiwsport.com",
@@ -658,5 +658,13 @@
   "https://www.reddit.com/r/futebol/comments/t9ldag/convocados_da_sele%C3%A7%C3%A3o_sub20/": {
     "host": "www.reddit.com",
     "seen_at": "2025-08-28T07:22:22"
+  },
+  "https://onefootball.com/pt-br/noticias/quatro-jogadores-do-sub-20-incluindo-artilheiro-da-base-passam-a-integrar-o-elenco-profissional-do-cruzeiro-39963763": {
+    "host": "onefootball.com",
+    "seen_at": "2025-08-29T07:21:17"
+  },
+  "https://www.threads.com/@alexandreernst/post/DN3E8Lk3GC8/convocadogustavo-prado-est%C3%A1-na-lista-da-sele%C3%A7%C3%A3o-sub-20-que-de-1-a-9-de-setembro-": {
+    "host": "www.threads.com",
+    "seen_at": "2025-08-29T07:21:29"
   }
 }
