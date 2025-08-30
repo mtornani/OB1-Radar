@@ -57,7 +57,7 @@
   },
   "https://www.apwin.com/es/equipo/sao-paulo-futebol-clube-under-20/": {
     "host": "www.apwin.com",
-    "seen_at": "2025-08-12T19:45:12"
+    "seen_at": "2025-08-30T07:18:21"
   },
   "https://www.cearasc.com/noticia/sub-20-ceara-encara-o-falconse-na-estreia-na-copa-": {
     "host": "www.cearasc.com",
@@ -85,7 +85,7 @@
   },
   "https://espndeportes.espn.com/futbol/mundial/nota/_/id/14718484/seleccion-colombia-empata-argentina-sudamericano-sub-20": {
     "host": "espndeportes.espn.com",
-    "seen_at": "2025-08-12T20:04:59"
+    "seen_at": "2025-08-30T07:18:13"
   },
   "https://clanfutbolero.com/seleccion-colombia/colombia-sub-20-debuto-con-empate-ante-argentina-en-el-sudamericano/": {
     "host": "clanfutbolero.com",
@@ -185,7 +185,7 @@
   },
   "https://olimpicocol.co/web/victoria-colombiana-en-el-debut-del-mundial-sub-20-de-futbol-de-salon/": {
     "host": "olimpicocol.co",
-    "seen_at": "2025-08-14T07:22:50"
+    "seen_at": "2025-08-30T07:18:04"
   },
   "https://www.transferfeed.com/es/fichajes/sergej-levak-roma-u19-inter/12360675": {
     "host": "www.transferfeed.com",
@@ -225,11 +225,11 @@
   },
   "https://espndeportes.espn.com/futbol/nota/_/id/14709873/triunfazo-agonico-uruguay-debut-sudamericano-sub-20-ante-chile": {
     "host": "espndeportes.espn.com",
-    "seen_at": "2025-08-15T07:21:25"
+    "seen_at": "2025-08-30T07:18:01"
   },
   "https://www.conmebol.com/noticias/argentina-gana-en-su-debut-en-el-mundial-sub20/": {
     "host": "www.conmebol.com",
-    "seen_at": "2025-08-15T07:21:27"
+    "seen_at": "2025-08-30T07:18:10"
   },
   "https://www.conmebol.com/noticias/fecha-2-de-la-conmebol-sub20-toda-la-informacion-y-donde-ver/": {
     "host": "www.conmebol.com",
@@ -666,5 +666,37 @@
   "https://www.threads.com/@alexandreernst/post/DN3E8Lk3GC8/convocadogustavo-prado-est%C3%A1-na-lista-da-sele%C3%A7%C3%A3o-sub-20-que-de-1-a-9-de-setembro-": {
     "host": "www.threads.com",
     "seen_at": "2025-08-29T07:21:29"
+  },
+  "https://www.conmebol.com/noticias/flamengo-bicampeon-de-la-intercontinental-sub20/": {
+    "host": "www.conmebol.com",
+    "seen_at": "2025-08-30T07:18:17"
+  },
+  "https://www.transferfeed.com/es/fichajes/ahmed-abdullahi-sunderland-angers-sco/16615152": {
+    "host": "www.transferfeed.com",
+    "seen_at": "2025-08-30T07:18:24"
+  },
+  "https://www.transfermarkt.co/campionato-nazionale-under-18/transfers/wettbewerb/ITJ7": {
+    "host": "www.transfermarkt.co",
+    "seen_at": "2025-08-30T07:18:37"
+  },
+  "https://www.transferfeed.com/es/fichajes/kayke-botafogo-fortaleza/16615073": {
+    "host": "www.transferfeed.com",
+    "seen_at": "2025-08-30T07:18:40"
+  },
+  "https://www.sandiegofc.com/news/san-diego-fc-ficha-al-extremo-alex-mighten": {
+    "host": "www.sandiegofc.com",
+    "seen_at": "2025-08-30T07:18:44"
+  },
+  "https://www.si.com/es-us/futbol/los-futbolistas-jovenes-del-ea-sports-fc-25-para-fichar-en-el-modo-carrera-con-rostro-escaneado": {
+    "host": "www.si.com",
+    "seen_at": "2025-08-30T07:18:48"
+  },
+  "https://www.reddit.com/r/footballmanagergames/comments/181g9w5/loan_manager_and_dof_are_turning_down_loan_offers/?tl=es-es": {
+    "host": "www.reddit.com",
+    "seen_at": "2025-08-30T07:18:57"
+  },
+  "https://www.cearasc.com/noticia/base-ceara-vence-classico-rei-pela-liga-ceara-na-c": {
+    "host": "www.cearasc.com",
+    "seen_at": "2025-08-30T07:19:02"
   }
 }
