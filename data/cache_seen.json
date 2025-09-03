@@ -113,7 +113,7 @@
   },
   "https://www.olympics.com/pt/noticias/copinha-2025-artilheiro-top-10": {
     "host": "www.olympics.com",
-    "seen_at": "2025-08-12T20:06:39"
+    "seen_at": "2025-09-03T07:21:09"
   },
   "https://espndeportes.espn.com/futbol/equipo/_/id/5172/mexico-sub-20": {
     "host": "espndeportes.espn.com",
@@ -317,7 +317,7 @@
   },
   "https://espndeportes.espn.com/blogs/index?entryID=14441282&nombre=futbol_de_estufa": {
     "host": "espndeportes.espn.com",
-    "seen_at": "2025-08-17T07:20:06"
+    "seen_at": "2025-09-03T07:20:34"
   },
   "https://www.infobae.com/colombia/deportes/2024/08/09/ex-jugador-de-atletico-nacional-es-oficializado-en-su-nuevo-equipo-de-la-mls/": {
     "host": "www.infobae.com",
@@ -738,5 +738,37 @@
   "https://www.reddit.com/r/footballmanagergames/comments/i3mm7j/international_manager_and_u20_selection_in_fm20/?tl=fr": {
     "host": "www.reddit.com",
     "seen_at": "2025-09-01T07:25:01"
+  },
+  "https://www.conmebol.com/noticias/colombia-y-brasil-debutan-en-el-mundial-sub20-femenino-con-victorias/": {
+    "host": "www.conmebol.com",
+    "seen_at": "2025-09-03T07:19:42"
+  },
+  "https://www.conmebol.com/conmebol-sub-20-goleadores/": {
+    "host": "www.conmebol.com",
+    "seen_at": "2025-09-03T07:19:49"
+  },
+  "https://www.transferfeed.com/es/fichajes/vitinho-cruzeiro-nautico/17102465": {
+    "host": "www.transferfeed.com",
+    "seen_at": "2025-09-03T07:19:52"
+  },
+  "https://www.reddit.com/r/Barca/comments/1mq2ii8/transfer_talk_thread_exits_ongoing_registrations/?tl=es-419": {
+    "host": "www.reddit.com",
+    "seen_at": "2025-09-03T07:20:56"
+  },
+  "https://x.com/BaseCorinthiana/status/1952928534550204874": {
+    "host": "x.com",
+    "seen_at": "2025-09-03T07:21:18"
+  },
+  "https://x.com/ColunadoFla/status/1918676719810011176": {
+    "host": "x.com",
+    "seen_at": "2025-09-03T07:21:27"
+  },
+  "https://www.gazetaesportiva.com/times/brasil/brasil-disputa-sul-americano-sub-20-desfalcado-e-a-fim-de-apagar-vexames-recentes/": {
+    "host": "www.gazetaesportiva.com",
+    "seen_at": "2025-09-03T07:22:24"
+  },
+  "https://www.olympics.com/pt/noticias/selecao-brasileira-futebol-masculino-jogadores-idade-olimpica-los-angeles": {
+    "host": "www.olympics.com",
+    "seen_at": "2025-09-03T07:22:27"
   }
 }
