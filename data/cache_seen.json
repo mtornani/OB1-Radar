@@ -117,7 +117,7 @@
   },
   "https://espndeportes.espn.com/futbol/equipo/_/id/5172/mexico-sub-20": {
     "host": "espndeportes.espn.com",
-    "seen_at": "2025-08-13T07:22:55"
+    "seen_at": "2025-09-05T07:20:29"
   },
   "https://www.concacaf.com/es/sub-15-hombres/noticias/grandes-jugadores-que-iniciaron-su-carrera-en-el-campeonato-sub-15-masculino-de-concacaf/": {
     "host": "www.concacaf.com",
@@ -221,7 +221,7 @@
   },
   "https://leopardleader.com/selection-u20-un-mini-stage-au-maghreb-avant-la-phase-finale/": {
     "host": "leopardleader.com",
-    "seen_at": "2025-08-14T07:23:41"
+    "seen_at": "2025-09-05T07:21:04"
   },
   "https://espndeportes.espn.com/futbol/nota/_/id/14709873/triunfazo-agonico-uruguay-debut-sudamericano-sub-20-ante-chile": {
     "host": "espndeportes.espn.com",
@@ -385,7 +385,7 @@
   },
   "https://www.infobae.com/colombia/deportes/2024/09/23/el-mundial-femenino-sub-20-colombia-2024-el-segundo-con-mayor-asistencia-a-los-estadios-en-la-historia/": {
     "host": "www.infobae.com",
-    "seen_at": "2025-08-20T07:21:59"
+    "seen_at": "2025-09-05T07:20:33"
   },
   "https://www.dcunited.com/news/el-defensa-jeremy-garay-regresa-de-prestamo-de-el-paso-locomotive-fc": {
     "host": "www.dcunited.com",
@@ -782,5 +782,29 @@
   "https://www.reddit.com/r/footballmanagergames/comments/15g5mwi/developing_youth_players_why_are_loans_not_the/": {
     "host": "www.reddit.com",
     "seen_at": "2025-09-04T07:22:48"
+  },
+  "https://www.si.com/es-us/futbol/los-mejores-mediocampistas-ofensivos-jovenes-para-fichar-en-el-modo-carrera-del-ea-sports-fc-24": {
+    "host": "www.si.com",
+    "seen_at": "2025-09-05T07:20:36"
+  },
+  "https://www.mlssoccer.com/news/inter-miami-cf-ejerce-compra-de-contrato-de-matias-pellegrini": {
+    "host": "www.mlssoccer.com",
+    "seen_at": "2025-09-05T07:20:40"
+  },
+  "https://onefootball.com/en/news/oficial-inter-miami-anuncio-el-fichaje-de-allen-obando-40883340": {
+    "host": "onefootball.com",
+    "seen_at": "2025-09-05T07:20:43"
+  },
+  "https://globoplay.globo.com/v/11944557/": {
+    "host": "globoplay.globo.com",
+    "seen_at": "2025-09-05T07:20:48"
+  },
+  "https://www.kawarji.com/actu-74421-la-liste-de-la-selection-tunisienne-u20-pour-affronter-la-france-u20.html": {
+    "host": "www.kawarji.com",
+    "seen_at": "2025-09-05T07:21:08"
+  },
+  "https://www.cafonline.com/caf-u-20-africa-cup-of-nations/news/sierra-leone-u20-profile-kamara-leads-shooting-stars-bright-new-generation-at-u-20-afcon/": {
+    "host": "www.cafonline.com",
+    "seen_at": "2025-09-05T07:21:19"
   }
 }
