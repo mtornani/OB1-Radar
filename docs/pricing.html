@@ -52,35 +52,36 @@
 
       <!-- PRO MENSILE -->
       <section class="card" id="pro">
-        <div><span class="badge">Consigliato</span></div>
-        <div class="price">€19<span class="muted">/mese</span></div>
+        <div><span class="badge">Più popolare</span></div>
+        <div class="price">€2.500<span class="muted">/mese</span></div>
         <ul>
           <li>Top-10 completo ogni giorno</li>
           <li>Breakdown per regione (AF/AS/SA)</li>
-          <li>CSV settimanale pronti all’uso</li>
-          <li>Early Access a nuove feature</li>
+          <li>CSV settimanale pronti all'uso</li>
+          <li>Report FSGC eleggibili</li>
+          <li>Alert Telegram giornalieri</li>
         </ul>
         <div style="display:flex;gap:8px;flex-wrap:wrap">
-          <button class="btn btn-primary paddle_button" data-product="PROD_MONTHLY_ID">Attiva — €19/mese</button>
-          <a class="btn" href="https://forms.gle/JqNbVPWKrCVkMv816" target="_blank" rel="noopener">Richiedi Accesso (Form)</a>
+          <button class="btn btn-primary paddle_button" data-price-id="MONTHLY_PRICE_ID">Attiva – €2.500/mese</button>
         </div>
         <div class="muted">IVA inclusa ove applicabile. Disdici quando vuoi.</div>
       </section>
 
       <!-- PRO ANNUALE -->
       <section class="card" id="annual">
-        <div><span class="badge">Due mesi gratis</span></div>
-        <div class="price"><span class="strike">€228</span> €190<span class="muted">/anno</span></div>
+        <div><span class="badge">Risparmia €5.000</span></div>
+        <div class="price">€25.000<span class="muted">/anno</span></div>
         <ul>
           <li>Tutto del piano Pro</li>
-          <li>2 mesi inclusi (risparmi €38)</li>
-          <li>Priorità su richieste/roadmap</li>
+          <li>Risparmio di €5.000/anno</li>
+          <li>Priorità su feature requests</li>
+          <li>Consulenza setup inclusa</li>
+          <li>White-label option</li>
         </ul>
         <div style="display:flex;gap:8px;flex-wrap:wrap">
-          <button class="btn btn-primary paddle_button" data-product="PROD_ANNUAL_ID">Attiva — €190/anno</button>
-          <a class="btn" href="https://forms.gle/JqNbVPWKrCVkMv816" target="_blank" rel="noopener">Richiedi Accesso (Form)</a>
+          <button class="btn btn-primary paddle_button" data-price-id="ANNUAL_PRICE_ID">Attiva – €25.000/anno</button>
         </div>
-        <div class="muted">Fatturazione annuale con Paddle. Rinnovo automatico, annullabile prima della scadenza.</div>
+        <div class="muted">Fatturazione annuale con Paddle. Ideale per club e agenzie.</div>
       </section>
     </div>
 
@@ -98,22 +99,42 @@
   </div>
 
   <!-- Paddle.js -->
-  <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
   <script>
-    // TODO: inserisci i tuoi ID reali
-    // Paddle vendor
-    const VENDOR_ID = YOUR_VENDOR_ID;         // es. 123456
-    // Prodotti Paddle
-    // - PROD_MONTHLY_ID: ID piano mensile
-    // - PROD_ANNUAL_ID:  ID piano annuale
+    // Setup Paddle
     Paddle.Environment.set('production');
-    Paddle.Setup({ vendor: VENDOR_ID });
+    Paddle.Initialize({ 
+      token: 'live_7c5da8decff27e2158b87f0a93b', // Il tuo client-side token
+      checkout: {
+        settings: {
+          allowedPaymentMethods: ["card", "paypal"],
+          locale: "it",
+          frameTarget: "self",
+          frameInitialHeight: 450,
+          successUrl: "https://mtornani.github.io/OB1-Radar/success.html"
+        }
+      }
+    });
 
+    // Gestione click bottoni
     document.querySelectorAll('.paddle_button').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const productId = btn.getAttribute('data-product');
-        Paddle.Checkout.open({ product: productId });
+        const priceId = btn.getAttribute('data-price-id');
+        
+        // IMPORTANTE: Sostituisci con i tuoi veri Price ID da Paddle
+        // Dopo aver creato i prodotti, Paddle ti darà degli ID tipo: pri_01h4d...
+        const priceMap = {
+          'MONTHLY_PRICE_ID': 'pri_INSERISCI_ID_MENSILE',  // €2500/mese
+          'ANNUAL_PRICE_ID': 'pri_INSERISCI_ID_ANNUALE'    // €25000/anno
+        };
+        
+        Paddle.Checkout.open({
+          items: [{
+            priceId: priceMap[priceId],
+            quantity: 1
+          }]
+        });
       });
     });
   </script>
