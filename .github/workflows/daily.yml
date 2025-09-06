@@ -38,11 +38,25 @@ jobs:
           mkdir -p output
           python engine/run.py
 
+      - name: Run FSGC eligibility check
+        run: |
+          python engine/fsgc_eligible.py || echo "[WARNING] FSGC check failed or no eligible found"
+
+      - name: Generate social media posts
+        run: |
+          python engine/generate_posts.py || echo "[WARNING] Post generation failed"
+          echo "=== LINKEDIN POST ===" 
+          cat output/linkedin_post.txt 2>/dev/null || echo "No LinkedIn post generated"
+          echo ""
+          echo "=== TWITTER POST ==="
+          cat output/twitter_post.txt 2>/dev/null || echo "No Twitter post generated"
+          echo "==================="
+
       - name: Publish JSONs to /docs
         run: |
           mkdir -p docs
           cp output/daily.json docs/daily.json
-          mkdir -p docs
+          cp output/fsgc_eligible_*.json docs/ 2>/dev/null || true
           cp -n output/snapshots/daily-*.json docs/ 2>/dev/null || true
 
       - name: Keep last 7 snapshots
@@ -104,6 +118,15 @@ jobs:
               link = (it.get("links") or [""])[0]
               lines.append(f"{score} · {label}\n{link}")
           text = f"<b>{html.escape(title)}</b>\n\n" + "\n".join(lines)
+          
+          # Check FSGC
+          try:
+              with open("docs/fsgc_eligible.json", encoding="utf-8") as f:
+                  fsgc = json.load(f)
+              if fsgc.get("eligible_found", 0) > 0:
+                  text += f"\n\n🇸🇲 FSGC: {fsgc['eligible_found']} potenziali eleggibili trovati!"
+          except: pass
+          
           url = f"https://api.telegram.org/bot{bot}/sendMessage"
           r = requests.post(url, data={"chat_id": chat, "parse_mode": "HTML", "text": text}, timeout=30)
           print("telegram:", r.status_code, r.text[:120])
@@ -115,6 +138,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/daily.json docs/daily-*.json docs/top-week.csv data/cache_seen.json || true
-          git commit -m "chore: update daily, snapshots & weekly CSV [skip ci]" || echo "No changes to commit"
+          git add docs/daily.json docs/daily-*.json docs/top-week.csv docs/fsgc_*.json data/cache_seen.json output/*.txt 2>/dev/null || true
+          git commit -m "chore: update daily, snapshots, FSGC & posts [skip ci]" || echo "No changes to commit"
           git push
