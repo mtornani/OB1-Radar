@@ -45,7 +45,7 @@
   },
   "https://www.antena2.com/futbol/colombia-sub-20-debuto-con-victoria-en-torneo-en-egipto": {
     "host": "www.antena2.com",
-    "seen_at": "2025-08-12T19:45:01"
+    "seen_at": "2025-09-07T07:18:33"
   },
   "https://es-us.noticias.yahoo.com/deportes/fixture-argentina-mundial-sub-20-190940842.html": {
     "host": "es-us.noticias.yahoo.com",
@@ -237,7 +237,7 @@
   },
   "https://www.olympics.com/es/noticias/futbol-joyas-jugadores-futuro-argentina-sudamericano-sub-20-2025": {
     "host": "www.olympics.com",
-    "seen_at": "2025-08-15T07:21:33"
+    "seen_at": "2025-09-07T07:18:48"
   },
   "https://www.reddit.com/r/JLeague/comments/15jwykz/sinttruiden_have_signed_zion_suzuki_on_loan_from/?tl=es-419": {
     "host": "www.reddit.com",
@@ -273,7 +273,7 @@
   },
   "https://www.threads.com/@marquinhos021/post/DMRHhxquFJg/ryan-roberto-brilha-no-sub-17-do-flamengo-com-20-gols-e-14-assist%C3%AAncias-em-33-jo": {
     "host": "www.threads.com",
-    "seen_at": "2025-08-16T07:20:29"
+    "seen_at": "2025-09-07T07:20:11"
   },
   "https://africasport.org/can-u20-le-programme-de-la-competition-qui-debute-ce-dimanche-en-egypte/": {
     "host": "africasport.org",
@@ -834,5 +834,33 @@
   "https://www.cearasc.com/noticia/sub-20-ceara-realiza-treino-apronto-para-o-classic": {
     "host": "www.cearasc.com",
     "seen_at": "2025-09-06T07:20:02"
+  },
+  "https://www.365scores.com/es/news/argentinos-sub-20-figuras-en-primera/": {
+    "host": "www.365scores.com",
+    "seen_at": "2025-09-07T07:18:37"
+  },
+  "https://www.infobae.com/deportes/2025/07/30/la-seleccion-argentina-jugara-la-final-por-el-titulo-del-torneo-de-lalcudia-ante-valencia-hora-tv-y-formaciones/": {
+    "host": "www.infobae.com",
+    "seen_at": "2025-09-07T07:18:41"
+  },
+  "https://riverelmasgrande.com/contenido/33039/sudamericano-sub-20-accion-jugadores-river-ruberto-subiabre-mastantuono-obregon-martinet": {
+    "host": "riverelmasgrande.com",
+    "seen_at": "2025-09-07T07:18:44"
+  },
+  "https://espndeportes.espn.com/futbol/mundial/nota/_/id/14947502/seleccion-argentina-y-sub-20-a-beneficio-de-bahia-blanca-entrenamiento-disney+": {
+    "host": "espndeportes.espn.com",
+    "seen_at": "2025-09-07T07:18:52"
+  },
+  "https://www.fotmob.com/es/news/5hg4vb6rag2a17yvi1c32y7dv_pt-BR-everton-completa-contratacao-de-dibling-do-southampton": {
+    "host": "www.fotmob.com",
+    "seen_at": "2025-09-07T07:19:22"
+  },
+  "https://x.com/base_botafogo?lang=en": {
+    "host": "x.com",
+    "seen_at": "2025-09-07T07:19:51"
+  },
+  "https://bandnewsfmcuritiba.com/conheca-os-atacantes-do-brasil-na-copa-do-mundo-sub-20/": {
+    "host": "bandnewsfmcuritiba.com",
+    "seen_at": "2025-09-07T07:20:03"
   }
 }

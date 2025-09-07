@@ -1,0 +1,15 @@
+{
+  "generated_at_utc": "2025-09-07T07:20:23Z",
+  "source": "FSGC-EligibilityRadar",
+  "mode": "eligibility_check",
+  "total_scanned": 10,
+  "eligible_found": 0,
+  "eligibility_breakdown": {
+    "surname_match": 0,
+    "sm_mention": 0,
+    "potential": 0,
+    "high_confidence": 0,
+    "medium_confidence": 0
+  },
+  "items": []
+}
