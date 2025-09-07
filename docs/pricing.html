@@ -15,16 +15,21 @@
     h1{font-size:22px;margin:6px 0 6px} p.lead{color:var(--muted);margin-top:0}
     .grid{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}
     @media (min-width:720px){ .grid{grid-template-columns:repeat(3,1fr);} }
-    .card{background:var(--card);border:1px solid #222831;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px}
+    .card{background:var(--card);border:1px solid #222831;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;position:relative;}
     .badge{display:inline-block;background:#1e2329;border:1px solid #2d3742;border-radius:999px;padding:2px 8px;font-size:12px;color:#c9d1d9}
-    .price{font-size:26px;font-weight:800} .strike{opacity:.7;text-decoration:line-through}
-    ul{margin:0 0 0 18px;padding:0} li{margin:4px 0}
-    .btn{display:inline-block;padding:10px 12px;border-radius:10px;background:#1c2229;border:1px solid #2a333d;color:var(--fg);cursor:pointer}
-    .btn-primary{background:var(--accent);border:1px solid #2b6be7}
-    .btn-ghost{background:#1c2229;border:1px dashed #2a333d}
-    .muted{color:var(--muted);font-size:12px}
-    footer{margin:20px 0 10px;color:var(--muted);text-align:center}
+    .badge-popular{background:#f59e0b;color:#000;border:none;}
+    .badge-enterprise{background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);color:#fff;border:none;}
+    .price{font-size:28px;font-weight:800;margin:10px 0;} 
+    .price-period{font-size:14px;color:var(--muted);font-weight:400;}
+    ul{margin:0 0 0 20px;padding:0;flex-grow:1;} li{margin:6px 0;}
+    .btn{display:inline-block;padding:12px 20px;border-radius:10px;background:#1c2229;border:1px solid #2a333d;color:var(--fg);cursor:pointer;font-weight:600;transition:all 0.2s;}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.3);}
+    .btn-primary{background:var(--accent);border:1px solid #2b6be7;color:#fff;}
+    .btn-ghost{background:transparent;border:1px dashed #2a333d;}
+    .muted{color:var(--muted);font-size:12px;margin-top:8px;}
+    footer{margin:40px 0 20px;color:var(--muted);text-align:center}
     .links{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+    .enterprise{background:linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);border:2px solid #8b5cf6;}
   </style>
 </head>
 <body>
@@ -35,58 +40,62 @@
     </header>
 
     <h1>Piani & Prezzi</h1>
-    <p class="lead">Scegli il piano. Puoi passare a Pro quando vuoi. Fatturazione tramite Paddle.</p>
+    <p class="lead">Scegli il piano giusto per te. Fatturazione sicura tramite Paddle.</p>
 
     <div class="grid">
       <!-- FREE -->
       <section class="card">
         <div><span class="badge">Free</span></div>
-        <div class="price">€0<span class="muted">/mese</span></div>
+        <div class="price">€0<span class="price-period">/mese</span></div>
         <ul>
-          <li>Preview Top-10 giornaliero</li>
-          <li>UI web mobile-first</li>
-          <li>Link alle fonti</li>
+          <li>✓ Preview Top-10 giornaliero</li>
+          <li>✓ UI web mobile-first</li>
+          <li>✓ Link alle fonti</li>
         </ul>
         <div><a class="btn btn-ghost" href="./index.html">Inizia gratis</a></div>
       </section>
 
       <!-- PRO MENSILE -->
       <section class="card" id="pro">
-        <div><span class="badge">Più popolare</span></div>
-        <div class="price">€2.500<span class="muted">/mese</span></div>
+        <div><span class="badge badge-popular">Più popolare</span></div>
+        <div class="price">€2.500<span class="price-period">/mese</span></div>
         <ul>
-          <li>Top-10 completo ogni giorno</li>
-          <li>Breakdown per regione (AF/AS/SA)</li>
-          <li>CSV settimanale pronti all'uso</li>
-          <li>Report FSGC eleggibili</li>
-          <li>Alert Telegram giornalieri</li>
+          <li>✓ Top-10 completo ogni giorno</li>
+          <li>✓ Breakdown per regione (AF/AS/SA)</li>
+          <li>✓ CSV settimanale pronti all'uso</li>
+          <li>✓ Report FSGC eleggibili</li>
+          <li>✓ Alert Telegram giornalieri</li>
         </ul>
-        <div style="display:flex;gap:8px;flex-wrap:wrap">
-          <button class="btn btn-primary paddle_button" data-price-id="MONTHLY_PRICE_ID">Attiva – €2.500/mese</button>
+        <div>
+          <button class="btn btn-primary" onclick="openCheckout('monthly')">
+            Attiva → €2.500/mese
+          </button>
         </div>
         <div class="muted">IVA inclusa ove applicabile. Disdici quando vuoi.</div>
       </section>
 
-      <!-- PRO ANNUALE -->
-      <section class="card" id="annual">
-        <div><span class="badge">Risparmia €5.000</span></div>
-        <div class="price">€25.000<span class="muted">/anno</span></div>
+      <!-- ENTERPRISE ANNUALE -->
+      <section class="card enterprise" id="annual">
+        <div><span class="badge badge-enterprise">Risparmia €5.000</span></div>
+        <div class="price">€25.000<span class="price-period">/anno</span></div>
         <ul>
-          <li>Tutto del piano Pro</li>
-          <li>Risparmio di €5.000/anno</li>
-          <li>Priorità su feature requests</li>
-          <li>Consulenza setup inclusa</li>
-          <li>White-label option</li>
+          <li>✓ Tutto del piano Pro</li>
+          <li>✓ Risparmio di €5.000/anno</li>
+          <li>✓ Priorità su feature requests</li>
+          <li>✓ Consulenza setup inclusa</li>
+          <li>✓ White-label option</li>
         </ul>
-        <div style="display:flex;gap:8px;flex-wrap:wrap">
-          <button class="btn btn-primary paddle_button" data-price-id="ANNUAL_PRICE_ID">Attiva – €25.000/anno</button>
+        <div>
+          <button class="btn btn-primary" onclick="openCheckout('annual')">
+            Attiva → €25.000/anno
+          </button>
         </div>
         <div class="muted">Fatturazione annuale con Paddle. Ideale per club e agenzie.</div>
       </section>
     </div>
 
-    <div class="muted">
-      Pagamenti gestiti da Paddle (Merchant of Record). Le ricevute fiscali saranno emesse da Paddle secondo la normativa applicabile.
+    <div class="muted" style="margin-top:30px;">
+      Pagamenti gestiti da <b>Paddle</b> (Merchant of Record). Le ricevute fiscali saranno emesse da Paddle secondo la normativa applicabile.
     </div>
 
     <div class="links">
@@ -101,42 +110,36 @@
   <!-- Paddle.js -->
   <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
   <script>
-    // Setup Paddle
+    // Inizializza Paddle
     Paddle.Environment.set('production');
     Paddle.Initialize({ 
-      token: 'live_7c5da8decff27e2158b87f0a93b', // Il tuo client-side token
+      token: 'live_7c5da8decff27e2158b87f0a93b', // Il tuo client token
       checkout: {
         settings: {
           allowedPaymentMethods: ["card", "paypal"],
           locale: "it",
           frameTarget: "self",
           frameInitialHeight: 450,
+          frameStyle: "width: 100%; min-width: 312px; background-color: transparent; border: none;",
           successUrl: "https://mtornani.github.io/OB1-Radar/success.html"
         }
       }
     });
 
-    // Gestione click bottoni
-    document.querySelectorAll('.paddle_button').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const priceId = btn.getAttribute('data-price-id');
-        
-        // IMPORTANTE: Sostituisci con i tuoi veri Price ID da Paddle
-        // Dopo aver creato i prodotti, Paddle ti darà degli ID tipo: pri_01h4d...
-        const priceMap = {
-          'MONTHLY_PRICE_ID': 'pro_01k4drm9nfpmqgph2ps1bpfe7w',  // €2500/mese
-          'ANNUAL_PRICE_ID': 'pri_INSERISCI_ID_ANNUALE'    // €25000/anno
-        };
-        
-        Paddle.Checkout.open({
-          items: [{
-            priceId: priceMap[priceId],
-            quantity: 1
-          }]
-        });
+    // Funzione per aprire checkout
+    function openCheckout(plan) {
+      const prices = {
+        monthly: 'pri_01k4ev94snz6naqdj8221qgh0q',  // €2.500/mese
+        annual: 'pri_01k4j50pa45x9t0gw887w3q9sz'    // €25.000/anno
+      };
+
+      Paddle.Checkout.open({
+        items: [{
+          priceId: prices[plan],
+          quantity: 1
+        }]
       });
-    });
+    }
   </script>
 </body>
 </html>
