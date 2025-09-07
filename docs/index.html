@@ -5,22 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OB1 · Ouroboros Radar — Top-10</title>
   <style>
-    :root { --bg:#0b0d10; --fg:#e8eaed; --muted:#9aa0a6; --card:#15181c; --chip:#2a2f36; --accent:#2563eb; }
+    :root { --bg:#0b0d10; --fg:#e8eaed; --muted:#9aa0a6; --card:#15181c; --chip:#2a2f36; --accent:#2563eb; --warning:#f59e0b; }
     html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;}
     .wrap{max-width:980px;margin:0 auto;padding:14px;}
     h1{font-size:18px;margin:6px 0 12px 0;font-weight:700}
 
     /* buttons & inputs */
     input[type="search"],select{background:#111419;border:1px solid #20242b;color:var(--fg);padding:10px;border-radius:10px;flex:1 1 220px;outline:none}
-    .btn{padding:10px 12px;border-radius:10px;background:#1c2229;border:1px solid #2a333d;color:var(--fg);text-decoration:none;display:inline-block}
-    .btn:hover{filter:brightness(1.1)}
-    .btn-primary{background:var(--accent);border:1px solid #2b6be7}
-    .btn-ghost{background:#1c2229;border:1px dashed #2a333d}
+    .btn{padding:10px 12px;border-radius:10px;background:#1c2229;border:1px solid #2a333d;color:var(--fg);text-decoration:none;display:inline-block;cursor:pointer;font-weight:500;}
+    .btn:hover{filter:brightness(1.15)}
+    .btn-primary{background:var(--accent);border:1px solid #2b6be7;color:#fff;}
+    .btn-ghost{background:transparent;border:1px dashed #2a333d}
+    .btn-warning{background:var(--warning);border:1px solid #d97706;color:#000;}
 
     .topbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
     .meta{font-size:12px;color:var(--muted);margin:8px 0}
     .list{display:flex;flex-direction:column;gap:10px;margin:10px 0 40px}
-    .card{background:var(--card);border:1px solid #222831;border-radius:14px;padding:12px}
+    .card{background:var(--card);border:1px solid #222831;border-radius:14px;padding:12px;position:relative;}
     .card .top{display:flex;justify-content:space-between;gap:10px}
     .title{font-weight:600}
     .score{background:#0f1a12;border:1px solid #1f3b26;color:#a7e3b5;border-radius:999px;padding:4px 10px;font-weight:700}
@@ -36,12 +37,27 @@
     .hide{display:none}
 
     /* hero */
-    .hero{background:#0f1318;border:1px solid #1e242c;border-radius:14px;padding:14px;margin:6px 0 12px}
-    .hero h2{margin:0 0 6px 0;font-size:18px}
-    .hero p{margin:0 0 10px 0;color:#9aa0a6}
+    .hero{background:#0f1318;border:1px solid #1e242c;border-radius:14px;padding:20px;margin:6px 0 16px}
+    .hero h2{margin:0 0 8px 0;font-size:20px}
+    .hero p{margin:0 0 12px 0;color:#9aa0a6;line-height:1.6;}
     .cta{display:flex;gap:8px;flex-wrap:wrap}
-    .linksline{font-size:12px;color:#9aa0a6;margin-top:6px}
+    .linksline{font-size:12px;color:#9aa0a6;margin-top:8px}
     .linksline a{color:#9aa0a6;text-decoration:none}
+    
+    /* Free Mode Notice */
+    .free-notice{background:linear-gradient(135deg, rgba(245,158,11,0.1) 0%, rgba(245,158,11,0.05) 100%);border:1px solid var(--warning);border-radius:10px;padding:12px;margin:12px 0;display:flex;align-items:center;gap:12px;}
+    .free-notice-icon{font-size:24px;}
+    .free-notice-text{flex:1;}
+    .free-notice-text strong{color:var(--warning);}
+    
+    /* Blurred items */
+    .blurred{opacity:0.3;pointer-events:none;filter:blur(2px);}
+    
+    /* Pro CTA Card */
+    .pro-cta{background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);border:none;text-align:center;padding:30px;}
+    .pro-cta h3{margin:0 0 12px;font-size:22px;}
+    .pro-cta p{color:#fff;opacity:0.9;margin:0 0 20px;}
+    .pro-cta .btn{background:#fff;color:#000;font-weight:600;}
 
     /* error overlay */
     #err { display:none; position:fixed; inset:0; background:rgba(0,0,0,.9); color:#fff; z-index:9999; }
@@ -60,23 +76,33 @@
   <div class="wrap">
     <h1>OB1 · Ouroboros Radar — Top-10</h1>
 
-<!-- HERO INTRO -->
-<div class="hero">
-  <h2>Scouting predittivo U19/U20, ogni giorno</h2>
-  <p>OB1 setaccia centinaia di fonti in <b>Africa</b>, <b>Asia</b> e <b>Sudamerica</b> e restituisce un <b>Top-10</b> giornaliero pronto all'uso con punteggio, tag e link verificati. Pensato per club, agenti e scout che vogliono arrivare prima.</p>
-  <div class="cta">
-    <a class="btn btn-primary" href="./pricing.html">🚀 Pro €2.500/mese</a>
-    <a class="btn btn-ghost" href="#list">Guarda il Top-10 Free</a>
-    <a class="btn" href="mailto:mirkotornani@gmail.com?subject=OB1%20Demo">Richiedi Demo</a>
-  </div>
-  <div class="linksline">
-    <a href="./pricing.html">Pricing</a> ·
-    <a href="./method.html">Metodo</a> ·
-    <a href="./terms.html">Termini</a> ·
-    <a href="./privacy.html">Privacy</a> ·
-    <a href="https://github.com/mtornani/OB1-Radar">GitHub</a>
-  </div>
-</div>
+    <!-- HERO INTRO -->
+    <div class="hero">
+      <h2>Scouting predittivo U19/U20, ogni giorno</h2>
+      <p>OB1 setaccia centinaia di fonti in <b>Africa</b>, <b>Asia</b> e <b>Sudamerica</b> e restituisce un <b>Top-10</b> giornaliero pronto all'uso con punteggio, tag e link verificati. Pensato per club, agenti e scout che vogliono arrivare prima.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="./pricing.html">🚀 Pro €2.500/mese</a>
+        <a class="btn btn-ghost" href="#list">Guarda il Top-10 Free</a>
+        <a class="btn" href="./pricing.html">Richiedi Demo</a>
+      </div>
+      <div class="linksline">
+        <a href="./pricing.html">Pricing</a> ·
+        <a href="./method.html">Metodo</a> ·
+        <a href="./terms.html">Termini</a> ·
+        <a href="./privacy.html">Privacy</a> ·
+        <a href="./refund.html">Rimborsi</a>
+      </div>
+    </div>
+
+    <!-- FREE MODE NOTICE -->
+    <div class="free-notice">
+      <div class="free-notice-icon">🔒</div>
+      <div class="free-notice-text">
+        <strong>Modalità Free:</strong> Stai vedendo il Top-10 completo con punteggi, tag e link verificati. 
+        Passa a Pro per CSV settimanale, alert Telegram e accesso API.
+      </div>
+      <a href="./pricing.html" class="btn btn-warning">Attiva Pro</a>
+    </div>
 
     <!-- toolbar -->
     <div class="topbar">
@@ -84,7 +110,6 @@
       <select id="type"></select>
       <select id="tag"></select>
       <label class="switch"><input id="recentOnly" type="checkbox" /> Solo recenti (≤21gg)</label>
-      <a class="btn" href="./pricing.html">Pricing</a>
       <button id="reset" class="btn">Reset</button>
     </div>
 
@@ -93,13 +118,13 @@
       &nbsp;•&nbsp;<span id="mode">mode —</span>
       &nbsp;•&nbsp;<span id="regions"></span>
       &nbsp;•&nbsp;<span class="archive" id="archive"></span>
-      &nbsp;•&nbsp;<a id="csv" class="hide" href="top-week.csv" target="_blank" rel="noopener">CSV week</a>
+      &nbsp;•&nbsp;<a id="csv" class="hide" href="./pricing.html">CSV week 🔒</a>
     </div>
 
     <div id="list" class="list"></div>
     <div id="empty" class="empty">
       Nessun risultato con questi filtri.
-      <div class="hint">Suggerimento: premi <b>Reset</b> o togli “Solo recenti”.</div>
+      <div class="hint">Suggerimento: premi <b>Reset</b> o togli "Solo recenti".</div>
     </div>
   </div>
 
@@ -113,11 +138,18 @@
     var state={data:null,items:[],q:'',type:'',tag:'',recentOnly:false};
 
     function badge(t){var s=document.createElement('span');s.className='chip';s.textContent=t;return s;}
+    
     function card(it){
-      var d=document.createElement('div'); d.className='card';
+      var d=document.createElement('div'); 
+      d.className='card';
+      
       var score=Math.round(Number(it && it.score || 0));
       d.innerHTML='<div class="top"><div class="title">'+esc(it && it.label)+'</div><div class="score">'+score+'</div></div><div class="chips"></div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="'+esc((it && it.links && it.links[0])||"#")+'">Apri fonte →</a></div>';
-      var box=d.querySelector('.chips'); var why=(it && it.why) || []; for(var i=0;i<why.length;i++) box.appendChild(badge(why[i]));
+      
+      var box=d.querySelector('.chips'); 
+      var why=(it && it.why) || []; 
+      for(var i=0;i<why.length;i++) box.appendChild(badge(why[i]));
+      
       return d;
     }
 
@@ -169,7 +201,19 @@
       var list=$('#list'), empty=$('#empty'); list.innerHTML='';
       if(!state.items.length){ empty.style.display='block'; return; }
       empty.style.display='none';
-      for(var i=0;i<state.items.length;i++) list.appendChild(card(state.items[i]));
+      
+      // Show all items in Free mode (no blur)
+      for(var i=0;i<state.items.length;i++) {
+        list.appendChild(card(state.items[i]));
+      }
+      
+      // Add Pro CTA at the end
+      if(state.items.length > 0){
+        var ctaCard = document.createElement('div');
+        ctaCard.className = 'card pro-cta';
+        ctaCard.innerHTML = '<h3>🚀 Vuoi di più?</h3><p>Accedi a CSV settimanale, alert Telegram, API endpoint e supporto prioritario</p><a class="btn" href="./pricing.html">Attiva Pro → €2.500/mese</a>';
+        list.appendChild(ctaCard);
+      }
     }
 
     function buildArchive(){
@@ -183,9 +227,9 @@
     }
 
     function probeCSV(){
-      fetch('top-week.csv?'+Date.now(), {cache:'no-store'})
-        .then(function(r){ if (r.ok) $('#csv').classList.remove('hide'); })
-        .catch(function(){});
+      // CSV is Pro-only feature
+      $('#csv').classList.remove('hide');
+      $('#csv').title = 'Funzione Pro - Clicca per attivare';
     }
 
     function boot(){
@@ -196,7 +240,8 @@
         .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
         .then(function(j){
           state.data=j||{items:[]};
-          $('#last').textContent="Last updated: "+toLocal(safe(j,'generated_at_utc',''))+" • items: "+(safe(j,'items',[]).length);
+          var totalItems = safe(j,'items',[]).length;
+          $('#last').textContent="Last updated: "+toLocal(safe(j,'generated_at_utc',''))+" • items: " + totalItems;
           $('#mode').textContent="mode: "+(j && j.mode || 'unknown');
           renderBreakdown(safe(j,'region_breakdown',null));
           hydrateFilters(); applyFilters(); buildArchive(); probeCSV();
