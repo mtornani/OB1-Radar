@@ -321,7 +321,7 @@
   },
   "https://www.infobae.com/colombia/deportes/2024/08/09/ex-jugador-de-atletico-nacional-es-oficializado-en-su-nuevo-equipo-de-la-mls/": {
     "host": "www.infobae.com",
-    "seen_at": "2025-08-17T07:20:16"
+    "seen_at": "2025-09-10T07:20:54"
   },
   "https://onefootball.com/pt-br/noticias/ja-comecou-conheca-a-selecao-sub-20-do-que-estreia-no-sul-americano-40610670": {
     "host": "onefootball.com",
@@ -365,7 +365,7 @@
   },
   "https://www.infobae.com/deportes/2025/01/24/la-seleccion-argentina-sub-20-debutara-en-el-sudamericano-contra-brasil-hora-tv-y-posibles-formaciones/": {
     "host": "www.infobae.com",
-    "seen_at": "2025-08-19T07:20:36"
+    "seen_at": "2025-09-10T07:19:55"
   },
   "https://www.cafonline.com/caf-u-20-africa-cup-of-nations/news/kenya-u-20-profile-rising-stars-set-sights-on-debut-statement-in-egypt/": {
     "host": "www.cafonline.com",
@@ -477,7 +477,7 @@
   },
   "https://www.olympics.com/es/noticias/sudamericano-sub-20-2025-resumen-y-clasificados-al-mundial": {
     "host": "www.olympics.com",
-    "seen_at": "2025-08-23T07:18:54"
+    "seen_at": "2025-09-10T07:20:30"
   },
   "https://soynuevaprensadigital.com/npd/venezuela-futsal-sub-20-debuto-con-goleada-en-el-sudamericano/": {
     "host": "soynuevaprensadigital.com",
@@ -501,7 +501,7 @@
   },
   "https://www.transfermarkt.co/iago/meistetorbeteiligungen/spieler/1012174": {
     "host": "www.transfermarkt.co",
-    "seen_at": "2025-08-23T07:19:38"
+    "seen_at": "2025-09-10T07:20:50"
   },
   "https://es.intermiamicf.com/noticias/inter-miami-cf-ficha-al-atacante-internacional-juvenil-argentino-mateo-silvetti": {
     "host": "es.intermiamicf.com",
@@ -529,7 +529,7 @@
   },
   "https://www.conmebol.com/noticias/sigue-la-accion-en-la-fase-final-de-la-conmebol-sub20-2025/": {
     "host": "www.conmebol.com",
-    "seen_at": "2025-08-24T07:20:31"
+    "seen_at": "2025-09-10T07:20:42"
   },
   "https://www.transferfeed.com/es/fichajes/claudio-echeverri-manchester-city-lazio/11873945": {
     "host": "www.transferfeed.com",
@@ -561,7 +561,7 @@
   },
   "https://espndeportes.espn.com/futbol/equipo/_/id/2840/argentina-sub-20": {
     "host": "espndeportes.espn.com",
-    "seen_at": "2025-08-25T07:22:07"
+    "seen_at": "2025-09-10T07:20:34"
   },
   "https://www.rsl.com/news/estrella-joven-de-rsl-diego-luna-lleva-a-la-seleccion-nacional-juvenil-masculina": {
     "host": "www.rsl.com",
@@ -930,5 +930,29 @@
   "https://www.marca.com/futbol/mercado-fichajes/2024/08/30/66d1503581748c002a462f66-directo.html": {
     "host": "www.marca.com",
     "seen_at": "2025-09-09T07:21:30"
+  },
+  "https://elpais.com/noticias/mundial-sub-20/": {
+    "host": "elpais.com",
+    "seen_at": "2025-09-10T07:20:00"
+  },
+  "https://www.telesurtv.net/argentina-empata-con-colombia-y-brasil-gana-a-bolivia-en-sudamericano-sub-20/": {
+    "host": "www.telesurtv.net",
+    "seen_at": "2025-09-10T07:20:05"
+  },
+  "https://www.futbolred.com/seleccion-colombia/asi-fue-debut-de-seleccion-colombia-sub-20-contra-arabia-saudita-en-amistoso-para-mundial-247782": {
+    "host": "www.futbolred.com",
+    "seen_at": "2025-09-10T07:20:10"
+  },
+  "https://www.eluniverso.com/deportes/futbol/ecuador-debuta-ante-bolivia-sudamericano-sub-20-nota/": {
+    "host": "www.eluniverso.com",
+    "seen_at": "2025-09-10T07:20:24"
+  },
+  "https://espndeportes.espn.com/futbol/nota/_/id/14671810/fixture-sudamericano-sub-20-de-venezuela-2025-fecha-hora-resultados-de-los-partidos": {
+    "host": "espndeportes.espn.com",
+    "seen_at": "2025-09-10T07:20:27"
+  },
+  "https://www.reddit.com/r/BlueLock/comments/1aqh5iz/blue_lock_u20_match_statistics/?tl=es-419": {
+    "host": "www.reddit.com",
+    "seen_at": "2025-09-10T07:20:47"
   }
 }
