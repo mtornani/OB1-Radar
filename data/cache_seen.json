@@ -493,7 +493,7 @@
   },
   "https://www.conmebol.com/noticias/flamengo-y-fc-barcelona-frente-a-frente-por-la-intercontinental-sub20/": {
     "host": "www.conmebol.com",
-    "seen_at": "2025-08-23T07:19:12"
+    "seen_at": "2025-09-11T07:21:48"
   },
   "https://www.apwin.com/es/equipo/cr-flamengo-under-20/": {
     "host": "www.apwin.com",
@@ -954,5 +954,49 @@
   "https://www.reddit.com/r/BlueLock/comments/1aqh5iz/blue_lock_u20_match_statistics/?tl=es-419": {
     "host": "www.reddit.com",
     "seen_at": "2025-09-10T07:20:47"
+  },
+  "https://www.rpctv.com/marea-roja/panama-sub-20-jugara-su-primer-amistoso-chile-n6053710": {
+    "host": "www.rpctv.com",
+    "seen_at": "2025-09-11T07:19:49"
+  },
+  "https://www.infobae.com/deportes/2025/01/24/la-historia-de-la-figura-de-la-seleccion-sub-20-que-actuo-como-doble-de-messi-en-un-documental/": {
+    "host": "www.infobae.com",
+    "seen_at": "2025-09-11T07:20:02"
+  },
+  "https://pro.imdb.com/title/tt26433730/?ref_=cons_tt_ov_hdr&rf=cons_tt_ov_hdr": {
+    "host": "pro.imdb.com",
+    "seen_at": "2025-09-11T07:20:10"
+  },
+  "https://www.infobae.com/colombia/deportes/2025/01/27/asi-quedo-la-tabla-del-suramericano-sub-20-tras-el-debut-con-empate-de-colombia-vs-argentina/": {
+    "host": "www.infobae.com",
+    "seen_at": "2025-09-11T07:20:18"
+  },
+  "https://www.archivo.cronicadelquindio.com/noticias/deporte/colombia-debuto-con-victotria-en-el-mundial-sub-20-de-futbol": {
+    "host": "www.archivo.cronicadelquindio.com",
+    "seen_at": "2025-09-11T07:20:32"
+  },
+  "https://www.eluniverso.com/deportes/futbol/colombia-iguala-con-argentina-en-su-debut-en-el-sudamericano-sub-20-nota/": {
+    "host": "www.eluniverso.com",
+    "seen_at": "2025-09-11T07:20:39"
+  },
+  "https://www.canal12misiones.com/noticias-de-misiones/deportes-2/messi-la-seleccion": {
+    "host": "www.canal12misiones.com",
+    "seen_at": "2025-09-11T07:20:42"
+  },
+  "https://www.chicagofirefc.com/news/chicago-fire-fc-ii-cede-a-prestamo-al-delantero-claudio-cassano-al-fc-lugano": {
+    "host": "www.chicagofirefc.com",
+    "seen_at": "2025-09-11T07:21:00"
+  },
+  "https://holanews.com/messi-el-rey-de-las-estadisticas-de-argentina-juega-su-ultimo-partido-oficial-en-casa/": {
+    "host": "holanews.com",
+    "seen_at": "2025-09-11T07:21:16"
+  },
+  "https://www.c5n.com/deportes/mario-kempes-fue-contundente-y-eligio-lionel-messi-y-diego-maradona-su-respuesta-n213888": {
+    "host": "www.c5n.com",
+    "seen_at": "2025-09-11T07:21:19"
+  },
+  "https://conlagentenoticias.com/cuantos-goles-y-asistencias-tiene-lionel-messi-en-finales-con-la-seleccion-argentina/": {
+    "host": "conlagentenoticias.com",
+    "seen_at": "2025-09-11T07:21:42"
   }
 }
