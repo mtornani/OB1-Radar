@@ -33,7 +33,7 @@
   },
   "https://www.transferfeed.com/es/fichajes/divin-mubama-manchester-city-u21-stoke-city/12361703": {
     "host": "www.transferfeed.com",
-    "seen_at": "2025-08-28T07:21:05"
+    "seen_at": "2025-09-13T07:17:05"
   },
   "https://www.transferfeed.com/es/fichajes/keimer-andres-sandoval-rodriguez-real-betis-ii-crvena-zvezda/10696374": {
     "host": "www.transferfeed.com",
@@ -53,7 +53,7 @@
   },
   "https://espndeportes.espn.com/futbol/equipo/_/id/10296/paraguay-sub-20": {
     "host": "espndeportes.espn.com",
-    "seen_at": "2025-08-27T07:20:41"
+    "seen_at": "2025-09-13T07:16:49"
   },
   "https://www.apwin.com/es/equipo/sao-paulo-futebol-clube-under-20/": {
     "host": "www.apwin.com",
@@ -1014,5 +1014,37 @@
   "https://cearasc.com/noticia/sub-20-ceara-fecha-preparacao-para-estreia-alvineg": {
     "host": "cearasc.com",
     "seen_at": "2025-09-12T07:21:18"
+  },
+  "https://www.olympics.com/es/noticias/mundial-sub-20-messi-ronaldinho-saviola-grandes-estrellas": {
+    "host": "www.olympics.com",
+    "seen_at": "2025-09-13T07:16:39"
+  },
+  "https://www.si.com/es-us/futbol/por-que-desire-doue-no-juega-el-mundial-sub-20-con-francia": {
+    "host": "www.si.com",
+    "seen_at": "2025-09-13T07:16:41"
+  },
+  "https://olimpicocol.co/web/colombia-debuto-con-victoria-sobre-israel-en-el-mundial-de-futbol-sub20/": {
+    "host": "olimpicocol.co",
+    "seen_at": "2025-09-13T07:16:45"
+  },
+  "https://www.lagalaxy.com/news/los-defensas-del-la-galaxy-mauricio-cuevas-y-marcus-ferkranus-han-sido-convocado": {
+    "host": "www.lagalaxy.com",
+    "seen_at": "2025-09-13T07:16:47"
+  },
+  "https://as.com/futbol/internacional/de-el-hannach-a-mustapha-los-jugadores-a-seguir-el-torneo-africano-sub-20-n/": {
+    "host": "as.com",
+    "seen_at": "2025-09-13T07:16:51"
+  },
+  "https://www.fotmob.com/it/news/qiw1vn06kpmb1aqlyj0z45cp8_es-fulham-y-sunderland-lideran-un-agitado-cierre-del-negocio-de-la-premier-league": {
+    "host": "www.fotmob.com",
+    "seen_at": "2025-09-13T07:16:53"
+  },
+  "https://websites.mygameday.app/assoc_page.cgi?c=0-3374-0-0-0&sID=91326": {
+    "host": "websites.mygameday.app",
+    "seen_at": "2025-09-13T07:16:59"
+  },
+  "https://www.marca.com/futbol/mercado-fichajes/2025/08/21/68a6c3d87aeb1c2f7510cc2d-directo.html": {
+    "host": "www.marca.com",
+    "seen_at": "2025-09-13T07:17:04"
   }
 }
