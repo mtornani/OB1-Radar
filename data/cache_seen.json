@@ -21,7 +21,7 @@
   },
   "https://www.futbolred.com/tabla-de-posiciones/sudamericano-sub-20": {
     "host": "www.futbolred.com",
-    "seen_at": "2025-08-12T19:06:44"
+    "seen_at": "2025-09-14T07:17:41"
   },
   "https://www.conmebol.com/noticias/colombia-y-paraguay-al-mundial-sub20/": {
     "host": "www.conmebol.com",
@@ -77,7 +77,7 @@
   },
   "https://onefootball.com/pt-br/noticias/delantero-chileno-sub-20-debuto-con-un-hat-trick-en-cuiaba-llego-hace-dos-dias-a-brasil-41477997": {
     "host": "onefootball.com",
-    "seen_at": "2025-08-28T07:20:52"
+    "seen_at": "2025-09-14T07:17:29"
   },
   "https://www.threads.com/@tigosportspa/post/DNJ1b2Spt3h/gran-debutel-juvenil-kadir-barria-debut%C3%B3-con-el-botafogo-sub-20-sucedi%C3%B3-en-el-to": {
     "host": "www.threads.com",
@@ -181,7 +181,7 @@
   },
   "https://espndeportes.espn.com/futbol/mundial/nota/_/id/13939737/triunfo-uruguay-sub-20-elche-fabian-coito-torneo-lalcudia": {
     "host": "espndeportes.espn.com",
-    "seen_at": "2025-08-29T07:20:42"
+    "seen_at": "2025-09-14T07:17:35"
   },
   "https://olimpicocol.co/web/victoria-colombiana-en-el-debut-del-mundial-sub-20-de-futbol-de-salon/": {
     "host": "olimpicocol.co",
@@ -565,7 +565,7 @@
   },
   "https://www.rsl.com/news/estrella-joven-de-rsl-diego-luna-lleva-a-la-seleccion-nacional-juvenil-masculina": {
     "host": "www.rsl.com",
-    "seen_at": "2025-08-25T07:22:11"
+    "seen_at": "2025-09-14T07:17:37"
   },
   "https://www.transferfeed.com/es/fichajes/rodrigo-ribeiro-sporting-cp/3146896": {
     "host": "www.transferfeed.com",
@@ -673,7 +673,7 @@
   },
   "https://www.transferfeed.com/es/fichajes/ahmed-abdullahi-sunderland-angers-sco/16615152": {
     "host": "www.transferfeed.com",
-    "seen_at": "2025-08-30T07:18:24"
+    "seen_at": "2025-09-14T07:17:43"
   },
   "https://www.transfermarkt.co/campionato-nazionale-under-18/transfers/wettbewerb/ITJ7": {
     "host": "www.transfermarkt.co",
@@ -681,7 +681,7 @@
   },
   "https://www.transferfeed.com/es/fichajes/kayke-botafogo-fortaleza/16615073": {
     "host": "www.transferfeed.com",
-    "seen_at": "2025-08-30T07:18:40"
+    "seen_at": "2025-09-14T07:17:42"
   },
   "https://www.sandiegofc.com/news/san-diego-fc-ficha-al-extremo-alex-mighten": {
     "host": "www.sandiegofc.com",
@@ -1046,5 +1046,17 @@
   "https://www.marca.com/futbol/mercado-fichajes/2025/08/21/68a6c3d87aeb1c2f7510cc2d-directo.html": {
     "host": "www.marca.com",
     "seen_at": "2025-09-13T07:17:04"
+  },
+  "https://www.conmebol.com/noticias/la-albirroja-arranca-con-el-pie-derecho/": {
+    "host": "www.conmebol.com",
+    "seen_at": "2025-09-14T07:17:25"
+  },
+  "https://santafedeportivo.com/2025/09/12/los-convocados-a-la-seleccion-sub-20-antes-del-mundial-que-pasara-con-los-del-exterior-y-los-que-juegan-copas/": {
+    "host": "santafedeportivo.com",
+    "seen_at": "2025-09-14T07:17:34"
+  },
+  "https://sportsmedia.games/2025/09/12/mundial-sub-20-chile-2025-estas-son-las-figuras-ausentes-en-el-torneo/": {
+    "host": "sportsmedia.games",
+    "seen_at": "2025-09-14T07:17:38"
   }
 }
