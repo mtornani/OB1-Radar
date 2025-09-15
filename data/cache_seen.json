@@ -69,7 +69,7 @@
   },
   "https://ituanofc.com/noticias/ituano-venceu-na-estreia-do-brasileiro-serie-b-sub-20": {
     "host": "ituanofc.com",
-    "seen_at": "2025-08-27T07:21:11"
+    "seen_at": "2025-09-15T19:36:19"
   },
   "https://www.olympics.com/pt/noticias/bola-de-ouro-2025-numeros-candidatos": {
     "host": "www.olympics.com",
@@ -133,7 +133,7 @@
   },
   "https://www.transfermarkt.co/real-madrid/transferstroeme/verein/418": {
     "host": "www.transfermarkt.co",
-    "seen_at": "2025-08-13T07:23:24"
+    "seen_at": "2025-09-15T19:36:07"
   },
   "https://www.cearasc.com/noticia/sub-20-ceara-fecha-preparacao-para-estreia-alvineg": {
     "host": "www.cearasc.com",
@@ -305,7 +305,7 @@
   },
   "https://espndeportes.espn.com/futbol/estadisticas/_/liga/BRA.BRASILEIRO_U20/temporada/2024": {
     "host": "espndeportes.espn.com",
-    "seen_at": "2025-09-01T07:23:40"
+    "seen_at": "2025-09-15T19:35:58"
   },
   "https://www.transferfeed.com/es/fichajes/rafael-luis-benfica-ii-strasbourg/14691172": {
     "host": "www.transferfeed.com",
@@ -1094,5 +1094,25 @@
   "https://es.scribd.com/document/855429951/Comentario-Del-Reglamento-Sobre-El-Estatuto-y-La-Transferencia-de-Los-Jugadores": {
     "host": "es.scribd.com",
     "seen_at": "2025-09-15T07:22:28"
+  },
+  "https://espndeportes.espn.com/futbol/mundial/nota/_/id/12080864/mundial-sub20-argentina-debut-triunfo-uzbekistan-uno-por-uno": {
+    "host": "espndeportes.espn.com",
+    "seen_at": "2025-09-15T19:35:57"
+  },
+  "https://www.transfermarkt.co/copa-africana-de-naciones-sub-20/scorerliste/pokalwettbewerb/20AC/saison_id/2016/altersklasse/": {
+    "host": "www.transfermarkt.co",
+    "seen_at": "2025-09-15T19:36:00"
+  },
+  "https://ovaciones.com/alex-padilla-jugara-con-pumas-ante-necaxa-su-debut-en-liga-mx-podria-tardar-mas-de-lo-esperado/": {
+    "host": "ovaciones.com",
+    "seen_at": "2025-09-15T19:36:03"
+  },
+  "https://futbol.fandom.com/es/wiki/Luciano_Dario_Vietto": {
+    "host": "futbol.fandom.com",
+    "seen_at": "2025-09-15T19:36:09"
+  },
+  "https://lorena.r7.com/categoria/esportes/jogos-de-hoje-brasileirao-ligas-2": {
+    "host": "lorena.r7.com",
+    "seen_at": "2025-09-15T19:36:21"
   }
 }

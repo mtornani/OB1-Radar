@@ -1,145 +1,119 @@
 {
-  "generated_at_utc": "2025-09-15T07:22:32Z",
+  "generated_at_utc": "2025-09-15T19:36:21Z",
   "source": "OB1-AnomalyRadar",
   "mode": "anycrawl",
   "region_breakdown": {
     "africa": 0,
     "asia": 0,
-    "south-america": 0,
+    "south-america": 2,
     "international": 0,
-    "unknown": 10
+    "unknown": 6
   },
   "items": [
     {
       "entity": "PLAYER",
-      "label": "Calificaciones de los grandes traspasos del verano",
+      "label": "Copa Africana de Naciones Sub-20 - Lista de goleadores y ...",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 100.0,
+      "why": [
+        "mercato",
+        "prestazioni",
+        "south-america"
+      ],
+      "links": [
+        "https://www.transfermarkt.co/copa-africana-de-naciones-sub-20/scorerliste/pokalwettbewerb/20AC/saison_id/2016/altersklasse/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Luciano Dario Vietto | Futbolpedia",
       "anomaly_type": "PLAYER_BURST",
       "score": 100.0,
       "why": [
-        "esordio",
-        "mercato",
-        "prestazioni"
-      ],
-      "links": [
-        "https://espndeportes.espn.com/futbol/nota/_/id/15341829/mercado-fichajes-europa-calificaciones-transferencias-traspasos-valor"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Fútbol: todo listo para el debut de Israel en el Sub 20 de ...",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 82.9,
-      "why": [
         "CONMEBOL",
         "esordio",
-        "prestazioni",
-        "youth"
-      ],
-      "links": [
-        "https://www.israeleconomico.com/deportes/todo-listo-para-el-debut-de-israel-ante-colombia-en-el-sub-20-de-argentina/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Mercado de fichajes hoy, en directo | Altas, bajas y última ...",
-      "anomaly_type": "TRANSFER_SIGNAL",
-      "score": 80.78,
-      "why": [
-        "CONMEBOL",
         "mercato",
         "prestazioni",
         "youth"
       ],
       "links": [
-        "https://www.marca.com/futbol/mercado-fichajes/2025/07/01/68638a9a7aeb1c2f7508bc47-directo.html"
+        "https://futbol.fandom.com/es/wiki/Luciano_Dario_Vietto"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Alemania se quita la espina del debut y golean a Nueva ...",
+      "label": "Ituano venceu na estreia do Brasileiro Série B sub 20",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 29.8,
+      "why": [
+        "prestazioni"
+      ],
+      "links": [
+        "https://ituanofc.com/noticias/ituano-venceu-na-estreia-do-brasileiro-serie-b-sub-20"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Mundial Sub20: El uno por uno de Argentina en su debut",
       "anomaly_type": "PLAYER_BURST",
-      "score": 67.5,
+      "score": 29.6,
       "why": [
         "esordio",
         "prestazioni"
       ],
       "links": [
-        "https://www.tudn.com/futbol/resumen-sub-20-alemania-se-quita-la-espina-del-debut-y-golean-a-nueva-zelanda-video"
+        "https://espndeportes.espn.com/futbol/mundial/nota/_/id/12080864/mundial-sub20-argentina-debut-triunfo-uzbekistan-uno-por-uno"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Sub-20: Ceará encara o Falcon/SE na estreia na Copa do ...",
+      "label": "Confira os jogos de hoje no Brasileirão, ligas europeias e ...",
       "anomaly_type": "NOISE_PULSE",
-      "score": 40.6,
+      "score": 26.9,
       "why": [
         "segnali"
       ],
       "links": [
-        "https://www.cearasc.com/noticia/sub-20-ceara-encara-o-falconse-na-estreia-na-copa-"
+        "https://lorena.r7.com/categoria/esportes/jogos-de-hoje-brasileirao-ligas-2"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "DEBUT DE ENSUEÑO PARA PUERTO RICO ANTE ...",
+      "label": "¿Álex Padilla jugará con Pumas ante Necaxa? Su debut ...",
       "anomaly_type": "PLAYER_BURST",
-      "score": 27.8,
+      "score": 25.6,
       "why": [
         "esordio",
-        "prestazioni"
+        "mercato",
+        "youth"
       ],
       "links": [
-        "https://fpfpuertorico.com/debut-de-ensueno-para-puerto-rico-ante-dominicana/"
+        "https://ovaciones.com/alex-padilla-jugara-con-pumas-ante-necaxa-su-debut-en-liga-mx-podria-tardar-mas-de-lo-esperado/"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Universitario cayó ante Belgrano en su debut en la Copa ...",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 12.5,
-      "why": [
-        "esordio",
-        "prestazioni"
-      ],
-      "links": [
-        "https://espndeportes.espn.com/futbol/copa-libertadores/nota/_/id/14867509/universitario-cayo-ante-belgrano-en-su-debut-sub20"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Trabajos de Futbolista en clubes con nuestra bolsa ...",
+      "label": "Estadísticas de Goles Campeonato Sub 20 Brasil - 2024-25",
       "anomaly_type": "NOISE_PULSE",
-      "score": 9.52,
+      "score": 6.6,
+      "why": [
+        "prestazioni"
+      ],
+      "links": [
+        "https://espndeportes.espn.com/futbol/estadisticas/_/liga/BRA.BRASILEIRO_U20/temporada/2024"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Real Madrid CF - Flujo de fichajes",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 1.3,
       "why": [
         "mercato",
-        "recente"
+        "south-america"
       ],
       "links": [
-        "https://futboljobs.com/bolsa-empleo-futbol/jugadores/?srsltid=AfmBOoo9R245s5yrFe6IHnvQicVa1Wx41TAVfY8jvDWCLxRUZvFIMTEz"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "[Resumo e Discussão de Transferências] Verão de 2025",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 0.0,
-      "why": [
-        "js-heavy"
-      ],
-      "links": [
-        "https://www.reddit.com/r/reddevils/comments/1my60bf/transfer_round_up_discussion_summer_2025/?tl=pt-br"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Comentario Del Reglamento Sobre El Estatuto y La ...",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 0.0,
-      "why": [
-        "segnali"
-      ],
-      "links": [
-        "https://es.scribd.com/document/855429951/Comentario-Del-Reglamento-Sobre-El-Estatuto-y-La-Transferencia-de-Los-Jugadores"
+        "https://www.transfermarkt.co/real-madrid/transferstroeme/verein/418"
       ]
     }
   ]
