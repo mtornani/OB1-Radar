@@ -1,129 +1,137 @@
 {
-  "generated_at_utc": "2025-09-16T07:21:11Z",
+  "generated_at_utc": "2025-09-16T20:20:31Z",
   "source": "OB1-AnomalyRadar",
   "mode": "anycrawl",
   "region_breakdown": {
     "africa": 0,
     "asia": 0,
-    "south-america": 0,
+    "south-america": 2,
     "international": 0,
-    "unknown": 8
+    "unknown": 7
   },
   "items": [
     {
       "entity": "PLAYER",
-      "label": "São Paulo Sub-20: Partidos, Resultados y Estadísticas",
-      "anomaly_type": "NOISE_PULSE",
+      "label": "Mercado de fichajes hoy en directo | Altas, bajas y última ...",
+      "anomaly_type": "TRANSFER_SIGNAL",
       "score": 100.0,
-      "why": [
-        "prestazioni",
-        "youth"
-      ],
-      "links": [
-        "https://www.apwin.com/es/equipo/sao-paulo-futebol-clube-under-20/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Oeste Sub-20: Partidos, Resultados y Estadísticas",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 100.0,
-      "why": [
-        "prestazioni",
-        "recente",
-        "youth"
-      ],
-      "links": [
-        "https://www.apwin.com/es/equipo/oeste-futebol-club-under-20/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Claudio Úbeda, antes del debut del Sub 20: «El modelo de ...",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 40.5,
       "why": [
         "CONMEBOL",
-        "esordio",
-        "recente",
-        "youth"
-      ],
-      "links": [
-        "https://www.conmebol.com/noticias/claudio-ubeda-antes-del-debut-del-sub-20-el-modelo-de-pekerman-es-un-estimulo-y-un-espejo-seguir/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Con presente en la Selección Sub 20: el Inter Miami de ...",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 39.62,
-      "why": [
-        "esordio",
         "mercato",
         "prestazioni",
-        "recente",
         "youth"
       ],
       "links": [
-        "https://www.infobae.com/deportes/2025/09/15/con-presente-en-la-seleccion-sub-20-el-inter-miami-de-messi-oficializo-la-llegada-de-un-nuevo-refuerzo/"
+        "https://www.marca.com/futbol/mercado-fichajes/2025/02/03/67a06b747aeb1c2f7518122a-directo.html"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Argentina empata 2-2 con Panamá en su debut en el ...",
+      "label": "Copa Mundial de Fútbol Sub-20 para Niños",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 63.6,
+      "why": [
+        "CONMEBOL",
+        "prestazioni",
+        "south-america",
+        "youth"
+      ],
+      "links": [
+        "https://ninos.kiddle.co/Copa_Mundial_de_F%C3%BAtbol_Sub-20"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "España sub-20 golea a Paraguay en el debut del Mundial",
       "anomaly_type": "PLAYER_BURST",
-      "score": 31.88,
+      "score": 39.0,
       "why": [
         "CONMEBOL",
         "esordio",
-        "prestazioni",
-        "recente"
+        "prestazioni"
       ],
       "links": [
-        "https://www.conmebol.com/noticias/argentina-empata-2-2-con-panama-en-su-debut-en-el-mundial-sub-20/"
+        "https://elpais.com/deportes/2018/08/06/actualidad/1533574161_479288.html"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Cae el Tri en debut en la Copa del Mundo Sub-20 (Video)",
+      "label": "La Sub 20 debutó con victoria frente a Noruega",
       "anomaly_type": "PLAYER_BURST",
-      "score": 30.2,
+      "score": 37.2,
       "why": [
         "esordio",
         "prestazioni"
       ],
       "links": [
-        "https://www.latimes.com/espanol/deportes/articulo/2019-05-23/hoyla-fut-agrio-debut-del-tri-en-mundial-sub-20-italia"
+        "https://www.eltelegrafo.com/2019/05/la-sub-20-debuto-con-victoria-frente-a-noruega/"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Gambeta, giro y potente remate: el golazo de Nico Paz en ...",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 28.92,
+      "label": "La FIFA suspendió a Samuel Etoo por su actitud en el ...",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 27.5,
       "why": [
-        "esordio",
-        "mercato",
-        "prestazioni",
-        "recente",
-        "youth"
+        "CONMEBOL",
+        "recente"
       ],
       "links": [
-        "https://www.infobae.com/deportes/2025/09/15/gambeta-giro-y-potente-remate-el-golazo-de-nico-paz-en-el-empate-del-como-frente-al-genoa/"
+        "https://www.rpctv.com/futbol-internacional/futbol/la-fifa-suspendio-samuel-etoo-su-actitud-el-mundial-femenino-sub-20-n6007165"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Trabajos de Futbolista en clubes con nuestra bolsa ...",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 11.12,
+      "label": "Argentina ganó en el debut en el Mundial Sub 20",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 26.0,
       "why": [
-        "mercato",
+        "CONMEBOL",
+        "esordio",
+        "prestazioni"
+      ],
+      "links": [
+        "https://espndeportes.espn.com/futbol/mundial/nota/_/id/12080821/mundial-sub-20-argentina-debut-triunfo-uzbekistan-carboni"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Angola estreia-se com vitória na competição masculina Sub ...",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 21.8,
+      "why": [
         "prestazioni",
         "recente"
       ],
       "links": [
-        "https://futboljobs.com/bolsa-empleo-futbol/jugadores/?srsltid=AfmBOop8X7sNEgxqTRUAhnR18hMn7vP135eaxBoe150uj-w4YSilqD8U"
+        "https://prodesporto.com/angola-estreia-se-com-vitoria-na-competicao-masculina-sub-20-dos-jogos-da-regiao-5/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Colombia debutó con triunfazo agónico en el Mundial Sub 20",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 18.8,
+      "why": [
+        "esordio",
+        "prestazioni"
+      ],
+      "links": [
+        "https://espndeportes.espn.com/futbol/nota/_/id/12084589/mundial-sub-20-colombia-israel-resumen-goles-debut-grupo-c"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Victoria colombiana en el debut del Mundial Sub-20 de ...",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 10.3,
+      "why": [
+        "esordio",
+        "prestazioni",
+        "south-america"
+      ],
+      "links": [
+        "https://olimpicocol.co/web/victoria-colombiana-en-el-debut-del-mundial-sub-20-de-futbol-de-salon/"
       ]
     }
   ]

@@ -129,7 +129,7 @@
   },
   "https://www.marca.com/futbol/mercado-fichajes/2025/02/03/67a06b747aeb1c2f7518122a-directo.html": {
     "host": "www.marca.com",
-    "seen_at": "2025-08-29T07:21:00"
+    "seen_at": "2025-09-16T20:20:25"
   },
   "https://www.transfermarkt.co/real-madrid/transferstroeme/verein/418": {
     "host": "www.transfermarkt.co",
@@ -185,7 +185,7 @@
   },
   "https://olimpicocol.co/web/victoria-colombiana-en-el-debut-del-mundial-sub-20-de-futbol-de-salon/": {
     "host": "olimpicocol.co",
-    "seen_at": "2025-08-30T07:18:04"
+    "seen_at": "2025-09-16T20:19:57"
   },
   "https://www.transferfeed.com/es/fichajes/sergej-levak-roma-u19-inter/12360675": {
     "host": "www.transferfeed.com",
@@ -333,7 +333,7 @@
   },
   "https://espndeportes.espn.com/futbol/mundial/nota/_/id/12080821/mundial-sub-20-argentina-debut-triunfo-uzbekistan-carboni": {
     "host": "espndeportes.espn.com",
-    "seen_at": "2025-08-18T07:25:17"
+    "seen_at": "2025-09-16T20:19:55"
   },
   "https://www.threads.com/@patriarubronegra/post/DMRNlVOu6Aq/ryan-roberto-brilha-no-sub-17-do-flamengo-com-20-gols-e-14-assist%C3%AAncias-em-33-jo": {
     "host": "www.threads.com",
@@ -1142,5 +1142,29 @@
   "https://futboljobs.com/bolsa-empleo-futbol/jugadores/?srsltid=AfmBOop8X7sNEgxqTRUAhnR18hMn7vP135eaxBoe150uj-w4YSilqD8U": {
     "host": "futboljobs.com",
     "seen_at": "2025-09-16T07:20:55"
+  },
+  "https://espndeportes.espn.com/futbol/nota/_/id/12084589/mundial-sub-20-colombia-israel-resumen-goles-debut-grupo-c": {
+    "host": "espndeportes.espn.com",
+    "seen_at": "2025-09-16T20:19:59"
+  },
+  "https://elpais.com/deportes/2018/08/06/actualidad/1533574161_479288.html": {
+    "host": "elpais.com",
+    "seen_at": "2025-09-16T20:20:04"
+  },
+  "https://www.eltelegrafo.com/2019/05/la-sub-20-debuto-con-victoria-frente-a-noruega/": {
+    "host": "www.eltelegrafo.com",
+    "seen_at": "2025-09-16T20:20:06"
+  },
+  "https://ninos.kiddle.co/Copa_Mundial_de_F%C3%BAtbol_Sub-20": {
+    "host": "ninos.kiddle.co",
+    "seen_at": "2025-09-16T20:20:07"
+  },
+  "https://www.rpctv.com/futbol-internacional/futbol/la-fifa-suspendio-samuel-etoo-su-actitud-el-mundial-femenino-sub-20-n6007165": {
+    "host": "www.rpctv.com",
+    "seen_at": "2025-09-16T20:20:28"
+  },
+  "https://prodesporto.com/angola-estreia-se-com-vitoria-na-competicao-masculina-sub-20-dos-jogos-da-regiao-5/": {
+    "host": "prodesporto.com",
+    "seen_at": "2025-09-16T20:20:31"
   }
 }
