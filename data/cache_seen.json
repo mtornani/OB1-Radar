@@ -57,7 +57,7 @@
   },
   "https://www.apwin.com/es/equipo/sao-paulo-futebol-clube-under-20/": {
     "host": "www.apwin.com",
-    "seen_at": "2025-08-30T07:18:21"
+    "seen_at": "2025-09-16T07:20:47"
   },
   "https://www.cearasc.com/noticia/sub-20-ceara-encara-o-falconse-na-estreia-na-copa-": {
     "host": "www.cearasc.com",
@@ -1114,5 +1114,33 @@
   "https://lorena.r7.com/categoria/esportes/jogos-de-hoje-brasileirao-ligas-2": {
     "host": "lorena.r7.com",
     "seen_at": "2025-09-15T19:36:21"
+  },
+  "https://www.conmebol.com/noticias/claudio-ubeda-antes-del-debut-del-sub-20-el-modelo-de-pekerman-es-un-estimulo-y-un-espejo-seguir/": {
+    "host": "www.conmebol.com",
+    "seen_at": "2025-09-16T07:20:33"
+  },
+  "https://www.latimes.com/espanol/deportes/articulo/2019-05-23/hoyla-fut-agrio-debut-del-tri-en-mundial-sub-20-italia": {
+    "host": "www.latimes.com",
+    "seen_at": "2025-09-16T07:20:35"
+  },
+  "https://www.conmebol.com/noticias/argentina-empata-2-2-con-panama-en-su-debut-en-el-mundial-sub-20/": {
+    "host": "www.conmebol.com",
+    "seen_at": "2025-09-16T07:20:39"
+  },
+  "https://www.apwin.com/es/equipo/oeste-futebol-club-under-20/": {
+    "host": "www.apwin.com",
+    "seen_at": "2025-09-16T07:20:49"
+  },
+  "https://www.infobae.com/deportes/2025/09/15/gambeta-giro-y-potente-remate-el-golazo-de-nico-paz-en-el-empate-del-como-frente-al-genoa/": {
+    "host": "www.infobae.com",
+    "seen_at": "2025-09-16T07:20:50"
+  },
+  "https://www.infobae.com/deportes/2025/09/15/con-presente-en-la-seleccion-sub-20-el-inter-miami-de-messi-oficializo-la-llegada-de-un-nuevo-refuerzo/": {
+    "host": "www.infobae.com",
+    "seen_at": "2025-09-16T07:20:51"
+  },
+  "https://futboljobs.com/bolsa-empleo-futbol/jugadores/?srsltid=AfmBOop8X7sNEgxqTRUAhnR18hMn7vP135eaxBoe150uj-w4YSilqD8U": {
+    "host": "futboljobs.com",
+    "seen_at": "2025-09-16T07:20:55"
   }
 }
