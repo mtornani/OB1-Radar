@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# fsgc_diaspora_hunter_v4.py - Basato su ricerca diaspora reale
+# fsgc_eligible.py - FSGC Diaspora Hunter v4 per OB1 Radar
 
 import json
 import re
@@ -12,90 +12,68 @@ DIASPORA_DATA = {
     "usa": {
         "population": 3000,
         "cities": ["detroit", "troy", "michigan", "new york", "nyc"],
-        "weight": 3.0,  # Detroit/Troy concentrazione massima
+        "weight": 3.0,
         "keywords": ["michigan", "detroit", "troy", "new york", "mls", "usl"]
     },
     "argentina": {
         "population": 1600,
         "cities": ["buenos aires", "córdoba", "pergamino", "mendoza", "jujuy", "río negro"],
-        "weight": 2.5,  # 6 associazioni ufficiali
+        "weight": 2.5,
         "keywords": ["argentina", "argentino", "river", "boca", "racing", "primera b", "primera c"]
     },
     "italy": {
         "population": 5724,
         "cities": ["roma", "milano", "torino", "napoli", "bologna"],
-        "weight": 2.0,  # Più grande ma più integrata
+        "weight": 2.0,
         "keywords": ["italia", "serie c", "serie d", "lega pro", "eccellenza"]
     },
     "france": {
         "population": 1881,
         "cities": ["paris", "lyon", "marseille", "nice"],
-        "weight": 1.5,  # 700 a Parigi
+        "weight": 1.5,
         "keywords": ["france", "français", "ligue 2", "national", "cfa"]
     },
     "brazil": {
-        "population": 500,  # Stimato, non confermato
+        "population": 500,
         "cities": ["são paulo", "rio", "santos"],
         "weight": 1.0,
         "keywords": ["brasil", "brasileiro", "série b", "série c"]
     }
 }
 
-# COGNOMI REALI PIÙ COMUNI (dalla ricerca)
+# COGNOMI REALI PIÙ COMUNI
 TOP_SURNAMES = {
-    "tier1": [  # Top 10 più comuni
-        "Gasperoni",  # 786 persone
-        "Guidi",      # 667
-        "Casadei",    # 457
-        "Zanotti",    # 397
-        "Giardi",     # 396
-        "Mularoni",
-        "Belluzzi",
-        "Della Valle",
-        "Benedettini",
-        "Ceccoli"
+    "tier1": [
+        "Gasperoni", "Guidi", "Casadei", "Zanotti", "Giardi",
+        "Mularoni", "Belluzzi", "Della Valle", "Benedettini", "Ceccoli"
     ],
-    "tier2": [  # Altri comuni documentati
+    "tier2": [
         "Bollini", "Mazza", "Nataloni", "Fabbri",
         "Valentini", "Casali", "Righi", "Berardi",
         "Battistini", "Felici", "Gatti", "Giovagnoli"
     ],
-    "tier3": [  # Cognomi con varianti diaspora
+    "tier3": [
         "Rossi", "Conti", "Guerra", "Stefanelli",
         "Forcellini", "Francini", "Morri", "Nicolini",
         "Selva", "Terenzi", "Ugolini", "Zafferani"
     ]
 }
 
-# VARIANTI COGNOMI PER PAESE
+# VARIANTI COGNOMI
 SURNAME_VARIANTS = {
-    "Gasperoni": ["Gasperoni", "Gasparoni", "Gasperon", "Gasperón"],  # Spagnolo -ón
+    "Gasperoni": ["Gasperoni", "Gasparoni", "Gasperon", "Gasperón"],
     "Guidi": ["Guidi", "Guido", "Guid", "Guidy"],
     "Zanotti": ["Zanotti", "Zanoti", "Zanott", "Zanotto"],
-    "Giardi": ["Giardi", "Giard", "Jardí", "Jardy"],  # Francese/Spagnolo
+    "Giardi": ["Giardi", "Giard", "Jardí", "Jardy"],
     "Casadei": ["Casadei", "Casadey", "Casade", "Casadé"],
     "Mularoni": ["Mularoni", "Mullaroni", "Mularón", "Mularony"],
     "Belluzzi": ["Belluzzi", "Bellucci", "Belluz", "Belluzzy"],
     "Della Valle": ["Della Valle", "DellaValle", "Dellavalle", "Del Valle", "Delvalle"],
     "Benedettini": ["Benedettini", "Benedettino", "Benedetti", "Benedettin"],
-    "Felici": ["Felici", "Felice", "Feliz", "Felix"],  # Latino/Spagnolo
-    "Fabbri": ["Fabbri", "Fabri", "Faber", "Fabre"],  # Latino/Francese
+    "Felici": ["Felici", "Felice", "Feliz", "Felix"],
+    "Fabbri": ["Fabbri", "Fabri", "Faber", "Fabre"],
     "Rossi": ["Rossi", "Rossy", "Ross", "Rosi", "Rosso"],
-    "Stefanelli": ["Stefanelli", "Estefanelli", "Stefanel", "Stephanel"],  # Spagnolo/Francese
-}
-
-# CASI NOTI DI SUCCESSO (dalla ricerca)
-SUCCESS_CASES = {
-    "Andy Selva": {
-        "born": "Roma",
-        "mother": "San Marinese",
-        "career": "8 goals in 73 caps",
-        "pattern": "Italian-born with SM parent"
-    },
-    "Massimo Bonini": {
-        "career": "Refused Italy for San Marino",
-        "pattern": "Loyalty over opportunity"
-    }
+    "Stefanelli": ["Stefanelli", "Estefanelli", "Stefanel", "Stephanel"],
 }
 
 class DiasporaHunterV4:
@@ -112,7 +90,7 @@ class DiasporaHunterV4:
         """Check cognomi con peso basato su tier e contesto"""
         text_lower = text.lower()
         
-        # Check Tier 1 (più comuni)
+        # Check Tier 1
         for surname in TOP_SURNAMES["tier1"]:
             for variant in SURNAME_VARIANTS.get(surname, [surname]):
                 if self._surname_match(variant.lower(), text_lower):
@@ -135,10 +113,10 @@ class DiasporaHunterV4:
     def _surname_match(self, surname: str, text: str) -> bool:
         """Match intelligente per cognomi"""
         patterns = [
-            rf'\b{surname}\b',                    # Cognome esatto
-            rf'\b\w+\s+{surname}\b',              # Nome + Cognome
-            rf'\b{surname}\s+\w+\b',              # Cognome + Nome (sudamerica)
-            rf'\b\w+\s+{surname}\s+\w+\b',        # Nome + Cognome + Secondo
+            rf'\b{surname}\b',
+            rf'\b\w+\s+{surname}\b',
+            rf'\b{surname}\s+\w+\b',
+            rf'\b\w+\s+{surname}\s+\w+\b',
         ]
         
         for pattern in patterns:
@@ -153,7 +131,7 @@ class DiasporaHunterV4:
         best_location = None
         
         for country, data in DIASPORA_DATA.items():
-            # Check città specifiche (più peso)
+            # Check città specifiche
             for city in data["cities"]:
                 if city in text_lower:
                     score = 30 * data["weight"]
@@ -172,11 +150,11 @@ class DiasporaHunterV4:
         return (int(best_score), best_location)
     
     def check_league_level(self, text: str) -> Tuple[int, Optional[str]]:
-        """Check livello competitivo (serie minori = più probabile)"""
+        """Check livello competitivo"""
         text_lower = text.lower()
         
         leagues = {
-            "high_opportunity": {  # Serie minori, alta opportunità
+            "high_opportunity": {
                 "patterns": ["serie c", "serie d", "lega pro", "eccellenza", "promozione",
                            "primera b", "primera c", "torneo federal", "regional",
                            "série b", "série c", "série d", "estadual",
@@ -190,7 +168,7 @@ class DiasporaHunterV4:
                 "score": 20,
                 "level": "professional"
             },
-            "low_opportunity": {  # Top league, difficile
+            "low_opportunity": {
                 "patterns": ["serie a", "premier league", "la liga", "bundesliga",
                            "primeira divisão", "mls"],
                 "score": 10,
@@ -206,7 +184,7 @@ class DiasporaHunterV4:
         return (0, None)
     
     def check_age_profile(self, text: str) -> Tuple[int, Optional[str]]:
-        """Check età con focus su 18-25 (ideale per switch)"""
+        """Check età con focus su 18-25"""
         text_lower = text.lower()
         
         age_patterns = [
@@ -263,22 +241,21 @@ class DiasporaHunterV4:
         age_score, age_cat = self.check_age_profile(full_text)
         nat_score, nat_signals = self.check_naturalization_signals(full_text)
         
-        # Score totale pesato
+        # Score totale
         total_score = surname_score + location_score + league_score + age_score + nat_score
         
-        # Determina priorità
+        # Determina priorità (senza emoji per compatibilità)
         if total_score >= 120:
-            priority = "🚨 CRITICAL - CONTACT IMMEDIATELY"
+            priority = "CRITICAL - CONTACT IMMEDIATELY"
         elif total_score >= 100:
-            priority = "⚠️ HIGH - Research genealogy"
+            priority = "HIGH - Research genealogy"
         elif total_score >= 80:
-            priority = "📍 MEDIUM - Monitor closely"
+            priority = "MEDIUM - Monitor closely"
         elif total_score >= 60:
-            priority = "👀 LOW - Add to watchlist"
+            priority = "LOW - Add to watchlist"
         else:
-            priority = "📝 MINIMAL - Archive"
+            priority = "MINIMAL - Archive"
         
-        # Costruisci intelligence report
         return {
             "entity": "DIASPORA_TARGET",
             "label": label,
@@ -315,20 +292,17 @@ class DiasporaHunterV4:
         """Genera azione specifica basata su dati"""
         if score >= 120:
             if location and "argentina" in location.lower():
-                return f"🚨 IMMEDIATE: Check CEMLA database for {surname} family immigration records"
+                return f"IMMEDIATE: Check CEMLA database for {surname} family"
             elif location and "detroit" in location.lower():
-                return f"🚨 IMMEDIATE: Contact San Marino Club Troy for {surname} family"
+                return f"IMMEDIATE: Contact San Marino Club Troy for {surname}"
             else:
-                return f"🚨 IMMEDIATE: Verify {surname} lineage - Tier {tier} surname"
-        
+                return f"IMMEDIATE: Verify {surname} lineage - Tier {tier}"
         elif score >= 100:
-            return f"⚠️ Research Ellis Island/CEMLA records for {surname} emigration"
-        
+            return f"Research Ellis Island/CEMLA records for {surname}"
         elif score >= 80:
-            return f"📍 Monitor performance, gather family history on {surname}"
-        
+            return f"Monitor performance, gather family history"
         else:
-            return "👀 Add to long-term tracking database"
+            return "Add to long-term tracking database"
 
 def generate_enhanced_report():
     """Genera report con dati reali diaspora"""
@@ -336,7 +310,7 @@ def generate_enhanced_report():
     # Load daily.json
     daily_path = Path("output/daily.json")
     if not daily_path.exists():
-        print("[ERROR] daily.json not found")
+        print("[FSGC] daily.json not found")
         return None
     
     with open(daily_path, 'r', encoding='utf-8') as f:
@@ -348,7 +322,7 @@ def generate_enhanced_report():
     # Analizza tutti gli items
     for item in daily_data.get("items", []):
         analysis = hunter.analyze_complete(item)
-        if analysis["total_score"] >= 50:  # Soglia minima
+        if analysis["total_score"] >= 50:
             targets.append(analysis)
     
     # Ordina per score
@@ -362,10 +336,11 @@ def generate_enhanced_report():
             country = loc.split(":")[0]
             country_stats[country] = country_stats.get(country, 0) + 1
     
-    # Genera report finale
+    # Genera report con campo eligible_found per Telegram
     report = {
         "generated_at": datetime.utcnow().isoformat() + "Z",
         "source": "FSGC-DiasporaHunter-v4",
+        "eligible_found": len(targets),  # IMPORTANTE per Telegram alert
         "based_on": "Real San Marino diaspora research",
         "diaspora_stats": {
             "total_diaspora": 13000,
@@ -381,45 +356,38 @@ def generate_enhanced_report():
             "high": sum(1 for t in targets if "HIGH" in t["priority"]),
             "by_country": country_stats
         },
-        "targets": targets[:20]  # Top 20
+        "targets": targets[:20]
     }
     
-    # Salva report
-    output_dir = Path("output")
-    output_file = output_dir / f"fsgc_diaspora_{datetime.now().strftime('%Y-%m-%d')}.json"
+    # Salva in DOCS per GitHub Pages e Telegram
+    docs_dir = Path("docs")
+    docs_dir.mkdir(exist_ok=True)
     
-    with open(output_file, 'w', encoding='utf-8') as f:
+    # File principale per Telegram alert
+    main_file = docs_dir / "fsgc_eligible.json"
+    with open(main_file, 'w', encoding='utf-8') as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
     
-    print(f"\n[DIASPORA HUNTER v4] Report generated: {output_file}")
-    print(f"[DIASPORA HUNTER v4] Based on REAL diaspora data")
-    print(f"[DIASPORA HUNTER v4] Key locations: Detroit/Troy, Argentina, Italy, France")
+    # File con data per archivio
+    date_file = docs_dir / f"fsgc_eligible_{datetime.now().strftime('%Y-%m-%d')}.json"
+    with open(date_file, 'w', encoding='utf-8') as f:
+        json.dump(report, f, ensure_ascii=False, indent=2)
+    
+    print(f"[FSGC] Generated reports: {len(targets)} targets found")
+    print(f"[FSGC] Saved to {main_file}")
+    print(f"[FSGC] Saved to {date_file}")
     
     # Alert per critical finds
     if report["analysis"]["critical"] > 0:
-        print("\n🚨 CRITICAL TARGETS FOUND!")
+        print("[FSGC] CRITICAL TARGETS FOUND!")
         for target in targets[:3]:
             if "CRITICAL" in target["priority"]:
-                print(f"\n→ {target['label'][:60]}...")
-                print(f"  Score: {target['total_score']}")
+                print(f"  -> {target['label'][:60]}...")
+                print(f"     Score: {target['total_score']}")
                 if target["surname"]["found"]:
-                    print(f"  Surname: {target['surname']['found']} (Tier {target['surname']['tier']})")
-                if target["location"]["identified"]:
-                    print(f"  Location: {target['location']['identified']}")
-                print(f"  ACTION: {target['action']}")
+                    print(f"     Surname: {target['surname']['found']} (Tier {target['surname']['tier']})")
     
     return report
 
 if __name__ == "__main__":
-    print("=" * 60)
-    print("FSGC DIASPORA HUNTER v4.0")
-    print("Based on real San Marino emigration data")
-    print("=" * 60)
-    print("\nKey diaspora locations:")
-    print("• USA: 3,000 (Detroit/Troy concentration)")
-    print("• Italy: 5,724 (10 communities)")
-    print("• France: 1,881 (Paris 700)")
-    print("• Argentina: 1,600 (6 associations)")
-    print("=" * 60)
-    
     result = generate_enhanced_report()
