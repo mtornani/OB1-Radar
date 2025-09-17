@@ -125,7 +125,7 @@
   },
   "https://espndeportes.espn.com/futbol/mexico/nota/_/id/15090382/liga-mx-futbol-estufa-apertura-2025-rumores-fichajes": {
     "host": "espndeportes.espn.com",
-    "seen_at": "2025-08-29T07:21:06"
+    "seen_at": "2025-09-17T07:20:24"
   },
   "https://www.marca.com/futbol/mercado-fichajes/2025/02/03/67a06b747aeb1c2f7518122a-directo.html": {
     "host": "www.marca.com",
@@ -645,7 +645,7 @@
   },
   "https://www.reddit.com/r/vasco/comments/1j9os20/vasco_escalado_para_o_primeiro_jogo_do_sub20/?tl=es-419": {
     "host": "www.reddit.com",
-    "seen_at": "2025-08-28T07:21:24"
+    "seen_at": "2025-09-17T07:20:31"
   },
   "https://www.threads.com/@diariodetorcedor/post/DNzFWVWXgDA/quem-%C3%A9-o-craque-do-brasileir%C3%A3o-at%C3%A9-o-momentoarrascaeta-18-jogos-10-gols-e-10-ass": {
     "host": "www.threads.com",
@@ -1166,5 +1166,29 @@
   "https://prodesporto.com/angola-estreia-se-com-vitoria-na-competicao-masculina-sub-20-dos-jogos-da-regiao-5/": {
     "host": "prodesporto.com",
     "seen_at": "2025-09-16T20:20:31"
+  },
+  "https://www.infobae.com/deportes/2025/09/16/viajaba-para-sumarse-a-la-sub-20-y-su-club-le-ordeno-volver-la-nueva-baja-de-placente-a-12-dias-del-mundial-de-chile/": {
+    "host": "www.infobae.com",
+    "seen_at": "2025-09-17T07:19:23"
+  },
+  "https://www.reddit.com/r/BlueLock/comments/17t4k4g/isagi_rin_barou_and_nagi_all_goals_and_assists/?tl=es-es": {
+    "host": "www.reddit.com",
+    "seen_at": "2025-09-17T07:20:03"
+  },
+  "https://www.transfermarkt.co/michael-camejo/meistetorbeteiligungen/spieler/1240598": {
+    "host": "www.transfermarkt.co",
+    "seen_at": "2025-09-17T07:20:05"
+  },
+  "https://www.conmebol.com/noticias/los-clasificados-del-grupo-b/": {
+    "host": "www.conmebol.com",
+    "seen_at": "2025-09-17T07:20:14"
+  },
+  "https://www.wikiwand.com/es/articles/Selecci%C3%B3n_de_f%C3%BAtbol_sub-20_de_Chile": {
+    "host": "www.wikiwand.com",
+    "seen_at": "2025-09-17T07:20:18"
+  },
+  "https://globoplay.globo.com/v/6404018/": {
+    "host": "globoplay.globo.com",
+    "seen_at": "2025-09-17T07:20:45"
   }
 }
