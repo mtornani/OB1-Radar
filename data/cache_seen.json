@@ -105,7 +105,7 @@
   },
   "https://www.365scores.com/pt-br/news/magazine/sul-americano-sub-20/": {
     "host": "www.365scores.com",
-    "seen_at": "2025-08-12T20:06:30"
+    "seen_at": "2025-09-18T07:20:19"
   },
   "https://ituanofc.com/noticias/ituano-vence-nas-3-categorias-da-base-com-viradas-no-15-e-20": {
     "host": "ituanofc.com",
@@ -1190,5 +1190,41 @@
   "https://globoplay.globo.com/v/6404018/": {
     "host": "globoplay.globo.com",
     "seen_at": "2025-09-17T07:20:45"
+  },
+  "https://estudiantesdelaplata.com/con-mura-la-seleccion-sub-20-goleo-en-el-debut-mundialista/": {
+    "host": "estudiantesdelaplata.com",
+    "seen_at": "2025-09-18T07:19:44"
+  },
+  "https://www.eldiarioweb.com/2025/01/argentina-se-alista-para-el-debut-en-el-sudamericano-sub20-en-venezuela/": {
+    "host": "www.eldiarioweb.com",
+    "seen_at": "2025-09-18T07:19:47"
+  },
+  "https://www.c5n.com/deportes/empieza-el-sudamericano-sub-20-cuando-debuta-la-seleccion-argentina-n188419": {
+    "host": "www.c5n.com",
+    "seen_at": "2025-09-18T07:19:49"
+  },
+  "https://www.conmebol.com/noticias/los-23-elegidos-de-la-seleccion-argentina-para-el-sudamericano-sub-20/": {
+    "host": "www.conmebol.com",
+    "seen_at": "2025-09-18T07:19:56"
+  },
+  "https://www.ellitoral.com/actualidad-tatengue/jeronimo-domina-union-seleccion-argentina-sub-20-amistoso-internacional-cotif-lalcudia-southampton-premier-league-torneo-sub-20-javier-mascherano-diego-placente_0_FgwKmpTTCC.html": {
+    "host": "www.ellitoral.com",
+    "seen_at": "2025-09-18T07:19:57"
+  },
+  "https://www.infobae.com/deportes/2025/01/25/humillacion-aplastados-y-la-peor-derrota-de-la-historia-asi-reflejaron-los-medios-brasilenos-el-6-0-de-argentina-en-el-sub-20/": {
+    "host": "www.infobae.com",
+    "seen_at": "2025-09-18T07:19:59"
+  },
+  "https://www.sandiegofc.com/news/san-diego-fc-adquiere-al-mediocampista-luca-de-la-torre-a-prestamo-del-rc-celta-de-vigo": {
+    "host": "www.sandiegofc.com",
+    "seen_at": "2025-09-18T07:20:06"
+  },
+  "https://www.gazetaesportiva.com/apostas/prognosticos/futebol/brasil-x-argentina-sul-americano-sub-20-24-01-2025": {
+    "host": "www.gazetaesportiva.com",
+    "seen_at": "2025-09-18T07:20:25"
+  },
+  "https://www.fogaonet.com/noticias-do-botafogo/campeonato-brasileiro-feminino-sub-20-botafogo-estreia-nesta-quinta-feira-contra-o-independente-sp/": {
+    "host": "www.fogaonet.com",
+    "seen_at": "2025-09-18T07:20:27"
   }
 }
