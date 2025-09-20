@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2025-09-20T07:19:09Z",
+  "generated_at_utc": "2025-09-20T14:31:32Z",
   "source": "OB1-AnomalyRadar",
   "mode": "anycrawl",
   "region_breakdown": {
@@ -12,112 +12,111 @@
   "items": [
     {
       "entity": "PLAYER",
-      "label": "El Mundial sub 20 pasa factura a los clubes españoles",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 100.0,
+      "label": "¡Colombia y Paraguay al Mundial Sub20!",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 92.06,
       "why": [
         "CONMEBOL",
-        "esordio",
         "prestazioni",
-        "recente"
+        "recente",
+        "youth"
       ],
       "links": [
-        "https://www.marca.com/futbol/seleccion/2025/09/18/mundial-sub-20-pasa-factura-clubes-espanoles.html"
+        "https://www.conmebol.com/noticias/colombia-y-paraguay-al-mundial-sub20/"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Corinthians Sub-20: Partidos, Resultados y Estadísticas",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 100.0,
+      "label": "Selección Sub-20 de Guatemala debutó en el Mundial de ...",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 85.7,
       "why": [
+        "esordio",
+        "prestazioni"
+      ],
+      "links": [
+        "https://www.guatemala.com/deportes/futbol-guatemalteco/seleccion-sub-20-de-guatemala-debuto-en-el-mundial-de-argentina-2023-2.html"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Mundial Femenino Sub-20 Colombia 2024 rompió récords",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 62.9,
+      "why": [
+        "esordio",
         "prestazioni",
         "youth"
       ],
       "links": [
-        "https://www.apwin.com/es/equipo/sc-corinthians-paulista-under-20/"
+        "https://www.infobae.com/colombia/deportes/2024/09/23/el-mundial-femenino-sub-20-colombia-2024-el-segundo-con-mayor-asistencia-a-los-estadios-en-la-historia/"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Notícias – Academia Pérolas Negras",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 100.0,
-      "why": [
-        "mercato",
-        "prestazioni",
-        "recente"
-      ],
-      "links": [
-        "https://academiaperolasnegras.org/?page_id=35012"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Fecha 2 de la CONMEBOL Sub20: Toda la información y ...",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 40.62,
-      "why": [
-        "CONMEBOL",
-        "esordio",
-        "prestazioni",
-        "recente"
-      ],
-      "links": [
-        "https://www.conmebol.com/noticias/fecha-2-de-la-conmebol-sub20-toda-la-informacion-y-donde-ver/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Mundial sub-20 de futebol masculino 2025: Brasil convoca ...",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 29.3,
-      "why": [
-        "prestazioni"
-      ],
-      "links": [
-        "https://www.olympics.com/pt/noticias/mundial-sub-20-futebol-masculino-2025-brasil-convocados-lista"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Fichaje de Benjamin Cremaschi: Inter Miami a Parma",
+      "label": "OFICIAL: Inter Miami anunció el fichaje de Allen Obando",
       "anomaly_type": "TRANSFER_SIGNAL",
-      "score": 14.9,
-      "why": [
-        "mercato",
-        "prestazioni",
-        "youth"
-      ],
-      "links": [
-        "https://www.transferfeed.com/es/fichajes/benja-cremaschi-inter-miami-parma/16615560"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Histórica goleada de Argentina sobre Brasil en el ...",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 12.0,
+      "score": 30.6,
       "why": [
         "CONMEBOL",
-        "esordio",
+        "mercato",
         "prestazioni"
       ],
       "links": [
-        "https://espndeportes.espn.com/futbol/nota/_/id/14707232/argentina-pone-primera-justo-ante-brasil-en-el-sudamericano-sub-20-venezuela"
+        "https://onefootball.com/en/news/oficial-inter-miami-anuncio-el-fichaje-de-allen-obando-40883340"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "🇦🇷🔙 Se cumplen 17 años del Mundial Juvenil Sub 20 de ...",
+      "label": "Quatro jogadores do Sub-20, incluindo artilheiro da base ...",
       "anomaly_type": "NOISE_PULSE",
-      "score": 9.2,
+      "score": 30.0,
+      "why": [
+        "mercato",
+        "prestazioni"
+      ],
+      "links": [
+        "https://onefootball.com/es/noticias/quatro-jogadores-do-sub-20-incluindo-artilheiro-da-base-passam-a-integrar-o-elenco-profissional-do-cruzeiro-39963763"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Novelli Júnior recebe decisão do Sub-20",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 26.3,
+      "why": [
+        "prestazioni",
+        "recente"
+      ],
+      "links": [
+        "https://ituanofc.com/noticias/novelli-junior-recebe-decisao-do-sub20"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Inter Miami se refuerza con joven promesa de Ecuador",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 12.5,
+      "why": [
+        "CONMEBOL",
+        "esordio",
+        "mercato"
+      ],
+      "links": [
+        "https://deportetotalusa.com/inter-miami-se-refuerza-con-joven-promesa-de-ecuador/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "¡El gerente de préstamos y el DOF están rechazando ofertas de ...",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 10.5,
       "why": [
         "js-heavy",
-        "prestazioni"
+        "mercato"
       ],
       "links": [
-        "https://www.threads.com/@trsportss_/post/C9ufiUHgLDf"
+        "https://www.reddit.com/r/footballmanagergames/comments/181g9w5/loan_manager_and_dof_are_turning_down_loan_offers/?tl=es-es"
       ]
     }
   ]

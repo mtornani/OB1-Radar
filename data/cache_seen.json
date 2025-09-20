@@ -25,7 +25,7 @@
   },
   "https://www.conmebol.com/noticias/colombia-y-paraguay-al-mundial-sub20/": {
     "host": "www.conmebol.com",
-    "seen_at": "2025-09-06T07:18:33"
+    "seen_at": "2025-09-20T14:30:41"
   },
   "https://www.transfermarkt.co/copa-mundial-sub-20-de-2015/scorerliste/pokalwettbewerb/20WC/saison_id/2014/altersklasse//sort/age": {
     "host": "www.transfermarkt.co",
@@ -385,7 +385,7 @@
   },
   "https://www.infobae.com/colombia/deportes/2024/09/23/el-mundial-femenino-sub-20-colombia-2024-el-segundo-con-mayor-asistencia-a-los-estadios-en-la-historia/": {
     "host": "www.infobae.com",
-    "seen_at": "2025-09-05T07:20:33"
+    "seen_at": "2025-09-20T14:30:43"
   },
   "https://www.dcunited.com/news/el-defensa-jeremy-garay-regresa-de-prestamo-de-el-paso-locomotive-fc": {
     "host": "www.dcunited.com",
@@ -693,7 +693,7 @@
   },
   "https://www.reddit.com/r/footballmanagergames/comments/181g9w5/loan_manager_and_dof_are_turning_down_loan_offers/?tl=es-es": {
     "host": "www.reddit.com",
-    "seen_at": "2025-08-30T07:18:57"
+    "seen_at": "2025-09-20T14:31:11"
   },
   "https://www.cearasc.com/noticia/base-ceara-vence-classico-rei-pela-liga-ceara-na-c": {
     "host": "www.cearasc.com",
@@ -793,7 +793,7 @@
   },
   "https://onefootball.com/en/news/oficial-inter-miami-anuncio-el-fichaje-de-allen-obando-40883340": {
     "host": "onefootball.com",
-    "seen_at": "2025-09-05T07:20:43"
+    "seen_at": "2025-09-20T14:30:48"
   },
   "https://globoplay.globo.com/v/11944557/": {
     "host": "globoplay.globo.com",
@@ -1278,5 +1278,21 @@
   "https://www.olympics.com/pt/noticias/mundial-sub-20-futebol-masculino-2025-brasil-convocados-lista": {
     "host": "www.olympics.com",
     "seen_at": "2025-09-20T07:19:02"
+  },
+  "https://www.guatemala.com/deportes/futbol-guatemalteco/seleccion-sub-20-de-guatemala-debuto-en-el-mundial-de-argentina-2023-2.html": {
+    "host": "www.guatemala.com",
+    "seen_at": "2025-09-20T14:30:38"
+  },
+  "https://deportetotalusa.com/inter-miami-se-refuerza-con-joven-promesa-de-ecuador/": {
+    "host": "deportetotalusa.com",
+    "seen_at": "2025-09-20T14:30:52"
+  },
+  "https://onefootball.com/es/noticias/quatro-jogadores-do-sub-20-incluindo-artilheiro-da-base-passam-a-integrar-o-elenco-profissional-do-cruzeiro-39963763": {
+    "host": "onefootball.com",
+    "seen_at": "2025-09-20T14:31:30"
+  },
+  "https://ituanofc.com/noticias/novelli-junior-recebe-decisao-do-sub20": {
+    "host": "ituanofc.com",
+    "seen_at": "2025-09-20T14:31:32"
   }
 }

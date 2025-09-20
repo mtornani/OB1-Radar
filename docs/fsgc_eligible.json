@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-09-20T07:19:09.485834Z",
+  "generated_at": "2025-09-20T14:31:32.913762Z",
   "source": "FSGC-DiasporaHunter-v4",
-  "eligible_found": 2,
+  "eligible_found": 0,
   "based_on": "Real San Marino diaspora research",
   "diaspora_stats": {
     "total_diaspora": 13000,
@@ -12,80 +12,10 @@
   },
   "analysis": {
     "total_scanned": 8,
-    "targets_found": 2,
+    "targets_found": 0,
     "critical": 0,
     "high": 0,
-    "by_country": {
-      "brazil": 1,
-      "argentina": 1
-    }
+    "by_country": {}
   },
-  "targets": [
-    {
-      "entity": "DIASPORA_TARGET",
-      "label": "Mundial sub-20 de futebol masculino 2025: Brasil convoca ...",
-      "total_score": 50,
-      "priority": "MINIMAL - Archive",
-      "surname": {
-        "found": null,
-        "original": null,
-        "tier": 0,
-        "score": 0
-      },
-      "location": {
-        "identified": "brazil",
-        "score": 20,
-        "population": 500
-      },
-      "competitive_level": {
-        "league": null,
-        "score": 0
-      },
-      "age_profile": {
-        "category": "youth",
-        "score": 30
-      },
-      "naturalization": {
-        "signals": [],
-        "score": 0
-      },
-      "action": "Add to long-term tracking database",
-      "links": [
-        "https://www.olympics.com/pt/noticias/mundial-sub-20-futebol-masculino-2025-brasil-convocados-lista"
-      ]
-    },
-    {
-      "entity": "DIASPORA_TARGET",
-      "label": "Histórica goleada de Argentina sobre Brasil en el ...",
-      "total_score": 50,
-      "priority": "MINIMAL - Archive",
-      "surname": {
-        "found": null,
-        "original": null,
-        "tier": 0,
-        "score": 0
-      },
-      "location": {
-        "identified": "argentina",
-        "score": 50,
-        "population": 1600
-      },
-      "competitive_level": {
-        "league": null,
-        "score": 0
-      },
-      "age_profile": {
-        "category": null,
-        "score": 0
-      },
-      "naturalization": {
-        "signals": [],
-        "score": 0
-      },
-      "action": "Add to long-term tracking database",
-      "links": [
-        "https://espndeportes.espn.com/futbol/nota/_/id/14707232/argentina-pone-primera-justo-ante-brasil-en-el-sudamericano-sub-20-venezuela"
-      ]
-    }
-  ]
+  "targets": []
 }
