@@ -233,7 +233,7 @@
   },
   "https://www.conmebol.com/noticias/fecha-2-de-la-conmebol-sub20-toda-la-informacion-y-donde-ver/": {
     "host": "www.conmebol.com",
-    "seen_at": "2025-08-15T07:21:29"
+    "seen_at": "2025-09-20T07:18:22"
   },
   "https://www.olympics.com/es/noticias/futbol-joyas-jugadores-futuro-argentina-sudamericano-sub-20-2025": {
     "host": "www.olympics.com",
@@ -441,7 +441,7 @@
   },
   "https://www.apwin.com/es/equipo/sc-corinthians-paulista-under-20/": {
     "host": "www.apwin.com",
-    "seen_at": "2025-08-22T07:20:18"
+    "seen_at": "2025-09-20T07:18:27"
   },
   "https://espndeportes.espn.com/futbol/nota/_/id/10654724/mercado-fichajes-europa-calificacion-mejores-clubes": {
     "host": "espndeportes.espn.com",
@@ -777,7 +777,7 @@
   },
   "https://www.transferfeed.com/es/fichajes/benja-cremaschi-inter-miami-parma/16615560": {
     "host": "www.transferfeed.com",
-    "seen_at": "2025-09-04T07:20:57"
+    "seen_at": "2025-09-20T07:18:37"
   },
   "https://www.reddit.com/r/footballmanagergames/comments/15g5mwi/developing_youth_players_why_are_loans_not_the/": {
     "host": "www.reddit.com",
@@ -1258,5 +1258,25 @@
   "https://futboljobs.com/bolsa-empleo-futbol/jugadores/?srsltid=AfmBOooNWhjE_aLzOcgculCgMC-YyBPhd2sjOkCYzbmTrOQdwjmMqGhu": {
     "host": "futboljobs.com",
     "seen_at": "2025-09-19T07:20:26"
+  },
+  "https://www.marca.com/futbol/seleccion/2025/09/18/mundial-sub-20-pasa-factura-clubes-espanoles.html": {
+    "host": "www.marca.com",
+    "seen_at": "2025-09-20T07:18:13"
+  },
+  "https://espndeportes.espn.com/futbol/nota/_/id/14707232/argentina-pone-primera-justo-ante-brasil-en-el-sudamericano-sub-20-venezuela": {
+    "host": "espndeportes.espn.com",
+    "seen_at": "2025-09-20T07:18:24"
+  },
+  "https://www.threads.com/@trsportss_/post/C9ufiUHgLDf": {
+    "host": "www.threads.com",
+    "seen_at": "2025-09-20T07:18:36"
+  },
+  "https://academiaperolasnegras.org/?page_id=35012": {
+    "host": "academiaperolasnegras.org",
+    "seen_at": "2025-09-20T07:18:57"
+  },
+  "https://www.olympics.com/pt/noticias/mundial-sub-20-futebol-masculino-2025-brasil-convocados-lista": {
+    "host": "www.olympics.com",
+    "seen_at": "2025-09-20T07:19:02"
   }
 }
