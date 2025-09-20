@@ -1,0 +1,8 @@
+2025-09-20T08:15:00ZZ | start_run | Loaded OB1-AnomalyRadar daily payload (8 items)
+2025-09-20T08:17:00ZZ | deduplicate | No duplicate labels detected
+2025-09-20T08:20:00ZZ | quality_gate | Declassed NOISE_PULSE items (Corinthians, Pérolas Negras, Brasil convocazione) per mancanza seconde fonti
+2025-09-20T08:22:00ZZ | exclusion | Scartato post Threads su Argentina U20 (fonte social non verificata)
+2025-09-20T08:25:00ZZ | reporting | Compilato executive brief + 3 schede prioritarie (Marca, CONMEBOL, ESPN, TransferFeed)
+2025-09-20T08:32:00ZZ | gtm_assets | Creato post LinkedIn bilingue, email sales A/B, pricing test
+2025-09-20T08:35:00ZZ | metrics | Aggiornate metriche AARRR iniziali per campagna ouroboros_day263
+2025-09-20T08:37:00ZZ | end_run | Output files salvati in dist/ e README aggiornato
