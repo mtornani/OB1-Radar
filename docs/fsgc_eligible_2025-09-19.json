@@ -1,0 +1,123 @@
+{
+  "generated_at": "2025-09-19T07:20:26.733948Z",
+  "source": "FSGC-DiasporaHunter-v4",
+  "eligible_found": 3,
+  "based_on": "Real San Marino diaspora research",
+  "diaspora_stats": {
+    "total_diaspora": 13000,
+    "usa": 3000,
+    "italy": 5724,
+    "france": 1881,
+    "argentina": 1600
+  },
+  "analysis": {
+    "total_scanned": 9,
+    "targets_found": 3,
+    "critical": 0,
+    "high": 0,
+    "by_country": {
+      "argentina": 3
+    }
+  },
+  "targets": [
+    {
+      "entity": "DIASPORA_TARGET",
+      "label": "Argentina dio a conocer la lista para el Mundial Sub 20",
+      "total_score": 80,
+      "priority": "MEDIUM - Monitor closely",
+      "surname": {
+        "found": null,
+        "original": null,
+        "tier": 0,
+        "score": 0
+      },
+      "location": {
+        "identified": "argentina",
+        "score": 50,
+        "population": 1600
+      },
+      "competitive_level": {
+        "league": null,
+        "score": 0
+      },
+      "age_profile": {
+        "category": "youth",
+        "score": 30
+      },
+      "naturalization": {
+        "signals": [],
+        "score": 0
+      },
+      "action": "Monitor performance, gather family history",
+      "links": [
+        "https://www.infobae.com/deportes/2025/09/18/argentina-dio-a-conocer-la-lista-para-el-mundial-sub-20-sin-echeverri-y-mastantuono-pero-con-varias-figuras-de-europa/"
+      ]
+    },
+    {
+      "entity": "DIASPORA_TARGET",
+      "label": "Es una promesa del fútbol argentino, fue citado por ...",
+      "total_score": 50,
+      "priority": "MINIMAL - Archive",
+      "surname": {
+        "found": null,
+        "original": null,
+        "tier": 0,
+        "score": 0
+      },
+      "location": {
+        "identified": "argentina",
+        "score": 50,
+        "population": 1600
+      },
+      "competitive_level": {
+        "league": null,
+        "score": 0
+      },
+      "age_profile": {
+        "category": null,
+        "score": 0
+      },
+      "naturalization": {
+        "signals": [],
+        "score": 0
+      },
+      "action": "Add to long-term tracking database",
+      "links": [
+        "https://www.infobae.com/deportes/2025/09/19/es-una-promesa-del-futbol-argentino-fue-citado-por-placente-pero-jugara-para-chile-el-mundial-sub-20/"
+      ]
+    },
+    {
+      "entity": "DIASPORA_TARGET",
+      "label": "Colombia debuta con empate ante el líder Argentina en ...",
+      "total_score": 50,
+      "priority": "MINIMAL - Archive",
+      "surname": {
+        "found": null,
+        "original": null,
+        "tier": 0,
+        "score": 0
+      },
+      "location": {
+        "identified": "argentina",
+        "score": 50,
+        "population": 1600
+      },
+      "competitive_level": {
+        "league": null,
+        "score": 0
+      },
+      "age_profile": {
+        "category": null,
+        "score": 0
+      },
+      "naturalization": {
+        "signals": [],
+        "score": 0
+      },
+      "action": "Add to long-term tracking database",
+      "links": [
+        "https://espndeportes.espn.com/futbol/mundial/nota/_/id/14718484/seleccion-colombia-empata-argentina-sudamericano-sub-20"
+      ]
+    }
+  ]
+}

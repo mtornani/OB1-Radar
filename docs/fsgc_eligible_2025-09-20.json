@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-09-21T07:18:16.366833Z",
+  "generated_at": "2025-09-20T14:31:32.913762Z",
   "source": "FSGC-DiasporaHunter-v4",
   "eligible_found": 0,
   "based_on": "Real San Marino diaspora research",
@@ -11,7 +11,7 @@
     "argentina": 1600
   },
   "analysis": {
-    "total_scanned": 7,
+    "total_scanned": 8,
     "targets_found": 0,
     "critical": 0,
     "high": 0,

@@ -1,0 +1,124 @@
+{
+  "generated_at_utc": "2025-09-20T07:19:09Z",
+  "source": "OB1-AnomalyRadar",
+  "mode": "anycrawl",
+  "region_breakdown": {
+    "africa": 0,
+    "asia": 0,
+    "south-america": 0,
+    "international": 0,
+    "unknown": 8
+  },
+  "items": [
+    {
+      "entity": "PLAYER",
+      "label": "El Mundial sub 20 pasa factura a los clubes españoles",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 100.0,
+      "why": [
+        "CONMEBOL",
+        "esordio",
+        "prestazioni",
+        "recente"
+      ],
+      "links": [
+        "https://www.marca.com/futbol/seleccion/2025/09/18/mundial-sub-20-pasa-factura-clubes-espanoles.html"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Corinthians Sub-20: Partidos, Resultados y Estadísticas",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 100.0,
+      "why": [
+        "prestazioni",
+        "youth"
+      ],
+      "links": [
+        "https://www.apwin.com/es/equipo/sc-corinthians-paulista-under-20/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Notícias – Academia Pérolas Negras",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 100.0,
+      "why": [
+        "mercato",
+        "prestazioni",
+        "recente"
+      ],
+      "links": [
+        "https://academiaperolasnegras.org/?page_id=35012"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Fecha 2 de la CONMEBOL Sub20: Toda la información y ...",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 40.62,
+      "why": [
+        "CONMEBOL",
+        "esordio",
+        "prestazioni",
+        "recente"
+      ],
+      "links": [
+        "https://www.conmebol.com/noticias/fecha-2-de-la-conmebol-sub20-toda-la-informacion-y-donde-ver/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Mundial sub-20 de futebol masculino 2025: Brasil convoca ...",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 29.3,
+      "why": [
+        "prestazioni"
+      ],
+      "links": [
+        "https://www.olympics.com/pt/noticias/mundial-sub-20-futebol-masculino-2025-brasil-convocados-lista"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Fichaje de Benjamin Cremaschi: Inter Miami a Parma",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 14.9,
+      "why": [
+        "mercato",
+        "prestazioni",
+        "youth"
+      ],
+      "links": [
+        "https://www.transferfeed.com/es/fichajes/benja-cremaschi-inter-miami-parma/16615560"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Histórica goleada de Argentina sobre Brasil en el ...",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 12.0,
+      "why": [
+        "CONMEBOL",
+        "esordio",
+        "prestazioni"
+      ],
+      "links": [
+        "https://espndeportes.espn.com/futbol/nota/_/id/14707232/argentina-pone-primera-justo-ante-brasil-en-el-sudamericano-sub-20-venezuela"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "🇦🇷🔙 Se cumplen 17 años del Mundial Juvenil Sub 20 de ...",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 9.2,
+      "why": [
+        "js-heavy",
+        "prestazioni"
+      ],
+      "links": [
+        "https://www.threads.com/@trsportss_/post/C9ufiUHgLDf"
+      ]
+    }
+  ]
+}
