@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+output/
+data/
+!data/
+!data/.gitkeep
+!data/historical_callups.sample.csv
+.DS_Store
+
