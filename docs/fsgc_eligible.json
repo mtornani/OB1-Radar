@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-09-22T05:10:35.503833Z",
+  "generated_at": "2025-09-22T07:24:43.169321Z",
   "source": "FSGC-DiasporaHunter-v4",
-  "eligible_found": 2,
+  "eligible_found": 0,
   "based_on": "Real San Marino diaspora research",
   "diaspora_stats": {
     "total_diaspora": 13000,
@@ -11,80 +11,11 @@
     "argentina": 1600
   },
   "analysis": {
-    "total_scanned": 10,
-    "targets_found": 2,
+    "total_scanned": 8,
+    "targets_found": 0,
     "critical": 0,
     "high": 0,
-    "by_country": {
-      "argentina": 1
-    }
+    "by_country": {}
   },
-  "targets": [
-    {
-      "entity": "DIASPORA_TARGET",
-      "label": "Sub-20: No confronto de ida das quartas do Estadual ...",
-      "total_score": 60,
-      "priority": "LOW - Add to watchlist",
-      "surname": {
-        "found": null,
-        "original": null,
-        "tier": 0,
-        "score": 0
-      },
-      "location": {
-        "identified": null,
-        "score": 0,
-        "population": 0
-      },
-      "competitive_level": {
-        "league": "semi-pro",
-        "score": 30
-      },
-      "age_profile": {
-        "category": "youth",
-        "score": 30
-      },
-      "naturalization": {
-        "signals": [],
-        "score": 0
-      },
-      "action": "Add to long-term tracking database",
-      "links": [
-        "https://www.cearasc.com/noticia/sub-20-no-confronto-de-ida-das-quartas-do-estadual"
-      ]
-    },
-    {
-      "entity": "DIASPORA_TARGET",
-      "label": "Fútbol: Conoce a las joyas del futuro de Argentina que ...",
-      "total_score": 50,
-      "priority": "MINIMAL - Archive",
-      "surname": {
-        "found": null,
-        "original": null,
-        "tier": 0,
-        "score": 0
-      },
-      "location": {
-        "identified": "argentina",
-        "score": 50,
-        "population": 1600
-      },
-      "competitive_level": {
-        "league": null,
-        "score": 0
-      },
-      "age_profile": {
-        "category": null,
-        "score": 0
-      },
-      "naturalization": {
-        "signals": [],
-        "score": 0
-      },
-      "action": "Add to long-term tracking database",
-      "links": [
-        "https://www.olympics.com/es/noticias/futbol-joyas-jugadores-futuro-argentina-sudamericano-sub-20-2025"
-      ]
-    }
-  ]
+  "targets": []
 }

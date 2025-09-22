@@ -93,7 +93,7 @@
   },
   "https://www.rsl.com/news/diego-luna-envia-a-la-seleccionnacional-juvenil-masculina-sub-20-de-estados-unid": {
     "host": "www.rsl.com",
-    "seen_at": "2025-09-08T07:21:27"
+    "seen_at": "2025-09-22T07:24:06"
   },
   "https://www.derechosdelfutbol.com/post/derechos-de-formacion": {
     "host": "www.derechosdelfutbol.com",
@@ -121,7 +121,7 @@
   },
   "https://www.concacaf.com/es/sub-15-hombres/noticias/grandes-jugadores-que-iniciaron-su-carrera-en-el-campeonato-sub-15-masculino-de-concacaf/": {
     "host": "www.concacaf.com",
-    "seen_at": "2025-09-08T07:21:24"
+    "seen_at": "2025-09-22T07:24:08"
   },
   "https://espndeportes.espn.com/futbol/mexico/nota/_/id/15090382/liga-mx-futbol-estufa-apertura-2025-rumores-fichajes": {
     "host": "espndeportes.espn.com",
@@ -825,7 +825,7 @@
   },
   "https://www.reddit.com/r/footballmanagergames/comments/1g3wc2q/reminder_to_everyone_check_top_league_youth/?tl=es-419": {
     "host": "www.reddit.com",
-    "seen_at": "2025-09-06T07:19:21"
+    "seen_at": "2025-09-22T07:24:34"
   },
   "https://www.cearasc.com/noticia/sub-20-na-final-da-copa-do-nordeste-o-adversario-d": {
     "host": "www.cearasc.com",
@@ -1334,5 +1334,25 @@
   "https://www.cearasc.com/noticia/sub-20-no-confronto-de-ida-das-quartas-do-estadual": {
     "host": "www.cearasc.com",
     "seen_at": "2025-09-22T05:10:35"
+  },
+  "https://meridiano.net/futbol/la-vinotinto/mal-comienzo-la-vinotinto-pierde-en-su-debut-en-el-sudamericano-sub-20-resumen--20251232190": {
+    "host": "meridiano.net",
+    "seen_at": "2025-09-22T07:23:56"
+  },
+  "https://www.mediotiempo.com/futbol/seleccion-sub-20/mundial-sub-20-cuando-y-contra-quien-debuta-seleccion-mexicana-2025": {
+    "host": "www.mediotiempo.com",
+    "seen_at": "2025-09-22T07:24:04"
+  },
+  "https://www.postadeportes.com/futbol/futbol-internacional/espanyol-y-rangers-van-por-amaury-morales-en-el-mundial-sub-20/vl2019043": {
+    "host": "www.postadeportes.com",
+    "seen_at": "2025-09-22T07:24:11"
+  },
+  "https://www.reddit.com/r/reddevils/comments/1mvornp/transfer_round_up_discussion_summer_2025/?tl=es-419": {
+    "host": "www.reddit.com",
+    "seen_at": "2025-09-22T07:24:24"
+  },
+  "https://www.galaticosonline.com/noticias/selecao-brasileira/ramon-menezes-convoca-selecao-brasileira-para-a-copa-do-mundo-sub-20.html": {
+    "host": "www.galaticosonline.com",
+    "seen_at": "2025-09-22T07:24:43"
   }
 }
