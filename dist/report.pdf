@@ -1,47 +1,297 @@
 %PDF-1.4
-1 0 obj<< /Type /Catalog /Pages 2 0 R >>endobj
-2 0 obj<< /Type /Pages /Kids [3 0 R] /Count 1 >>endobj
-3 0 obj<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>endobj
-4 0 obj<< /Length 948 >>stream
+%
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Symbol >>
+endobj
+4 0 obj
+<< /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> /ProcSet [/PDF /Text] >>
+endobj
+5 0 obj
+<< /Length 5055 >>
+stream
+0.75 G
+48.00 311.00 499.00 138.00 re S
+48.00 191.00 499.00 114.00 re S
+48.00 59.00 499.00 126.00 re S
+0 G
 BT
-/F1 11 Tf
-72 780 Td
-(Ouroboros Report ? 20 Settembre 2025) Tj
-0 -16 Td
-(Executive Brief \(?1 pagina\)) Tj
-0 -16 Td
-(Focus: ondata di visibilit U20 \(CONMEBOL, Liga\) e finestra MLS ? Serie A.) Tj
-0 -16 Td
-(Carico club spagnoli: convocazioni Mondiale U20 riducono disponibilit \(Marca\).) Tj
-0 -16 Td
-(Contesa CONMEBOL Sub20: duelli Argentina-Brasile e dati clip \(CONMEBOL\).) Tj
-0 -16 Td
-(Argentina U20 travolge Brasile: priorit final third report \(ESPN\).) Tj
-0 -16 Td
-(Benjamn Cremaschi: Parma valuta ingresso da Inter Miami, azione agente \(TransferFeed\).) Tj
-0 -16 Td
-(Next 72h: clip CONMEBOL, negoziazione Cremaschi, supporto academy.) Tj
-0 -16 Td
-(Schede priorit:) Tj
-0 -16 Td
-(1\) Convocazioni U20 Spagna ? rischi overload, attivare check staff medico.) Tj
-0 -16 Td
-(2\) Argentina U20 ? organizzare call osservatore, raccolta clip xG.) Tj
-0 -16 Td
-(3\) Cremaschi a Parma ? contatto agente, analisi TCO, competizione roster.) Tj
+/F2 18.00 Tf
+48.00 792.00 Td
+(Ouroboros Report \227 20 Settembre 2025) Tj
 ET
+BT
+/F2 11.00 Tf
+48.00 764.00 Td
+(EXECUTIVE BRIEF \(?1 PAGINA\)) Tj
+ET
+BT
+/F1 12.00 Tf
+48.00 749.00 Td
+(Focus: ondata di visibilit\340 sui tornei U20 CONMEBOL e finestra di mercato) Tj
+ET
+BT
+/F1 12.00 Tf
+48.00 736.00 Td
+(per profili MLS ) Tj
+/F3 12.00 Tf
+(\256) Tj
+/F1 12.00 Tf
+( Serie A. Il carico sulle rose spagnole e la vittoria) Tj
+ET
+BT
+/F1 12.00 Tf
+48.00 723.00 Td
+(larga dell'Argentina U20 creano punti d'attenzione immediati per scouting) Tj
+ET
+BT
+/F1 12.00 Tf
+48.00 710.00 Td
+(live e pianificazione minutaggi.) Tj
+ET
+BT
+/F1 12.00 Tf
+48.00 694.00 Td
+(Next 72h: bloccare slot analisti per clip CONMEBOL, negoziare disponibilit\340) Tj
+ET
+BT
+/F1 12.00 Tf
+48.00 681.00 Td
+(Cremaschi con intermediario MLS, monitorare richieste academy per) Tj
+ET
+BT
+/F1 12.00 Tf
+48.00 668.00 Td
+(sostituzioni emergenti.) Tj
+ET
+BT
+/F1 12.00 Tf
+48.00 652.00 Td
+(\225 Carico club spagnoli: convocazioni massicce al Mondiale U20 riducono) Tj
+ET
+BT
+/F1 12.00 Tf
+66.00 639.00 Td
+(disponibilit\340 e suggeriscono di monitorare resilienza matchday e) Tj
+ET
+BT
+/F1 12.00 Tf
+66.00 626.00 Td
+(opportunit\340 di prestito flash. Fonte: Marca) Tj
+ET
+BT
+/F1 12.00 Tf
+66.00 613.00 Td
+(\(https://www.marca.com/futbol/seleccion/2025/09/18/mundial-sub-20-pasa-factura-clubes-espanoles.html\).) Tj
+ET
+BT
+/F1 12.00 Tf
+48.00 598.00 Td
+(\225 Contesa CONMEBOL Sub20: calendario della Fecha 2 mette in vetrina duelli) Tj
+ET
+BT
+/F1 12.00 Tf
+66.00 585.00 Td
+(Argentina-Brasile, con finestre streaming e dati per clip analytics) Tj
+ET
+BT
+/F1 12.00 Tf
+66.00 572.00 Td
+(entro 48h. Fonte: CONMEBOL) Tj
+ET
+BT
+/F1 12.00 Tf
+66.00 559.00 Td
+(\(https://www.conmebol.com/noticias/fecha-2-de-la-conmebol-sub20-toda-la-informacion-y-donde-ver/\).) Tj
+ET
+BT
+/F1 12.00 Tf
+48.00 544.00 Td
+(\225 Argentina travolge Brasile: attacco albiceleste in evidenza, suggerendo) Tj
+ET
+BT
+/F1 12.00 Tf
+66.00 531.00 Td
+(richiesta urgente di report su final third. Fonte: ESPN) Tj
+ET
+BT
+/F1 12.00 Tf
+66.00 518.00 Td
+(\(https://espndeportes.espn.com/futbol/nota/_/id/14707232/argentina-pone-primera-justo-ante-brasil-en-el-sudamericano-sub-20-venezuela\).) Tj
+ET
+BT
+/F1 12.00 Tf
+48.00 503.00 Td
+(\225 Benjam\355n Cremaschi: Parma valuta acquisto dall'Inter Miami; finestra per) Tj
+ET
+BT
+/F1 12.00 Tf
+66.00 490.00 Td
+(inserire opzione di rivendita e contatto agente entro 72h. Fonte:) Tj
+ET
+BT
+/F1 12.00 Tf
+66.00 477.00 Td
+(TransferFeed) Tj
+ET
+BT
+/F1 12.00 Tf
+66.00 464.00 Td
+(\(https://www.transferfeed.com/es/fichajes/benja-cremaschi-inter-miami-parma/16615560\).) Tj
+ET
+BT
+/F2 13.00 Tf
+56.00 441.00 Td
+(Spagna U20: uso sponde-prestiti) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 427.00 Td
+(Perch\351 conta: spazi di mercato per corse per prestiti rapidi in profili Sub20.) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 415.00 Td
+(Fonte: Marca) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 403.00 Td
+(\(https://www.marca.com/futbol/seleccion/2025/09/18/mundial-sub-20-pasa-factura-clubes-espanoles.html\).) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 387.00 Td
+(Rischi: prompt cantilever, flusso visti, priorit\340 sulla Fifpro.) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 371.00 Td
+(Next actions \(48\22672h\): richiesta match report dept/leghe e reflettori a La Liga) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 359.00 Td
+(2.) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 343.00 Td
+(Contatti/monitoraggio: DS + Academy director in club Spagna segmentati per) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 331.00 Td
+(esposizione U20.) Tj
+ET
+BT
+/F2 13.00 Tf
+56.00 297.00 Td
+(Argentina U20 travolge il Brasile) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 283.00 Td
+(Perch\351 conta: momentum in final third che pu\362 alzare valutazioni 9 e 9.5) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 271.00 Td
+(obiettivo. Fonte: ESPN) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 259.00 Td
+(\(https://espndeportes.espn.com/futbol/nota/_/id/14707232/argentina-pone-primera-justo-ante-brasil-en-el-sudamericano-sub-20-venezuela\).) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 243.00 Td
+(Rischi: campione piccolo; non confermato vs contesti europei.) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 227.00 Td
+(Next actions \(48\22672h\): scouting clip set con osservatore in Venezuela.) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 211.00 Td
+(Contatti/monitoraggio: referente locale + richiesta feed raw da partner.) Tj
+ET
+BT
+/F2 13.00 Tf
+56.00 177.00 Td
+(Valutazione Benjam\355n Cremaschi) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 163.00 Td
+(Perch\351 conta: MLS) Tj
+/F3 11.00 Tf
+(\256) Tj
+/F1 11.00 Tf
+(Serie A: opzione realist, inserimenti di valore con) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 151.00 Td
+(condizioni economiche.) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 135.00 Td
+(Rischi: costi MLS, visti, over-index su narrativa hype.) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 119.00 Td
+(Next actions \(48\22672h\): tavolo con DS + legale, sistema \223total cost of) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 107.00 Td
+(ownership\224, valutare competizione interna Parma.) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 91.00 Td
+(Contatti/monitoraggio: Direttore sportivo Parma; follow-up con referente) Tj
+ET
+BT
+/F1 11.00 Tf
+56.00 79.00 Td
+(scouting MLS.) Tj
+ET
+
 endstream
 endobj
-5 0 obj<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>endobj
+6 0 obj
+<< /Type /Page /Parent 7 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources 4 0 R >>
+endobj
+7 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+8 0 obj
+<< /Type /Catalog /Pages 7 0 R >>
+endobj
 xref
-0 6
+0 9
 0000000000 65535 f 
-0000000009 00000 n 
-0000000056 00000 n 
-0000000111 00000 n 
-0000000235 00000 n 
-0000001232 00000 n 
-trailer<< /Size 6 /Root 1 0 R >>
+0000000015 00000 n 
+0000000112 00000 n 
+0000000214 00000 n 
+0000000281 00000 n 
+0000000366 00000 n 
+0000005473 00000 n 
+0000005577 00000 n 
+0000005634 00000 n 
+trailer<< /Size 9 /Root 8 0 R >>
 startxref
-1300
+5683
 %%EOF
