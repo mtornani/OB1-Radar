@@ -23,6 +23,35 @@ oriundi-pipeline run --config config/settings.toml
 Il comando CLI produce `output/resolved_candidates.json` e `output/oriundi_graph.ttl`,
 pronti per essere condivisi con analisti e staff federale.
 
+## Esecuzione via GitHub Actions
+
+Per avviare la pipeline anche da mobile (o senza shell locale) puoi usare il
+workflow manuale `Oriundi Radar Pipeline` definito in
+`.github/workflows/oriundi-radar.yml`.
+
+1. Apri le impostazioni della repository su GitHub e aggiungi i secret che ti
+   servono:
+   - `ORIUNDI_ANYCRAWL_KEY` (obbligatorio per interrogare AnyCrawl).
+   - opzionali: `ORIUNDI_ANYCRAWL_URL`, `ORIUNDI_ANYCRAWL_RATE_LIMIT`,
+     `ORIUNDI_GENEALOGIC_KEY`, `ORIUNDI_GENEALOGIC_URL` per endpoint/quote
+     personalizzati.
+2. Vai in **Actions → Oriundi Radar Pipeline → Run workflow** e scegli le
+   opzioni:
+   - `use_sample_data` è attivo di default e fa girare la pipeline in modalità
+     offline (nessuna chiamata esterna, utile per smoke test rapidi).
+   - imposta `use_sample_data` a `false` per utilizzare le fonti reali,
+     opzionalmente fornendo query personalizzate (una per riga) e attivando i
+     registri open data (`registry_enabled` + `registry_base_url`).
+   - `fuzzy_threshold` permette di regolare la sensibilità del clustering.
+3. A fine esecuzione troverai gli artefatti scaricabili (`oriundi-radar-output`)
+   che includono `output/resolved_candidates.json`, `output/oriundi_graph.ttl` e
+   una copia redatta della configurazione usata.
+
+Il workflow installa automaticamente il pacchetto con le dipendenze opzionali,
+genera un file di configurazione temporaneo e lancia `oriundi-pipeline run`.
+Puoi quindi farlo partire anche da smartphone/tablet senza dover preparare un
+ambiente locale.
+
 ## Struttura della mini-repo
 
 ```
