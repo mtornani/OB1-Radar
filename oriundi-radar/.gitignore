@@ -1,10 +1,17 @@
+# Bytecode and virtualenv
 __pycache__/
 *.py[cod]
 .venv/
+
+# Runtime artifacts
 output/
+
+# Keep the data folder versioned only for the template assets
 data/
 !data/
 !data/.gitkeep
 !data/historical_callups.sample.csv
+
+# macOS metadata
 .DS_Store
 

@@ -1,6 +1,9 @@
 # Oriundi Radar Pipeline
 
 Pipeline modulare per supportare la FSGC nell'identificazione di calciatori potenzialmente naturalizzabili (oriundi).
+È pensata per funzionare anche senza integrazioni esterne grazie a uno storico CSV
+incluso nella repo, utile quando GitHub segnala conflitti o si lavora da ambienti
+offline.
 
 ## Caratteristiche principali
 
