@@ -35,6 +35,7 @@
 
 ## Come usare il pacchetto
 1. Consumare `dist/report.html`/`report.pdf` per briefing quotidiano con staff tecnico.
+   - Rigenerare il PDF con rendering fedele all'HTML eseguendo `python engine/render_report_pdf.py` (script standalone, nessuna dipendenza extra).
 2. Pubblicare il post LinkedIn bilingue coordinato con invio email (varianti A/B) e monitorare metriche in `dist/metrics.json`.
 3. Registrare ogni decisione o esclusione nel log `logs/run.log` per alimentare retrospettiva.
 4. Aggiornare prezzi/CTA in `dist/gtm_assets.json` sulla base dei dati AARRR e feedback clienti.
