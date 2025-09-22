@@ -1,150 +1,154 @@
 {
-  "generated_at_utc": "2025-09-22T05:10:35Z",
+  "generated_at_utc": "2025-09-22T08:46:02Z",
   "source": "OB1-AnomalyRadar",
   "mode": "anycrawl",
   "region_breakdown": {
     "africa": 0,
     "asia": 0,
-    "south-america": 0,
+    "south-america": 2,
     "international": 0,
-    "unknown": 10
+    "unknown": 8
   },
   "items": [
     {
       "entity": "PLAYER",
-      "label": "Así va la tabla de posiciones del Sudamericano Sub-20",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 84.2,
-      "why": [
-        "CONMEBOL",
-        "esordio",
-        "prestazioni",
-        "youth"
-      ],
-      "links": [
-        "https://www.infobae.com/colombia/deportes/2025/02/05/que-le-hace-falta-a-la-seleccion-colombia-para-clasificar-al-mundial-asi-va-la-tabla-de-posiciones-del-sudamericano-sub-20/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Transferencias de Préstamo en el Fútbol: ¿Que Son? ¿Como ...",
-      "anomaly_type": "TRANSFER_SIGNAL",
-      "score": 73.5,
-      "why": [
-        "mercato",
-        "youth"
-      ],
-      "links": [
-        "https://obt.1b6.myftpupload.com/2023/03/10/transferencias-de-prestamo-en-el-futbol-que-son-como-funcionan-quien-esta-implicado/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Fútbol: Conoce a las joyas del futuro de Argentina que ...",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 55.5,
-      "why": [
-        "CONMEBOL",
-        "esordio",
-        "prestazioni",
-        "youth"
-      ],
-      "links": [
-        "https://www.olympics.com/es/noticias/futbol-joyas-jugadores-futuro-argentina-sudamericano-sub-20-2025"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "El Defensa Jeremy Garay Regresa de Préstamo de El ...",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 33.4,
-      "why": [
-        "esordio",
-        "mercato",
-        "prestazioni",
-        "youth"
-      ],
-      "links": [
-        "https://www.dcunited.com/news/el-defensa-jeremy-garay-regresa-de-prestamo-de-el-paso-locomotive-fc"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Sub-20: No confronto de ida das quartas do Estadual ...",
+      "label": "Juventus-SP Sub-20: Partidos, Resultados y Estadísticas",
       "anomaly_type": "NOISE_PULSE",
-      "score": 32.42,
+      "score": 100.0,
       "why": [
         "prestazioni",
-        "recente"
+        "recente",
+        "youth"
       ],
       "links": [
-        "https://www.cearasc.com/noticia/sub-20-no-confronto-de-ida-das-quartas-do-estadual"
+        "https://www.apwin.com/es/equipo/ca-juventus-sao-paulo-under-20/"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "FC Desamparados Is the Team with The Most Sub 20 Minutes ...",
-      "anomaly_type": "PLAYER_BURST",
-      "score": 21.8,
+      "label": "U19 Süper Lig - Fichajes 25/26",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 100.0,
       "why": [
+        "mercato",
+        "prestazioni",
+        "south-america"
+      ],
+      "links": [
+        "https://www.transfermarkt.co/u19-super-lig/transfers/wettbewerb/T191"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Campionato Under 18 - Fichajes 25/26",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 100.0,
+      "why": [
+        "mercato",
+        "prestazioni",
+        "south-america",
+        "youth"
+      ],
+      "links": [
+        "https://www.transfermarkt.co/campionato-nazionale-under-18/transfers/wettbewerb/ITJ7"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Ten Hag recibe cinco goles en su debut con el Leverkusen ...",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 98.82,
+      "why": [
+        "CONMEBOL",
         "esordio",
+        "mercato",
+        "prestazioni",
+        "youth"
+      ],
+      "links": [
+        "https://www.marca.com/futbol/bundesliga/2025/07/18/ten-hag-recibe-cinco-goles-debut-leverkusen-flamengo-sub-20.html"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Mercado de fichajes hoy, en directo | Altas, bajas y última ...",
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "score": 85.64,
+      "why": [
+        "CONMEBOL",
         "mercato",
         "prestazioni"
       ],
       "links": [
-        "https://wearefc.club/2022/11/01/fc-desamparados-is-the-team-with-the-most-sub-20-minutes-during-regular-phase/"
+        "https://www.marca.com/futbol/mercado-fichajes/2025/07/07/686b71707aeb1c2f7568893b-directo.html"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "El Chicago Fire FC Adquiere al Defensa Portugués Leonardo ...",
-      "anomaly_type": "TRANSFER_SIGNAL",
-      "score": 19.1,
+      "label": "Brasil Sub 20 Resultados, estadísticas y highlights",
+      "anomaly_type": "NOISE_PULSE",
+      "score": 82.7,
       "why": [
-        "mercato",
+        "CONMEBOL",
         "prestazioni",
         "youth"
       ],
       "links": [
-        "https://www.chicagofirefc.com/news/el-chicago-fire-fc-adquiere-al-defensa-portugues-leonardo-barroso-del-sporting-cp"
+        "https://espndeportes.espn.com/futbol/equipo/_/id/2918/brasil-sub-20"
       ]
     },
     {
       "entity": "PLAYER",
-      "label": "Venezuela golea y Chile debuta sumando en el Sub-20 ...",
+      "label": "Angelo é decisivo em sua estreia pelo São Paulo sub-20",
       "anomaly_type": "NOISE_PULSE",
-      "score": 17.9,
-      "why": [
-        "CONMEBOL",
-        "prestazioni",
-        "recente"
-      ],
-      "links": [
-        "https://www.conmebol.com/noticias/venezuela-golea-y-chile-debuta-sumando-en-el-sub-20-femenino/"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Los mejores porteros jóvenes para fichar en el modo ...",
-      "anomaly_type": "TRANSFER_SIGNAL",
-      "score": 8.8,
-      "why": [
-        "mercato"
-      ],
-      "links": [
-        "https://www.si.com/es-us/futbol/los-mejores-porteros-jovenes-para-fichar-en-el-modo-carrera-del-ea-sports-fc-24"
-      ]
-    },
-    {
-      "entity": "PLAYER",
-      "label": "Los futbolistas jóvenes del EA Sports FC 25 para fichar en ...",
-      "anomaly_type": "NOISE_PULSE",
-      "score": 0.0,
+      "score": 74.7,
       "why": [
         "segnali"
       ],
       "links": [
-        "https://www.si.com/es-us/futbol/los-futbolistas-jovenes-del-ea-sports-fc-25-para-fichar-en-el-modo-carrera-con-rostro-escaneado"
+        "https://www.arqtricolor.com/base/angelo-e-decisivo-em-sua-estreia-pelo-sao-paulo-sub-20/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Iván Román destacó en la Sub 20 de Atlético Mineiro",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 37.5,
+      "why": [
+        "CONMEBOL",
+        "esordio",
+        "youth"
+      ],
+      "links": [
+        "https://www.guioteca.com/futbol-joven/ivan-roman-destaco-en-la-sub-20-de-atletico-mineiro-fue-capitan-en-su-debut/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "Sudamericano Sub 20: Uruguay venció a Chile en su debut",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 36.3,
+      "why": [
+        "CONMEBOL",
+        "esordio",
+        "prestazioni",
+        "youth"
+      ],
+      "links": [
+        "https://agenciasanluis.com/2020/03/07/622872-sudamericano-sub-20-uruguay-vencio-a-chile-en-su-debut/"
+      ]
+    },
+    {
+      "entity": "PLAYER",
+      "label": "A 20 años del fatídico debut de Messi con la Selección ...",
+      "anomaly_type": "PLAYER_BURST",
+      "score": 35.1,
+      "why": [
+        "esordio",
+        "prestazioni"
+      ],
+      "links": [
+        "https://espndeportes.espn.com/futbol/mundial/nota/_/id/7290876/aniversario-debut-lionel-messi-seleccion-argentina-tarjeta-roja-hungria"
       ]
     }
   ]

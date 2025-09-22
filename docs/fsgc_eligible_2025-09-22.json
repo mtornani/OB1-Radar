@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-09-22T05:10:35.503833Z",
+  "generated_at": "2025-09-22T08:46:02.207061Z",
   "source": "FSGC-DiasporaHunter-v4",
   "eligible_found": 2,
   "based_on": "Real San Marino diaspora research",
@@ -16,13 +16,13 @@
     "critical": 0,
     "high": 0,
     "by_country": {
-      "argentina": 1
+      "brazil": 2
     }
   },
   "targets": [
     {
       "entity": "DIASPORA_TARGET",
-      "label": "Sub-20: No confronto de ida das quartas do Estadual ...",
+      "label": "Angelo é decisivo em sua estreia pelo São Paulo sub-20",
       "total_score": 60,
       "priority": "LOW - Add to watchlist",
       "surname": {
@@ -32,13 +32,13 @@
         "score": 0
       },
       "location": {
-        "identified": null,
-        "score": 0,
-        "population": 0
+        "identified": "brazil:são paulo",
+        "score": 30,
+        "population": 500
       },
       "competitive_level": {
-        "league": "semi-pro",
-        "score": 30
+        "league": null,
+        "score": 0
       },
       "age_profile": {
         "category": "youth",
@@ -50,12 +50,12 @@
       },
       "action": "Add to long-term tracking database",
       "links": [
-        "https://www.cearasc.com/noticia/sub-20-no-confronto-de-ida-das-quartas-do-estadual"
+        "https://www.arqtricolor.com/base/angelo-e-decisivo-em-sua-estreia-pelo-sao-paulo-sub-20/"
       ]
     },
     {
       "entity": "DIASPORA_TARGET",
-      "label": "Fútbol: Conoce a las joyas del futuro de Argentina que ...",
+      "label": "Brasil Sub 20 Resultados, estadísticas y highlights",
       "total_score": 50,
       "priority": "MINIMAL - Archive",
       "surname": {
@@ -65,17 +65,17 @@
         "score": 0
       },
       "location": {
-        "identified": "argentina",
-        "score": 50,
-        "population": 1600
+        "identified": "brazil",
+        "score": 20,
+        "population": 500
       },
       "competitive_level": {
         "league": null,
         "score": 0
       },
       "age_profile": {
-        "category": null,
-        "score": 0
+        "category": "youth",
+        "score": 30
       },
       "naturalization": {
         "signals": [],
@@ -83,7 +83,7 @@
       },
       "action": "Add to long-term tracking database",
       "links": [
-        "https://www.olympics.com/es/noticias/futbol-joyas-jugadores-futuro-argentina-sudamericano-sub-20-2025"
+        "https://espndeportes.espn.com/futbol/equipo/_/id/2918/brasil-sub-20"
       ]
     }
   ]
