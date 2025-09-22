@@ -46,7 +46,7 @@ class MLSettings:
 @dataclass
 class HistoricalRosterSettings:
     enabled: bool = True
-    path: Path = Path("data/fsgc_callups.csv")
+    path: Path = Path("data/historical_callups.csv")
     max_rows: int = 100
 
 

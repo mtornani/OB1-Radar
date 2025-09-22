@@ -4,7 +4,7 @@
 
 | Layer | Tecnologia | Note |
 |-------|------------|------|
-| Orchestrazione | Python 3.12 + Typer CLI | Invocazione pipeline locale o CI |
+| Orchestrazione | Python 3.12 + argparse CLI | Invocazione pipeline locale o CI |
 | Configurazione | dataclass + parser TOML | Config da env/TOML con override da env |
 | Data ingest | stdlib `urllib` (fallback) + `requests` (extra) + `csv` | AnyCrawl API + registri open data + CSV storico convocazioni |
 | Storage | JSON base, DuckDB (extra) | Persistenza locale con export JSON/TTL |
