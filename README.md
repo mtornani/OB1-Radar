@@ -97,5 +97,8 @@ GitHub Pages può pubblicare da main//docs.
 
 I workflow schedule girano in UTC; il token GITHUB_TOKEN usa permessi configurabili (principio del minimo privilegio).
 
+## Mini-repo pipeline oriundi
 
+Il codice sperimentale per l'identificazione degli oriundi ora vive in `oriundi-radar/`.
+Consulta `oriundi-radar/README.md` per setup e dettagli architetturali.
 

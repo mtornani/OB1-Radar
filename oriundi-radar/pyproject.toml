@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oriundi-radar"
+version = "0.1.0"
+description = "Pipeline per identificare giocatori naturalizzabili per la nazionale sammarinese"
+authors = [{ name = "OB1", email = "team@ob1.dev" }]
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["football", "entity resolution", "knowledge graph", "pipeline"]
+classifiers = [
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+  "Topic :: Software Development :: Build Tools"
+]
+dependencies = []
+
+[project.optional-dependencies]
+full = [
+  "requests>=2.31",
+  "pandas>=2.2",
+  "duckdb>=1.0",
+  "rapidfuzz>=3.9",
+  "networkx>=3.2",
+  "rdflib>=7.0",
+  "spacy>=3.7",
+]
+dev = ["pytest>=7.4", "pytest-cov>=4.1", "ruff>=0.6"]
+
+[project.urls]
+Homepage = "https://github.com/ob1/oriundi-radar"
+
+[project.scripts]
+oriundi-pipeline = "oriundi.cli:app"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
