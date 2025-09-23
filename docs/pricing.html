@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OB1 · Pricing</title>
-  <meta name="description" content="Piani e prezzi per OB1 Ouroboros Radar: accesso al Top-10 U19/U20, breakdown per regione e CSV settimanale." />
+  <meta name="description" content="Piani e prezzi per OB1 Ouroboros Radar: accesso al Top-10 U19/U20, breakdown per regione e CSV settimanale pronto per l'analisi." />
   <style>
     :root { --bg:#0b0d10; --fg:#e8eaed; --muted:#9aa0a6; --card:#15181c; --chip:#2a2f36; --accent:#2563eb; }
     html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;}
@@ -19,7 +19,7 @@
     .badge{display:inline-block;background:#1e2329;border:1px solid #2d3742;border-radius:999px;padding:2px 8px;font-size:12px;color:#c9d1d9}
     .badge-popular{background:#f59e0b;color:#000;border:none;}
     .badge-enterprise{background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);color:#fff;border:none;}
-    .price{font-size:28px;font-weight:800;margin:10px 0;} 
+    .price{font-size:28px;font-weight:800;margin:10px 0;}
     .price-period{font-size:14px;color:var(--muted);font-weight:400;}
     ul{margin:0 0 0 20px;padding:0;flex-grow:1;} li{margin:6px 0;}
     .btn{display:inline-block;padding:12px 20px;border-radius:10px;background:#1c2229;border:1px solid #2a333d;color:var(--fg);cursor:pointer;font-weight:600;transition:all 0.2s;}
@@ -67,9 +67,7 @@
           <li>✓ Alert Telegram giornalieri</li>
         </ul>
         <div>
-          <button class="btn btn-primary" onclick="openCheckout('monthly')">
-            Attiva → €2.500/mese
-          </button>
+          <button class="btn btn-primary" onclick="buyMonthly()">Attiva → €2.500/mese</button>
         </div>
         <div class="muted">IVA inclusa ove applicabile. Disdici quando vuoi.</div>
       </section>
@@ -86,9 +84,7 @@
           <li>✓ White-label option</li>
         </ul>
         <div>
-          <button class="btn btn-primary" onclick="openCheckout('annual')">
-            Attiva → €25.000/anno
-          </button>
+          <button class="btn btn-primary" onclick="buyAnnual()">Attiva → €25.000/anno</button>
         </div>
         <div class="muted">Fatturazione annuale con Paddle. Ideale per club e agenzie.</div>
       </section>
@@ -107,37 +103,28 @@
     <footer>© OB1 Radar</footer>
   </div>
 
-  <!-- Paddle.js -->
-  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <!-- Paddle v3 -->
+  <script src="https://cdn.paddle.com/paddle/v3/paddle.js"></script>
   <script>
-    // Inizializza Paddle
-    Paddle.Environment.set('production');
-    Paddle.Initialize({ 
-      token: 'live_7c5da8decff27e2158b87f0a93b', // Il tuo client token
-      checkout: {
-        settings: {
-          allowedPaymentMethods: ["card", "paypal"],
-          locale: "it",
-          frameTarget: "self",
-          frameInitialHeight: 450,
-          frameStyle: "width: 100%; min-width: 312px; background-color: transparent; border: none;",
-          successUrl: "https://mtornani.github.io/OB1-Radar/success.html"
-        }
-      }
+    // Sostituisci con la tua PUBLIC KEY v3 (deve iniziare con pk_live_)
+    Paddle.Initialize({
+      token: "pk_live_7c5da8decff27e2158b87f0a93b"
+      // ,eventCallback: (event) => console.log(event)
     });
 
-    // Funzione per aprire checkout
-    function openCheckout(plan) {
-      const prices = {
-        monthly: 'pri_01k4ev94snz6naqdj8221qgh0q',  // €2.500/mese
-        annual: 'pri_01k4j50pa45x9t0gw887w3q9sz'    // €25.000/anno
-      };
+    // ID prezzo reali dalla dashboard Paddle (ambiente live)
+    const PRICE_MONTHLY = "pri_01k4ev94snz6naqdj8221qgh0q"; // €2.500/mese
+    const PRICE_ANNUAL = "pri_01k4j50pa45x9t0gw887w3q9sz"; // €25.000/anno
 
+    function buyMonthly() {
       Paddle.Checkout.open({
-        items: [{
-          priceId: prices[plan],
-          quantity: 1
-        }]
+        items: [{ priceId: PRICE_MONTHLY, quantity: 1 }]
+      });
+    }
+
+    function buyAnnual() {
+      Paddle.Checkout.open({
+        items: [{ priceId: PRICE_ANNUAL, quantity: 1 }]
       });
     }
   </script>
