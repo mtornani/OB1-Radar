@@ -153,7 +153,7 @@
   },
   "https://espndeportes.espn.com/futbol/equipo/_/id/5203/chile-sub-20": {
     "host": "espndeportes.espn.com",
-    "seen_at": "2025-08-13T14:18:52"
+    "seen_at": "2025-09-23T07:20:23"
   },
   "https://www.portaltela.com/esporte/futebol/2025/08/13/joao-cruz-brilha-no-brasil-sub20-com-gol-e-assistencia-pelo-athletico": {
     "host": "www.portaltela.com",
@@ -489,7 +489,7 @@
   },
   "https://www.conmebol.com/noticias/conmebol-sub20-todo-sobre-la-fecha-3/": {
     "host": "www.conmebol.com",
-    "seen_at": "2025-08-23T07:19:08"
+    "seen_at": "2025-09-23T07:20:33"
   },
   "https://www.conmebol.com/noticias/flamengo-y-fc-barcelona-frente-a-frente-por-la-intercontinental-sub20/": {
     "host": "www.conmebol.com",
@@ -885,7 +885,7 @@
   },
   "https://www.wikiwand.com/pt/articles/Salom%C3%B3n_Rond%C3%B3n": {
     "host": "www.wikiwand.com",
-    "seen_at": "2025-09-08T07:21:39"
+    "seen_at": "2025-09-23T07:20:54"
   },
   "https://fla.mundobola.com/flamengo-estreia-no-brasileirao-sub-20-buscando-igualar-palmeiras/": {
     "host": "fla.mundobola.com",
@@ -1378,5 +1378,21 @@
   "https://onefootball.com/en/news/la-estan-rompiendo-colombianos-lideran-tablas-de-asistencia-y-gol-del-sub20-40672329": {
     "host": "onefootball.com",
     "seen_at": "2025-09-22T08:45:35"
+  },
+  "https://espndeportes.espn.com/futbol/nota/_/id/15713074/mundial-sub-20-de-chile-2025-los-candidatos-al-titulo-y-el-panorama-de-cada-grupo": {
+    "host": "espndeportes.espn.com",
+    "seen_at": "2025-09-23T07:20:22"
+  },
+  "https://www.canal12misiones.com/noticias-de-misiones/deportes-2/seleccion-argentina-sub-20-campeona": {
+    "host": "www.canal12misiones.com",
+    "seen_at": "2025-09-23T07:20:46"
+  },
+  "https://www.365scores.com/es/news/tag/luis-diaz/page/11/": {
+    "host": "www.365scores.com",
+    "seen_at": "2025-09-23T07:20:51"
+  },
+  "https://www.transfermarkt.co/gibraltar-national-league/transfers/wettbewerb/GI1": {
+    "host": "www.transfermarkt.co",
+    "seen_at": "2025-09-23T07:21:01"
   }
 }
