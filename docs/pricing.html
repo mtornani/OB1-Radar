@@ -67,9 +67,10 @@
           <li>✓ Alert Telegram giornalieri</li>
         </ul>
         <div>
-          <button class="btn btn-primary" onclick="openCheckout('monthly')">
+          <a class="btn btn-primary"
+             href="https://checkout.paddle.com/prices/pri_01k4ev94snz6naqdj8221qgh0q?quantity=1&success=https%3A%2F%2Fmatchanalysispro.online%2Fsuccess.html&passthrough=%7B%22plan%22%3A%22pro-monthly%22%2C%22source%22%3A%22site%22%7D">
             Attiva → €2.500/mese
-          </button>
+          </a>
         </div>
         <div class="muted">IVA inclusa ove applicabile. Disdici quando vuoi.</div>
       </section>
@@ -86,9 +87,10 @@
           <li>✓ White-label option</li>
         </ul>
         <div>
-          <button class="btn btn-primary" onclick="openCheckout('annual')">
+          <a class="btn btn-primary"
+             href="https://checkout.paddle.com/prices/pri_01k4j50pa45x9t0gw887w3q9sz?quantity=1&success=https%3A%2F%2Fmatchanalysispro.online%2Fsuccess.html&passthrough=%7B%22plan%22%3A%22pro-annual%22%2C%22source%22%3A%22site%22%7D">
             Attiva → €25.000/anno
-          </button>
+          </a>
         </div>
         <div class="muted">Fatturazione annuale con Paddle. Ideale per club e agenzie.</div>
       </section>
@@ -107,39 +109,5 @@
     <footer>© OB1 Radar</footer>
   </div>
 
-  <!-- Paddle.js -->
-  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-  <script>
-    // Inizializza Paddle
-    Paddle.Environment.set('production');
-    Paddle.Initialize({ 
-      token: 'live_7c5da8decff27e2158b87f0a93b', // Il tuo client token
-      checkout: {
-        settings: {
-          allowedPaymentMethods: ["card", "paypal"],
-          locale: "it",
-          frameTarget: "self",
-          frameInitialHeight: 450,
-          frameStyle: "width: 100%; min-width: 312px; background-color: transparent; border: none;",
-          successUrl: "https://mtornani.github.io/OB1-Radar/success.html"
-        }
-      }
-    });
-
-    // Funzione per aprire checkout
-    function openCheckout(plan) {
-      const prices = {
-        monthly: 'pri_01k4ev94snz6naqdj8221qgh0q',  // €2.500/mese
-        annual: 'pri_01k4j50pa45x9t0gw887w3q9sz'    // €25.000/anno
-      };
-
-      Paddle.Checkout.open({
-        items: [{
-          priceId: prices[plan],
-          quantity: 1
-        }]
-      });
-    }
-  </script>
 </body>
 </html>
