@@ -913,7 +913,7 @@
   },
   "https://www.wikiwand.com/es/articles/Copa_Mundial_de_F%C3%BAtbol_Sub-20_de_2011": {
     "host": "www.wikiwand.com",
-    "seen_at": "2025-09-09T07:20:55"
+    "seen_at": "2025-09-24T07:20:33"
   },
   "https://www.infobae.com/deportes/2023/04/17/quienes-son-las-10-figuras-a-seguir-en-el-mundial-sub-20-que-se-jugara-en-argentina/": {
     "host": "www.infobae.com",
@@ -1394,5 +1394,37 @@
   "https://www.transfermarkt.co/gibraltar-national-league/transfers/wettbewerb/GI1": {
     "host": "www.transfermarkt.co",
     "seen_at": "2025-09-23T07:21:01"
+  },
+  "https://panamaendirecto.com/la-sub-20-de-panama-ya-esta-lista-para-su-debut-en-el-torneo-maurice-revello/": {
+    "host": "panamaendirecto.com",
+    "seen_at": "2025-09-24T07:20:22"
+  },
+  "https://www.si.com/es-us/futbol/los-10-mejores-futbolistas-del-mundial-sub-20-chile-2025-rankeados": {
+    "host": "www.si.com",
+    "seen_at": "2025-09-24T07:20:26"
+  },
+  "https://www.tudn.com/mundial-sub-20/mexico-cae-con-colombia-en-su-ultimo-juego-de-preparacion-previo-mundial-sub-20": {
+    "host": "www.tudn.com",
+    "seen_at": "2025-09-24T07:20:28"
+  },
+  "https://defato.com/esportes/123304/seleo-brasileira-convocada-por-ramon-para-copa-do-mundo-sub-20": {
+    "host": "defato.com",
+    "seen_at": "2025-09-24T07:20:40"
+  },
+  "https://www.gazetaesportiva.com/times/brasil/com-5-do-futebol-paulista-selecao-define-convocados-para-a-copa-do-mundo-sub-20/": {
+    "host": "www.gazetaesportiva.com",
+    "seen_at": "2025-09-24T07:20:41"
+  },
+  "https://www.cearasc.com/noticia/sub-20-em-busca-do-titulo-inedito-da-copa-do-norde": {
+    "host": "www.cearasc.com",
+    "seen_at": "2025-09-24T07:20:50"
+  },
+  "https://culturaefutebol.wordpress.com/2011/08/21/brasil-pentacampeao-do-mundial-sub-20-de-futebol/": {
+    "host": "culturaefutebol.wordpress.com",
+    "seen_at": "2025-09-24T07:20:51"
+  },
+  "https://www.olympics.com/pt/noticias/copa-do-mundo-masculina-sub-20-futebol-brasil-busca-hexa-vivendo-maior-jejum": {
+    "host": "www.olympics.com",
+    "seen_at": "2025-09-24T07:20:53"
   }
 }
