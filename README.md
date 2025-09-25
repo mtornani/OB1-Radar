@@ -11,8 +11,12 @@ _Publishing: branch `main`, cartella `/docs`._
 
 ├─ .github/workflows/daily.yml # CI: esegue il motore, copia, commit & push
 ├─ engine/run.py # motore: genera output/daily.json
+├─ engine/prediction_engine.py # Monday prediction engine (hash + X posting)
+├─ engine/accountability.py # timestamp ledger utilities
+├─ engine/x_poster.py # client X/Twitter con fallback queue
 └─ docs/
 ├─ index.html # UI (vanilla JS, mobile-first)
+├─ accountability.html # dashboard pubblico delle prediction
 └─ daily.json # file generato dalla CI
 
 
@@ -28,6 +32,27 @@ _Publishing: branch `main`, cartella `/docs`._
    - _(opzionale)_ `SHEET_CSV_URL` → URL CSV di una Google Sheet pubblicata
 
 Poi vai su **Actions → Daily Anomaly Radar → Run workflow**. La CI creerà/aggiornerà `docs/daily.json` e la pagina si aggiornerà.
+
+---
+
+## Monday Prediction Engine
+
+Ogni lunedì alle 00:01 UTC il workflow `Monday Prediction Engine` (`.github/workflows/prediction-engine.yml`) estrae gli snapshot del weekend, genera 3 prediction hashate e aggiorna il ledger pubblico.
+
+### Secrets richiesti
+- `X_BEARER_TOKEN` (facoltativo): token OAuth2 di X/Twitter con permesso `tweet.write`. Se assente le call vengono accodate in `output/predictions/x_queue.jsonl`.
+
+### Output
+- `data/predictions/<YYYY-MM-DD>/<hash>.json` → prova immutabile (timestamp + canonical JSON)
+- `docs/prediction-ledger.json` + `docs/accountability.html` → consultazione pubblica (nessuna auth)
+- `output/predictions/latest_predictions.json` → snapshot integrale con ledger
+- Post su X con hashtag `#OB1Predicted` (o coda offline se mancano credenziali)
+
+### Run manuale
+```bash
+python engine/prediction_engine.py --limit 3
+```
+Opzioni utili: `--dry-run` (non scrive su disco), `--as-of 2025-01-06T00:01:00Z` (override timestamp per replay).
 
 ---
 

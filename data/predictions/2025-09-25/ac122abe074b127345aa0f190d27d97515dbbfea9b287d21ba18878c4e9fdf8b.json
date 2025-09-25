@@ -1,0 +1,46 @@
+{
+  "hash": "ac122abe074b127345aa0f190d27d97515dbbfea9b287d21ba18878c4e9fdf8b",
+  "timestamp_utc": "2025-09-25T18:56:24Z",
+  "payload": {
+    "player_id": "tm-204887",
+    "player_name": "Issa Diarra",
+    "current_value_eur": 715406.25,
+    "predicted_value_eur": 1164770.8,
+    "timeframe_days": 180,
+    "rationale": {
+      "verdict": "Overvalued by 63%",
+      "explanation": "Signal: TRANSFER_SIGNAL — tags [africa, ball-winning, debut, loan]",
+      "prediction": "Value will move 63% in 6 months",
+      "confidence_interval_pct": [
+        87.79,
+        112.21
+      ],
+      "confidence": 0.8372,
+      "source_snapshot": "sample_weekend_signals.json",
+      "tags": [
+        "africa",
+        "debut",
+        "loan",
+        "ball-winning"
+      ]
+    },
+    "confidence": 0.8372,
+    "confidence_interval_eur": {
+      "lower": 1022552.29,
+      "upper": 1306989.32
+    },
+    "links": [
+      "https://example.com/issa-diarra-first-team-debut"
+    ],
+    "region": "unknown",
+    "anomaly_type": "TRANSFER_SIGNAL",
+    "evidence_score": 88.1,
+    "created_at_utc": "2025-01-06T00:01:00Z",
+    "tracker_version": "1.0",
+    "premium_release_delay_hours": 48,
+    "public_release_at_utc": "2025-01-08T00:01:00Z",
+    "call_to_action": "Ignore this call and we'll publicly log you when it lands.",
+    "timestamp_utc": "2025-09-25T18:56:24Z"
+  },
+  "canonical": "{\"anomaly_type\":\"TRANSFER_SIGNAL\",\"call_to_action\":\"Ignore this call and we'll publicly log you when it lands.\",\"confidence\":0.8372,\"confidence_interval_eur\":{\"lower\":1022552.29,\"upper\":1306989.32},\"created_at_utc\":\"2025-01-06T00:01:00Z\",\"current_value_eur\":715406.25,\"evidence_score\":88.1,\"links\":[\"https://example.com/issa-diarra-first-team-debut\"],\"player_id\":\"tm-204887\",\"player_name\":\"Issa Diarra\",\"predicted_value_eur\":1164770.8,\"premium_release_delay_hours\":48,\"public_release_at_utc\":\"2025-01-08T00:01:00Z\",\"rationale\":{\"confidence\":0.8372,\"confidence_interval_pct\":[87.79,112.21],\"explanation\":\"Signal: TRANSFER_SIGNAL — tags [africa, ball-winning, debut, loan]\",\"prediction\":\"Value will move 63% in 6 months\",\"source_snapshot\":\"sample_weekend_signals.json\",\"tags\":[\"africa\",\"debut\",\"loan\",\"ball-winning\"],\"verdict\":\"Overvalued by 63%\"},\"region\":\"unknown\",\"timeframe_days\":180,\"timestamp_utc\":\"2025-09-25T18:56:24Z\",\"tracker_version\":\"1.0\"}"
+}

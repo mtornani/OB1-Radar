@@ -1,0 +1,37 @@
+{
+  "generated_at_utc": "2025-01-05T23:59:00Z",
+  "signals": [
+    {
+      "player_id": "tm-189274",
+      "player_name": "Mateus Carvalho",
+      "score": 92.4,
+      "anomaly_type": "PLAYER_BURST",
+      "tags": ["south-america", "mercato", "pressing", "u20"],
+      "links": ["https://example.com/mateus-carvalho-u20-hat-trick"]
+    },
+    {
+      "player_id": "tm-204887",
+      "player_name": "Issa Diarra",
+      "score": 88.1,
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "tags": ["africa", "debut", "loan", "ball-winning"],
+      "links": ["https://example.com/issa-diarra-first-team-debut"]
+    },
+    {
+      "player_id": "tm-219443",
+      "player_name": "Takumi Watanabe",
+      "score": 86.7,
+      "anomaly_type": "PLAYER_BURST",
+      "tags": ["asia", "esordio", "positional-flex", "high-press"],
+      "links": ["https://example.com/takumi-watanabe-a-levan-cup"]
+    },
+    {
+      "player_id": "tm-195552",
+      "player_name": "Emiliano Figueroa",
+      "score": 82.3,
+      "anomaly_type": "TRANSFER_SIGNAL",
+      "tags": ["south-america", "mercato", "u19"],
+      "links": ["https://example.com/emiliano-figueroa-scouting"]
+    }
+  ]
+}

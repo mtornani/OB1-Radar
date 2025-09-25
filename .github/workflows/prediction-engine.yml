@@ -1,0 +1,55 @@
+name: Monday Prediction Engine
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "1 0 * * 1"   # Monday 00:01 UTC
+
+permissions:
+  contents: write
+
+jobs:
+  predictions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -V
+          pip -V
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run Monday prediction engine
+        env:
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        run: |
+          mkdir -p output/predictions
+          python engine/prediction_engine.py
+          find output/predictions -maxdepth 2 -type f -print
+
+      - name: Publish ledger to docs
+        run: |
+          mkdir -p docs
+          cp output/predictions/latest_predictions.json docs/latest-predictions.json
+          cp docs/prediction-ledger.json output/predictions/ledger-public.json
+
+      - name: Commit & push predictions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/predictions docs/prediction-ledger.json docs/latest-predictions.json output/predictions/*.json output/predictions/*.jsonl logs/prediction_tracker.log 2>/dev/null || true
+          git commit -m "chore: update monday predictions [skip ci]" || echo "No changes to commit"
+          git push

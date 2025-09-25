@@ -1,0 +1,46 @@
+{
+  "hash": "3d625dcd3d301ffb1aa409c0eb9100bb715e6c64df037a38c2daf842aaf71cc9",
+  "timestamp_utc": "2025-09-25T18:56:24Z",
+  "payload": {
+    "player_id": "tm-219443",
+    "player_name": "Takumi Watanabe",
+    "current_value_eur": 709718.75,
+    "predicted_value_eur": 1092523.3,
+    "timeframe_days": 180,
+    "rationale": {
+      "verdict": "Overvalued by 54%",
+      "explanation": "Signal: PLAYER_BURST — tags [asia, esordio, high-press, positional-flex]",
+      "prediction": "Value will move 54% in 6 months",
+      "confidence_interval_pct": [
+        87.2,
+        112.8
+      ],
+      "confidence": 0.8294,
+      "source_snapshot": "sample_weekend_signals.json",
+      "tags": [
+        "asia",
+        "esordio",
+        "positional-flex",
+        "high-press"
+      ]
+    },
+    "confidence": 0.8294,
+    "confidence_interval_eur": {
+      "lower": 952734.94,
+      "upper": 1232311.66
+    },
+    "links": [
+      "https://example.com/takumi-watanabe-a-levan-cup"
+    ],
+    "region": "unknown",
+    "anomaly_type": "PLAYER_BURST",
+    "evidence_score": 86.7,
+    "created_at_utc": "2025-01-06T00:01:00Z",
+    "tracker_version": "1.0",
+    "premium_release_delay_hours": 48,
+    "public_release_at_utc": "2025-01-08T00:01:00Z",
+    "call_to_action": "Ignore this call and we'll publicly log you when it lands.",
+    "timestamp_utc": "2025-09-25T18:56:24Z"
+  },
+  "canonical": "{\"anomaly_type\":\"PLAYER_BURST\",\"call_to_action\":\"Ignore this call and we'll publicly log you when it lands.\",\"confidence\":0.8294,\"confidence_interval_eur\":{\"lower\":952734.94,\"upper\":1232311.66},\"created_at_utc\":\"2025-01-06T00:01:00Z\",\"current_value_eur\":709718.75,\"evidence_score\":86.7,\"links\":[\"https://example.com/takumi-watanabe-a-levan-cup\"],\"player_id\":\"tm-219443\",\"player_name\":\"Takumi Watanabe\",\"predicted_value_eur\":1092523.3,\"premium_release_delay_hours\":48,\"public_release_at_utc\":\"2025-01-08T00:01:00Z\",\"rationale\":{\"confidence\":0.8294,\"confidence_interval_pct\":[87.2,112.8],\"explanation\":\"Signal: PLAYER_BURST — tags [asia, esordio, high-press, positional-flex]\",\"prediction\":\"Value will move 54% in 6 months\",\"source_snapshot\":\"sample_weekend_signals.json\",\"tags\":[\"asia\",\"esordio\",\"positional-flex\",\"high-press\"],\"verdict\":\"Overvalued by 54%\"},\"region\":\"unknown\",\"timeframe_days\":180,\"timestamp_utc\":\"2025-09-25T18:56:24Z\",\"tracker_version\":\"1.0\"}"
+}

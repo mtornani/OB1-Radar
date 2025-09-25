@@ -1,0 +1,46 @@
+{
+  "hash": "d475730d5a69b93c321a8f06c0f327a03d28b4812e0a2731ecc0f72918bcd234",
+  "timestamp_utc": "2025-09-25T18:56:24Z",
+  "payload": {
+    "player_id": "tm-189274",
+    "player_name": "Mateus Carvalho",
+    "current_value_eur": 732875.0,
+    "predicted_value_eur": 1183593.12,
+    "timeframe_days": 180,
+    "rationale": {
+      "verdict": "Overvalued by 62%",
+      "explanation": "Signal: PLAYER_BURST — tags [mercato, pressing, south-america, u20]",
+      "prediction": "Value will move 62% in 6 months",
+      "confidence_interval_pct": [
+        89.58,
+        110.42
+      ],
+      "confidence": 0.8611,
+      "source_snapshot": "sample_weekend_signals.json",
+      "tags": [
+        "south-america",
+        "mercato",
+        "pressing",
+        "u20"
+      ]
+    },
+    "confidence": 0.8611,
+    "confidence_interval_eur": {
+      "lower": 1060292.31,
+      "upper": 1306893.94
+    },
+    "links": [
+      "https://example.com/mateus-carvalho-u20-hat-trick"
+    ],
+    "region": "unknown",
+    "anomaly_type": "PLAYER_BURST",
+    "evidence_score": 92.4,
+    "created_at_utc": "2025-01-06T00:01:00Z",
+    "tracker_version": "1.0",
+    "premium_release_delay_hours": 48,
+    "public_release_at_utc": "2025-01-08T00:01:00Z",
+    "call_to_action": "Ignore this call and we'll publicly log you when it lands.",
+    "timestamp_utc": "2025-09-25T18:56:24Z"
+  },
+  "canonical": "{\"anomaly_type\":\"PLAYER_BURST\",\"call_to_action\":\"Ignore this call and we'll publicly log you when it lands.\",\"confidence\":0.8611,\"confidence_interval_eur\":{\"lower\":1060292.31,\"upper\":1306893.94},\"created_at_utc\":\"2025-01-06T00:01:00Z\",\"current_value_eur\":732875.0,\"evidence_score\":92.4,\"links\":[\"https://example.com/mateus-carvalho-u20-hat-trick\"],\"player_id\":\"tm-189274\",\"player_name\":\"Mateus Carvalho\",\"predicted_value_eur\":1183593.12,\"premium_release_delay_hours\":48,\"public_release_at_utc\":\"2025-01-08T00:01:00Z\",\"rationale\":{\"confidence\":0.8611,\"confidence_interval_pct\":[89.58,110.42],\"explanation\":\"Signal: PLAYER_BURST — tags [mercato, pressing, south-america, u20]\",\"prediction\":\"Value will move 62% in 6 months\",\"source_snapshot\":\"sample_weekend_signals.json\",\"tags\":[\"south-america\",\"mercato\",\"pressing\",\"u20\"],\"verdict\":\"Overvalued by 62%\"},\"region\":\"unknown\",\"timeframe_days\":180,\"timestamp_utc\":\"2025-09-25T18:56:24Z\",\"tracker_version\":\"1.0\"}"
+}
