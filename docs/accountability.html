@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OB1 · Prediction Ledger</title>
+  <style>
+    body { background:#05070b; color:#f1f5f9; font:15px/1.5 system-ui, -apple-system, Segoe UI, Roboto; margin:0; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 18px; }
+    h1 { margin: 10px 0 4px; font-size: 24px; }
+    h2 { margin-top: 28px; font-size: 18px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th, td { border-bottom: 1px solid rgba(148,163,184,0.2); padding: 8px; text-align: left; vertical-align: top; }
+    th { text-transform: uppercase; font-size: 12px; letter-spacing: 0.08em; color: #94a3b8; }
+    .hash { font-family: "JetBrains Mono", Menlo, Consolas, monospace; font-size: 12px; }
+    .badge { display:inline-block; border-radius:999px; padding:2px 8px; margin:2px; background:#1e293b; color:#bae6fd; font-size:12px; }
+    .meta { color:#94a3b8; font-size:13px; }
+    .shame { background: rgba(248,113,113,0.12); border:1px solid rgba(248,113,113,0.3); padding:10px; border-radius:10px; margin:12px 0; }
+    a { color:#38bdf8; }
+    .ledger-link { display:inline-block; margin-top:12px; padding:8px 12px; border-radius:999px; background:#0f172a; border:1px solid #1e293b; color:#e2e8f0; text-decoration:none; }
+    .grid { display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { background:#0f172a; border:1px solid #1e293b; border-radius:14px; padding:14px; }
+    .card h3 { margin:0 0 6px; font-size:16px; }
+    .card p { margin:4px 0; color:#cbd5f5; font-size:13px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>OB1 · Prediction Ledger</h1>
+    <div id="meta" class="meta">Loading...</div>
+
+    <div class="grid" id="stats"></div>
+
+    <h2>Predictions</h2>
+    <table id="pred-table">
+      <thead>
+        <tr>
+          <th>Timestamp (UTC)</th>
+          <th>Player</th>
+          <th>Confidence</th>
+          <th>Predicted €</th>
+          <th>Proof</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Shame Wall</h2>
+    <div id="shame"></div>
+
+    <a class="ledger-link" href="./prediction-ledger.json">Download raw ledger JSON</a>
+  </div>
+
+  <script>
+    async function fetchLedger(){
+      const res = await fetch('./prediction-ledger.json?v=' + Date.now());
+      if(!res.ok){ throw new Error('HTTP ' + res.status); }
+      return await res.json();
+    }
+
+    function fmtMoney(v){
+      if(!v && v !== 0) return '—';
+      return '€' + (Number(v)/1_000_000).toFixed(2) + 'M';
+    }
+
+    function fmtConf(v){
+      if(v == null) return '—';
+      return (Number(v) * 100).toFixed(0) + '%';
+    }
+
+    function createStats(ledger){
+      const stats = document.getElementById('stats');
+      stats.innerHTML = '';
+      const items = [
+        { label: 'Predictions', value: ledger.total_predictions },
+        { label: 'Verified', value: ledger.verified_predictions },
+        { label: 'Accuracy', value: ledger.accuracy_pct != null ? ledger.accuracy_pct + '%' : 'n/a' }
+      ];
+      items.forEach(it => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `<h3>${it.label}</h3><p>${it.value}</p>`;
+        stats.appendChild(card);
+      });
+    }
+
+    function createPredictions(ledger){
+      const tbody = document.querySelector('#pred-table tbody');
+      tbody.innerHTML='';
+      ledger.predictions.forEach(rec => {
+        const tr = document.createElement('tr');
+        const payload = rec.payload || {};
+        const links = (payload.links || []).map(url => `<a href="${url}" target="_blank" rel="noopener">link</a>`).join(' ');
+        const confidence = fmtConf(payload.confidence);
+        const predicted = fmtMoney(payload.predicted_value_eur);
+        const status = rec.verification ? rec.verification.outcome + ' (' + (rec.verification.accuracy || 'unknown') + ')' : 'Pending';
+        tr.innerHTML = `
+          <td>${rec.timestamp_utc || '—'}</td>
+          <td><div>${payload.player_name || '—'}</div><div>${links}</div></td>
+          <td>${confidence}</td>
+          <td>${predicted}</td>
+          <td class="hash">${rec.hash}</td>
+          <td>${status}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function createShame(ledger){
+      const root = document.getElementById('shame');
+      root.innerHTML = '';
+      if(!ledger.shame_wall || !ledger.shame_wall.length){
+        const note = document.createElement('div');
+        note.className = 'meta';
+        note.textContent = 'No one to shame yet. Stay alert.';
+        root.appendChild(note);
+        return;
+      }
+      ledger.shame_wall.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'shame';
+        div.innerHTML = `<strong>${item.player}</strong> — ignored by ${item.ignored_by.join(', ')} on ${item.verified_at_utc}`;
+        if(item.notes){
+          const p = document.createElement('div');
+          p.textContent = item.notes;
+          div.appendChild(p);
+        }
+        root.appendChild(div);
+      });
+    }
+
+    fetchLedger().then(ledger => {
+      document.getElementById('meta').textContent = `Generated at ${ledger.generated_at_utc}`;
+      createStats(ledger);
+      createPredictions(ledger);
+      createShame(ledger);
+    }).catch(err => {
+      document.getElementById('meta').textContent = 'Failed to load ledger: ' + err;
+    });
+  </script>
+</body>
+</html>

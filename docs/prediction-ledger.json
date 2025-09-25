@@ -1,0 +1,163 @@
+{
+  "generated_at_utc": "2025-09-25T18:56:24Z",
+  "total_predictions": 3,
+  "verified_predictions": 0,
+  "on_target_predictions": 0,
+  "accuracy_pct": null,
+  "predictions": [
+    {
+      "hash": "3d625dcd3d301ffb1aa409c0eb9100bb715e6c64df037a38c2daf842aaf71cc9",
+      "timestamp_utc": "2025-09-25T18:56:24Z",
+      "payload": {
+        "player_id": "tm-219443",
+        "player_name": "Takumi Watanabe",
+        "current_value_eur": 709718.75,
+        "predicted_value_eur": 1092523.3,
+        "timeframe_days": 180,
+        "rationale": {
+          "verdict": "Overvalued by 54%",
+          "explanation": "Signal: PLAYER_BURST — tags [asia, esordio, high-press, positional-flex]",
+          "prediction": "Value will move 54% in 6 months",
+          "confidence_interval_pct": [
+            87.2,
+            112.8
+          ],
+          "confidence": 0.8294,
+          "source_snapshot": "sample_weekend_signals.json",
+          "tags": [
+            "asia",
+            "esordio",
+            "positional-flex",
+            "high-press"
+          ]
+        },
+        "confidence": 0.8294,
+        "confidence_interval_eur": {
+          "lower": 952734.94,
+          "upper": 1232311.66
+        },
+        "links": [
+          "https://example.com/takumi-watanabe-a-levan-cup"
+        ],
+        "region": "unknown",
+        "anomaly_type": "PLAYER_BURST",
+        "evidence_score": 86.7,
+        "created_at_utc": "2025-01-06T00:01:00Z",
+        "tracker_version": "1.0",
+        "premium_release_delay_hours": 48,
+        "public_release_at_utc": "2025-01-08T00:01:00Z",
+        "call_to_action": "Ignore this call and we'll publicly log you when it lands.",
+        "timestamp_utc": "2025-09-25T18:56:24Z"
+      },
+      "proof": {
+        "algorithm": "sha256",
+        "canonical_json": "{\"anomaly_type\":\"PLAYER_BURST\",\"call_to_action\":\"Ignore this call and we'll publicly log you when it lands.\",\"confidence\":0.8294,\"confidence_interval_eur\":{\"lower\":952734.94,\"upper\":1232311.66},\"created_at_utc\":\"2025-01-06T00:01:00Z\",\"current_value_eur\":709718.75,\"evidence_score\":86.7,\"links\":[\"https://example.com/takumi-watanabe-a-levan-cup\"],\"player_id\":\"tm-219443\",\"player_name\":\"Takumi Watanabe\",\"predicted_value_eur\":1092523.3,\"premium_release_delay_hours\":48,\"public_release_at_utc\":\"2025-01-08T00:01:00Z\",\"rationale\":{\"confidence\":0.8294,\"confidence_interval_pct\":[87.2,112.8],\"explanation\":\"Signal: PLAYER_BURST — tags [asia, esordio, high-press, positional-flex]\",\"prediction\":\"Value will move 54% in 6 months\",\"source_snapshot\":\"sample_weekend_signals.json\",\"tags\":[\"asia\",\"esordio\",\"positional-flex\",\"high-press\"],\"verdict\":\"Overvalued by 54%\"},\"region\":\"unknown\",\"timeframe_days\":180,\"timestamp_utc\":\"2025-09-25T18:56:24Z\",\"tracker_version\":\"1.0\"}",
+        "hash": "3d625dcd3d301ffb1aa409c0eb9100bb715e6c64df037a38c2daf842aaf71cc9"
+      },
+      "storage_path": "data/predictions/2025-09-25/3d625dcd3d301ffb1aa409c0eb9100bb715e6c64df037a38c2daf842aaf71cc9.json"
+    },
+    {
+      "hash": "ac122abe074b127345aa0f190d27d97515dbbfea9b287d21ba18878c4e9fdf8b",
+      "timestamp_utc": "2025-09-25T18:56:24Z",
+      "payload": {
+        "player_id": "tm-204887",
+        "player_name": "Issa Diarra",
+        "current_value_eur": 715406.25,
+        "predicted_value_eur": 1164770.8,
+        "timeframe_days": 180,
+        "rationale": {
+          "verdict": "Overvalued by 63%",
+          "explanation": "Signal: TRANSFER_SIGNAL — tags [africa, ball-winning, debut, loan]",
+          "prediction": "Value will move 63% in 6 months",
+          "confidence_interval_pct": [
+            87.79,
+            112.21
+          ],
+          "confidence": 0.8372,
+          "source_snapshot": "sample_weekend_signals.json",
+          "tags": [
+            "africa",
+            "debut",
+            "loan",
+            "ball-winning"
+          ]
+        },
+        "confidence": 0.8372,
+        "confidence_interval_eur": {
+          "lower": 1022552.29,
+          "upper": 1306989.32
+        },
+        "links": [
+          "https://example.com/issa-diarra-first-team-debut"
+        ],
+        "region": "unknown",
+        "anomaly_type": "TRANSFER_SIGNAL",
+        "evidence_score": 88.1,
+        "created_at_utc": "2025-01-06T00:01:00Z",
+        "tracker_version": "1.0",
+        "premium_release_delay_hours": 48,
+        "public_release_at_utc": "2025-01-08T00:01:00Z",
+        "call_to_action": "Ignore this call and we'll publicly log you when it lands.",
+        "timestamp_utc": "2025-09-25T18:56:24Z"
+      },
+      "proof": {
+        "algorithm": "sha256",
+        "canonical_json": "{\"anomaly_type\":\"TRANSFER_SIGNAL\",\"call_to_action\":\"Ignore this call and we'll publicly log you when it lands.\",\"confidence\":0.8372,\"confidence_interval_eur\":{\"lower\":1022552.29,\"upper\":1306989.32},\"created_at_utc\":\"2025-01-06T00:01:00Z\",\"current_value_eur\":715406.25,\"evidence_score\":88.1,\"links\":[\"https://example.com/issa-diarra-first-team-debut\"],\"player_id\":\"tm-204887\",\"player_name\":\"Issa Diarra\",\"predicted_value_eur\":1164770.8,\"premium_release_delay_hours\":48,\"public_release_at_utc\":\"2025-01-08T00:01:00Z\",\"rationale\":{\"confidence\":0.8372,\"confidence_interval_pct\":[87.79,112.21],\"explanation\":\"Signal: TRANSFER_SIGNAL — tags [africa, ball-winning, debut, loan]\",\"prediction\":\"Value will move 63% in 6 months\",\"source_snapshot\":\"sample_weekend_signals.json\",\"tags\":[\"africa\",\"debut\",\"loan\",\"ball-winning\"],\"verdict\":\"Overvalued by 63%\"},\"region\":\"unknown\",\"timeframe_days\":180,\"timestamp_utc\":\"2025-09-25T18:56:24Z\",\"tracker_version\":\"1.0\"}",
+        "hash": "ac122abe074b127345aa0f190d27d97515dbbfea9b287d21ba18878c4e9fdf8b"
+      },
+      "storage_path": "data/predictions/2025-09-25/ac122abe074b127345aa0f190d27d97515dbbfea9b287d21ba18878c4e9fdf8b.json"
+    },
+    {
+      "hash": "d475730d5a69b93c321a8f06c0f327a03d28b4812e0a2731ecc0f72918bcd234",
+      "timestamp_utc": "2025-09-25T18:56:24Z",
+      "payload": {
+        "player_id": "tm-189274",
+        "player_name": "Mateus Carvalho",
+        "current_value_eur": 732875.0,
+        "predicted_value_eur": 1183593.12,
+        "timeframe_days": 180,
+        "rationale": {
+          "verdict": "Overvalued by 62%",
+          "explanation": "Signal: PLAYER_BURST — tags [mercato, pressing, south-america, u20]",
+          "prediction": "Value will move 62% in 6 months",
+          "confidence_interval_pct": [
+            89.58,
+            110.42
+          ],
+          "confidence": 0.8611,
+          "source_snapshot": "sample_weekend_signals.json",
+          "tags": [
+            "south-america",
+            "mercato",
+            "pressing",
+            "u20"
+          ]
+        },
+        "confidence": 0.8611,
+        "confidence_interval_eur": {
+          "lower": 1060292.31,
+          "upper": 1306893.94
+        },
+        "links": [
+          "https://example.com/mateus-carvalho-u20-hat-trick"
+        ],
+        "region": "unknown",
+        "anomaly_type": "PLAYER_BURST",
+        "evidence_score": 92.4,
+        "created_at_utc": "2025-01-06T00:01:00Z",
+        "tracker_version": "1.0",
+        "premium_release_delay_hours": 48,
+        "public_release_at_utc": "2025-01-08T00:01:00Z",
+        "call_to_action": "Ignore this call and we'll publicly log you when it lands.",
+        "timestamp_utc": "2025-09-25T18:56:24Z"
+      },
+      "proof": {
+        "algorithm": "sha256",
+        "canonical_json": "{\"anomaly_type\":\"PLAYER_BURST\",\"call_to_action\":\"Ignore this call and we'll publicly log you when it lands.\",\"confidence\":0.8611,\"confidence_interval_eur\":{\"lower\":1060292.31,\"upper\":1306893.94},\"created_at_utc\":\"2025-01-06T00:01:00Z\",\"current_value_eur\":732875.0,\"evidence_score\":92.4,\"links\":[\"https://example.com/mateus-carvalho-u20-hat-trick\"],\"player_id\":\"tm-189274\",\"player_name\":\"Mateus Carvalho\",\"predicted_value_eur\":1183593.12,\"premium_release_delay_hours\":48,\"public_release_at_utc\":\"2025-01-08T00:01:00Z\",\"rationale\":{\"confidence\":0.8611,\"confidence_interval_pct\":[89.58,110.42],\"explanation\":\"Signal: PLAYER_BURST — tags [mercato, pressing, south-america, u20]\",\"prediction\":\"Value will move 62% in 6 months\",\"source_snapshot\":\"sample_weekend_signals.json\",\"tags\":[\"south-america\",\"mercato\",\"pressing\",\"u20\"],\"verdict\":\"Overvalued by 62%\"},\"region\":\"unknown\",\"timeframe_days\":180,\"timestamp_utc\":\"2025-09-25T18:56:24Z\",\"tracker_version\":\"1.0\"}",
+        "hash": "d475730d5a69b93c321a8f06c0f327a03d28b4812e0a2731ecc0f72918bcd234"
+      },
+      "storage_path": "data/predictions/2025-09-25/d475730d5a69b93c321a8f06c0f327a03d28b4812e0a2731ecc0f72918bcd234.json"
+    }
+  ],
+  "shame_wall": []
+}
