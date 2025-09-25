@@ -841,7 +841,7 @@
   },
   "https://www.infobae.com/deportes/2025/07/30/la-seleccion-argentina-jugara-la-final-por-el-titulo-del-torneo-de-lalcudia-ante-valencia-hora-tv-y-formaciones/": {
     "host": "www.infobae.com",
-    "seen_at": "2025-09-07T07:18:41"
+    "seen_at": "2025-09-25T07:21:31"
   },
   "https://riverelmasgrande.com/contenido/33039/sudamericano-sub-20-accion-jugadores-river-ruberto-subiabre-mastantuono-obregon-martinet": {
     "host": "riverelmasgrande.com",
@@ -973,7 +973,7 @@
   },
   "https://www.archivo.cronicadelquindio.com/noticias/deporte/colombia-debuto-con-victotria-en-el-mundial-sub-20-de-futbol": {
     "host": "www.archivo.cronicadelquindio.com",
-    "seen_at": "2025-09-11T07:20:32"
+    "seen_at": "2025-09-25T07:21:03"
   },
   "https://www.eluniverso.com/deportes/futbol/colombia-iguala-con-argentina-en-su-debut-en-el-sudamericano-sub-20-nota/": {
     "host": "www.eluniverso.com",
@@ -1426,5 +1426,37 @@
   "https://www.olympics.com/pt/noticias/copa-do-mundo-masculina-sub-20-futebol-brasil-busca-hexa-vivendo-maior-jejum": {
     "host": "www.olympics.com",
     "seen_at": "2025-09-24T07:20:53"
+  },
+  "https://eltiempomx.com/noticia/2025/nacio-en-buenos-aires-lo-debuto-anselmi-y-jugara-con-mexico-el-mundial-sub-20.html": {
+    "host": "eltiempomx.com",
+    "seen_at": "2025-09-25T07:21:05"
+  },
+  "https://www.cadenaheat.com/noticia/futbol/la-seleccion-argentina-sub-20-debuto-en-lalcudia-con-triunfo-ante-brasil_392741": {
+    "host": "www.cadenaheat.com",
+    "seen_at": "2025-09-25T07:21:19"
+  },
+  "https://www.postadeportes.com/futbol/futbol-mexicano/gilberto-mora-aumenta-su-valor-previo-al-mundial-sub20-con-mexico/vl2019639": {
+    "host": "www.postadeportes.com",
+    "seen_at": "2025-09-25T07:21:21"
+  },
+  "https://www.olympics.com/es/noticias/mexico-mundial-sub-20-historia": {
+    "host": "www.olympics.com",
+    "seen_at": "2025-09-25T07:21:25"
+  },
+  "https://www.futbolred.com/seleccion-colombia/jugadores-mas-valiosos-de-la-seleccion-colombia-para-el-mundial-sub-20-255709": {
+    "host": "www.futbolred.com",
+    "seen_at": "2025-09-25T07:21:36"
+  },
+  "https://www.noticiascaracol.com/golcaracol/lista-de-tecnicos-que-brillaron-en-el-mundial-sub-20-hay-dos-exseleccion-colombia-cb20": {
+    "host": "www.noticiascaracol.com",
+    "seen_at": "2025-09-25T07:21:39"
+  },
+  "https://www.transfermarkt.co/afc-u20-asian-cup-qualifikation/scorerliste/pokalwettbewerb/AU2C": {
+    "host": "www.transfermarkt.co",
+    "seen_at": "2025-09-25T07:21:41"
+  },
+  "https://www.reddit.com/r/footballmanagergames/comments/19fdfxv/send_under_21_players_on_loan_or_development/?tl=es-es": {
+    "host": "www.reddit.com",
+    "seen_at": "2025-09-25T07:21:49"
   }
 }
