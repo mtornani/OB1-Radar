@@ -1,0 +1,16 @@
+{
+  "buildCommand": "python run.py && python setup_web.py",
+  "outputDirectory": "public",
+  "installCommand": "pip install -r requirements.txt",
+  "functions": {
+    "api/**/*.py": {
+      "runtime": "vercel-python@3.9"
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/daily",
+      "schedule": "0 3 * * *"
+    }
+  ]
+}
