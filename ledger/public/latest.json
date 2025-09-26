@@ -1,0 +1,72 @@
+{
+  "generated_at": "2025-09-26T19:28:15Z",
+  "predictions": [
+    {
+      "confidence_interval": [
+        0.653,
+        0.727
+      ],
+      "current_value_eur": 310000.0,
+      "hash": "32cd6366210b46ad3a2a7803534c35dfb1bbd86cba90a55928cefa9e63d3bd28",
+      "player_id": "fallback-03",
+      "player_name": "West African striker",
+      "predicted_value_eur": 418500.0,
+      "probability": 0.69,
+      "rationale": [
+        "Non-penalty xG up 0.28 per 90",
+        "Pressing volume top 10% in league",
+        "Premier League scouts logged twice in two weeks"
+      ],
+      "source_snapshot": "2025-09-26T19:28:15Z",
+      "timeframe": "6_months",
+      "timestamp": "2025-09-26T19:28:15Z"
+    },
+    {
+      "confidence_interval": [
+        0.709,
+        0.771
+      ],
+      "current_value_eur": 520000.0,
+      "hash": "12cb6afd3eaad123222e7dc49d588aad59e11f164649d8bbe738fc4cadc76ccb",
+      "player_id": "fallback-02",
+      "player_name": "Nordic centre back",
+      "predicted_value_eur": 832000.0,
+      "probability": 0.74,
+      "rationale": [
+        "Top 5% for aerial wins",
+        "Progressive passes doubled season-on-season",
+        "Contract ends in 2026 - renewal stalled"
+      ],
+      "source_snapshot": "2025-09-26T19:28:15Z",
+      "timeframe": "6_months",
+      "timestamp": "2025-09-26T19:28:15Z"
+    },
+    {
+      "confidence_interval": [
+        0.79,
+        0.85
+      ],
+      "current_value_eur": 750000.0,
+      "hash": "d9fbab59c6e3ddf2be4f74b92e7b20d98f9f7b397a6b8bad00a8d2156133fa0f",
+      "player_id": "fallback-01",
+      "player_name": "South America winger",
+      "predicted_value_eur": 1200000.0,
+      "probability": 0.82,
+      "rationale": [
+        "Minutes up 34% since winter",
+        "Shot creation up 0.9 per 90",
+        "Agent pushing Serie A move"
+      ],
+      "source_snapshot": "2025-09-26T19:28:15Z",
+      "timeframe": "6_months",
+      "timestamp": "2025-09-26T19:28:15Z"
+    }
+  ],
+  "track_record": {
+    "accuracy": 0.0,
+    "total_predictions": 3,
+    "verdict_breakdown": {},
+    "verified_predictions": 0
+  },
+  "verifications": []
+}
