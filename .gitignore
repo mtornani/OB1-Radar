@@ -1,0 +1,17 @@
+*.pyc
+__pycache__/
+.env
+data/*
+output/*
+!data/.gitkeep
+!output/.gitkeep
+*.log
+.DS_Store
+node_modules/
+dist/
+build/
+*.swp
+.idea/
+.vscode/
+public/
+.vercel/

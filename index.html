@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OB1 Radar</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            background: #000;
+            color: #0f0;
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 4em;
+            margin: 0;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .data {
+            margin-top: 50px;
+            padding: 30px;
+            border: 1px solid #0f0;
+            max-width: 600px;
+            text-align: center;
+        }
+        a {
+            color: #0f0;
+            font-size: 1.5em;
+        }
+        .loading {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>OB1 RADAR</h1>
+    <div class="data">
+        <p class="loading">Checking latest analysis...</p>
+    </div>
+    <script>
+        // Try to load daily.json if it exists
+        fetch('/output/daily.json')
+            .then(r => r.json())
+            .then(data => {
+                const html = `
+                    <h2>Latest Scan Results</h2>
+                    <p>Found: ${data.items?.length || 0} talents</p>
+                    <p>Top Score: ${data.items?.[0]?.score || 0}%</p>
+                    <p>Regions: ${Object.keys(data.region_breakdown || {}).length}</p>
+                    <br>
+                    <p>Full data: €89/month</p>
+                    <a href="mailto:ob1radar@proton.me?subject=OB1 Access">Get Access</a>
+                `;
+                document.querySelector('.data').innerHTML = html;
+            })
+            .catch(e => {
+                document.querySelector('.data').innerHTML = `
+                    <h2>OB1 Radar Active</h2>
+                    <p>Daily analysis runs at 3 AM UTC</p>
+                    <p>U20 talent detection system</p>
+                    <br>
+                    <a href="mailto:ob1radar@proton.me?subject=OB1 Access">Contact for Access</a>
+                `;
+            });
+    </script>
+</body>
+</html>

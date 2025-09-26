@@ -1,0 +1,15 @@
+{
+  "buildCommand": "pip install -r requirements.txt && python run.py || echo 'No build needed'",
+  "outputDirectory": ".",
+  "installCommand": "pip install requests",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
