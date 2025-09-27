@@ -1,0 +1,20 @@
+{
+  "confidence_interval": [
+    0.653,
+    0.727
+  ],
+  "current_value_eur": 310000.0,
+  "hash": "d180652bd3cd3eba74c4d7a5be1edc9446f8e1eacddb2d05fe5532463afc0bd4",
+  "player_id": "fallback-03",
+  "player_name": "West African striker",
+  "predicted_value_eur": 418500.0,
+  "probability": 0.69,
+  "rationale": [
+    "Non-penalty xG up 0.28 per 90",
+    "Pressing volume top 10% in league",
+    "Premier League scouts logged twice in two weeks"
+  ],
+  "source_snapshot": "2025-09-27T18:27:12Z",
+  "timeframe": "6_months",
+  "timestamp": "2025-09-27T18:27:12Z"
+}

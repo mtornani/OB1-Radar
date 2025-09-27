@@ -1,0 +1,20 @@
+{
+  "confidence_interval": [
+    0.79,
+    0.85
+  ],
+  "current_value_eur": 750000.0,
+  "hash": "801ad110d426b5bf6aa49ecfb7c3b1350e06b9dc242f157601a0928c8c85f19f",
+  "player_id": "fallback-01",
+  "player_name": "South America winger",
+  "predicted_value_eur": 1200000.0,
+  "probability": 0.82,
+  "rationale": [
+    "Minutes up 34% since winter",
+    "Shot creation up 0.9 per 90",
+    "Agent pushing Serie A move"
+  ],
+  "source_snapshot": "2025-09-27T18:27:12Z",
+  "timeframe": "6_months",
+  "timestamp": "2025-09-27T18:27:12Z"
+}
